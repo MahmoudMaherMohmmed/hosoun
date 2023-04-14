@@ -1,0 +1,182 @@
+@extends('auth.layouts.master')
+@section('title')
+  حساب جديد
+@endsection
+@section('auth-header-redirect')
+  <a href="{{ route('register') }}" class="btn btn-accent">{{ __('frontstaticword.Signup') }}</a>
+@endsection
+@section('bottombar-redirect')
+  <a href="{{ route('register') }}" class="btn btn-white">{{ __('frontstaticword.Signup') }}</a>
+@endsection
+
+@section('content')
+  <section class="container">
+    <div class="auth-wrapper">
+      <section class="auth-block">
+        <div class="auth-head">
+          <span>{{ __('frontstaticword.Welcome') }}</span>
+          {{ __('frontstaticword.StartLearning') }}
+        </div>
+        <div class="auth-body">
+          <form method="POST" action="{{ route('register') }}">
+            @csrf
+            <div class="form-group">
+              <label for="fname" class="form-label">{{ __('frontstaticword.FirstName') }}</label>
+              <div class="form-group-icon">
+                <input type="text" name="fname" id="fname" class="form-control {{ $errors->has('fname') ? ' is-invalid' : '' }}" value="{{ old('fname') }}" placeholder="{{ __('frontstaticword.FirstName') }}">
+                <svg class="svg-default form-control-icon">
+                  <use xlink:href="{{ asset('/front/svg/sprite.svg#profile') }}" />
+                </svg>
+                @if ($errors->has('fname'))
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('fname') }}</strong>
+                    </span>
+                @endif
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="lname" class="form-label">{{ __('frontstaticword.LastName') }}</label>
+              <div class="form-group-icon">
+                <input type="text" name="lname" id="lname" class="form-control {{ $errors->has('lname') ? ' is-invalid' : '' }}" placeholder="{{ __('frontstaticword.LastName') }}" value="{{ old('lname') }}">
+                <svg class="svg-default form-control-icon">
+                  <use xlink:href="{{ asset('/front/svg/sprite.svg#profile') }}" />
+                </svg>
+                @if($errors->has('lname'))
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('lname') }}</strong>
+                    </span>
+                @endif
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-label">{{ __('frontstaticword.Email') }}</label>
+              <div class="form-group-icon">
+                <input type="email" name="email" id="email" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('frontstaticword.Email') }}" value="{{ old('email') }}">
+                <svg class="svg-default form-control-icon">
+                  <use xlink:href="{{ asset('/front/svg/sprite.svg#sms') }}" />
+                </svg>
+                @if($errors->has('email'))
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('email') }}</strong>
+                    </span>
+                @endif
+              </div>
+            </div>
+            @if($gsetting->mobile_enable == 1)
+            <div class="form-group">
+              <label for="mobile" class="form-label">{{ __('frontstaticword.Mobile') }}</label>
+              <input type="tel" name="mobile" id="mobile" class="form-control {{ $errors->has('mobile') ? ' is-invalid' : '' }}" placeholder="{{ __('frontstaticword.Mobile') }}" value="{{ old('mobile') }}">
+              @if($errors->has('mobile'))
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $errors->first('mobile') }}</strong>
+                  </span>
+              @endif
+            </div>
+            @endif
+            <div class="form-group">
+              <label for="nationality" class="form-label">{{ __('frontstaticword.Nationality') }}</label>
+              <div class="form-group-icon">
+                <select name="nationality" id="nationality" class="select2-search-enable {{ $errors->has('nationality') ? ' is-invalid' : '' }}" data-placeholder="{{ __('frontstaticword.Nationality') }}">
+                  <option></option>
+                  <option value="0"> {{ __('frontstaticword.SaudiArabia') }} </option>
+                  <option value="1"> {{ __('frontstaticword.GulfCountries') }} </option>
+                  <option value="2"> {{ __('frontstaticword.ArabCountries') }} </option>
+                  <option value="3"> {{ __('frontstaticword.ForeignerWithASaudiPassport') }} </option>
+                  <option value="4"> {{ __('frontstaticword.DisplacedTribesmen') }} </option>
+                  <option value="5"> {{ __('frontstaticword.OtherNationality') }} </option>
+                </select>
+                <svg class="svg-default form-control-icon">
+                  <use xlink:href="{{ asset('/front/svg/sprite.svg#location') }}" />
+                </svg>
+                @if($errors->has('nationality'))
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('nationality') }}</strong>
+                    </span>
+                @endif
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="national_id" class="form-label">{{ __('frontstaticword.nationalID') }}</label>
+              <div class="form-group-icon">
+                <input type="number" name="national_id" id="national_id" class="form-control {{ $errors->has('national_id') ? ' is-invalid' : '' }}" placeholder="{{ __('frontstaticword.nationalID') }}" value="{{ old('national_id') }}">
+                <svg class="svg-default form-control-icon">
+                  <use xlink:href="{{ asset('/front/svg/sprite.svg#profile') }}" />
+                </svg>
+                @if($errors->has('national_id'))
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('national_id') }}</strong>
+                    </span>
+                @endif
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="academic_qualification" class="form-label">{{ __('frontstaticword.AcademicQualification') }}</label>
+              <div class="form-group-icon">
+                <select name="academic_qualification" id="academic_qualification" class="select2-search-enable {{ $errors->has('academic_qualification') ? ' is-invalid' : '' }}" data-placeholder="{{ __('frontstaticword.AcademicQualification') }}">
+                  <option></option>
+                  <option value="0"> {{ __('frontstaticword.IntermediateEducation') }} </option>
+                  <option value="1"> {{ __('frontstaticword.Diploma') }} </option>
+                  <option value="2"> {{ __('frontstaticword.HighSchoolEducation') }} </option>
+                  <option value="3"> {{ __('frontstaticword.UniversityEducation') }} </option>
+                  <option value="4"> {{ __('frontstaticword.BA') }} </option>
+                  <option value="5"> {{ __('frontstaticword.Master') }} </option>
+                  <option value="6"> {{ __('frontstaticword.PhD') }} </option>
+                  <option value="7"> {{ __('frontstaticword.OtherAcademicQualification') }} </option>
+                </select>
+                <svg class="svg-default form-control-icon">
+                  <use xlink:href="{{ asset('/front/svg/sprite.svg#teacher') }}" />
+                </svg>
+                @if($errors->has('academic_qualification'))
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('academic_qualification') }}</strong>
+                    </span>
+                @endif
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="password" class="form-label">{{ __('frontstaticword.Password') }}</label>
+              <div class="form-group-icon">
+                <input type="password" name="password" id="password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{ __('frontstaticword.Password') }}">
+                <svg class="svg-default form-control-icon">
+                  <use xlink:href="{{ asset('/front/svg/sprite.svg#lock') }}" />
+                </svg>
+                @if ($errors->has('password'))
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('password') }}</strong>
+                    </span>
+                @endif
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="password_confirmation" class="form-label">{{ __('frontstaticword.ConfirmPassword') }}</label>
+              <div class="form-group-icon">
+                <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="{{ __('frontstaticword.ConfirmPassword') }}">
+                <svg class="svg-default form-control-icon">
+                  <use xlink:href="{{ asset('/front/svg/sprite.svg#lock') }}" />
+                </svg>
+              </div>
+            </div>
+            <div class="form-check form-group">
+              <input type="checkbox" name="term" id="term" class="form-check-input">
+              <label for="term" class="form-check-label">
+                {{ __('frontstaticword.IAgreeTo') }}
+                <a href="{{url('terms_condition')}}" class="text-accent fw-light">{{ __('frontstaticword.Terms&Condition') }}</a>
+                <a href="{{url('privacy_policy')}}" class="text-accent fw-light">{{ __('frontstaticword.PrivacyPolicy') }}</a>
+              </label>
+            </div>
+            <button type="submit" class="btn btn-accent w-100 mt-5">{{ __('frontstaticword.Signup') }}</button>
+
+            <div class="mt-5 text-center">
+              <div class="fw-bold">
+                {{ __('frontstaticword.Alreadyhaveanaccount') }}?
+                <a href="{{ route('login') }}" class="text-accent">{{ __('frontstaticword.Login') }}</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </section>
+@endsection
+@section('js')
+@endsection

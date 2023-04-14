@@ -1,0 +1,130 @@
+[21-Sep-2021 12:38:06 UTC] PHP Fatal error:  Cannot redeclare App\Course::scopeSearch() in /home/demos/public_html/academy/app/Course.php on line 161
+[21-Sep-2021 12:38:36 UTC] PHP Fatal error:  Cannot redeclare App\Course::scopeSearch() in /home/demos/public_html/academy/app/Course.php on line 161
+[07-Feb-2022 17:09:58 UTC] PHP Fatal error:  Uncaught ReflectionException: Class "view" does not exist in /home/demos/public_html/academy/vendor/laravel/framework/src/Illuminate/Container/Container.php:833
+Stack trace:
+#0 /home/demos/public_html/academy/vendor/laravel/framework/src/Illuminate/Container/Container.php(833): ReflectionClass->__construct()
+#1 /home/demos/public_html/academy/vendor/laravel/framework/src/Illuminate/Container/Container.php(714): Illuminate\Container\Container->build()
+#2 /home/demos/public_html/academy/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(841): Illuminate\Container\Container->resolve()
+#3 /home/demos/public_html/academy/vendor/laravel/framework/src/Illuminate/Container/Container.php(652): Illuminate\Foundation\Application->resolve()
+#4 /home/demos/public_html/academy/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(826): Illuminate\Container\Container->make()
+#5 /home/demos/public_html/academy/vendor/laravel/framework/src/Illuminate/Container/Container.php(1365): Illuminate\Foundation\Application->make()
+#6 /home/demos/public_html/academy/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(198): Illuminate\Container\Container->offsetGet()
+#7 /home/demos/public_html/academy/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(166): Illuminate\Support\Facades\Facade::resolveFacadeInstance()
+#8 /home/demos/public_html/academy/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(255): Illuminate\Support\Facades\Facade::getFacadeRoot()
+#9 /home/demos/public_html/academy/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#10 /home/demos/public_html/academy/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(582): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#11 /home/demos/public_html/academy/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(563): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#12 /home/demos/public_html/academy/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(474): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#13 /home/demos/public_html/academy/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(352): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#14 /home/demos/public_html/academy/app/Exceptions/Handler.php(53): Illuminate\Foundation\Exceptions\Handler->render()
+#15 /home/demos/public_html/academy/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(119): App\Exceptions\Handler->render()
+#16 /home/demos/public_html/academy/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(96): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#17 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#18 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [view] does not exist. in /home/demos/public_html/academy/vendor/laravel/framework/src/Illuminate/Container/Container.php:835
+Stack trace:
+#0 /home/demos/public_html/academy/vendor/laravel/framework/src/Illuminate/Container/Container.php(714): Illuminate\Container\Container->build()
+#1 /home/demos/public_html/academy/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(841): Illuminate\Container\Container->resolve()
+#2 /home/demos/public_html/academy/vendor/laravel/framework/src/Illuminate/Container/Container.php(652): Illuminate\Foundation\Application->resolve()
+#3 /home/demos/public_html/academy/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(826): Illuminate\Container\Container->make()
+#4 /home/demos/public_html/academy/vendor/laravel/framework/src/Illuminate/Container/Container.php(1365): Illuminate\Foundation\Application->make()
+#5 /home/demos/public_html/academy/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(198): Illuminate\Container\Container->offsetGet()
+#6 /home/demos/public_html/academy/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(166): Illuminate\Support\Facades\Facade::resolveFacadeInstance()
+#7 /home/demos/public_html/academy/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(255): Illuminate\Support\Facades\Facade::getFacadeRoot()
+#8 /home/demos/public_html/academy/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#9 /home/demos/public_html/academy/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(582): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#10 /home/demos/public_html/academy/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(563): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#11 /home/demos/public_html/academy/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(474): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#12 /home/demos/public_html/academy/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(352): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#13 /home/demos/public_html/academy/app/Exceptions/Handler.php(53): Illuminate\Foundation\Exceptions\Handler->render()
+#14 /home/demos/public_html/academy/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(119): App\Exceptions\Handler->render()
+#15 /home/demos/public_html/academy/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(96): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#16 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#17 {main}
+  thrown in /home/demos/public_html/academy/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 835
+[01-Sep-2022 04:27:52 UTC] PHP Notice:  file_put_contents(): write of 7165 bytes failed with errno=28 No space left on device in /home/trainingabegs/public_html/vendor/myfatoorah/library/autoload.php on line 44
+[01-Sep-2022 04:27:52 UTC] PHP Warning:  file_put_contents(): Only -1 of 7165 bytes written, possibly out of free disk space in /home/trainingabegs/public_html/vendor/myfatoorah/library/autoload.php on line 44
+[01-Sep-2022 04:27:52 UTC] PHP Notice:  file_put_contents(): write of 1000 bytes failed with errno=28 No space left on device in /home/trainingabegs/public_html/vendor/myfatoorah/library/autoload.php on line 45
+[01-Sep-2022 04:27:52 UTC] PHP Warning:  file_put_contents(): Only 8192 of 9192 bytes written, possibly out of free disk space in /home/trainingabegs/public_html/vendor/myfatoorah/library/autoload.php on line 45
+[01-Sep-2022 04:27:52 UTC] PHP Fatal error:  Uncaught ErrorException: file_put_contents(): write of 441 bytes failed with errno=28 No space left on device in /home/trainingabegs/public_html/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:185
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'file_put_conten...', '/home/traininga...', 185, Array)
+#1 /home/trainingabegs/public_html/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(185): file_put_contents('/home/traininga...', '<?php $__env->s...', 0)
+#2 /home/trainingabegs/public_html/vendor/laravel/framework/src/Illuminate/View/Compilers/BladeCompiler.php(160): Illuminate\Filesystem\Filesystem->put('/home/traininga...', '<?php $__env->s...')
+#3 /home/trainingabegs/public_html/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(55): Illuminate\View\Compilers\BladeCompiler->compile('/home/traininga...')
+[11-Sep-2022 16:09:50 UTC] PHP Fatal error:  During class fetch: Uncaught ErrorException: include(): read of 32655 bytes failed with errno=12 Cannot allocate memory in /home/trainingabegs/public_html/vendor/composer/ClassLoader.php:571
+Stack trace:
+#0 /home/trainingabegs/public_html/vendor/composer/ClassLoader.php(571): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'include(): read...', '/home/traininga...', 571, Array)
+#1 /home/trainingabegs/public_html/vendor/composer/ClassLoader.php(571): include()
+#2 /home/trainingabegs/public_html/vendor/composer/ClassLoader.php(428): Composer\Autoload\includeFile('/home/traininga...')
+#3 [internal function]: Composer\Autoload\ClassLoader->loadClass('Carbon\\Traits\\C...')
+#4 /home/trainingabegs/public_html/vendor/nesbot/carbon/src/Carbon/Traits/Date.php(526): spl_autoload_call('Carbon\\Traits\\C...')
+#5 /home/trainingabegs/public_html/vendor/composer/ClassLoader.php(571): include('/home/traininga...')
+#6 /home/trainingabegs/public_html/vendor/composer/ClassLoader.php(428): Composer\Autoload\incl in /home/trainingabegs/public_html/vendor/nesbot/carbon/src/Carbon/Traits/Date.php on line 526
+[11-Sep-2022 16:09:52 UTC] PHP Notice:  require(): read of 4283367 bytes failed with errno=12 Cannot allocate memory in /home/trainingabegs/public_html/vendor/composer/autoload_real.php on line 33
+[11-Sep-2022 16:09:53 UTC] PHP Notice:  include(): read of 1853 bytes failed with errno=12 Cannot allocate memory in /home/trainingabegs/public_html/vendor/composer/ClassLoader.php on line 571
+[11-Sep-2022 16:09:53 UTC] PHP Notice:  include(): read of 48070 bytes failed with errno=12 Cannot allocate memory in /home/trainingabegs/public_html/vendor/composer/ClassLoader.php on line 571
+[11-Sep-2022 16:09:53 UTC] PHP Notice:  include(): read of 1837 bytes failed with errno=12 Cannot allocate memory in /home/trainingabegs/public_html/vendor/composer/ClassLoader.php on line 571
+[11-Sep-2022 16:09:53 UTC] PHP Notice:  include(): read of 1679 bytes failed with errno=12 Cannot allocate memory in /home/trainingabegs/public_html/vendor/composer/ClassLoader.php on line 571
+[11-Sep-2022 16:09:53 UTC] PHP Notice:  include(): read of 316 bytes failed with errno=12 Cannot allocate memory in /home/trainingabegs/public_html/vendor/composer/ClassLoader.php on line 571
+[11-Sep-2022 16:09:53 UTC] PHP Notice:  include(): read of 8351 bytes failed with errno=12 Cannot allocate memory in /home/trainingabegs/public_html/vendor/composer/ClassLoader.php on line 571
+[11-Sep-2022 16:10:01 UTC] PHP Notice:  include(): read of 1752 bytes failed with errno=12 Cannot allocate memory in /home/trainingabegs/public_html/vendor/composer/ClassLoader.php on line 571
+[11-Sep-2022 16:10:02 UTC] PHP Notice:  include(): read of 7143 bytes failed with errno=12 Cannot allocate memory in /home/trainingabegs/public_html/vendor/composer/ClassLoader.php on line 571
+[11-Sep-2022 16:10:03 UTC] PHP Notice:  include(): read of 67182 bytes failed with errno=12 Cannot allocate memory in /home/trainingabegs/public_html/vendor/voku/portable-ascii/src/voku/helper/ASCII.php on line 1372
+[11-Sep-2022 16:10:09 UTC] PHP Notice:  require(): read of 4283367 bytes failed with errno=12 Cannot allocate memory in /home/trainingabegs/public_html/vendor/composer/autoload_real.php on line 33
+[11-Sep-2022 16:10:16 UTC] PHP Notice:  include(): read of 8246 bytes failed with errno=12 Cannot allocate memory in /home/trainingabegs/public_html/vendor/composer/ClassLoader.php on line 571
+[11-Sep-2022 16:10:16 UTC] PHP Fatal error:  Uncaught ErrorException: include(): read of 1284 bytes failed with errno=12 Cannot allocate memory in /home/trainingabegs/public_html/vendor/composer/ClassLoader.php:571
+Stack trace:
+#0 /home/trainingabegs/public_html/vendor/composer/ClassLoader.php(571): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'include(): read...', '/home/traininga...', 571, Array)
+#1 /home/trainingabegs/public_html/vendor/composer/ClassLoader.php(571): include()
+#2 /home/trainingabegs/public_html/vendor/composer/ClassLoader.php(428): Compos[11-Sep-2022 16:10:35 UTC] PHP Fatal error:  require_once(): Failed opening required '/home/trainingabegs/public_html/vendor/composer/autoload_real.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/trainingabegs/public_html/vendor/autoload.php on line 5
+[11-Sep-2022 16:10:42 UTC] PHP Fatal error:  During class fetch: Uncaught ErrorException: include(): read of 15662 bytes failed with errno=12 Cannot allocate memory in /home/trainingabegs/public_html/vendor/composer/ClassLoader.php:571
+Stack trace:
+#0 /home/trainingabegs/public_html/vendor/composer/ClassLoader.php(571): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'include(): read...', '/home/traininga...', 571, Array)
+#1 /home/trainingabegs/public_html/vendor/composer/ClassLoader.php(571): include()
+#2 /home/trainingabegs/public_html/vendor/composer/ClassLoader.php(428): Composer\Autoload\includeFile('/home/traininga...')
+#3 [internal function]: Composer\Autoload\ClassLoader->loadClass('Carbon\\Traits\\C...')
+#4 /home/trainingabegs/public_html/vendor/nesbot/carbon/src/Carbon/Traits/Date.php(526): spl_autoload_call('Carbon\\Traits\\C...')
+#5 /home/trainingabegs/public_html/vendor/composer/ClassLoader.php(571): include('/home/traininga...')
+#6 /home/trainingabegs/public_html/vendor/composer/ClassLoader.php(428): Composer\Autoload\incl in /home/trainingabegs/public_html/vendor/nesbot/carbon/src/Carbon/Traits/Date.php on line 526
+[11-Sep-2022 16:10:42 UTC] PHP Notice:  include(): read of 6174 bytes failed with errno=12 Cannot allocate memory in /home/trainingabegs/public_html/vendor/composer/ClassLoader.php on line 571
+[11-Sep-2022 16:10:42 UTC] PHP Notice:  include(): read of 6174 bytes failed with errno=12 Cannot allocate memory in /home/trainingabegs/public_html/vendor/composer/ClassLoader.php on line 571
+[11-Sep-2022 16:10:51 UTC] PHP Fatal error:  Uncaught ErrorException: include(): read of 7249 bytes failed with errno=12 Cannot allocate memory in /home/trainingabegs/public_html/vendor/composer/ClassLoader.php:571
+Stack trace:
+#0 /home/trainingabegs/public_html/vendor/composer/ClassLoader.php(571): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'include(): read...', '/home/traininga...', 571, Array)
+#1 /home/trainingabegs/public_html/vendor/composer/ClassLoader.php(571): include()
+#2 /home/trainingabegs/public_html/vendor/composer/ClassLoader.php(428): Composer\Autoload\includeFile('/home/traininga...')
+#3 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Foun...')
+#4 /home/trainingabegs/public_html/app/Exceptions/Handler.php(8): spl_autoload_call('Illuminate\\Foun...')
+#5 /home/trainingabegs/public_html/vendor/composer/ClassLoader.php(571): include('/home/traininga...')
+#6 /home/trainingabegs/public_html/vendor/composer/ClassLoader.php(428): Composer\Autoload\includeFile('/home/traininga...')
+#7 [internal fun in /home/trainingabegs/public_html/vendor/composer/ClassLoader.php on line 571
+[11-Sep-2022 16:10:51 UTC] PHP Notice:  require(): read of 1519 bytes failed with errno=12 Cannot allocate memory in /home/trainingabegs/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php on line 72
+[11-Sep-2022 16:10:51 UTC] PHP Fatal error:  During class fetch: Uncaught ErrorException: include(): read of 6822 bytes failed with errno=12 Cannot allocate memory in /home/trainingabegs/public_html/vendor/composer/ClassLoader.php:571
+Stack trace:
+#0 /home/trainingabegs/public_html/vendor/composer/ClassLoader.php(571): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'include(): read...', '/home/traininga...', 571, Array)
+#1 /home/trainingabegs/public_html/vendor/composer/ClassLoader.php(571): include()
+#2 /home/trainingabegs/public_html/vendor/composer/ClassLoader.php(428): Composer\Autoload\includeFile('/home/traininga...')
+#3 [internal function]: Composer\Autoload\ClassLoader->loadClass('Carbon\\Traits\\R...')
+#4 /home/trainingabegs/public_html/vendor/nesbot/carbon/src/Carbon/Traits/Date.php(526): spl_autoload_call('Carbon\\Traits\\R...')
+#5 /home/trainingabegs/public_html/vendor/composer/ClassLoader.php(571): include('/home/traininga...')
+#6 /home/trainingabegs/public_html/vendor/composer/ClassLoader.php(428): Composer\Autoload\inclu in /home/trainingabegs/public_html/vendor/nesbot/carbon/src/Carbon/Traits/Date.php on line 526
+[11-Sep-2022 16:10:51 UTC] PHP Fatal error:  Uncaught ErrorException: include(): read of 15441 bytes failed with errno=12 Cannot allocate memory in /home/trainingabegs/public_html/vendor/composer/ClassLoader.php:571
+Stack trace:
+#0 /home/trainingabegs/public_html/vendor/composer/ClassLoader.php(571): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'include(): read...', '/home/traininga...', 571, Array)
+#1 /home/trainingabegs/public_html/vendor/composer/ClassLoader.php(571): include()
+#2 /home/trainingabegs/public_html/vendor/composer/ClassLoader.php(428): Composer\Autoload\includeFile('/home/traininga...')
+#3 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Foun...')
+#4 /home/trainingabegs/public_html/app/Exceptions/Handler.php(8): spl_autoload_call('Illuminate\\Foun...')
+#5 /home/trainingabegs/public_html/vendor/composer/ClassLoader.php(571): include('/home/traininga...')
+#6 /home/trainingabegs/public_html/vendor/composer/ClassLoader.php(428): Composer\Autoload\includeFile('/home/traininga...')
+#7 [internal fu in /home/trainingabegs/public_html/vendor/composer/ClassLoader.php on line 571
+[11-Sep-2022 16:10:58 UTC] PHP Notice:  include(): read of 16741 bytes failed with errno=12 Cannot allocate memory in /home/trainingabegs/public_html/vendor/composer/ClassLoader.php on line 571
+[11-Sep-2022 16:10:58 UTC] PHP Warning:  Cannot declare class Illuminate\Support\Arr, because the name is already in use in /home/trainingabegs/public_html/vendor/tightenco/collect/src/Collect/Support/alias.php on line 19
+[11-Sep-2022 16:11:13 UTC] PHP Fatal error:  require_once(): Failed opening required '/home/trainingabegs/public_html/vendor/composer/autoload_real.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/trainingabegs/public_html/vendor/autoload.php on line 5
+[11-Sep-2022 16:12:21 UTC] PHP Notice:  include(): read of 1631 bytes failed with errno=12 Cannot allocate memory in /home/trainingabegs/public_html/vendor/composer/ClassLoader.php on line 571
+[24-Oct-2022 06:25:00 UTC] PHP Notice:  file_put_contents(): write of 7106 bytes failed with errno=28 No space left on device in /home/trainingabegs/public_html/vendor/myfatoorah/library/autoload.php on line 44
+[24-Oct-2022 06:25:00 UTC] PHP Warning:  file_put_contents(): Only -1 of 7106 bytes written, possibly out of free disk space in /home/trainingabegs/public_html/vendor/myfatoorah/library/autoload.php on line 44
+[24-Oct-2022 06:25:00 UTC] PHP Notice:  file_put_contents(): write of 6055 bytes failed with errno=28 No space left on device in /home/trainingabegs/public_html/vendor/myfatoorah/library/autoload.php on line 45
+[24-Oct-2022 06:25:00 UTC] PHP Warning:  file_put_contents(): Only 4096 of 10151 bytes written, possibly out of free disk space in /home/trainingabegs/public_html/vendor/myfatoorah/library/autoload.php on line 45

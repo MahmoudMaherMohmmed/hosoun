@@ -1,0 +1,9 @@
+{
+    "Hello!": "!مرحبا",
+    "Reset Password": "إعادة تعيين كلمة المرور",
+    "Reset Password Notification": "إعادة تعيين كلمة المرور",
+    "You are receiving this email because we received a password reset request for your account.": "أنت تتلقى هذا البريد الإلكتروني لأننا تلقينا طلب إعادة تعيين كلمة المرور لحسابك.",
+    "This password reset link will expire in :count minutes.": "ستنتهي صلاحية رابط إعادة تعيين كلمة المرور خلال :count دقيقة",
+    "If you did not request a password reset, no further action is required.": "إذا لم تطلب إعادة تعيين كلمة المرور ، فلا داعي لاتخاذ أي إجراء آخر.",
+    "Regards": "مع تحيات"
+}

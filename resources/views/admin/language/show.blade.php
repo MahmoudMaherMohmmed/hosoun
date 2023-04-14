@@ -1,0 +1,79 @@
+@extends('admin.layouts.master')
+@section('title', __('adminstaticword.Language') . ' - ' . __('adminstaticword.Admin'))
+@section('body')
+@include('admin.message')
+
+
+@if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
+
+
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h1 class="box-title">{{ __('adminstaticword.Language') }}</h1>
+                </div>
+                <div class="box-body">
+                    <!-- Nav tabs -->
+                    <div class="nav-tabs-custom">
+                        <ul class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#home" aria-controls="home" role="tab" data-toggle="tab">
+                                    <i class='bx bx-globe' ></i> Language
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">
+                                    <i class='bx bx-laptop' ></i> Front Static Word Translation
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#admin" aria-controls="profile" role="tab" data-toggle="tab">
+                                    <i class='bx bx-laptop' ></i> Admin Static Word Translation
+                                </a>
+                            </li>
+
+                            <li role="presentation">
+                                <a href="#flash" aria-controls="flash" role="tab" data-toggle="tab">
+                                    <i class='bx bx-laptop' ></i> Flash Message Translation
+                                </a>
+                            </li>
+                        </ul>
+
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane fade in active" id="home">
+
+                                @include('admin.language.index')
+                            </div>
+                            <div role="tabpanel" class="fade tab-pane" id="profile">
+
+                                @include('admin.language.frontstatic.index')
+                            </div>
+                            <div role="tabpanel" class="fade tab-pane" id="admin">
+
+                                @include('admin.language.adminstatic.index')
+                            </div>
+
+                            <div role="tabpanel" class="fade tab-pane" id="flash">
+
+                                @include('admin.language.flashmsg.index')
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@endsection

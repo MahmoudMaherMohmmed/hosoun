@@ -1,0 +1,305 @@
+/* Font Faces */
+@font-face {
+  font-family: "SuisseIntl";
+  src: url("../fonts/suisseIntl/light.woff") format("woff");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "SuisseIntl";
+  src: url("../fonts/suisseIntl/medium.woff") format("woff");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "SuisseIntl";
+  src: url("../fonts/suisseIntl/bold.woff") format("woff");
+  font-weight: 700;
+}
+/* /Font Faces */
+
+html {
+  direction: ltr;
+}
+
+body {
+  font-family: "SuisseIntl", sans-serif;
+  text-align: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "SuisseIntl", sans-serif;
+}
+
+.bg-watermark::after {
+  left: unset;
+  right: -10rem;
+  transform: scaleX(-1);
+  background-position: right;
+}
+
+.auth-block::after {
+  left: unset;
+  right: 0;
+  background-position: right;
+}
+
+.auth-block.email::after {
+  left: unset;
+  right: -2rem;
+}
+
+.select2-container--default
+  .select2-selection--single
+  .select2-selection__arrow {
+  left: unset;
+  right: 2rem;
+}
+
+.select2-container--default
+  .select2-selection--single
+  .select2-selection__arrow
+  b {
+  border-width: 0.2rem 0 0 0.2rem;
+  transform: rotate(-135deg);
+}
+
+.select2-container--default.select2-container--open
+  .select2-selection--single
+  .select2-selection__arrow
+  b {
+  border-width: 0.2rem 0 0 0.2rem;
+  transform: rotate(45deg);
+}
+
+.select2 .select2-selection,
+.form-control {
+  padding: 0 2rem 0 5.4rem;
+}
+
+.form-group-icon .form-control-icon {
+  right: unset;
+  left: 2rem;
+}
+
+[type="email"],
+[type="number"],
+[type="tel"],
+[type="url"] {
+  direction: ltr;
+}
+
+.form-check .form-check-input {
+  margin-bottom: 0.5rem;
+}
+
+.iti__country-list {
+  left: 0;
+  right: auto;
+}
+
+.iti--allow-dropdown .iti__flag-container,
+.iti--separate-dial-code .iti__flag-container {
+  left: 0;
+  right: auto;
+}
+
+.iti--separate-dial-code .iti__selected-flag {
+  padding: 0 1.4rem 0 2rem;
+}
+
+.dropdown-menu[data-bs-popper] {
+  left: auto;
+  right: 0;
+}
+
+.dropdown-toggle::after {
+  border-width: 0.2rem 0 0 0.2rem;
+  transform: rotate(-135deg);
+  margin-right: 0;
+  margin-left: 0.7rem;
+}
+
+@media all and (min-width: 992px) {
+  .mega-drop .dropdown-menu.submenu {
+    right: unset;
+    left: 90%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .nav-item .submenu-left {
+    right: 100%;
+    left: auto;
+  }
+}
+
+.mega-drop .dropdown-menu {
+  left: 0;
+  right: auto;
+}
+
+.mega-drop .dropdown-item.toggle::after {
+  border-width: 0.2rem 0 0 0.2rem;
+  transform: rotate(135deg);
+}
+
+#search .btn {
+  left: unset;
+  right: 2rem;
+}
+
+#cart .notification {
+  left: unset;
+  right: 0;
+}
+
+.offcanvas .nav-link:hover,
+.offcanvas .nav-link:focus {
+  transform: translateX(1rem);
+}
+
+.auth-user .dropdown-menu .menu .dropdown-item:hover span,
+.auth-user .dropdown-menu .menu .dropdown-item:focus span {
+  transform: translateX(1rem);
+}
+
+#mycourses {
+  right: 0;
+  left: unset;
+}
+
+.bg-stats::after {
+  left: unset;
+  right: -12rem;
+  background-position: right;
+}
+
+.testimonials-card::after {
+  left: unset;
+  right: -2rem;
+  transform: scaleX(-1);
+  background-position: right;
+}
+
+.testimonials-card figure {
+  transform: scaleX(-1);
+}
+
+.page_header {
+  background-image: linear-gradient(
+    to right,
+    var(--clr-accent),
+    var(--clr-accent-2)
+  );
+}
+
+.page_header::after {
+  left: unset;
+  right: -15rem;
+  transform: translateY(-50%) scaleX(-1);
+  background-position: right;
+}
+
+@media only screen and (min-width: 576px) {
+  .page_header::after {
+    right: -21rem;
+  }
+}
+
+.course-card .card-footer svg {
+  transform: translateX(0.2rem) scale(-1);
+}
+
+.btn-redirect svg {
+  transform: translateX(1rem) scaleX(-1);
+}
+
+.sortby-dropdown .select2-results__option {
+  padding: 1.5rem 3rem 1.5rem 0;
+}
+
+.filter-block .filter-list svg {
+  transform: scaleX(-1);
+}
+
+.course-header.page_header::after {
+  transform: translateY(0) scaleX(-1);
+}
+
+.course-content-block .total-rating {
+  background-image: linear-gradient(
+    to right,
+    var(--clr-accent),
+    var(--clr-accent-2)
+  );
+}
+
+.btn-close {
+  left: unset;
+  right: 4.5rem;
+}
+
+.exam .form-check-input:checked[type="radio"]::after {
+  transform: translate(0.2rem, -0.3rem);
+}
+
+@media only screen and (min-width: 768px) {
+  .exam .form-check-input:checked[type="radio"]::after {
+    transform: translate(0.2rem, -0.2rem);
+  }
+}
+
+.checkout-card .collapse .btn {
+  left: unset;
+  right: 0.5rem;
+}
+
+.fav-remove {
+  right: unset;
+  left: 5rem;
+}
+
+.payment-table table th:first-child {
+  border-top-left-radius: 4rem;
+  border-bottom-left-radius: 4rem;
+}
+
+.payment-table table th:last-child {
+  border-top-right-radius: 4rem;
+  border-bottom-right-radius: 4rem;
+}
+
+.profile-pic label {
+  background-image: linear-gradient(
+    to left,
+    rgba(var(--clr-accent-rgb), 0.2),
+    rgba(var(--clr-accent-2-rgb), 0.2)
+  );
+}
+
+.support-item .chevron {
+  transform: rotate(-90deg);
+}
+
+.blog-card .card-content svg {
+  transform: scale(-1);
+}
+
+footer::after {
+  left: unset;
+  right: -12rem;
+  transform: scaleX(-1);
+  background-position: right;
+}
+
+.footer-link:hover,
+.footer-link:focus {
+  transform: translateX(1rem);
+}
+
+.jq-star {
+  transform: scaleX(1);
+}
