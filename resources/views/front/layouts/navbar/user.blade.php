@@ -1,15 +1,13 @@
-<div class="dropdown auth-user ms-2 ms-sm-4 flex-shrink-0">
-  <button class="btn ms-md-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    @if (Auth::User()['user_img'] != null &&
-            Auth::User()['user_img'] != '' &&
-            @file_get_contents('images/user_img/' . Auth::user()['user_img']))
-      <img src="{{ url('/images/user_img/' . Auth::User()->user_img) }}"
-        alt="{{ Auth::User()->fname . ' ' . Auth::User()->lname }}">
-    @else
-      <img src="{{ asset('images/default/user.jpg') }}" alt="{{ Auth::User()->fname . ' ' . Auth::User()->lname }}">
-    @endif
-    <svg class="d-none d-md-inline-block svg-stroke-black" style="width: 1.5rem; height: 1.5rem">
-      <use xlink:href="{{ asset('/front/svg/sprite.svg#chevron') }}" />
+<div class="dropdown auth-user ms-3 flex-shrink-0">
+  <button class="btn btn-accent d-xl-inline-flex" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <svg class="svg-resize-24 svg-fill-white">
+      <use xlink:href="{{ asset('/front/svg/sprite.svg#user') }}" />
+    </svg>
+    <span class="d-none d-xl-inline-block">
+      {{ __('frontstaticword.MyAccount') }}
+    </span>
+    <svg class="d-none d-xl-inline-block svg-resize-24 svg-fill-white">
+      <use xlink:href="{{ asset('/front/svg/sprite.svg#arrow-solid') }}" />
     </svg>
   </button>
   <div class="dropdown-menu">
@@ -25,15 +23,19 @@
           <img src="{{ asset('images/default/user.jpg') }}" alt="{{ Auth::User()->fname . ' ' . Auth::User()->lname }}">
         @endif
         <div class="d-flex flex-column ms-3">
-          <h5 class="fw-bold text">{{ Auth::User()->fname . ' ' . Auth::User()->lname }}</h5>
-          <h6 class="fw-light mt-3 text-dim text">{{ Auth::User()->email }}</h6>
+          <h5 class="fw-semibold text">
+            {{ Auth::User()->fname . ' ' . Auth::User()->lname }}
+          </h5>
+          <h6 class="fw-normal mt-3 text-dim text">
+            {{ Auth::User()->email }}
+          </h6>
         </div>
       </div>
       {{-- Menu --}}
       <ul class="menu p-0">
         @if (Auth::User()->role == 'admin')
           <li>
-            <a class="dropdown-item fw-bold" href="{{ url('/admins') }}" target="_blank">
+            <a class="dropdown-item fw-semibold" href="{{ url('/admins') }}" target="_blank">
               <svg class="svg-default">
                 <use xlink:href="{{ asset('/front/svg/sprite.svg#setting') }}" />
               </svg>
@@ -43,7 +45,7 @@
         @endif
         @if (Auth::User()->role == 'instructor')
           <li>
-            <a class="dropdown-item fw-bold" href="{{ url('/instructor') }}" target="_blank">
+            <a class="dropdown-item fw-semibold" href="{{ url('/instructor') }}" target="_blank">
               <svg class="svg-default">
                 <use xlink:href="{{ asset('/front/svg/sprite.svg#note') }}" />
               </svg>
@@ -52,7 +54,7 @@
           </li>
         @endif
         <li>
-          <a class="dropdown-item fw-bold" href="{{ route('profile.show', Auth::User()->id) }}">
+          <a class="dropdown-item fw-semibold" href="{{ route('profile.show', Auth::User()->id) }}">
             <svg class="svg-default">
               <use xlink:href="{{ asset('/front/svg/sprite.svg#profile-circle') }}" />
             </svg>
@@ -61,15 +63,15 @@
         </li>
         <li>
         <li>
-          <a class="dropdown-item fw-bold" href="{{ url('bankdetail') }}">
+          <a class="dropdown-item fw-semibold" href="{{ url('bankdetail') }}">
             <svg class="svg-default">
               <use xlink:href="{{ asset('/front/svg/sprite.svg#cards') }}" />
             </svg>
-            <span> {{__('frontstaticword.MyBankDetails')}} </span>
+            <span> {{ __('frontstaticword.MyBankDetails') }} </span>
           </a>
         </li>
         <li>
-          <a class="dropdown-item fw-bold" href="{{ route('mycourse.show') }}">
+          <a class="dropdown-item fw-semibold" href="{{ route('mycourse.show') }}">
             <svg class="svg-default">
               <use xlink:href="{{ asset('/front/svg/sprite.svg#note') }}" />
             </svg>
@@ -77,7 +79,7 @@
           </a>
         </li>
         <li>
-          <a class="dropdown-item fw-bold" href="{{ route('wishlist.show') }}">
+          <a class="dropdown-item fw-semibold" href="{{ route('wishlist.show') }}">
             <svg class="svg-default">
               <use xlink:href="{{ asset('/front/svg/sprite.svg#heart') }}" />
             </svg>
@@ -85,7 +87,7 @@
           </a>
         </li>
         <li>
-          <a class="dropdown-item fw-bold" href="{{ route('purchase.show') }}">
+          <a class="dropdown-item fw-semibold" href="{{ route('purchase.show') }}">
             <svg class="svg-default">
               <use xlink:href="{{ asset('/front/svg/sprite.svg#receipt-text') }}" />
             </svg>
@@ -95,7 +97,7 @@
         @if (Auth::User()->role == 'user')
           @if ($gsetting->instructor_enable == 1)
             <li>
-              <a class="dropdown-item fw-bold pb-0" href="{{ route('beinstructor.show') }}">
+              <a class="dropdown-item fw-semibold pb-0" href="{{ route('beinstructor.show') }}">
                 <svg class="svg-default">
                   <use xlink:href="{{ asset('/front/svg/sprite.svg#user-add') }}" />
                 </svg>
@@ -106,12 +108,11 @@
         @endif
       </ul>
     </div>
-    <div class="text-center border-top py-4">
-      <form action="{{ route('logout') }}" method="POST">
-        @csrf
-
-        <button id="logout" class="btn text-dim fw-bold py-2">{{ __('frontstaticword.Logout') }}</button>
-      </form>
-    </div>
+    <form id="logout" class="text-center border-top py-4" action="{{ route('logout') }}" method="POST">
+      @csrf
+      <button type="submit" class="border-0 bg-transparent fw-semibold p-0 fs-14">
+        {{ __('frontstaticword.Logout') }}
+      </button>
+    </form>
   </div>
 </div>

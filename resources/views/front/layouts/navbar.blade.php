@@ -1,62 +1,68 @@
-<nav class="navbar flex-column navbar-expand-xl bg-white p-0">
-  <div class="w-100 border-bottom mt-sm-5 mb-xl-5 py-4 pb-sm-0 pb-sm-5">
+<nav class="navbar flex-column navbar-expand-xl bg-light p-0">
+  <div class="w-100 py-4">
     <div class="container">
-      <div class="d-flex align-items-center ms-auto">
+      <div class="d-flex align-items-center ms-auto py-2">
 
-        <a class="navbar-brand logo" href="{{ url('/') }}">
+        <a class="navbar-brand logo p-0" href="{{ url('/') }}">
           <img src="{{ asset('/front/img/logo.png') }}" alt="website-logo">
         </a>
 
-        <div class="collapse navbar-collapse ms-5" id="navbarCollapse">
-          @include('front.partials.search', ['search_placeholder' => 'ابحث عن الدورة'])
-        </div>
+        <ul class="navbar-nav d-none d-xl-flex justify-content-center mx-auto">
+          @include('front.layouts.navbar.nav')
+        </ul>
+
         <div class="d-flex align-items-center ms-auto ms-xl-5">
-          @include('front.layouts.navbar.lang')
+          {{-- Language Switcher Btn --}}
+          @php $languages = App\Language::all(); @endphp
+          @if (isset($languages) && count($languages) > 0)
+            @foreach ($languages as $language)
+              @if ($language->local != Session::get('changed_language'))
+                <a href="{{ route('languageSwitch', $language->local) }}"
+                  class="btn nav-btn lang flex-shrink-0 text-uppercase">
+                  {{ $language->local }}
+                </a>
+              @endif
+            @endforeach
+          @endif
+
 
           {{-- Login/Register buttons --}}
           @guest
-          <a href="{{ route('login') }}" class="d-inline-block d-sm-none">
-            <svg class="svg-resize-32 svg-stroke-accent">
-              <use xlink:href="{{ asset('/front/svg/sprite.svg#profile-circle') }}" />
-            </svg>
-          </a>
-          <a href="{{ route('register') }}" class="btn btn-accent ms-4 d-none d-sm-inline-flex">{{ __('frontstaticword.SignupFree') }}</a>
-          <a href="{{ route('login') }}" class="text-accent text-nowrap ms-4 d-none d-sm-inline-flex">{{ __('frontstaticword.Login') }}</a>
+            <a href="{{ route('register') }}" class="btn btn-accent ms-3 d-none d-xl-inline-flex">
+              {{ __('frontstaticword.SignupFree') }}
+            </a>
+            <a href="{{ route('login') }}" class="text-accent text-nowrap ms-4 d-none d-xl-inline-flex">
+              {{ __('frontstaticword.Login') }}
+            </a>
+            <a href="{{ route('login') }}" class="d-inline-block d-xl-none btn nav-btn">
+              <svg class="svg-resize-24 svg-fill-white">
+                <use xlink:href="{{ asset('/front/svg/sprite.svg#user') }}" />
+              </svg>
+            </a>
           @endguest
 
           @auth
-            <a href="{{ route('cart.show') }}" id="cart" class="btn nav-btn ms-2 ms-sm-4 position-relative">
-              <svg class="svg-default">
-                <use xlink:href="{{ asset('/front/svg/sprite.svg#bag') }}" />
-              </svg>
-              <span class="notification">{{App\Cart::where('user_id', Auth::User()->id)->count()}}</span>
-            </a>
-            <a href="{{ route('wishlist.show') }}" class="btn nav-btn ms-2 ms-sm-4">
-              <svg class="svg-default">
-                <use xlink:href="{{ asset('/front/svg/sprite.svg#heart') }}" />
+            @include('front.layouts.navbar.user')
+            <a href="{{ route('wishlist.show') }}" class="btn btn-accent2 nav-btn ms-3">
+              <svg class="svg-resize-24 svg-fill-white">
+                <use xlink:href="{{ asset('/front/svg/sprite.svg#heart-fill') }}" />
               </svg>
             </a>
-            @include('front.layouts.navbar.notifications')
-            @include('front.layouts.navbar.user_dropdown')
+            <a href="{{ route('cart.show') }}" id="cart" class="btn btn-dark nav-btn ms-3 position-relative">
+              <svg class="svg-resize-24 svg-fill-white">
+                <use xlink:href="{{ asset('/front/svg/sprite.svg#cart') }}" />
+              </svg>
+              <span class="notification">{{ App\Cart::where('user_id', Auth::User()->id)->count() }}</span>
+            </a>
+            {{-- @include('front.layouts.navbar.notifications') --}}
           @endauth
         </div>
 
-        <button class="btn d-xl-none" style="min-width: 0" type="button" data-bs-toggle="offcanvas"
+        <button class="d-xl-none border-0 p-0 rounded-0 bg-light ms-3" type="button" data-bs-toggle="offcanvas"
           data-bs-target="#sidebar" aria-controls="sidebar">
-          <span class="navbar-toggler-icon"></span>
+          <i class="fas fa-bars fs-20 text-accent"></i>
         </button>
       </div>
-    </div>
-  </div>
-  <div class="w-100 mb-5 d-none d-xl-block">
-    <div class="container position-relative">
-      @include('front.layouts.navbar.nav')
-      <a href="{{ Auth::User()!=null ? route('mycourse.show') : route('login') }}" id="mycourses" class="btn btn-accent-light">
-        <svg class="svg-default"> 
-          <use xlink:href="{{ asset('/front/svg/sprite.svg#book-square') }}" />
-        </svg>
-        {{ __('frontstaticword.MyCourses') }}
-      </a>
     </div>
   </div>
 </nav>

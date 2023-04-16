@@ -23,17 +23,19 @@
 <style>
   /* CSS Variables */
   :root {
-    --clr-black: #000;
-    --clr-black-rgb: 0, 0, 0;
+    --clr-black: #03151E;
+    --clr-black-rgb: 3, 21, 30;
     --clr-white: #FFF;
     --clr-white-rgb: 255, 255, 255;
+    --clr-dark: #0E3C54;
     --clr-light: #F3F9FB;
     --clr-border: #EEE;
     --clr-dim: #959595;
-    --clr-accent: #1B89B6;
-    --clr-accent-rgb: 27, 137, 182;
-    --clr-accent-2: #1BC2B4;
-    --clr-accent-2-rgb: 27, 194, 180;
+    --clr-accent: #58b6b0;
+    --clr-accent-rgb: 88, 182, 176;
+    --clr-accent-2: #e49a02;
+    --clr-accent-2-rgb: 228, 154, 2;
+    --clr-danger: #D40D0D;
     --bs-border-color: #EEEEEE;
   }
 

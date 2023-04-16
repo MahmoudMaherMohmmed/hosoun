@@ -23,7 +23,7 @@ return array(
   'Contactus' => 'اتصل بنا',
   'ContactusDescription' => 'تواجه مشكلة ؟ يمكنك الآن الاتصال بنا.',
   'Careers' => 'وظائف',
-  'Blog' => 'الاخبار والمدونات',
+  'Blog' => 'المقالات',
   'Help&Support' => 'الدعم والمساعدة',
   'Terms&Condition' => 'الشروط والأحكام',
   'PrivacyPolicy' => 'سياسة الخصوصية',
@@ -31,6 +31,7 @@ return array(
   'LocalHomePages' => 'الصفحات الرئيسية المحلية',
   'Backtohome' => 'العودة إلى الرئيسية',
   'Account' => 'الحساب',
+  'MyAccount' => 'حسابي',
   'Welcome' => 'مرحبا بك',
   'LogIn' => 'سجل دخولك الى حسابك',
   'LogIntoYour' => 'تسجيل الدخول إلى ملف',
@@ -122,6 +123,10 @@ return array(
   'Q&A' => 'سؤال وجواب',
   'Announcements' => 'مواعيد الدورة',
   'Quiz' => 'اختبار',
+  'Quizzes' => 'الإختبارات',
+  'Book' => 'الكتاب',
+  'Books' => 'الكتب',
+
   'RecentActivity' => 'النشاط الأخير',
   'RecentQuestions' => 'الأسئلة الأخيرة',
   'Browsequestions' => 'تصفح جميع الأسئلة',
@@ -136,6 +141,7 @@ return array(
   'link' => 'ربط',
   'Aboutthiscourse' => 'معلومات عن هذه الدورة',
   'Instructor' => 'مدرب',
+  'Instructors' => 'المعلمين',
   'Section' => 'الجزء',
   'Students' => 'المتدربين',
   'questionsinthiscourse' => 'أسئلة في هذه الدورة',
@@ -185,6 +191,7 @@ return array(
   'emptywishlist' => 'قائمة رغباتك فارغة',
   'Browse' => 'تصفح الدورات الآن',
   'Courses' => 'الدورات التدريبية',
+  'Courseslist' => 'قائمة الدورات',
   'Nosearch' => 'عذرا ، لم نتمكن من العثور على أي نتائج عن',
   'whenenroll' => 'عند التسجيل في دورة ، ستظهر هنا.',
   'KeepinTouch' => 'تواصل معنا للاستفسارات او المقترحات',
@@ -402,7 +409,7 @@ return array(
   'A/CNo' => 'رقم الحساب',
   'IFSCCode' => 'كود IFSC',
 
-  'PleaseDocument' => 'صورة التحويل', 
+  'PleaseDocument' => 'صورة التحويل',
   'Accountholdername' => 'أسم صاحب الحساب',
   'SwiftCode' => 'السويفت كود',
   'IFCSCode' => 'رقم الايبان',
@@ -419,5 +426,7 @@ return array(
   'ForeignerWithASaudiPassport' => 'اجنبي بجواز سفر سعودي',
   'DisplacedTribesmen' => 'ابناء القبائل النازحة',
   'OtherNationality' => 'أخرى',
-);
 
+
+
+);
