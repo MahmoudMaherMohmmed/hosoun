@@ -355,7 +355,7 @@ return array(
   'CourseIncludes' => 'تشمل الدورة',
   'read_lesson' => 'قراءة الدرس',
   'RecentNews' => 'آخر الأخبار',
-  'RecentBlogs' => 'المقالات',
+  'RecentBlogs' => 'المقالات احدث',
   'RecentBlogsText' => 'مجموعة من المقالات المتنوعة في التخصصات التعليمية المختلفة',
   'Batches' => 'الحزم',
   'GoogleMeetings' => 'إجتماعات جوجل',
@@ -429,5 +429,9 @@ return array(
   'OtherNationality' => 'أخرى',
   'FollowSocials' => 'تابعنا على كل المنصات',
   'AcceptedPayment' => 'نقبل الدفع بالطرق التالية',
-  'Copyright' => 'جميع الحقوق محفوظة لموقع حصون التعليمية '
+  'Copyright' => 'جميع الحقوق محفوظة لموقع حصون التعليمية ',
+  'SeeAllArticles' => 'شاهد كل المقالات',
+  'BooksCategories' => 'أقسام الكتب',
+  'BooksSubtitle' => 'باقة من أفضل أقسام الكتب المناسبة لكل الطلاب',
+  'SeeAllBooksCat' => 'شاهد كل أقسام الكتب',
 );

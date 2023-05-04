@@ -93,98 +93,102 @@
   {{-- Home Carousel --}}
   @if (!$trusted->isEmpty())
     <section id="homeCarousel" class="carousel slide carousel-fade mt-5 pt-3" data-bs-ride="carousel">
-      <section class="carousel-inner">
-        <div class="d-flex mt-md-5 pt-md-5 ">
-          @foreach ($sliders as $slider)
-            <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="carousel-caption text-black">
-                    <div class="content">
-                      @if ($slider->heading != null)
-                        <h5 class="caption-title">{{ $slider->heading }}</h5>
-                      @endif
-                      @if ($slider->detail != null)
-                        <p class="caption-text">{{ $slider->detail }}</p>
-                      @endif
-                      @if ($slider->button_text != null && $slider->button_url != null)
-                        <a href="{{ url($slider->button_url) }}" class="btn btn-accent">
-                          <svg class="svg-resize-20 svg-fill-white flex-shrink-0">
-                            <use xlink:href="{{ asset('/front/svg/sprite.svg#arrow-circle') }}" />
-                          </svg>
-                          {{ $slider->button_text }}
-                        </a>
-                      @endif
+      <div class="container">
+        <section class="carousel-inner">
+          <div class="d-flex mt-md-5 pt-md-5 ">
+            @foreach ($sliders as $slider)
+              <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="carousel-caption text-black">
+                      <div class="content">
+                        @if ($slider->heading != null)
+                          <h5 class="caption-title">{{ $slider->heading }}</h5>
+                        @endif
+                        @if ($slider->detail != null)
+                          <p class="caption-text">{{ $slider->detail }}</p>
+                        @endif
+                        @if ($slider->button_text != null && $slider->button_url != null)
+                          <a href="{{ url($slider->button_url) }}" class="btn btn-accent">
+                            <svg class="svg-resize-20 svg-fill-white flex-shrink-0">
+                              <use xlink:href="{{ asset('/front/svg/sprite.svg#arrow-circle') }}" />
+                            </svg>
+                            {{ $slider->button_text }}
+                          </a>
+                        @endif
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="col-md-6 mt-5 mt-md-0">
-                  <img src="{{ asset('images/slider/' . $slider['image']) }}" class="img-fluid"
-                    alt="{{ $slider->heading }}">
+                  <div class="col-md-6 mt-5 mt-md-0">
+                    <img src="{{ asset('images/slider/' . $slider['image']) }}" class="img-fluid"
+                      alt="{{ $slider->heading }}">
+                  </div>
                 </div>
               </div>
-            </div>
-          @endforeach
-        </div>
-        {{-- Next/Prev --}}
-        <section class="carousel-controls mt-5 mt-lg-0">
-          <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          </button>
+            @endforeach
+          </div>
+          {{-- Next/Prev --}}
+          <section class="carousel-controls mt-5 mt-lg-0">
+            <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+          </section>
         </section>
-      </section>
+      </div>
     </section>
   @endif
   {{-- /Home Carousel --}}
 
   {{-- Why Hosoun --}}
   <div class="block-sec">
-    <section class="bg-accent-gradient px-5 block-sec rounded-50">
-      <div class="row">
-        <div class="col-12 text-center mb-5 pb-3">
-          <h3 class="sec-title text-white">لماذا تختار حصون؟</h3>
-          <p class="text-white-50">
-            حصون خيارك الأمثل لتجربة تعليمية مميزة
-          </p>
-        </div>
-        @php
-          $items = [
-              [
-                  'image' => 'online-course.svg',
-                  'title' => 'دورات مميزة',
-                  'desc' => 'أفضل الدورات التي تقدم على منصة حصون على ايدي باقة من أبرز المدربين',
-              ],
-              [
-                  'image' => 'teacher.svg',
-                  'title' => 'كوادر علمية',
-                  'desc' => 'أفضل الكوادر العلمية من كل المدربين المميزين على منصة حصون التعليمية',
-              ],
-              [
-                  'image' => 'question.svg',
-                  'title' => 'إختبارات مستمرة',
-                  'desc' => 'نقدم الإختبارات المستمرة على كل الدورات الموجودة لمتابعة مستوى الطلاب',
-              ],
-          ];
-        @endphp
-        @foreach ($items as $item)
-          <div class="col-xl-4 features-item">
-            <div class="rounded-50 bg-white p-5">
-              <div class="d-flex align-items-start py-3">
-                <img src="{{ url('front/svg', $item['image']) }}" class="features-img flex-shrink-0 me-5 mb-5"
-                  alt="feature-image">
-                <div class="d-flex flex-column">
-                  <span class="fs-1 fw-black mb-3">{{ $item['title'] }}</span>
-                  <span class="text-dim pt-3">{{ $item['desc'] }}</span>
+    <div class="container">
+      <section class="bg-accent-gradient px-5 block-sec rounded-50">
+        <div class="row">
+          <div class="col-12 text-center mb-5 pb-3">
+            <h3 class="sec-title text-white">لماذا تختار حصون؟</h3>
+            <p class="text-white-70">
+              حصون خيارك الأمثل لتجربة تعليمية مميزة
+            </p>
+          </div>
+          @php
+            $items = [
+                [
+                    'image' => 'online-course.svg',
+                    'title' => 'دورات مميزة',
+                    'desc' => 'أفضل الدورات التي تقدم على منصة حصون على ايدي باقة من أبرز المدربين',
+                ],
+                [
+                    'image' => 'teacher.svg',
+                    'title' => 'كوادر علمية',
+                    'desc' => 'أفضل الكوادر العلمية من كل المدربين المميزين على منصة حصون التعليمية',
+                ],
+                [
+                    'image' => 'question.svg',
+                    'title' => 'إختبارات مستمرة',
+                    'desc' => 'نقدم الإختبارات المستمرة على كل الدورات الموجودة لمتابعة مستوى الطلاب',
+                ],
+            ];
+          @endphp
+          @foreach ($items as $item)
+            <div class="col-xl-4 features-item">
+              <div class="rounded-50 bg-white p-5">
+                <div class="d-flex align-items-start py-3">
+                  <img src="{{ url('front/svg', $item['image']) }}" class="features-img flex-shrink-0 me-5 mb-5"
+                    alt="feature-image">
+                  <div class="d-flex flex-column">
+                    <span class="fs-1 fw-black mb-3">{{ $item['title'] }}</span>
+                    <span class="text-dim pt-3">{{ $item['desc'] }}</span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        @endforeach
-      </div>
-    </section>
+          @endforeach
+        </div>
+      </section>
+    </div>
   </div>
   {{-- /Why Hosoun --}}
 
@@ -218,7 +222,7 @@
   {{-- /Featured sections --}}
 
   {{-- Statistics --}}
-  @if (!$facts->isEmpty())
+  {{-- @if (!$facts->isEmpty())
     <section class="bg-accent-2 bg-stats">
       <div class="container">
         <div class="stats">
@@ -232,7 +236,7 @@
         </div>
       </div>
     </section>
-  @endif
+  @endif --}}
 
   {{-- New Courses --}}
   @if (!$recent_courses->isEmpty())
@@ -285,86 +289,115 @@
   @endif
 
 
+  {{-- BooksSections --}}
+  <section class="block-sec bg-dark-accent">
+    <div class="container position-relative" style="z-index: 0">
+      <section class="titling">
+        <h3 class="sec-title text-white">
+          {{ __('frontstaticword.BooksCategories') }}
+        </h3>
+        <p class="text-white-70">
+          {{ __('frontstaticword.BooksSubtitle') }}
+        </p>
+      </section>
 
-  {{-- Testimonial Carousel --}}
-  @if (!$testi->isEmpty())
-    <section class="bg-white">
-      <div class="container">
-        <div class="block-sec">
-          <section class="titling">
-            <h6 class="min-title">{{ __('frontstaticword.SectionTestimonialTitle') }}</h6>
-            <h3 class="sec-title">{{ __('frontstaticword.SectionTestimonialSubtitle') }}</h3>
-            <p class="text-dim">{{ __('frontstaticword.SectionTestimonialText') }}</p>
+      <section class="books-carousel owl-carousel owl-theme">
+        @php
+          $items = [
+              [
+                  'img' => 'books.png',
+                  'title' => 'عربي',
+                  'desc' => 'كتب اللغة العربية المختلفة وتصنيفات العربي',
+              ],
+              [
+                  'img' => 'quran.png',
+                  'title' => 'مواد شرعية',
+                  'desc' => 'كتب المواد الشرعية مثل الفقه والحديث والسيرة وغيرها',
+              ],
+              [
+                  'img' => 'quran2.png',
+                  'title' => 'قران كريم',
+                  'desc' => 'علوم القران الكريم من الحفظ والتجويد والقراءات وغيرها',
+              ],
+              [
+                  'img' => 'openbook.png',
+                  'title' => 'علوم أخرى',
+                  'desc' => 'مواد أخرى مثل الإنجليزية والعلوم وغيرها من المواد',
+              ],
+              [
+                  'img' => 'books.png',
+                  'title' => 'عربي',
+                  'desc' => 'كتب اللغة العربية المختلفة وتصنيفات العربي',
+              ],
+              [
+                  'img' => 'quran.png',
+                  'title' => 'مواد شرعية',
+                  'desc' => 'كتب المواد الشرعية مثل الفقه والحديث والسيرة وغيرها',
+              ],
+              [
+                  'img' => 'quran2.png',
+                  'title' => 'قران كريم',
+                  'desc' => 'علوم القران الكريم من الحفظ والتجويد والقراءات وغيرها',
+              ],
+              [
+                  'img' => 'openbook.png',
+                  'title' => 'علوم أخرى',
+                  'desc' => 'مواد أخرى مثل الإنجليزية والعلوم وغيرها من المواد',
+              ],
+          ];
+        @endphp
+        @foreach ($items as $item)
+          <section class="books-item text-center d-flex flex-column align-items-center justify-content-start">
+            <img src="{{ url('front/img/books', $item['img']) }}" class="books-thumbnail" alt="">
+            <span class="fs-1 fw-bold text-white">{{ $item['title'] }}</span>
+            <span class="text-white-70">
+              {{ $item['desc'] }}
+            </span>
           </section>
+        @endforeach
+      </section>
 
-          <section class="testimonials-carousel owl-carousel owl-theme">
-            @foreach ($testi as $tes)
-              <section class="testimonials-card">
-                <figure>
-                  <svg>
-                    <use xlink:href="{{ asset('/front/svg/sprite.svg#quotes') }}" />
-                  </svg>
-                </figure>
-                <h5 class="title">{{ __('frontstaticword.TestimonialTitle') }}</h5>
-                <p>{!! str_limit($tes->details, $limit = 300, $end = '...') !!}</p>
-
-                <div class="d-flex align-items-center user">
-                  <img src="{{ asset('images/testimonial/' . $tes['image']) }}" alt="user-img">
-                  <div class="d-flex flex-column">
-                    <span class="name">{{ $tes['client_name'] }}</span>
-                    <!--<span class="user-title text-dim">استشاري نفسي</span>-->
-                  </div>
-                </div>
-              </section>
-            @endforeach
-          </section>
+      <div class="row mt-5 pt-3">
+        <div class="col-sm-6 col-lg-4 mx-auto">
+          <a href="" class="btn btn-white-outline w-100">
+            <svg class="svg-resize-20 flex-shrink-0">
+              <use xlink:href="{{ asset('/front/svg/sprite.svg#arrow-circle') }}" />
+            </svg>
+            {{ __('frontstaticword.SeeAllBooksCat') }}
+          </a>
         </div>
       </div>
-    </section>
-  @endif
 
-  {{-- Trusted --}}
-  @if (!$trusted->isEmpty())
-    <section class="bg-accent-2-light">
-      <div class="block-sec">
-        <div class="container">
-          <div class="row align-items-md-center">
-            <div class="col-12 col-md-3">
-              <div class="titling text-md-start pb-md-0">
-                <h6 class="min-title">{{ __('frontstaticword.Partners') }}</h6>
-                <h3 class="sec-title mb-0">{{ __('frontstaticword.Trusted') }}</h3>
-              </div>
-            </div>
-            <div class="col-12 col-md-9">
-              <section class="trusted-carousel owl-carousel owl-theme">
-                @foreach ($trusted as $trust)
-                  <a href="{{ $trust['url'] }}" target="_blank">
-                    <img src="{{ asset('images/trusted/' . $trust['image']) }}" alt="trusted-client-logo" />
-                  </a>
-                @endforeach
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-    </section>
-  @endif
+      {{-- animations --}}
+      <img src="{{ asset('front/svg/lines.svg') }}" class="lines">
+      <img src="{{ asset('front/svg/lines.svg') }}" class="lines">
+    </div>
+  </section>
 
   {{-- Blog Carousel --}}
   @if (!$blogs->isEmpty())
-    <section class="">
-      <div class="container">
-        <div class="block-sec">
-          <section class="titling">
-            <h3 class="sec-title">{{ __('frontstaticword.RecentBlogs') }}</h3>
-            <p class="text-dim">{{ __('frontstaticword.RecentBlogsText') }}</p>
-          </section>
+    <section class="container">
+      <div class="block-sec">
+        <section class="titling">
+          <h3 class="sec-title">{{ __('frontstaticword.Blog') }}</h3>
+          <p class="text-dim">{{ __('frontstaticword.RecentBlogsText') }}</p>
+        </section>
 
-          <section class="blog-carousel owl-carousel owl-theme">
-            @foreach ($blogs as $blog)
-              @include('front.blog.card')
-            @endforeach
-          </section>
+        <section class="blog-carousel owl-carousel owl-theme">
+          @foreach ($blogs as $blog)
+            @include('front.blog.card')
+          @endforeach
+        </section>
+
+        <div class="row mt-5 pt-3">
+          <div class="col-sm-6 col-lg-4 mx-auto">
+            <a href="{{ route('blog.all') }}" class="btn btn-dark-outline w-100">
+              <svg class="svg-resize-20 flex-shrink-0">
+                <use xlink:href="{{ asset('/front/svg/sprite.svg#arrow-circle') }}" />
+              </svg>
+              {{ __('frontstaticword.SeeAllArticles') }}
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -372,28 +405,30 @@
 
   {{-- LearningPath --}}
   <section class="block-sec">
-    <div class="boxpath__bg px-5 rounded-50" style="background-image: url('front/img/slidersection.png');">
-      <p class="sec-title mb-0 block-sec pb-5">
-        <span class="text-accent-2">مسار</span>
-        حفظ القرآن الكريم
-      </p>
-    </div>
-    <section class="px-5">
-      <div class="row boxpath__items position-relative justify-content-center">
-        @php
-          $items = ['حفظ', 'تصحيح تلاوة', 'إجازات', 'قراءات', 'تجويد'];
-        @endphp
-        @foreach ($items as $item)
-          <div class="col-6 col-sm-4 col-lg p-3">
-            <div class="boxpath bg-white text-center">
-              <div class="boxpath__number mb-4"></div>
-              <p class="title">
-                {{ $item }}
-              </p>
-            </div>
-          </div>
-        @endforeach
+    <div class="container">
+      <div class="boxpath__bg px-5 rounded-50" style="background-image: url('front/img/slidersection.png');">
+        <p class="sec-title mb-0 block-sec pb-5">
+          <span class="text-accent-2">مسار</span>
+          حفظ القرآن الكريم
+        </p>
       </div>
-    </section>
+      <section class="px-5">
+        <div class="row boxpath__items position-relative justify-content-center">
+          @php
+            $items = ['حفظ', 'تصحيح تلاوة', 'إجازات', 'قراءات', 'تجويد'];
+          @endphp
+          @foreach ($items as $item)
+            <div class="col-6 col-sm-4 col-lg p-3">
+              <div class="boxpath bg-white text-center">
+                <div class="boxpath__number mb-4"></div>
+                <p class="title">
+                  {{ $item }}
+                </p>
+              </div>
+            </div>
+          @endforeach
+        </div>
+      </section>
+    </div>
   </section>
 @endsection

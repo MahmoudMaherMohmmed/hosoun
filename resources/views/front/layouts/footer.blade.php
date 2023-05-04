@@ -113,7 +113,7 @@
               </div>
             </div>
           </div>
-          <p class="text-end text-white-50 mt-2">
+          <p class="text-end text-white-70 mt-2">
             {{ __('frontstaticword.Copyright') }} @
             <span id="current-year"></span>
           </p>

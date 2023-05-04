@@ -13,7 +13,7 @@
 
 <body class="position-relative">
   @include('front.layouts.navbar')
-  <main class="container">
+  <main class="">
     @yield('page-header')
 
     @yield('content')

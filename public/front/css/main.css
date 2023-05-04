@@ -163,6 +163,10 @@ ul {
   color: var(--clr-dim);
 }
 
+.text-white-70 {
+  color: rgba(var(--clr-white-rgb), 0.7);
+}
+
 .bg-dark-accent {
   background-color: var(--clr-dark);
 }
@@ -292,6 +296,9 @@ svg {
 .svg-fill-accent-2 {
   fill: var(--clr-accent-2) !important;
 }
+.svg-fill-dark {
+  fill: var(--clr-dark) !important;
+}
 /* /SVG STYLES */
 
 /* TRANSFORMS */
@@ -336,6 +343,14 @@ svg {
 .btn:hover::before {
   background-color: rgba(var(--clr-black-rgb), 0.05);
 }
+
+.btn svg {
+  fill: currentColor;
+}
+
+/* .btn:hover svg {
+  fill: currentColor;
+} */
 
 .btn:active {
   transform: translate(0);
@@ -439,6 +454,26 @@ svg {
   color: var(--clr-white);
   border-color: var(--clr-dark);
   background-color: var(--clr-dark);
+}
+.btn.btn-dark-outline {
+  color: var(--clr-dark);
+  border: 2px solid var(--clr-dark);
+  background-color: var(--clr-white);
+}
+.btn.btn-dark-outline:hover,
+.btn.btn-dark-outline:focus {
+  color: var(--clr-white);
+  background-color: var(--clr-dark);
+}
+.btn.btn-white-outline {
+  color: var(--clr-white);
+  border: 2px solid var(--clr-white);
+  background-color: var(--clr-dark);
+}
+.btn.btn-white-outline:hover,
+.btn.btn-white-outline:focus {
+  color: var(--clr-dark);
+  background-color: var(--clr-white);
 }
 
 .anim {
@@ -2796,6 +2831,46 @@ input {
 }
 
 /* /Instructor page */
+
+/* Books Carousel Section */
+.books-item {
+  grid-gap: 2rem;
+  padding: 4rem 3rem;
+  border-radius: 4rem;
+  background-color: rgba(var(--clr-white-rgb), 0.1);
+}
+
+.books-carousel .books-thumbnail {
+  height: 8rem;
+  width: auto;
+  object-fit: contain;
+  transition: all 0.35s linear;
+}
+
+.books-item:hover .books-thumbnail {
+  transform: translateY(-1rem) rotateY(180deg);
+}
+
+.books-carousel .owl-nav [class*="owl-"] {
+  background-color: var(--clr-accent-2) !important;
+}
+
+img.lines {
+  width: 19rem;
+  height: 8.5rem;
+  object-fit: contain;
+  position: absolute;
+  z-index: -1;
+}
+img.lines:first-of-type {
+  top: 0;
+  right: 0;
+}
+img.lines:last-of-type {
+  bottom: 0;
+  left: 0;
+}
+/* /Books Carousel Section */
 
 /* blog */
 .blog-card {

@@ -88,29 +88,35 @@ $(document).ready(function () {
             }
         }
     })
-    $('.trusted-carousel').owlCarousel({
+    $('.books-carousel').owlCarousel({
         loop: true,
         autoplay: true,
         rtl: true,
+        margin: 18,
         responsiveClass: true,
         nav: true,
+        navText: [
+            `<svg xmlns="http://www.w3.org/2000/svg" width="6" height="12" viewBox="0 0 6 12">
+                <path id="start" d="M16,12l-6,6V6Z" transform="translate(-10 -6)" fill="#fff" />
+            </svg>`
+            ,
+            `<svg xmlns="http://www.w3.org/2000/svg" width="6" height="12" viewBox="0 0 6 12">
+                <path id="end" d="M10,12l6,6V6Z" transform="translate(-10 -6)" fill="#fff" />
+            </svg>`
+        ],
         dots: false,
         responsive: {
             0: {
-                margin: 50,
+                items: 1,
+            },
+            576: {
                 items: 2,
             },
-            500: {
-                margin: 70,
+            992: {
                 items: 3,
             },
-            992: {
-                margin: 100,
-                items: 4,
-            },
             1200: {
-                margin: 100,
-                items: 5,
+                items: 4,
             }
         }
     })

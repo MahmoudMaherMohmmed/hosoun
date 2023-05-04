@@ -385,7 +385,7 @@ return [
     'OrderConfirmation' => 'Order Confirmation',
     'MyPurchasedCourses' => 'My Purchased Courses',
     'RecentNews' => 'Recent News',
-    'RecentBlogs' => 'Articles',
+    'RecentBlogs' => 'Recent Articles',
     'RecentBlogsText' => 'Various articles in different learning specialities',
     'Subscription' => 'Subscription',
     'UnSubscribe' => 'Cancel Subscription',
@@ -451,5 +451,10 @@ return [
     'OtherNationality' => 'Other',
     'FollowSocials' => 'Follow us on all platforms',
     'AcceptedPayment' => 'We accept the following paymetns',
-    'Copyright' => 'All Copyrights goes to Hosoun Academy'
+    'Copyright' => 'All Copyrights goes to Hosoun Academy',
+    'SeeAllArticles' => 'See All Articles',
+    'BooksCategories' => 'Books Categories',
+    'BooksSubtitle' => 'Best books categories for students',
+    'SeeAllBooksCat' => 'See All Books Categories',
+
 ];
