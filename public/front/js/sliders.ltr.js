@@ -4,7 +4,7 @@ $(document).ready(function () {
         loop: true,
         margin: 16,
         responsiveClass: true,
-        nav: false,
+        nav: true,
         responsive: {
             0: {
                 items: 1,
@@ -24,7 +24,7 @@ $(document).ready(function () {
         loop: true,
         margin: 16,
         responsiveClass: true,
-        nav: false,
+        nav: true,
         responsive: {
             0: {
                 items: 1,
@@ -41,13 +41,17 @@ $(document).ready(function () {
         loop: true,
         margin: 16,
         responsiveClass: true,
-        nav: false,
+        nav: true,
+        dots: false,
         responsive: {
             0: {
                 items: 1,
             },
-            992: {
+            576: {
                 items: 2,
+            },
+            768: {
+                items: 3,
             }
         }
     })
@@ -55,7 +59,7 @@ $(document).ready(function () {
         loop: true,
         margin: 16,
         responsiveClass: true,
-        nav: false,
+        nav: true,
         responsive: {
             0: {
                 items: 1,
@@ -72,7 +76,7 @@ $(document).ready(function () {
         loop: true,
         autoplay: true,
         responsiveClass: true,
-        nav: false,
+        nav: true,
         dots: false,
         responsive: {
             0: {

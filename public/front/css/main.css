@@ -1271,7 +1271,7 @@ input {
 .block-sec .sec-title {
   font-size: 3.5rem;
   font-weight: 800;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 
 @media only screen and (min-width: 576px) {
@@ -1299,16 +1299,22 @@ input {
   background-color: var(--clr-accent-2);
 }
 
-/* .owl-carousel .owl-stage-outer {
-  padding: 1rem 0;
-} */
-
-.owl-item {
-  transition: transform 0.35s ease-in-out;
+.owl-theme .owl-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-gap: 1rem;
+  margin-top: 4rem;
 }
 
-.owl-item:hover {
-  transform: translateY(-1rem);
+.owl-theme .owl-nav [class*="owl-"] {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 100%;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  background-color: rgba(var(--clr-dark-rgb), 0.08) !important;
 }
 /* /Owl-carousels */
 
@@ -2793,43 +2799,47 @@ input {
 
 /* blog */
 .blog-card {
-  min-height: 24rem;
-  display: grid;
-  grid-gap: 2.2rem;
-  padding: 2.5rem;
-  border-radius: 3rem;
-  border: 1px solid var(--clr-border);
-  background-color: var(--clr-white);
+  height: 38rem;
+  border-radius: 4rem;
 }
 
-@media only screen and (min-width: 576px) {
-  .blog-card {
-    grid-template-columns: 22rem 1fr;
-  }
+.blog-card::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  opacity: 0.8;
+  border-radius: 4rem;
+  background-image: linear-gradient(to top, #03151e, transparent);
 }
 
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
-  .blog-card {
-    grid-template-columns: 16rem 1fr;
-  }
+.blog-card .blog-img {
+  border-radius: 4rem;
 }
 
 .blog-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 3rem;
+  border-radius: 4rem;
   background-color: var(--clr-light);
+  transition: all 0.3s linear;
+}
+
+.blog-card:hover img {
+  transform: scale(1.4);
 }
 
 .blog-card .card-content {
-  font-size: 1.4rem;
+  grid-gap: 2.4rem;
+  bottom: 0;
+  padding: 4rem;
+  z-index: 1;
 }
 
 .blog-card .card-content .card-title {
-  font-size: 1.8rem;
+  font-size: 2.5rem;
   line-height: 3rem;
-  margin: 1.5rem 0;
 }
 
 .blog-content {
@@ -2855,9 +2865,13 @@ input {
   margin-bottom: 4rem;
 }
 
-.blog-carousel .blog-card {
-  border: none;
+.blog-card .time {
+  padding: 1rem 1.5rem;
+  color: var(--clr-white);
+  border-radius: 2.3rem;
+  background-color: var(--clr-accent);
 }
+
 /* /blog */
 
 /* Footer */

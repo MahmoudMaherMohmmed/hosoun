@@ -385,8 +385,8 @@ return [
     'OrderConfirmation' => 'Order Confirmation',
     'MyPurchasedCourses' => 'My Purchased Courses',
     'RecentNews' => 'Recent News',
-    'RecentBlogs' => 'Recent Blogs',
-    'RecentBlogsText' => 'Choose from one of these new training courses to develop your potential',
+    'RecentBlogs' => 'Articles',
+    'RecentBlogsText' => 'Various articles in different learning specialities',
     'Subscription' => 'Subscription',
     'UnSubscribe' => 'Cancel Subscription',
     'RecurringPrice' => 'Recurring Price',
@@ -449,4 +449,7 @@ return [
     'ForeignerWithASaudiPassport' => 'A Foreigner With A Saudi Passport',
     'DisplacedTribesmen' => 'Displaced Tribesmen',
     'OtherNationality' => 'Other',
+    'FollowSocials' => 'Follow us on all platforms',
+    'AcceptedPayment' => 'We accept the following paymetns',
+    'Copyright' => 'All Copyrights goes to Hosoun Academy'
 ];

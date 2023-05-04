@@ -284,26 +284,7 @@
     </section>
   @endif
 
-  {{-- Blog Carousel --}}
-  @if (!$blogs->isEmpty())
-    <section class="bg-accent-2-light bg-watermark">
-      <div class="container">
-        <div class="block-sec">
-          <section class="titling">
-            <h6 class="min-title">{{ __('frontstaticword.RecentNews') }}</h6>
-            <h3 class="sec-title">{{ __('frontstaticword.RecentBlogs') }}</h3>
-            <p class="text-dim">{{ __('frontstaticword.RecentBlogsText') }}</p>
-          </section>
 
-          <section class="blog-carousel owl-carousel owl-theme">
-            @foreach ($blogs as $blog)
-              @include('front.blog.card')
-            @endforeach
-          </section>
-        </div>
-      </div>
-    </section>
-  @endif
 
   {{-- Testimonial Carousel --}}
   @if (!$testi->isEmpty())
@@ -368,4 +349,51 @@
       </div>
     </section>
   @endif
+
+  {{-- Blog Carousel --}}
+  @if (!$blogs->isEmpty())
+    <section class="">
+      <div class="container">
+        <div class="block-sec">
+          <section class="titling">
+            <h3 class="sec-title">{{ __('frontstaticword.RecentBlogs') }}</h3>
+            <p class="text-dim">{{ __('frontstaticword.RecentBlogsText') }}</p>
+          </section>
+
+          <section class="blog-carousel owl-carousel owl-theme">
+            @foreach ($blogs as $blog)
+              @include('front.blog.card')
+            @endforeach
+          </section>
+        </div>
+      </div>
+    </section>
+  @endif
+
+  {{-- LearningPath --}}
+  <section class="block-sec">
+    <div class="boxpath__bg px-5 rounded-50" style="background-image: url('front/img/slidersection.png');">
+      <p class="sec-title mb-0 block-sec pb-5">
+        <span class="text-accent-2">مسار</span>
+        حفظ القرآن الكريم
+      </p>
+    </div>
+    <section class="px-5">
+      <div class="row boxpath__items position-relative justify-content-center">
+        @php
+          $items = ['حفظ', 'تصحيح تلاوة', 'إجازات', 'قراءات', 'تجويد'];
+        @endphp
+        @foreach ($items as $item)
+          <div class="col-6 col-sm-4 col-lg p-3">
+            <div class="boxpath bg-white text-center">
+              <div class="boxpath__number mb-4"></div>
+              <p class="title">
+                {{ $item }}
+              </p>
+            </div>
+          </div>
+        @endforeach
+      </div>
+    </section>
+  </section>
 @endsection

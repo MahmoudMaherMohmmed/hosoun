@@ -85,7 +85,9 @@
                   ->get();
             @endphp
             @if ($social_links->isNotEmpty())
-              <h4 class="text-white text-center mb-4 mb-lg-0 me-lg-5">تابعنا على كل المنصات</h4>
+              <h4 class="text-white text-center mb-4 mb-lg-0 me-lg-5">
+                {{ __('frontstaticword.FollowSocials') }}
+              </h4>
               <nav
                 class="sharesocial d-flex flex-wrap align-itemse-center justify-content-center ml-lg-4 justify-content-center">
                 @foreach ($social_links as $social_link)
@@ -101,7 +103,7 @@
           <div class="border-bottom pb-4 mb-4">
             <div class="d-flex align-items-center justify-content-between">
               <p class="mb-0 line-13 text-white">
-                نقبل الدفع بالطرق التالية
+                {{ __('frontstaticword.AcceptedPayment') }}
               </p>
               <div class="d-flex align-items-center">
                 <img src="{{ asset('front/img/payment/mastercard.png') }}" class="payment-img me-3"
@@ -112,7 +114,7 @@
             </div>
           </div>
           <p class="text-end text-white-50 mt-2">
-            جميع الحقوق محفوظة لموقع حصون التعليمية @
+            {{ __('frontstaticword.Copyright') }} @
             <span id="current-year"></span>
           </p>
         </div>

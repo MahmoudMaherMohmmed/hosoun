@@ -355,8 +355,8 @@ return array(
   'CourseIncludes' => 'تشمل الدورة',
   'read_lesson' => 'قراءة الدرس',
   'RecentNews' => 'آخر الأخبار',
-  'RecentBlogs' => 'المدونة',
-  'RecentBlogsText' => 'اختر من احدى هذه المقالات الجديدة للاطلاع والقراءة',
+  'RecentBlogs' => 'المقالات',
+  'RecentBlogsText' => 'مجموعة من المقالات المتنوعة في التخصصات التعليمية المختلفة',
   'Batches' => 'الحزم',
   'GoogleMeetings' => 'إجتماعات جوجل',
   'jitsi' => 'إجتماعات Jitsi',
@@ -427,7 +427,7 @@ return array(
   'ForeignerWithASaudiPassport' => 'اجنبي بجواز سفر سعودي',
   'DisplacedTribesmen' => 'ابناء القبائل النازحة',
   'OtherNationality' => 'أخرى',
-
-
-
+  'FollowSocials' => 'تابعنا على كل المنصات',
+  'AcceptedPayment' => 'نقبل الدفع بالطرق التالية',
+  'Copyright' => 'جميع الحقوق محفوظة لموقع حصون التعليمية '
 );
