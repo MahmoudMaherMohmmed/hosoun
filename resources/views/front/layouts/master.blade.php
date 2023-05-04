@@ -11,9 +11,9 @@
   @yield('custom-css')
 </head>
 
-<body class="">
+<body class="position-relative">
   @include('front.layouts.navbar')
-  <main class="">
+  <main class="container">
     @yield('page-header')
 
     @yield('content')

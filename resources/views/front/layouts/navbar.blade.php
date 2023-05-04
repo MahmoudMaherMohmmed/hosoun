@@ -1,10 +1,10 @@
-<nav class="navbar flex-column navbar-expand-xl bg-light p-0">
+<nav class="navbar flex-column navbar-expand-xl p-0">
   <div class="w-100 py-4">
     <div class="container">
       <div class="d-flex align-items-center ms-auto py-2">
 
         <a class="navbar-brand logo p-0" href="{{ url('/') }}">
-          <img src="{{ asset('/front/img/logo.png') }}" alt="website-logo">
+          <img src="{{ asset('/front/img/logo.svg') }}" alt="website-logo">
         </a>
 
         <ul class="navbar-nav d-none d-xl-flex justify-content-center mx-auto">

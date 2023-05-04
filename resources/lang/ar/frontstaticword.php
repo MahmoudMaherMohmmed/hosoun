@@ -1,6 +1,6 @@
 <?php
 return array(
-  'numakkinedu' => 'مركز نمكن للتدريب',
+  'numakkinedu' => 'مركز حصون للتدريب',
   'Categories' => 'التصنيفات',
   'Searchforcourses' => 'ابحث عن الدورات',
   'BecomeAnInstructor' => 'درب معنا',
@@ -332,7 +332,8 @@ return array(
   'Twitter' => 'تويتر',
   'Facebook' => 'فيسبوك',
   'Youtube' => ' يوتيوب',
-  'WebsiteCategories' => 'أقسام نمكن',
+  'WebsiteCategories' => 'أقسام حصون',
+  'CoursesCategories' => 'أقسام الدورات',
   'FeaturedCategories' => 'الفئات المميزة',
   'FeaturedCategoriesSubtitle' => 'تقدم المنصة التدريبية مجموعة من البرامج التدريبية في المجالات المختلفة',
   'BrowseCategory' => 'تصفح قسم ',

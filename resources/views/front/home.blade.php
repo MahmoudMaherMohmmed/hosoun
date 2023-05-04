@@ -7,35 +7,177 @@
 
 
 @section('content')
-  {{-- Home Carousel --}}
-  @if (!$trusted->isEmpty())
-    <section id="homeCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-      <div class="carousel-indicators m-0">
-        <div class="container">
-          @foreach ($sliders as $slider)
-            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="{{ $loop->index }}"
-              class="{{ $loop->first ? 'active' : '' }}" aria-current="true"
-              aria-label="Slide_{{ $slider->id }}"></button>
-          @endforeach
+  <header class="headersearch">
+    <div class="container">
+      <div class="row bg-accent rounded-pill align-items-center">
+        <div class="col-auto">
+          <div class="headersearch__dropdown dropdown">
+            <button
+              class="border-0 bg-transparent dropdown-toggle d-flex align-items-center justify-content-center text-white fw-bold pe-0 ps-4 mx-auto"
+              type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <svg class="svg-resize-24 svg-fill-white me-sm-3">
+                <use xlink:href="{{ asset('/front/svg/sprite.svg#grid') }}" />
+              </svg>
+              <span class="d-none d-sm-inline-block">
+                {{ __('frontstaticword.CoursesCategories') }}
+              </span>
+              <svg class="d-none d-lg-inline-block svg-resize-24 svg-fill-white flex-shrink-0 ms-2">
+                <use xlink:href="{{ asset('/front/svg/sprite.svg#arrow-solid') }}" />
+              </svg>
+            </button>
+
+            @php
+              $categories = App\Categories::with('subcategory')
+                  ->where('status', 1)
+                  ->orderBy('position', 'ASC')
+                  ->get();
+            @endphp
+            @if (!$categories->isEmpty())
+              <ul class="dropdown-menu rounded-top-0 rounded-bottom-5 bg-accent">
+                @foreach ($categories as $category)
+                  @php $sub_categories= $category->subcategory->where('status', 1) @endphp
+                  <li>
+                    <a class="dropdown-item p-3 text-white {{ $sub_categories != null && count($sub_categories) > 0 ? 'toggle' : '' }}"
+                      href="{{ route('category.page', ['id' => $category->id, 'category' => $category->title]) }}">
+                      {{ str_limit($category->title, $limit = 25, $end = '..') }}
+                    </a>
+                    @if ($sub_categories != null && count($sub_categories) > 0)
+                      <ul class="submenu dropdown-menu">
+                        @foreach ($sub_categories as $sub_category)
+                          @php $child_categories= $sub_category->childcategory->where('status', 1) @endphp
+                          <li>
+                            <a class="dropdown-item p-3 text-white {{ $child_categories != null && count($child_categories) > 0 ? 'toggle' : '' }}"
+                              href="{{ route('subcategory.page', ['id' => $sub_category->id, 'category' => $sub_category->title]) }}">
+                              {{ str_limit($sub_category->title, $limit = 25, $end = '..') }}
+                            </a>
+                            @if ($child_categories != null && count($child_categories) > 0)
+                              <ul class="submenu dropdown-menu">
+                                @foreach ($child_categories as $child_category)
+                                  <li>
+                                    <a class="dropdown-item p-3 text-white"
+                                      href="{{ route('childcategory.page', ['id' => $child_category->id, 'category' => $child_category->title]) }}">
+                                      {{ str_limit($child_category->title, $limit = 25, $end = '..') }}
+                                    </a>
+                                  </li>
+                                @endforeach
+                              </ul>
+                            @endif
+                          </li>
+                        @endforeach
+                      </ul>
+                    @endif
+                  </li>
+                @endforeach
+              </ul>
+            @endif
+          </div>
+        </div>
+        <div class="col px-0">
+          <form action="" class="headersearch__form position-relative">
+            <div
+              class="position-absolute top-50 translate-middle-y d-flex align-items-center justify-content-center px-4 border-end">
+              <button class="bg-transparent border-0 px-2" type="submit">
+                <svg class="svg-resize-24 svg-fill-accent flex-shrink-0">
+                  <use xlink:href="{{ asset('/front/svg/sprite.svg#search-bold') }}" />
+                </svg>
+              </button>
+            </div>
+            <input type="search" class="form-control rounded-pill"
+              placeholder="{{ __('frontstaticword.Searchforcourses') }}">
+          </form>
         </div>
       </div>
-      <div class="carousel-inner">
-        @foreach ($sliders as $slider)
-          <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-            <img src="{{ asset('images/slider/' . $slider['image']) }}" class="d-block w-100"
-              alt="{{ $slider->heading }}">
-            <div class="carousel-caption">
-              <div class="container w-100 mx-auto">
-                <div class="content">
-                  @if ($slider->heading != null)
-                    <h5 class="caption-title">{{ $slider->heading }}</h5>
-                  @endif
-                  @if ($slider->detail != null)
-                    <p class="caption-text">{{ $slider->detail }}</p>
-                  @endif
-                  @if($slider->button_text!=null && $slider->button_url!=null)
-                    <a href="{{ url($slider->button_url) }}" class="btn btn-accent2">{{ $slider->button_text }}</a>
-                  @endif
+    </div>
+  </header>
+
+  {{-- Home Carousel --}}
+  @if (!$trusted->isEmpty())
+    <section id="homeCarousel" class="carousel slide carousel-fade mt-5 pt-3" data-bs-ride="carousel">
+      <section class="carousel-inner">
+        <div class="d-flex mt-md-5 pt-md-5 ">
+          @foreach ($sliders as $slider)
+            <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="carousel-caption text-black">
+                    <div class="content">
+                      @if ($slider->heading != null)
+                        <h5 class="caption-title">{{ $slider->heading }}</h5>
+                      @endif
+                      @if ($slider->detail != null)
+                        <p class="caption-text">{{ $slider->detail }}</p>
+                      @endif
+                      @if ($slider->button_text != null && $slider->button_url != null)
+                        <a href="{{ url($slider->button_url) }}" class="btn btn-accent">
+                          <svg class="svg-resize-20 svg-fill-white flex-shrink-0">
+                            <use xlink:href="{{ asset('/front/svg/sprite.svg#arrow-circle') }}" />
+                          </svg>
+                          {{ $slider->button_text }}
+                        </a>
+                      @endif
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mt-5 mt-md-0">
+                  <img src="{{ asset('images/slider/' . $slider['image']) }}" class="img-fluid"
+                    alt="{{ $slider->heading }}">
+                </div>
+              </div>
+            </div>
+          @endforeach
+        </div>
+        {{-- Next/Prev --}}
+        <section class="carousel-controls mt-5 mt-lg-0">
+          <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          </button>
+        </section>
+      </section>
+    </section>
+  @endif
+  {{-- /Home Carousel --}}
+
+  {{-- Why Hosoun --}}
+  <div class="block-sec">
+    <section class="bg-accent-gradient px-5 block-sec rounded-50">
+      <div class="row">
+        <div class="col-12 text-center mb-5 pb-3">
+          <h3 class="sec-title text-white">لماذا تختار حصون؟</h3>
+          <p class="text-white-50">
+            حصون خيارك الأمثل لتجربة تعليمية مميزة
+          </p>
+        </div>
+        @php
+          $items = [
+              [
+                  'image' => 'online-course.svg',
+                  'title' => 'دورات مميزة',
+                  'desc' => 'أفضل الدورات التي تقدم على منصة حصون على ايدي باقة من أبرز المدربين',
+              ],
+              [
+                  'image' => 'teacher.svg',
+                  'title' => 'كوادر علمية',
+                  'desc' => 'أفضل الكوادر العلمية من كل المدربين المميزين على منصة حصون التعليمية',
+              ],
+              [
+                  'image' => 'question.svg',
+                  'title' => 'إختبارات مستمرة',
+                  'desc' => 'نقدم الإختبارات المستمرة على كل الدورات الموجودة لمتابعة مستوى الطلاب',
+              ],
+          ];
+        @endphp
+        @foreach ($items as $item)
+          <div class="col-xl-4 features-item">
+            <div class="rounded-50 bg-white p-5">
+              <div class="d-flex align-items-start py-3">
+                <img src="{{ url('front/svg', $item['image']) }}" class="features-img flex-shrink-0 me-5 mb-5"
+                  alt="feature-image">
+                <div class="d-flex flex-column">
+                  <span class="fs-1 fw-black mb-3">{{ $item['title'] }}</span>
+                  <span class="text-dim pt-3">{{ $item['desc'] }}</span>
                 </div>
               </div>
             </div>
@@ -43,8 +185,8 @@
         @endforeach
       </div>
     </section>
-  @endif
-  {{-- /Home Carousel --}}
+  </div>
+  {{-- /Why Hosoun --}}
 
   {{-- Featured sections --}}
   @if (!$featured_categories->isEmpty())
@@ -108,11 +250,11 @@
           @endforeach
         </section>
 
-        {{--<div class="more-btn">
+        {{-- <div class="more-btn">
           <a href="" class="btn btn-accent2">
             {{ __('frontstaticword.ViewMoreCourses') }}
           </a>
-        </div>--}}
+        </div> --}}
       </div>
     </section>
   @endif
@@ -133,11 +275,11 @@
           @endforeach
         </section>
 
-        {{--<div class="more-btn">
+        {{-- <div class="more-btn">
           <a href="" class="btn btn-accent2">
             {{ __('frontstaticword.ViewMoreCourses') }}
           </a>
-        </div>--}}
+        </div> --}}
       </div>
     </section>
   @endif

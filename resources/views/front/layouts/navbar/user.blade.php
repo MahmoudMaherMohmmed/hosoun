@@ -1,12 +1,12 @@
 <div class="dropdown auth-user ms-3 flex-shrink-0">
   <button class="btn btn-accent d-xl-inline-flex" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    <svg class="svg-resize-24 svg-fill-white">
+    <svg class="svg-resize-24 svg-fill-white flex-shrink-0">
       <use xlink:href="{{ asset('/front/svg/sprite.svg#user') }}" />
     </svg>
     <span class="d-none d-xl-inline-block">
       {{ __('frontstaticword.MyAccount') }}
     </span>
-    <svg class="d-none d-xl-inline-block svg-resize-24 svg-fill-white">
+    <svg class="d-none d-xl-inline-block svg-resize-24 svg-fill-white flex-shrink-0">
       <use xlink:href="{{ asset('/front/svg/sprite.svg#arrow-solid') }}" />
     </svg>
   </button>
