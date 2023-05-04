@@ -103,3 +103,134 @@
     font-size: 2.5rem;
   }
 }
+
+.teachers__bg {
+  width: 100%;
+  z-index: 0;
+}
+.teachers__bg::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 26rem;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 4rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: saturation;
+  background-image: url("../img/arabic.jpg");
+  background-color: var(--clr-accent);
+}
+
+.teachers__bg img {
+  height: 31rem;
+  margin: 0 auto;
+  width: auto !important;
+  object-fit: contain;
+}
+
+.instructor-item {
+  grid-gap: 3rem;
+}
+
+.instructor-item .title {
+  width: 100%;
+  height: 5rem;
+  line-height: 5rem;
+  border-radius: 2.5rem;
+  background-color: rgba(var(--clr-accent-rgb), 0.08);
+}
+
+.iconshapes .iconshapes__1 {
+  left: 0;
+  top: 0;
+}
+.iconshapes .iconshapes__2 {
+  right: 50px;
+  top: 60px;
+}
+.iconshapes2 .iconshapes__1 {
+  left: 0;
+  bottom: 0;
+  border-radius: 0 0 0 50px;
+}
+.iconshapes2 .iconshapes__2 {
+  right: 0;
+  top: 0;
+  border-radius: 0 50px 0 0;
+}
+.iconshapes3 .iconshapes__1 {
+  left: 0;
+  bottom: 0;
+}
+.iconshapes3 .iconshapes__2 {
+  right: 0;
+  top: 0;
+}
+
+.boxcourse__content-star {
+  color: #f9e7c2;
+}
+.boxcourse__content-star .active {
+  color: #e49a02;
+}
+.boxcourse__thu {
+  z-index: 1;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 260px;
+}
+.boxcourse__content {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.boxcourse__content,
+.boxcourse__thu {
+  transition: 0.2s;
+}
+.boxcourse:hover a {
+  color: #fff;
+}
+.boxcourse:hover a:hover:not(.btn) {
+  color: #e49a02;
+}
+.boxcourse:hover .text-dark {
+  color: #e49a02 !important;
+}
+.boxcourse:hover .boxcourse__thu {
+  height: 100%;
+}
+.boxcourse:hover .boxcourse__content {
+  padding-right: 20px;
+  padding-left: 20px;
+  background: linear-gradient(0deg, #0d1b23 0%, transparent 100%);
+  border-radius: 0 0 40px 40px;
+}
+.boxcourse__label,
+.boxcourse__discount,
+.boxcourse__content {
+  z-index: 2;
+}
+.boxcourse__label,
+.boxcourse__discount {
+  top: 20px;
+}
+.boxcourse__label {
+  left: 20px;
+}
+.boxcourse__discount {
+  right: 20px;
+}
+.boxcourse__buttons a:last-child {
+  width: 52px;
+  max-width: 52px;
+  flex: 0 0 52px;
+  height: 52px;
+  background-color: #eef8f7;
+  border-color: #cde3e1;
+  color: #58b6b0;
+}

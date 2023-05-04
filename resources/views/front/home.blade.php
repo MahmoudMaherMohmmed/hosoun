@@ -192,101 +192,183 @@
   </div>
   {{-- /Why Hosoun --}}
 
-  {{-- Featured sections --}}
-  @if (!$featured_categories->isEmpty())
-    <section class="block-sec">
-      <div class="container">
+  {{-- Courses Carousel --}}
+  @if (!$blogs->isEmpty())
+    <section class="container">
+      <div class="block-sec">
         <section class="titling">
-          <h6 class="min-title">{{ __('frontstaticword.WebsiteCategories') }}</h6>
-          <h3 class="sec-title">{{ __('frontstaticword.FeaturedCategories') }}</h3>
-          <p class="text-dim">{{ __('frontstaticword.FeaturedCategoriesSubtitle') }}</p>
+          <h3 class="sec-title">{{ __('frontstaticword.Courseslist') }}</h3>
+          <p class="text-dim">{{ __('frontstaticword.CourseslistSubtitle') }}</p>
         </section>
 
-        <section class="featured-carousel owl-carousel owl-theme">
-          @foreach ($featured_categories as $featured)
-            <a href="{{ route('category.page', ['id' => $featured->id, 'category' => $featured->title]) }}"
-              class="featured-item">
-              <figure>
-                <img
-                  src="{{ $featured->cat_image != null ? asset('images/category/' . $featured->cat_image) : Avatar::create($featured->title)->toBase64() }}"
-                  alt="{{ $featured->title }}">
-              </figure>
-              <h4 class="title">{{ $featured->title }}</h4>
-              <p class="text-dim">{{ __('frontstaticword.BrowseCategory') }} {{ $featured->title }}</p>
-            </a>
-          @endforeach
-        </section>
-      </div>
-    </section>
-  @endif
-  {{-- /Featured sections --}}
-
-  {{-- Statistics --}}
-  {{-- @if (!$facts->isEmpty())
-    <section class="bg-accent-2 bg-stats">
-      <div class="container">
-        <div class="stats">
-          @foreach ($facts as $fact)
-            <div class="stats-item">
-              <i class="fa-solid {{ $fact->icon }}"></i>
-              <span class="number">{{ $fact->heading }}</span>
-              <span class="title">{{ $fact->sub_heading }}</span>
+        <section class="course-carousel owl-carousel owl-theme">
+          @for ($i = 0; $i < 5; $i++)
+            <div class="boxcourse position-relative overflow-hidden">
+              <div class="boxcourse__thu position-absolute position-relative rounded-40"
+                style="background-image: url('assets/img/img-5.jpg')"></div>
+              <div class="boxcourse__label position-absolute bg-dark text-white rounded-pill py-2 px-3 font-15">
+                جديد
+              </div>
+              <div class="boxcourse__discount position-absolute bg-danger text-white rounded-pill py-2 px-3 font-15">
+                -15%
+              </div>
+              <div class="boxcourse__blank img-h260"></div>
+              <div class="boxcourse__content position-relative mt-4 pt-2 d-flex flex-column">
+                <span class="rating-readonly"></span>
+                <a href="#" class="fs-1 fw-bold">
+                  دورة تعلم أساسيات اللغة العربية المستوى الأول
+                </a>
+                <div class="d-flex align-items-center mb-4">
+                  <p class="text-dark fs-1 fw-bold">
+                    350 <span class="fs-5">ج.م</span>
+                  </p>
+                  <p class="text-dim text-decoration-line-through fs-1 fw-bold ms-4 ps-2">
+                    420 <span class="fs-4">ج.م</span>
+                  </p>
+                </div>
+                <div class="d-flex boxcourse__buttons">
+                  <a class="btn btn-accent flex-grow-1" href="#">
+                    <svg class="svg-resize-24 svg-fill-white">
+                      <use xlink:href="{{ asset('/front/svg/sprite.svg#cart') }}" />
+                    </svg>
+                    أضف للسلة
+                  </a>
+                  <a class="btn btn-light rounded-circle flex-shrink-0" href="#">
+                    <svg class="svg-resize-24 svg-stroke-white">
+                      <use xlink:href="{{ asset('/front/svg/sprite.svg#heart') }}" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
             </div>
-          @endforeach
+          @endfor
+        </section>
+
+        <div class="row mt-5 pt-3">
+          <div class="col-sm-6 col-lg-4 mx-auto">
+            <a href="{{ route('blog.all') }}" class="btn btn-dark-outline w-100">
+              <svg class="svg-resize-20 flex-shrink-0">
+                <use xlink:href="{{ asset('/front/svg/sprite.svg#arrow-circle') }}" />
+              </svg>
+              {{ __('frontstaticword.SeeAllArticles') }}
+            </a>
+          </div>
         </div>
       </div>
     </section>
-  @endif --}}
-
-  {{-- New Courses --}}
-  @if (!$recent_courses->isEmpty())
-    <section class="block-sec">
-      <div class="container">
-        <section class="titling">
-          <h6 class="min-title">{{ __('frontstaticword.Courses') }}</h6>
-          <h3 class="sec-title">{{ __('frontstaticword.RecentCourses') }}</h3>
-          <p class="text-dim">{{ __('frontstaticword.RecentCoursesSubtitle') }}</p>
-        </section>
-
-        <section class="course-carousel owl-carousel owl-theme">
-          @foreach ($recent_courses as $course)
-            @include('front.course.layout.card')
-          @endforeach
-        </section>
-
-        {{-- <div class="more-btn">
-          <a href="" class="btn btn-accent2">
-            {{ __('frontstaticword.ViewMoreCourses') }}
-          </a>
-        </div> --}}
-      </div>
-    </section>
   @endif
+  {{-- /Courses Carousel --}}
 
-  {{-- Featured Courses --}}
-  @if (!$featured_courses->isEmpty())
-    <section class="block-sec pt-0">
-      <div class="container">
-        <section class="titling">
-          <h6 class="min-title">{{ __('frontstaticword.Courses') }}</h6>
-          <h3 class="sec-title">{{ __('frontstaticword.FeaturedCourses') }}</h3>
-          <p class="text-dim">{{ __('frontstaticword.FeaturedCoursesSubtitle') }}</p>
-        </section>
 
-        <section class="course-carousel owl-carousel owl-theme">
-          @foreach ($featured_courses as $course)
-            @include('front.course.layout.card')
-          @endforeach
-        </section>
 
-        {{-- <div class="more-btn">
-          <a href="" class="btn btn-accent2">
-            {{ __('frontstaticword.ViewMoreCourses') }}
-          </a>
-        </div> --}}
+  {{-- Banner --}}
+  <div class="pt-4">
+    <div class="container">
+      <div class="bg-light rounded-50 position-relative">
+        <div class="iconshapes2">
+          <img class="iconshapes__1 position-absolute" src="{{ asset('front/img/iconshape-4.png') }}" alt="">
+          <img class="iconshapes__2 position-absolute" src="{{ asset('front/img/iconshape-3.png') }}" alt="">
+        </div>
+        <div class="row align-items-center justify-content-center">
+          <div class="col-lg-4 align-self-end mb-4 mb-lg-0">
+            <img class="img-fluid d-block mx-auto" src="{{ asset('front/img/img-2.svg') }}" alt="">
+          </div>
+          <div class="col-lg-6">
+            <div class="p-4 p-lg-5 text-center text-lg-left">
+              <p class="font-30 fw-black mb-4 px-0 px-md-6 px-xl-0">
+                ابدأ رحلتك الآن في حصون
+                وتحدى قدراتك من
+                اللحظة
+              </p>
+              <div class="d-flex align-items-center justify-content-center justify-content-lg-start flex-wrap">
+                <a class="btn btn-accent2 px-4 mr-3 mb-2" href="#">
+                  <svg class="svg-resize-20 svg-fill-white flex-shrink-0">
+                    <use xlink:href="{{ asset('/front/svg/sprite.svg#arrow-circle') }}" />
+                  </svg>
+                  سجل الآن
+                </a>
+                <a class="btn btn-dark px-4 mr-3 mb-2" href="#">
+                  <svg class="svg-resize-24 svg-fill-white flex-shrink-0">
+                    <use xlink:href="{{ asset('/front/svg/sprite.svg#play-circle') }}" />
+                  </svg>
+                  شاهد قصتنا
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
-  @endif
+    </div>
+  </div>
+  {{-- /Banner --}}
+
+
+
+  {{-- InstructorsSections --}}
+  <section class="block-sec">
+    <div class="container">
+      <section class="titling">
+        <h3 class="sec-title">
+          {{ __('frontstaticword.Instructors') }}
+        </h3>
+        <p class="text-dim">
+          {{ __('frontstaticword.InstructorsSubtitle') }}
+        </p>
+      </section>
+
+      <section class="instructors-carousel owl-carousel owl-theme">
+        @php
+          $items = [
+              [
+                  'img' => 'person-1.png',
+                  'title' => 'أ / أحمد منير',
+              ],
+              [
+                  'img' => 'person-2.png',
+                  'title' => 'أ / كريم عصام الدين',
+              ],
+              [
+                  'img' => 'person-3.png',
+                  'title' => 'أ / محمود خليل',
+              ],
+              [
+                  'img' => 'person-4.png',
+                  'title' => 'أ / عمر علي',
+              ],
+              [
+                  'img' => 'person-1.png',
+                  'title' => 'أ / أحمد منير',
+              ],
+              [
+                  'img' => 'person-2.png',
+                  'title' => 'أ / كريم عصام الدين',
+              ],
+              [
+                  'img' => 'person-3.png',
+                  'title' => 'أ / محمود خليل',
+              ],
+              [
+                  'img' => 'person-4.png',
+                  'title' => 'أ / عمر علي',
+              ],
+          ];
+        @endphp
+        @foreach ($items as $item)
+          <section class="instructor-item text-center d-flex flex-column align-items-center justify-content-start">
+            <div class="teachers__bg position-relative">
+              <img src="{{ url('front/img/persons', $item['img']) }}" alt="instructor-img">
+            </div>
+            <span class="fs-1 fw-bold">{{ $item['title'] }}</span>
+            <div class="title text-accent fw-medium">
+              مدرس لغة عربية
+            </div>
+          </section>
+        @endforeach
+      </section>
+    </div>
+  </section>
+  {{-- /InstructorsSections --}}
+
 
 
   {{-- BooksSections --}}
@@ -402,6 +484,8 @@
       </div>
     </section>
   @endif
+  {{-- /Blog Carousel --}}
+
 
   {{-- LearningPath --}}
   <section class="block-sec">
@@ -431,4 +515,6 @@
       </section>
     </div>
   </section>
+  {{-- /LearningPath --}}
+
 @endsection

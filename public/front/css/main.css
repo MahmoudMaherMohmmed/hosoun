@@ -2832,6 +2832,12 @@ input {
 
 /* /Instructor page */
 
+/* instructors Carousel Section */
+.instructors-carousel .owl-nav [class*="owl-"] {
+  background-color: rgba(var(--clr-accent-2-rgb), 0.1) !important;
+}
+/* /instructors Carousel Section */
+
 /* Books Carousel Section */
 .books-item {
   grid-gap: 2rem;
