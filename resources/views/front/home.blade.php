@@ -193,7 +193,7 @@
   {{-- /Why Hosoun --}}
 
   {{-- Courses Carousel --}}
-  @if (!$blogs->isEmpty())
+  @if($featured_courses->isNotEmpty())
     <section class="container">
       <div class="block-sec">
         <section class="titling">
@@ -202,46 +202,9 @@
         </section>
 
         <section class="course-carousel owl-carousel owl-theme">
-          @for ($i = 0; $i < 5; $i++)
-            <div class="boxcourse position-relative overflow-hidden">
-              <div class="boxcourse__thu position-absolute position-relative rounded-40"
-                style="background-image: url('assets/img/img-5.jpg')"></div>
-              <div class="boxcourse__label position-absolute bg-dark text-white rounded-pill py-2 px-3 font-15">
-                جديد
-              </div>
-              <div class="boxcourse__discount position-absolute bg-danger text-white rounded-pill py-2 px-3 font-15">
-                -15%
-              </div>
-              <div class="boxcourse__blank img-h260"></div>
-              <div class="boxcourse__content position-relative mt-4 pt-2 d-flex flex-column">
-                <span class="rating-readonly"></span>
-                <a href="#" class="fs-1 fw-bold">
-                  دورة تعلم أساسيات اللغة العربية المستوى الأول
-                </a>
-                <div class="d-flex align-items-center mb-4">
-                  <p class="text-dark fs-1 fw-bold">
-                    350 <span class="fs-5">ج.م</span>
-                  </p>
-                  <p class="text-dim text-decoration-line-through fs-1 fw-bold ms-4 ps-2">
-                    420 <span class="fs-4">ج.م</span>
-                  </p>
-                </div>
-                <div class="d-flex boxcourse__buttons">
-                  <a class="btn btn-accent flex-grow-1" href="#">
-                    <svg class="svg-resize-24 svg-fill-white">
-                      <use xlink:href="{{ asset('/front/svg/sprite.svg#cart') }}" />
-                    </svg>
-                    أضف للسلة
-                  </a>
-                  <a class="btn btn-light rounded-circle flex-shrink-0" href="#">
-                    <svg class="svg-resize-24 svg-stroke-white">
-                      <use xlink:href="{{ asset('/front/svg/sprite.svg#heart') }}" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          @endfor
+          @foreach ($featured_courses as $course)
+            @include('front.course.layout.card')
+          @endforeach
         </section>
 
         <div class="row mt-5 pt-3">
