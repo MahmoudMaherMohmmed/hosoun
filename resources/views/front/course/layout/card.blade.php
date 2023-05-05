@@ -13,9 +13,12 @@
         </div>
     @endif
 
+    @if (($course->discount_price == !null) && ($course->price > 0))
     <div class="boxcourse__discount position-absolute bg-danger text-white rounded-pill py-2 px-3 font-15">
     -{{number_format((($course->price - $course->discount_price) * 100) / $course->price, 1)}}%
     </div>
+    @endif
+
     <div class="boxcourse__blank img-h260"></div>
     <div class="boxcourse__content position-relative mt-4 pt-2 d-flex flex-column">
     <span class="rating-readonly"></span>
