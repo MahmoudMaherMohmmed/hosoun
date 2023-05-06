@@ -212,8 +212,22 @@ ul {
   );
 }
 
+.rounded-40 {
+  border-radius: 1.5rem;
+}
+
 .rounded-50 {
-  border-radius: 5rem;
+  border-radius: 2rem;
+}
+
+@media only screen and (min-width: 992px) {
+  .rounded-40 {
+    border-radius: 4rem;
+  }
+
+  .rounded-50 {
+    border-radius: 5rem;
+  }
 }
 
 .main-block {
@@ -1270,7 +1284,13 @@ input {
 
 /* block section */
 .block-sec {
-  padding: 8rem 0;
+  padding: 4rem 0;
+}
+
+@media only screen and (min-width: 992px) {
+  .block-sec {
+    padding: 8rem 0;
+  }
 }
 
 .block-sec .titling {
@@ -1286,12 +1306,17 @@ input {
 }
 
 .block-sec .sec-title {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-weight: 800;
   margin-bottom: 1.2rem;
 }
 
-@media only screen and (min-width: 576px) {
+@media only screen and (min-width: 350px) {
+  .block-sec .sec-title {
+    font-size: 3rem;
+  }
+}
+@media only screen and (min-width: 768px) {
   .block-sec .sec-title {
     font-size: 4.5rem;
   }
@@ -2807,9 +2832,16 @@ input {
 /* Books Carousel Section */
 .books-item {
   grid-gap: 2rem;
-  padding: 4rem 3rem;
-  border-radius: 4rem;
+  padding: 3rem;
+  border-radius: 2rem;
   background-color: rgba(var(--clr-white-rgb), 0.1);
+}
+
+@media only screen and (min-width: 992px) {
+  .books-item {
+    padding: 4rem 3rem;
+    border-radius: 4rem;
+  }
 }
 
 .books-carousel .books-thumbnail {
@@ -2846,8 +2878,8 @@ img.lines:last-of-type {
 
 /* blog */
 .blog-card {
-  height: 38rem;
-  border-radius: 4rem;
+  height: 30rem;
+  border-radius: 2rem;
 }
 
 .blog-card::before {
@@ -2856,21 +2888,34 @@ img.lines:last-of-type {
   z-index: 1;
   inset: 0;
   opacity: 0.8;
-  border-radius: 4rem;
+  border-radius: 2rem;
   background-image: linear-gradient(to top, #03151e, transparent);
 }
 
 .blog-card .blog-img {
-  border-radius: 4rem;
+  border-radius: 2rem;
 }
 
 .blog-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 4rem;
+  border-radius: 2rem;
   background-color: var(--clr-light);
   transition: all 0.3s linear;
+}
+
+@media only screen and (min-width: 992px) {
+  .blog-card {
+    height: 38rem;
+  }
+
+  .blog-card,
+  .blog-card::before,
+  .blog-card .blog-img,
+  .blog-card img {
+    border-radius: 4rem;
+  }
 }
 
 .blog-card:hover img {

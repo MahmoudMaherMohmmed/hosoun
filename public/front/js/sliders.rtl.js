@@ -113,7 +113,7 @@ $(document).ready(function () {
             0: {
                 items: 1,
             },
-            576: {
+            370: {
                 items: 2,
             },
             768: {
