@@ -529,28 +529,6 @@ svg {
   overflow: hidden;
 }
 
-.auth-block::after {
-  content: "";
-  z-index: -1;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 33rem;
-  height: 56rem;
-  pointer-events: none;
-  background: no-repeat left / contain url("../img/auth.png");
-}
-
-.auth-block.email::after {
-  left: -2rem;
-  bottom: -15rem;
-  width: 30rem;
-}
-.auth-block.reset::after {
-  width: 30rem;
-  height: 45rem;
-}
-
 .auth-head {
   padding: 4rem;
   font-size: 2.5rem;
@@ -1618,24 +1596,10 @@ input {
   z-index: 0;
   background-image: linear-gradient(
     to left,
-    var(--clr-accent),
-    var(--clr-accent-2)
+    var(--clr-dark),
+    var(--clr-accent)
   );
   overflow: hidden;
-}
-
-.page_header::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  width: 38rem;
-  height: 38rem;
-  left: -15rem;
-  top: 75%;
-  transform: translateY(-50%);
-  background: no-repeat left/contain url("../img/watermark-page.png");
-  pointer-events: none;
-  animation: fade 1.5s infinite alternate both;
 }
 
 .page_header .title {
@@ -1647,11 +1611,6 @@ input {
 @media only screen and (min-width: 576px) {
   .page_header {
     min-height: 25rem;
-  }
-  .page_header::after {
-    width: 48rem;
-    height: 48rem;
-    left: -21rem;
   }
 
   .page_header .title {

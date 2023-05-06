@@ -1,12 +1,6 @@
-@extends('auth.layouts.master')
+@extends('front.layouts.master')
 @section('title')
   تسجيل الدخول
-@endsection
-@section('auth-header-redirect')
-  <a href="{{ route('register') }}" class="btn btn-accent">{{ __('frontstaticword.Signup') }}</a>
-@endsection
-@section('bottombar-redirect')
-  <a href="{{ route('register') }}" class="btn btn-white">{{ __('frontstaticword.Signup') }}</a>
 @endsection
 
 @section('content')
@@ -23,34 +17,39 @@
             <div class="form-group">
               <label for="email" class="form-label">{{ __('frontstaticword.EnterYourEMail') }}</label>
               <div class="form-group-icon">
-                <input type="email" name="email" id="email" value="{{ old('email') }}" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('frontstaticword.EnterYourEMail') }}" required autofocus>
+                <input type="email" name="email" id="email" value="{{ old('email') }}"
+                  class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}"
+                  placeholder="{{ __('frontstaticword.EnterYourEMail') }}" required autofocus>
                 <svg class="svg-default form-control-icon">
                   <use xlink:href="{{ asset('/front/svg/sprite.svg#sms') }}" />
                 </svg>
               </div>
               @if ($errors->has('email'))
-                  <span class="invalid-feedback" role="alert">
-                      <strong>{{ $errors->first('email') }}</strong>
-                  </span>
+                <span class="invalid-feedback" role="alert">
+                  <strong>{{ $errors->first('email') }}</strong>
+                </span>
               @endif
             </div>
             <div class="form-group">
               <label for="password" class="form-label">{{ __('frontstaticword.EnterYourPassword') }}</label>
               <div class="form-group-icon">
-                <input type="password" name="password" id="password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{ __('frontstaticword.EnterYourPassword') }}" required>
+                <input type="password" name="password" id="password"
+                  class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}"
+                  placeholder="{{ __('frontstaticword.EnterYourPassword') }}" required>
                 <svg class="svg-default form-control-icon">
                   <use xlink:href="{{ asset('/front/svg/sprite.svg#lock') }}" />
                 </svg>
               </div>
               @if ($errors->has('password'))
-                  <span class="invalid-feedback" role="alert">
-                      <strong>{{ $errors->first('password') }}</strong>
-                  </span>
+                <span class="invalid-feedback" role="alert">
+                  <strong>{{ $errors->first('password') }}</strong>
+                </span>
               @endif
             </div>
             <div class="d-flex align-items-center justify-content-between">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                <input class="form-check-input" type="checkbox" name="remember" id="remember"
+                  {{ old('remember') ? 'checked' : '' }}>
                 <label class="form-check-label text-accent" for="remember">
                   {{ __('frontstaticword.RememberMe') }}
                 </label>
@@ -66,8 +65,10 @@
               </div>
               <div class="mt-4 pt-3">
                 {{ __('frontstaticword.Bysigningup') }}
-                <a href="{{url('terms_condition')}}" class="text-accent fw-light">{{ __('frontstaticword.Terms&Condition') }}</a>
-                <a href="{{url('privacy_policy')}}" class="text-accent fw-light">{{ __('frontstaticword.PrivacyPolicy') }}</a>
+                <a href="{{ url('terms_condition') }}"
+                  class="text-accent-2 fw-medium">{{ __('frontstaticword.Terms&Condition') }}</a>
+                <a href="{{ url('privacy_policy') }}"
+                  class="text-accent-2 fw-medium">{{ __('frontstaticword.PrivacyPolicy') }}</a>
               </div>
             </div>
           </form>
