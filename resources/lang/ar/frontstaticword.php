@@ -437,4 +437,6 @@ return array(
   'BooksCategories' => 'أقسام الكتب',
   'BooksSubtitle' => 'باقة من أفضل أقسام الكتب المناسبة لكل الطلاب',
   'SeeAllBooksCat' => 'شاهد كل أقسام الكتب',
+
+  'WhenSubscribe' => 'عندما تقوم بالاشتراك ، ستظهر الدورات هنا.',
 );
