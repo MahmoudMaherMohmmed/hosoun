@@ -34,7 +34,7 @@
             <a href="{{ route('login') }}" class="text-accent text-nowrap ms-4 d-none d-xl-inline-flex">
               {{ __('frontstaticword.Login') }}
             </a>
-            <a href="{{ route('login') }}" class="d-inline-block d-xl-none btn nav-btn">
+            <a href="{{ route('login') }}" class="d-xl-none btn bg-accent nav-btn ms-3">
               <svg class="svg-resize-24 svg-fill-white">
                 <use xlink:href="{{ asset('/front/svg/sprite.svg#user') }}" />
               </svg>
