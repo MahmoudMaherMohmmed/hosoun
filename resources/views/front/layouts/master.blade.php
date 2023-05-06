@@ -11,7 +11,7 @@
   @yield('custom-css')
 </head>
 
-<body class="position-relative">
+<body class="position-relative overflow-x-hidden">
   @include('front.layouts.navbar')
   <main class="">
     @yield('page-header')

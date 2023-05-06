@@ -142,8 +142,9 @@
   @endif
   {{-- /Home Carousel --}}
 
+
   {{-- Why Hosoun --}}
-  <div class="block-sec">
+  <section class="block-sec">
     <div class="container">
       <section class="bg-accent-gradient px-5 block-sec rounded-50 overflow-hidden position-relative z-0">
         {{-- animated svg --}}
@@ -195,7 +196,7 @@
         </div>
       </section>
     </div>
-  </div>
+  </section>
   {{-- /Why Hosoun --}}
 
   {{-- Courses Carousel --}}
@@ -229,48 +230,47 @@
   {{-- /Courses Carousel --}}
 
 
-
   {{-- Banner --}}
-  <div class="pt-4">
-    <div class="container">
-      <div class="bg-light rounded-50 position-relative">
-        <div class="iconshapes2">
-          <img class="iconshapes__1 position-absolute" src="{{ asset('front/img/iconshape-4.png') }}" alt="">
-          <img class="iconshapes__2 position-absolute" src="{{ asset('front/img/iconshape-3.png') }}" alt="">
+  <section class="container">
+    <div class="bg-accent-2-light rounded-50 position-relative z-0">
+      <div class="iconshapes2">
+        <img class="iconshapes__1 position-absolute z-n1 d-none d-md-inline-block"
+          src="{{ asset('front/img/iconshape-4.png') }}" alt="">
+        <img class="iconshapes__2 position-absolute z-n1" src="{{ asset('front/img/iconshape-3.png') }}"
+          alt="">
+      </div>
+      <div class="row align-items-center justify-content-center">
+        <div class="col-lg-6 align-self-end mb-4 mb-lg-0">
+          <img class="img-fluid d-block mx-auto" src="{{ asset('front/img/img-2.svg') }}"
+            style="transform:translateY(-3rem); margin-bottom: -3rem">
         </div>
-        <div class="row align-items-center justify-content-center">
-          <div class="col-lg-4 align-self-end mb-4 mb-lg-0">
-            <img class="img-fluid d-block mx-auto" src="{{ asset('front/img/img-2.svg') }}" alt="">
-          </div>
-          <div class="col-lg-6">
-            <div class="p-4 p-lg-5 text-center text-lg-left">
-              <p class="font-30 fw-black mb-4 px-0 px-md-6 px-xl-0">
-                ابدأ رحلتك الآن في حصون
-                وتحدى قدراتك من
-                اللحظة
-              </p>
-              <div class="d-flex align-items-center justify-content-center justify-content-lg-start flex-wrap">
-                <a class="btn btn-accent2 px-4 mr-3 mb-2" href="#">
-                  <svg class="svg-resize-20 svg-fill-white flex-shrink-0">
-                    <use xlink:href="{{ asset('/front/svg/sprite.svg#arrow-circle') }}" />
-                  </svg>
-                  سجل الآن
-                </a>
-                <a class="btn btn-dark px-4 mr-3 mb-2" href="#">
-                  <svg class="svg-resize-24 svg-fill-white flex-shrink-0">
-                    <use xlink:href="{{ asset('/front/svg/sprite.svg#play-circle') }}" />
-                  </svg>
-                  شاهد قصتنا
-                </a>
-              </div>
+        <div class="col-lg-6 block-sec py-5">
+          <div class="p-5 text-center text-lg-start">
+            <p class="sec-title mb-5 pb-3 pe-5 lh-sm">
+              ابدأ رحلتك الآن في حصون
+              وتحدى قدراتك من
+              اللحظة
+            </p>
+            <div class="d-flex gap-3 align-items-center justify-content-center justify-content-lg-start flex-wrap">
+              <a class="btn btn-accent2 px-4 flex-grow-1 flex-sm-grow-0" href="#">
+                <svg class="svg-resize-20 svg-fill-white flex-shrink-0">
+                  <use xlink:href="{{ asset('/front/svg/sprite.svg#arrow-circle') }}" />
+                </svg>
+                سجل الآن
+              </a>
+              <a class="btn btn-dark px-4 flex-grow-1 flex-sm-grow-0" href="#">
+                <svg class="svg-resize-24 svg-fill-white flex-shrink-0">
+                  <use xlink:href="{{ asset('/front/svg/sprite.svg#play-circle') }}" />
+                </svg>
+                شاهد قصتنا
+              </a>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
   {{-- /Banner --}}
-
 
 
   {{-- InstructorsSections --}}
@@ -337,7 +337,6 @@
     </div>
   </section>
   {{-- /InstructorsSections --}}
-
 
 
   {{-- BooksSections --}}
@@ -424,6 +423,8 @@
       <img src="{{ asset('front/svg/lines.svg') }}" class="lines">
     </div>
   </section>
+  {{-- /BooksSections --}}
+
 
   {{-- Blog Carousel --}}
   @if (!$blogs->isEmpty())

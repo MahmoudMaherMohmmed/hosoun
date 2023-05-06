@@ -24,17 +24,18 @@
   <section class="boxcourse__content position-relative">
     <div class="d-flex flex-column pt-5">
       <span class="rating-readonly"></span>
-      <a href="{{ route('course.content', ['id' => $course->id, 'slug' => $course->slug]) }}" class="fs-1 fw-bold mt-4">
+      <a href="{{ route('course.content', ['id' => $course->id, 'slug' => $course->slug]) }}"
+        class="fs-20 fw-bold mt-4">
         {{ $course->title }} </a>
       <div class="d-flex align-items-center mt-4 mb-5">
         @if ($course->type == 1)
           @if ($course->discount_price == !null)
             @if ($gsetting->currency_swipe == 1)
-              <p class="text-dark-accent fs-1 fw-bold">
+              <p class="text-dark-accent fs-20 fw-bold">
                 <span class="fs-5">{{ $currency->icon }}</span> {{ $course->discount_price }}
               </p>
 
-              <p class="text-dim text-decoration-line-through fs-1 fw-bold ms-4 ps-2">
+              <p class="text-dim text-decoration-line-through fs-20 fw-bold ms-4 ps-2">
                 <span class="fs-5">{{ $currency->icon }}</span> {{ $course->price }}
               </p>
             @else
@@ -42,23 +43,23 @@
                 {{ $course->discount_price }} <span class="fs-5">{{ $currency->icon }}</span>
               </p>
 
-              <p class="text-dim text-decoration-line-through fs-1 fw-bold ms-4 ps-2">
+              <p class="text-dim text-decoration-line-through fs-20 fw-bold ms-4 ps-2">
                 {{ $course->price }} <span class="fs-5">{{ $currency->icon }}</span>
               </p>
             @endif
           @else
             @if ($gsetting->currency_swipe == 1)
-              <p class="text-dark-accent fs-1 fw-bold">
+              <p class="text-dark-accent fs-20 fw-bold">
                 <span class="fs-5">{{ $currency->icon }}</span> {{ $course->price }}
               </p>
             @else
-              <p class="text-dark-accent fs-1 fw-bold">
+              <p class="text-dark-accent fs-20 fw-bold">
                 {{ $course->price }} <span class="fs-5">{{ $currency->icon }}</span>
               </p>
             @endif
           @endif
         @else
-          <p class="text-dark-accent fs-1 fw-bold">{{ __('frontstaticword.Free') }}</p>
+          <p class="text-dark-accent fs-20 fw-bold">{{ __('frontstaticword.Free') }}</p>
         @endif
       </div>
       <div class="d-flex boxcourse__buttons">

@@ -149,18 +149,18 @@
   top: 0;
 }
 .iconshapes .iconshapes__2 {
-  right: 50px;
-  top: 60px;
+  right: 5rem;
+  top: 6rem;
 }
 .iconshapes2 .iconshapes__1 {
   left: 0;
   bottom: 0;
-  border-radius: 0 0 0 50px;
+  border-radius: 0 0 0 5rem;
 }
 .iconshapes2 .iconshapes__2 {
   right: 0;
   top: 0;
-  border-radius: 0 50px 0 0;
+  border-radius: 0 5rem 0 0;
 }
 .iconshapes3 .iconshapes__1 {
   left: 0;
