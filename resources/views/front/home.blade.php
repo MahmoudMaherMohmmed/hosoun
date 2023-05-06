@@ -91,7 +91,7 @@
   </header>
 
   {{-- Home Carousel --}}
-  @if (!$trusted->isEmpty())
+  @if (!$sliders->isEmpty())
     <section id="homeCarousel" class="carousel slide carousel-fade mt-5 pt-3" data-bs-ride="carousel">
       <div class="container">
         <section class="carousel-inner">
