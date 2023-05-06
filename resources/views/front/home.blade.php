@@ -145,9 +145,15 @@
   {{-- Why Hosoun --}}
   <div class="block-sec">
     <div class="container">
-      <section class="bg-accent-gradient px-5 block-sec rounded-50">
-        <div class="row">
-          <div class="col-12 text-center mb-5 pb-3">
+      <section class="bg-accent-gradient px-5 block-sec rounded-50 overflow-hidden position-relative z-0">
+        {{-- animated svg --}}
+        <img src="{{ asset('front/svg/diamond-big.svg') }}" class="diamond-img big position-absolute z-n1">
+        <div class="row position-relative z-0">
+          <div class="col-12 position-relative z-0 text-center mb-5 pb-3">
+            {{-- animated svg --}}
+            <img src="{{ asset('front/svg/diamond-small.svg') }}"
+              class="diamond-img position-absolute z-n1 top-0 start-0 ms-4 d-none d-lg-inline-block">
+            {{-- Section title --}}
             <h3 class="sec-title text-white">لماذا تختار حصون؟</h3>
             <p class="text-white-70">
               حصون خيارك الأمثل لتجربة تعليمية مميزة
@@ -175,12 +181,12 @@
           @foreach ($items as $item)
             <div class="col-xl-4 features-item">
               <div class="rounded-50 bg-white p-5">
-                <div class="d-flex align-items-start py-3">
-                  <img src="{{ url('front/svg', $item['image']) }}" class="features-img flex-shrink-0 me-5 mb-5"
-                    alt="feature-image">
-                  <div class="d-flex flex-column">
+                <div class="d-flex flex-column flex-sm-row align-items-center align-items-sm-start py-3">
+                  <img src="{{ url('front/svg', $item['image']) }}"
+                    class="features-img flex-shrink-0 mx-auto me-sm-5 ms-sm-0 mb-4" alt="feature-image">
+                  <div class="d-flex flex-column align-items-center align-items-sm-start">
                     <span class="fs-1 fw-black mb-3">{{ $item['title'] }}</span>
-                    <span class="text-dim pt-3">{{ $item['desc'] }}</span>
+                    <span class="text-dim pt-3 text-center text-sm-start">{{ $item['desc'] }}</span>
                   </div>
                 </div>
               </div>
@@ -465,7 +471,7 @@
             $items = ['حفظ', 'تصحيح تلاوة', 'إجازات', 'قراءات', 'تجويد'];
           @endphp
           @foreach ($items as $item)
-            <div class="col-6 col-sm-4 col-lg p-3">
+            <div class="col-4 col-lg p-3">
               <div class="boxpath bg-white text-center">
                 <div class="boxpath__number mb-4"></div>
                 <p class="title">

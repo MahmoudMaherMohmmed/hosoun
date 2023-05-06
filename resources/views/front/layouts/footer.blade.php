@@ -7,26 +7,26 @@
       <div class="col-lg-1"></div>
       @php $widgets = App\WidgetSetting::first(); @endphp
       @if (isset($widgets))
-        <div class="col-sm-6 col-lg-3 mt-5 mb-sm-5 mb-lg-0">
-          <h6 class="footer-links-title">{{ $widgets->widget_two }}</h6>
+        <div class="col-6 col-lg-3 mt-5 mb-sm-5 mb-lg-0">
+          <h6 class="fs-1 text-dark-accent mb-5 pb-2">{{ $widgets->widget_two }}</h6>
           <ul class="footerbg__links list-unstyled mb-0 font-16 font-w500">
             <li>
-              <a href="{{ url('/user_contact') }}" class="footer-link">
+              <a href="{{ url('/user_contact') }}" class="footer-link fw-medium mb-3">
                 {{ __('frontstaticword.Contactus') }}
               </a>
             </li>
             <li>
-              <a href="{{ url('/terms_condition') }}" class="footer-link">
+              <a href="{{ url('/terms_condition') }}" class="footer-link fw-medium mb-3">
                 {{ __('frontstaticword.Terms&Condition') }}
               </a>
             </li>
             <li>
-              <a href="{{ url('/privacy_policy') }}" class="footer-link">
+              <a href="{{ url('/privacy_policy') }}" class="footer-link fw-medium mb-3">
                 {{ __('adminstaticword.PrivacyPolicy') }}
               </a>
             </li>
             <li>
-              <a href="{{ route('help.show') }}" class="footer-link">
+              <a href="{{ route('help.show') }}" class="footer-link fw-medium mb-3">
                 {{ __('frontstaticword.Help&Support') }}
               </a>
             </li>
@@ -34,14 +34,14 @@
               @if (Auth::check())
                 @if (Auth::User()->role == 'user')
                   <li>
-                    <a href="{{ route('beinstructor.show') }}" class="footer-link">
+                    <a href="{{ route('beinstructor.show') }}" class="footer-link fw-medium mb-3">
                       {{ __('frontstaticword.BecomeAnInstructor') }}
                     </a>
                   </li>
                 @endif
               @else
                 <li>
-                  <a href="{{ route('login') }}" class="footer-link"
+                  <a href="{{ route('login') }}" class="footer-link fw-medium mb-3"
                     title="{{ __('frontstaticword.BecomeAnInstructor') }}">
                     {{ __('frontstaticword.BecomeAnInstructor') }}
                   </a>
@@ -51,22 +51,22 @@
           </ul>
         </div>
       @endif
-      <div class="col-sm-6 col-lg-3 my-5 mb-lg-0">
-        <h6 class="footer-links-title">
+      <div class="col-6 col-lg-3 my-5 mb-lg-0">
+        <h6 class="fs-1 text-dark-accent mb-5 pb-2">
           تواصل معنا
         </h6>
         <p class="fw-medium mb-3">
           تواصل هاتفيا
         </p>
-        <a class="d-inline-block text-accent-2 fs-20 fw-bold mb-3" href="tel:00201002653533">00201002653533</a>
+        <a class="d-inline-block text-accent-2 fs-2 fw-bold mb-3" href="tel:00201002653533">00201002653533</a>
         <p class="fw-medium mb-3">
           البريد الإلكتروني
         </p>
-        <a class="d-inline-block text-accent-2 fs-20 fw-bold mb-3" href="mailto:info@huson.com">info@huson.com</a>
+        <a class="d-inline-block text-accent-2 fs-2 fw-bold mb-3" href="mailto:info@huson.com">info@huson.com</a>
         <p class="fw-medium mb-3">
           العنوان
         </p>
-        <p class="text-accent-2 fs-20 fw-bold mb-3">
+        <p class="text-accent-2 fs-2 fw-bold mb-3">
           القاهرة - المعادي
         </p>
       </div>

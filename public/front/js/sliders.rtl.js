@@ -5,6 +5,7 @@ $(document).ready(function () {
         rtl: true,
         margin: 16,
         responsiveClass: true,
+        autoplay: true,
         nav: true,
         navText: [
             `<svg xmlns="http://www.w3.org/2000/svg" width="6" height="12" viewBox="0 0 6 12">
@@ -33,6 +34,7 @@ $(document).ready(function () {
         rtl: true,
         margin: 16,
         responsiveClass: true,
+        autoplay: true,
         nav: true,
         dots: false,
         navText: [
@@ -56,13 +58,13 @@ $(document).ready(function () {
             }
         }
     })
-
     $('.books-carousel').owlCarousel({
         loop: true,
         autoplay: true,
         rtl: true,
         margin: 18,
         responsiveClass: true,
+        autoplay: true,
         nav: true,
         navText: [
             `<svg xmlns="http://www.w3.org/2000/svg" width="6" height="12" viewBox="0 0 6 12">
@@ -78,7 +80,7 @@ $(document).ready(function () {
             0: {
                 items: 1,
             },
-            576: {
+            370: {
                 items: 2,
             },
             992: {
@@ -95,6 +97,7 @@ $(document).ready(function () {
         rtl: true,
         margin: 18,
         responsiveClass: true,
+        autoplay: true,
         nav: true,
         navText: [
             `<svg xmlns="http://www.w3.org/2000/svg" width="6" height="12" viewBox="0 0 6 12">

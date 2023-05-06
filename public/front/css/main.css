@@ -1355,30 +1355,39 @@ input {
   margin: 0;
   background-color: rgba(var(--clr-dark-rgb), 0.08) !important;
 }
+
+.course-carousel .owl-nav [class*="owl-"],
+.instructors-carousel .owl-nav [class*="owl-"] {
+  background-color: rgba(var(--clr-accent-2-rgb), 0.1) !important;
+}
 /* /Owl-carousels */
 
 /* Features items */
+.diamond-img {
+  pointer-events: none;
+  width: 7.5rem;
+  height: 8.5rem;
+  object-fit: contain;
+}
+
+.diamond-img.big {
+  width: 45rem;
+  height: 50rem;
+  left: -5rem;
+  top: -3px;
+}
+
 .features-item {
   padding: 1.8rem;
 }
 .features-img {
-  width: 4rem;
-  height: 4rem;
+  width: 6rem;
+  height: 6rem;
   object-fit: contain;
-}
-
-@media only screen and (min-width: 420px) {
-  .features-img {
-    width: 6rem;
-    height: 6rem;
-  }
 }
 /* /Features items */
 
 /* featured-carousel */
-/* .featured-carousel {
-  margin-bottom: 3.5rem;
-} */
 .featured-item {
   font-size: 1.4rem;
   padding: 2rem;
@@ -2836,12 +2845,6 @@ input {
 
 /* /Instructor page */
 
-/* instructors Carousel Section */
-.instructors-carousel .owl-nav [class*="owl-"] {
-  background-color: rgba(var(--clr-accent-2-rgb), 0.1) !important;
-}
-/* /instructors Carousel Section */
-
 /* Books Carousel Section */
 .books-item {
   grid-gap: 2rem;
@@ -2969,31 +2972,6 @@ footer::after {
   background-image: linear-gradient(to top, var(--clr-aceent), transparent);
 }
 
-.sharesocial {
-  position: relative;
-  padding: 0 7rem;
-  margin: 0 -0.45rem;
-}
-
-.sharesocial::before,
-.sharesocial::after {
-  position: absolute;
-  content: "";
-  width: 5rem;
-  height: 1px;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: var(--clr-white);
-}
-
-.sharesocial::before {
-  right: 0;
-}
-
-.sharesocial::after {
-  left: 0;
-}
-
 .social-link {
   flex-shrink: 0;
   display: grid;
@@ -3011,17 +2989,8 @@ footer::after {
   background-color: rgba(var(--clr-white-rgb), 1);
 }
 
-.footer-links-title {
-  font-size: 2.5rem;
-  color: var(--clr-dark);
-  font-weight: 700;
-  margin-bottom: 3.6rem;
-}
-
 .footer-link {
   display: inline-block;
-  font-weight: 700;
-  margin-bottom: 2.2rem;
   transition: all 0.2s ease-in-out;
 }
 
@@ -3058,6 +3027,31 @@ footer::after {
     border-radius: 3.5rem 0 0 3.5rem;
     right: 0;
     background-color: var(--clr-dark);
+  }
+
+  .sharesocial {
+    position: relative;
+    padding: 0 7rem;
+    margin: 0 -0.45rem;
+  }
+
+  .sharesocial::before,
+  .sharesocial::after {
+    position: absolute;
+    content: "";
+    width: 5rem;
+    height: 1px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--clr-white);
+  }
+
+  .sharesocial::before {
+    right: 0;
+  }
+
+  .sharesocial::after {
+    left: 0;
   }
 }
 
