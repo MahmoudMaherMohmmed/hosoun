@@ -48,12 +48,16 @@ $(document).ready(function () {
 
     $(".rating-readonly").starRating({
         readOnly: true,
-        strokeColor: '#FFC107',
-        starShape: 'rounded',
-        emptyColor: 'transparent',
-        ratedColors: ['transparent', '#FFC107'],
+        strokeColor: 'transparent',
+        starShape: 'straight',
+        emptyColor: '#E49A00',
+        activeColor: '#E49A00',
+        hoverColor: '#E49A00',
+        ratedColor: '#E49A00',
+        ratedColors: ['#E49A00', '#E49A00', '#E49A00', '#E49A00', '#E49A00'],
         useGradient: false,
-        initialRating: 4.5
+        initialRating: 3,
+        useFullStars: true
     });
 });
 

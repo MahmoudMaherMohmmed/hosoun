@@ -167,6 +167,10 @@ ul {
   color: rgba(var(--clr-white-rgb), 0.7);
 }
 
+.text-dark-accent {
+  color: var(--clr-dark);
+}
+
 .bg-dark-accent {
   background-color: var(--clr-dark);
 }

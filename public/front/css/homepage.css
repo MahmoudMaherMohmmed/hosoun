@@ -171,44 +171,41 @@
   top: 0;
 }
 
-.boxcourse__content-star {
-  color: #f9e7c2;
-}
-.boxcourse__content-star .active {
-  color: #e49a02;
-}
 .boxcourse__thu {
   z-index: 1;
-  top: 0;
-  right: 0;
+  inset: 0;
   width: 100%;
-  height: 260px;
+  height: 26rem;
+  border-radius: 4rem;
 }
-.boxcourse__content {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
+
 .boxcourse__content,
+.boxcourse__content > div,
 .boxcourse__thu {
-  transition: 0.2s;
+  transition: all 0.2s linear;
 }
+
 .boxcourse:hover a {
-  color: #fff;
+  color: var(--clr-white);
 }
-.boxcourse:hover a:hover:not(.btn) {
-  color: #e49a02;
-}
-.boxcourse:hover .text-dark {
-  color: #e49a02 !important;
+
+.boxcourse:hover .text-dark-accent {
+  color: var(--clr-accent-2) !important;
 }
 .boxcourse:hover .boxcourse__thu {
   height: 100%;
 }
+.boxcourse__blank {
+  height: 26rem;
+}
 .boxcourse:hover .boxcourse__content {
-  padding-right: 20px;
-  padding-left: 20px;
+  padding: 0 2.4rem;
   background: linear-gradient(0deg, #0d1b23 0%, transparent 100%);
-  border-radius: 0 0 40px 40px;
+  border-radius: 0 0 4rem 4rem;
+}
+
+.boxcourse:hover .boxcourse__content > div {
+  transform: translateY(-3rem);
 }
 .boxcourse__label,
 .boxcourse__discount,
@@ -217,20 +214,21 @@
 }
 .boxcourse__label,
 .boxcourse__discount {
-  top: 20px;
+  top: 3rem;
 }
 .boxcourse__label {
-  left: 20px;
+  left: 3rem;
 }
 .boxcourse__discount {
-  right: 20px;
+  right: 3rem;
+  background-color: var(--clr-danger);
 }
-.boxcourse__buttons a:last-child {
-  width: 52px;
-  max-width: 52px;
-  flex: 0 0 52px;
-  height: 52px;
-  background-color: #eef8f7;
-  border-color: #cde3e1;
-  color: #58b6b0;
+.boxcourse__buttons .btn:last-child {
+  width: 5rem;
+  min-width: 5rem;
+  height: 5rem;
+  margin-inline-start: 1.3rem;
+  background-color: rgba(var(--clr-accent-rgb), 0.1);
+  border: 2px solid rgba(var(--clr-accent-rgb), 0.1);
+  color: var(--clr-accent);
 }

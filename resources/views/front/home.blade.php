@@ -193,7 +193,7 @@
   {{-- /Why Hosoun --}}
 
   {{-- Courses Carousel --}}
-  @if($featured_courses->isNotEmpty())
+  @if ($featured_courses->isNotEmpty())
     <section class="container">
       <div class="block-sec">
         <section class="titling">
@@ -209,11 +209,11 @@
 
         <div class="row mt-5 pt-3">
           <div class="col-sm-6 col-lg-4 mx-auto">
-            <a href="{{ route('blog.all') }}" class="btn btn-dark-outline w-100">
+            <a href="" class="btn btn-dark-outline w-100">
               <svg class="svg-resize-20 flex-shrink-0">
                 <use xlink:href="{{ asset('/front/svg/sprite.svg#arrow-circle') }}" />
               </svg>
-              {{ __('frontstaticword.SeeAllArticles') }}
+              {{ __('frontstaticword.SeeAllCourses') }}
             </a>
           </div>
         </div>

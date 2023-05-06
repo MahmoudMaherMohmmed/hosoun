@@ -6,6 +6,15 @@ $(document).ready(function () {
         margin: 16,
         responsiveClass: true,
         nav: true,
+        navText: [
+            `<svg xmlns="http://www.w3.org/2000/svg" width="6" height="12" viewBox="0 0 6 12">
+                <path id="start" d="M16,12l-6,6V6Z" transform="translate(-10 -6)" fill="#E49A00" />
+            </svg>`
+            ,
+            `<svg xmlns="http://www.w3.org/2000/svg" width="6" height="12" viewBox="0 0 6 12">
+                <path id="end" d="M10,12l6,6V6Z" transform="translate(-10 -6)" fill="#E49A00" />
+            </svg>`
+        ],
         dots: false,
         responsive: {
             0: {
