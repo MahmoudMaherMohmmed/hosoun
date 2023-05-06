@@ -119,7 +119,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-6 mt-5 mt-md-0">
+                  <div class="col-md-6 mt-5 mt-md-0 text-end">
                     <img src="{{ asset('images/slider/' . $slider['image']) }}" class="img-fluid"
                       alt="{{ $slider->heading }}">
                   </div>
@@ -150,7 +150,7 @@
         {{-- animated svg --}}
         <img src="{{ asset('front/svg/diamond-big.svg') }}" class="diamond-img big position-absolute z-n1">
         <div class="row position-relative z-0">
-          <div class="col-12 position-relative z-0 text-center mb-5 pb-3">
+          <div class="col-12 position-relative z-0 text-center mb-3 mb-lg-5 pb-3">
             {{-- animated svg --}}
             <img src="{{ asset('front/svg/diamond-small.svg') }}"
               class="diamond-img position-absolute z-n1 top-0 start-0 ms-4 d-none d-lg-inline-block">
@@ -180,9 +180,9 @@
             ];
           @endphp
           @foreach ($items as $item)
-            <div class="col-xl-4 features-item">
-              <div class="rounded-50 bg-white p-5">
-                <div class="d-flex flex-column flex-sm-row align-items-center align-items-sm-start py-3">
+            <div class="col-xl-4 features-item p-3 p-lg-4">
+              <div class="rounded-40 bg-white p-5">
+                <div class="d-flex flex-column flex-sm-row align-items-center align-items-sm-start py-lg-3">
                   <img src="{{ url('front/svg', $item['image']) }}"
                     class="features-img flex-shrink-0 mx-auto me-sm-5 ms-sm-0 mb-4" alt="feature-image">
                   <div class="d-flex flex-column align-items-center align-items-sm-start">
@@ -215,7 +215,7 @@
         </section>
 
         <div class="row mt-5 pt-3">
-          <div class="col-sm-6 col-lg-4 mx-auto">
+          <div class="col-10 col-lg-4 mx-auto">
             <a href="" class="btn btn-dark-outline w-100">
               <svg class="svg-resize-20 flex-shrink-0">
                 <use xlink:href="{{ asset('/front/svg/sprite.svg#arrow-circle') }}" />
@@ -231,7 +231,7 @@
 
 
   {{-- Banner --}}
-  <section class="container">
+  <section class="container mt-5">
     <div class="bg-accent-2-light rounded-50 position-relative z-0">
       <div class="iconshapes2">
         <img class="iconshapes__1 position-absolute z-n1 d-none d-md-inline-block"
@@ -323,11 +323,12 @@
           ];
         @endphp
         @foreach ($items as $item)
-          <section class="instructor-item text-center d-flex flex-column align-items-center justify-content-start">
+          <section
+            class="instructor-item gap-4 gap-lg-5 text-center d-flex flex-column align-items-center justify-content-start">
             <div class="teachers__bg position-relative">
               <img src="{{ url('front/img/persons', $item['img']) }}" alt="instructor-img">
             </div>
-            <span class="fs-1 fw-bold">{{ $item['title'] }}</span>
+            <span class="name fw-bold">{{ $item['title'] }}</span>
             <div class="title text-accent fw-medium">
               مدرس لغة عربية
             </div>
@@ -408,7 +409,7 @@
       </section>
 
       <div class="row mt-5 pt-3">
-        <div class="col-sm-6 col-lg-4 mx-auto">
+        <div class="col-10 col-lg-4 mx-auto">
           <a href="" class="btn btn-white-outline w-100">
             <svg class="svg-resize-20 flex-shrink-0">
               <use xlink:href="{{ asset('/front/svg/sprite.svg#arrow-circle') }}" />
@@ -419,8 +420,8 @@
       </div>
 
       {{-- animations --}}
-      <img src="{{ asset('front/svg/lines.svg') }}" class="lines">
-      <img src="{{ asset('front/svg/lines.svg') }}" class="lines">
+      <img src="{{ asset('front/svg/lines.svg') }}" class="lines d-none d-sm-inline-block">
+      <img src="{{ asset('front/svg/lines.svg') }}" class="lines d-none d-sm-inline-block">
     </div>
   </section>
   {{-- /BooksSections --}}
@@ -442,7 +443,7 @@
         </section>
 
         <div class="row mt-5 pt-3">
-          <div class="col-sm-6 col-lg-4 mx-auto">
+          <div class="col-10 col-lg-4 mx-auto">
             <a href="{{ route('blog.all') }}" class="btn btn-dark-outline w-100">
               <svg class="svg-resize-20 flex-shrink-0">
                 <use xlink:href="{{ asset('/front/svg/sprite.svg#arrow-circle') }}" />
@@ -472,8 +473,8 @@
             $items = ['حفظ', 'تصحيح تلاوة', 'إجازات', 'قراءات', 'تجويد'];
           @endphp
           @foreach ($items as $item)
-            <div class="col-4 col-lg p-3">
-              <div class="boxpath bg-white text-center">
+            <div class="col-4 col-lg p-2 p-sm-3">
+              <div class="boxpath h-100 bg-white text-center">
                 <div class="boxpath__number mb-4"></div>
                 <p class="title">
                   {{ $item }}
