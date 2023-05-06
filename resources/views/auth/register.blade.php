@@ -100,22 +100,6 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="national_id" class="form-label">{{ __('frontstaticword.nationalID') }}</label>
-              <div class="form-group-icon">
-                <input type="number" name="national_id" id="national_id"
-                  class="form-control {{ $errors->has('national_id') ? ' is-invalid' : '' }}"
-                  placeholder="{{ __('frontstaticword.nationalID') }}" value="{{ old('national_id') }}">
-                <svg class="svg-default form-control-icon">
-                  <use xlink:href="{{ asset('/front/svg/sprite.svg#profile') }}" />
-                </svg>
-                @if ($errors->has('national_id'))
-                  <span class="invalid-feedback" role="alert">
-                    <strong>{{ $errors->first('national_id') }}</strong>
-                  </span>
-                @endif
-              </div>
-            </div>
-            <div class="form-group">
               <label for="academic_qualification"
                 class="form-label">{{ __('frontstaticword.AcademicQualification') }}</label>
               <div class="form-group-icon">

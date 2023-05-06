@@ -64,7 +64,6 @@ class RegisterController extends Controller
                 'g-recaptcha-response' => 'required|captcha',
                 'mobile' => ['required', 'regex:/^([0-9\s\-\+\(\)]*)$/', 'max:17'],
                 'nationality' => ['required', 'integer'],
-                'national_id' => ['required'],
                 'academic_qualification' => ['required', 'integer'], 
                 'term' => 'required',
             ], [], trans('frontstaticword'));
@@ -78,7 +77,6 @@ class RegisterController extends Controller
                 'password' => ['required', 'string', 'min:6', 'confirmed'],
                 'mobile' => ['required', 'regex:/^([0-9\s\-\+\(\)]*)$/', 'max:17'],
                 'nationality' => ['required', 'integer'],
-                'national_id' => ['required'],
                 'academic_qualification' => ['required', 'integer'],
                 'term' => 'required',
             ], [], trans('frontstaticword'));
@@ -124,7 +122,6 @@ class RegisterController extends Controller
             'email_verified_at'  => $verified,
             'password' => Hash::make($data['password']),
             'nationality' => $data['nationality'],
-            'national_id' => $data['national_id'],
             'academic_qualification' => $data['academic_qualification'],
         ]);
 
