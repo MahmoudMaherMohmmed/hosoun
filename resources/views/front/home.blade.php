@@ -307,7 +307,11 @@
               </a>
             </span>
             <div class="title text-accent fw-medium">
-              مدرس لغة عربية
+              @if ($instructor->detail != null)
+                {!! $instructor->detail !!}
+              @else
+                مدرب
+              @endif
             </div>
           </section>
         @endforeach
