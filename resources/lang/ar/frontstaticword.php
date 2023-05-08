@@ -140,7 +140,7 @@ return array(
   'Play' => 'تشغيل',
   'link' => 'ربط',
   'Aboutthiscourse' => 'معلومات عن هذه الدورة',
-  'Instructor' => 'مدرب',
+  'Instructor' => 'معلم',
   'Instructors' => 'المعلمين',
   'InstructorsSubtitle' => 'أفضل الكوادر العلمية من كل المدربين المميزين على منصة حصون التعليمية',
   'Section' => 'الجزء',

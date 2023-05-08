@@ -310,7 +310,7 @@
               @if ($instructor->detail != null)
                 {!! $instructor->detail !!}
               @else
-                مدرب
+                {{ __('frontstaticword.Instructor') }}
               @endif
             </div>
           </section>
