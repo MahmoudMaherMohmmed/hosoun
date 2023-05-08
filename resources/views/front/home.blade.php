@@ -91,7 +91,7 @@
   </header>
 
   {{-- Home Carousel --}}
-  @if (!$sliders->isEmpty())
+  @if ($sliders->isNotEmpty())
     <section id="homeCarousel" class="carousel slide carousel-fade mt-5 pt-3" data-bs-ride="carousel">
       <div class="container">
         <section class="carousel-inner">
@@ -274,6 +274,7 @@
 
 
   {{-- InstructorsSections --}}
+  @if ($instructors->isNotEmpty())
   <section class="block-sec">
     <div class="container">
       <section class="titling">
@@ -286,49 +287,25 @@
       </section>
 
       <section class="instructors-carousel owl-carousel owl-theme">
-        @php
-          $items = [
-              [
-                  'img' => 'person-1.png',
-                  'title' => 'أ / أحمد منير',
-              ],
-              [
-                  'img' => 'person-2.png',
-                  'title' => 'أ / كريم عصام الدين',
-              ],
-              [
-                  'img' => 'person-3.png',
-                  'title' => 'أ / محمود خليل',
-              ],
-              [
-                  'img' => 'person-4.png',
-                  'title' => 'أ / عمر علي',
-              ],
-              [
-                  'img' => 'person-1.png',
-                  'title' => 'أ / أحمد منير',
-              ],
-              [
-                  'img' => 'person-2.png',
-                  'title' => 'أ / كريم عصام الدين',
-              ],
-              [
-                  'img' => 'person-3.png',
-                  'title' => 'أ / محمود خليل',
-              ],
-              [
-                  'img' => 'person-4.png',
-                  'title' => 'أ / عمر علي',
-              ],
-          ];
-        @endphp
-        @foreach ($items as $item)
+        @foreach ($instructors as $instructor)
+          @php
+            $fullname = isset($instructor->fname) . ' ' . isset($instructor->lname);
+            $fullname = preg_replace('/\s+/', '', $fullname);
+          @endphp
           <section
             class="instructor-item gap-4 gap-lg-5 text-center d-flex flex-column align-items-center justify-content-start">
             <div class="teachers__bg position-relative">
-              <img src="{{ url('front/img/persons', $item['img']) }}" alt="instructor-img">
+              @if ($instructor->user_img != null || $instructor->user_img != '')
+                <img src="{{ asset('images/user_img/' . $instructor->user_img) }}" alt="{{ $instructor->fname }} {{ $instructor->lname }}">
+              @else
+                <img src="{{ asset('images/default/instructor.png') }}" alt="{{ $instructor->fname }} {{ $instructor->lname }}">
+              @endif
             </div>
-            <span class="name fw-bold">{{ $item['title'] }}</span>
+            <span class="name fw-bold">
+              <a href="{{ route('instructor.profile', ['id' => $instructor->id, 'name' => $fullname]) }}" title="{{ $instructor->fname }} {{ $instructor->lname }}">
+                {{ $instructor->fname }} {{ $instructor->lname }}
+              </a>
+            </span>
             <div class="title text-accent fw-medium">
               مدرس لغة عربية
             </div>
@@ -337,6 +314,7 @@
       </section>
     </div>
   </section>
+  @endif
   {{-- /InstructorsSections --}}
 
 
@@ -428,7 +406,7 @@
 
 
   {{-- Blog Carousel --}}
-  @if (!$blogs->isEmpty())
+  @if ($blogs->isNotEmpty())
     <section class="container">
       <div class="block-sec">
         <section class="titling">

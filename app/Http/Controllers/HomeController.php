@@ -10,6 +10,7 @@ use App\Course;
 use App\Testimonial;
 use App\Trusted;
 use App\Blog;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -39,6 +40,7 @@ class HomeController extends Controller
         $testi = Testimonial::where('status', 1)->orderBy('created_at', 'DESC')->get();
         $trusted = Trusted::where('status', 1)->orderBy('created_at', 'DESC')->get();
         $currency = Currency::first();
+        $instructors = User::where('role', 'instructor')->where('status', 1)->get();
 
         /*
         $category = Categories::orderBy('position', 'ASC')->get();
@@ -102,7 +104,7 @@ class HomeController extends Controller
         $total_count=$counter;
         */
 
-        return view('front.home', compact('sliders', 'featured_categories', 'featured_courses', 'facts', 'recent_courses', 'blogs', 'testi', 'trusted', 'currency'));
+        return view('front.home', compact('sliders', 'featured_categories', 'featured_courses', 'facts', 'recent_courses', 'blogs', 'testi', 'trusted', 'currency', 'instructors'));
     }
 
     public function beInstructor()
