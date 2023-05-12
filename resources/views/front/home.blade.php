@@ -446,23 +446,50 @@
     <div class="container">
       <div class="boxpath__bg px-5 rounded-50" style="background-image: url('front/img/slidersection.png');">
         <p class="sec-title mb-0 block-sec pb-5">
-          <span class="text-accent-2">مسار</span>
-          حفظ القرآن الكريم
+          <span class="text-accent-2">{{ __('hosoun.path') }}</span>
+          {{ __('hosoun.memorizeQuran') }}
         </p>
       </div>
       <section class="px-5">
         <div class="row boxpath__items position-relative justify-content-center">
           @php
-            $items = ['حفظ', 'تصحيح تلاوة', 'إجازات', 'قراءات', 'تجويد'];
+            $items = [
+                [
+                    'name' => __('hosoun.memorize'),
+                    'url' => '/memorize',
+                    'title' => __('hosoun.registerToMemorizePath'),
+                ],
+                [
+                    'name' => __('hosoun.telawa'),
+                    'url' => '/telawa',
+                    'title' => __('hosoun.registerToTelawaPath'),
+                ],
+                [
+                    'name' => __('hosoun.ejazat'),
+                    'url' => '/ejazat',
+                    'title' => __('hosoun.registerToEjazatPath'),
+                ],
+                [
+                    'name' => __('hosoun.keraat'),
+                    'url' => '/keraat',
+                    'title' => __('hosoun.registerToKeraatPath'),
+                ],
+                [
+                    'name' => __('hosoun.tajwed'),
+                    'url' => '/tajwed',
+                    'title' => __('hosoun.registerToTajwedPath'),
+                ],
+            ];
           @endphp
           @foreach ($items as $item)
             <div class="col-4 col-lg p-2 p-sm-3">
-              <div class="boxpath h-100 bg-white text-center">
+              <a href="{{ url($item['url']) }}" class="boxpath d-block h-100 bg-white text-center"
+                title="{{ $item['title'] }}">
                 <div class="boxpath__number mb-4"></div>
                 <p class="title">
-                  {{ $item }}
+                  {{ $item['name'] }}
                 </p>
-              </div>
+              </a>
             </div>
           @endforeach
         </div>

@@ -774,3 +774,11 @@ Route::delete('delete-meeting/{id}', 'JitsiController@deletemeeting')->name('del
 Route::get('jitsi/detail/{id}', 'JitsiController@jitsidetailpage')->name('jitsipage.detail');
 // ====== jisti meeting end =============
 
+
+
+
+
+// Learning path forms
+Route::get('/memorize', function () {
+    return view('front.quran.memorize');
+});

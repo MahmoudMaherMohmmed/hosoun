@@ -511,8 +511,8 @@ svg {
 
 @media only screen and (min-width: 576px) {
   .logo {
-    width: 15rem;
-    height: 8rem;
+    width: 14rem;
+    height: 7.5rem;
   }
 }
 
@@ -700,7 +700,7 @@ textarea.form-control {
 
 .form-group-icon .form-control-icon {
   position: absolute;
-  z-index: 1;
+  z-index: 100000;
   top: 1.25rem;
   right: 2rem;
 }
@@ -1070,7 +1070,7 @@ input {
 }
 
 .navbar-nav {
-  grid-gap: 3rem;
+  grid-gap: 2.4rem;
 }
 
 /* .navbar-nav .nav-item.dropdown .dropdown-toggle::after {
@@ -1080,6 +1080,7 @@ input {
 .navbar-nav .nav-link {
   font-size: 1.6rem;
   font-weight: 500;
+  color: var(--clr-black);
   /* margin: 0 1.5rem; */
 }
 

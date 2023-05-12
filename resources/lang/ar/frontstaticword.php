@@ -260,7 +260,7 @@ return array(
   'UpdatePassword' => 'تحديث كلمة السر',
   'AuthorBio' => 'مؤلف السيرة الذاتية',
   'SelectanOption' => 'حدد اختيارا',
-  'DateofBirth' => 'تاريخ الولادة',
+  'DateofBirth' => 'تاريخ الميلاد',
   'ChooseGender' => 'اختر الجنس',
   'Country' => 'الدولة',
   'State' => 'الولاية',
