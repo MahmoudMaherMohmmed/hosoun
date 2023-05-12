@@ -92,43 +92,37 @@
 
   {{-- Home Carousel --}}
   @if ($sliders->isNotEmpty())
-    <section id="homeCarousel" class="carousel slide carousel-fade mt-5 pt-3" data-bs-ride="carousel">
-      <div class="container">
-        <section class="carousel-inner">
-          <div class="d-flex mt-md-5 pt-md-5 ">
-            @foreach ($sliders as $slider)
-              <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="carousel-caption text-black">
-                      <div class="content">
-                        @if ($slider->heading != null)
-                          <h5 class="caption-title">{{ $slider->heading }}</h5>
-                        @endif
-                        @if ($slider->detail != null)
-                          <p class="caption-text">{{ $slider->detail }}</p>
-                        @endif
-                        @if ($slider->button_text != null && $slider->button_url != null)
-                          <a href="{{ url($slider->button_url) }}" class="btn btn-accent">
-                            <svg class="svg-resize-20 svg-fill-white flex-shrink-0">
-                              <use xlink:href="{{ asset('/front/svg/sprite.svg#arrow-circle') }}" />
-                            </svg>
-                            {{ $slider->button_text }}
-                          </a>
-                        @endif
-                      </div>
+    <section class="container mt-5 pt-3">
+      <div class="row mt-lg-5 pt-lg-5">
+        <div class="col-lg-6 d-flex flex-column">
+          <section id="homeCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <section class="carousel-inner">
+              @foreach ($sliders as $slider)
+                <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                  <div class="carousel-caption text-black">
+                    <div class="content">
+                      @if ($slider->heading != null)
+                        <h5 class="caption-title">{{ $slider->heading }}</h5>
+                      @endif
+                      @if ($slider->detail != null)
+                        <p class="caption-text">{{ $slider->detail }}</p>
+                      @endif
+                      @if ($slider->button_text != null && $slider->button_url != null)
+                        <a href="{{ url($slider->button_url) }}" class="btn btn-accent">
+                          <svg class="svg-resize-20 svg-fill-white flex-shrink-0">
+                            <use xlink:href="{{ asset('/front/svg/sprite.svg#arrow-circle') }}" />
+                          </svg>
+                          {{ $slider->button_text }}
+                        </a>
+                      @endif
                     </div>
                   </div>
-                  <div class="col-md-6 mt-5 mt-md-0 text-end">
-                    <img src="{{ asset('images/slider/' . $slider['image']) }}" class="img-fluid"
-                      alt="{{ $slider->heading }}">
-                  </div>
                 </div>
-              </div>
-            @endforeach
-          </div>
+              @endforeach
+            </section>
+          </section>
           {{-- Next/Prev --}}
-          <section class="carousel-controls mt-5 mt-lg-0">
+          <section class="carousel-controls mt-5 mt-lg-auto">
             <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             </button>
@@ -136,7 +130,11 @@
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
             </button>
           </section>
-        </section>
+        </div>
+        {{-- Home Carousel image --}}
+        <div class="col-lg-6 mt-5 mt-lg-0 text-end">
+          <img src="{{ asset('front/img/home-slider-img.svg') }}" class="img-fluid" alt="{{ $slider->heading }}">
+        </div>
       </div>
     </section>
   @endif
@@ -144,12 +142,12 @@
 
 
   {{-- Why Hosoun --}}
-  <section class="block-sec">
+  <section class="block-sec pb-0">
     <div class="container">
-      <section class="bg-accent-gradient px-5 block-sec rounded-50 overflow-hidden position-relative z-0">
+      <section class="bg-accent-gradient p-5 rounded-50 overflow-hidden position-relative z-0">
         {{-- animated svg --}}
         <img src="{{ asset('front/svg/diamond-big.svg') }}" class="diamond-img big position-absolute z-n1">
-        <div class="row position-relative z-0">
+        <div class="row position-relative z-0 p-4">
           <div class="col-12 position-relative z-0 text-center mb-3 mb-lg-5 pb-3">
             {{-- animated svg --}}
             <img src="{{ asset('front/svg/diamond-small.svg') }}"
@@ -275,49 +273,52 @@
 
   {{-- InstructorsSections --}}
   @if ($instructors->isNotEmpty())
-  <section class="block-sec">
-    <div class="container">
-      <section class="titling">
-        <h3 class="sec-title">
-          {{ __('frontstaticword.Instructors') }}
-        </h3>
-        <p class="text-dim">
-          {{ __('frontstaticword.InstructorsSubtitle') }}
-        </p>
-      </section>
+    <section class="block-sec">
+      <div class="container">
+        <section class="titling">
+          <h3 class="sec-title">
+            {{ __('frontstaticword.Instructors') }}
+          </h3>
+          <p class="text-dim">
+            {{ __('frontstaticword.InstructorsSubtitle') }}
+          </p>
+        </section>
 
-      <section class="instructors-carousel owl-carousel owl-theme">
-        @foreach ($instructors as $instructor)
-          @php
-            $fullname = isset($instructor->fname) . ' ' . isset($instructor->lname);
-            $fullname = preg_replace('/\s+/', '', $fullname);
-          @endphp
-          <section
-            class="instructor-item gap-4 gap-lg-5 text-center d-flex flex-column align-items-center justify-content-start">
-            <div class="teachers__bg position-relative">
-              @if ($instructor->user_img != null || $instructor->user_img != '')
-                <img src="{{ asset('images/user_img/' . $instructor->user_img) }}" alt="{{ $instructor->fname }} {{ $instructor->lname }}">
-              @else
-                <img src="{{ asset('images/default/instructor.png') }}" alt="{{ $instructor->fname }} {{ $instructor->lname }}">
-              @endif
-            </div>
-            <span class="name fw-bold">
-              <a href="{{ route('instructor.profile', ['id' => $instructor->id, 'name' => $fullname]) }}" title="{{ $instructor->fname }} {{ $instructor->lname }}">
-                {{ $instructor->fname }} {{ $instructor->lname }}
-              </a>
-            </span>
-            <div class="title text-accent fw-medium">
-              @if ($instructor->detail != null)
-                {!! $instructor->detail !!}
-              @else
-                {{ __('frontstaticword.Instructor') }}
-              @endif
-            </div>
-          </section>
-        @endforeach
-      </section>
-    </div>
-  </section>
+        <section class="instructors-carousel owl-carousel owl-theme">
+          @foreach ($instructors as $instructor)
+            @php
+              $fullname = isset($instructor->fname) . ' ' . isset($instructor->lname);
+              $fullname = preg_replace('/\s+/', '', $fullname);
+            @endphp
+            <section
+              class="instructor-item gap-4 gap-lg-5 text-center d-flex flex-column align-items-center justify-content-start">
+              <div class="teachers__bg position-relative">
+                @if ($instructor->user_img != null || $instructor->user_img != '')
+                  <img src="{{ asset('images/user_img/' . $instructor->user_img) }}"
+                    alt="{{ $instructor->fname }} {{ $instructor->lname }}">
+                @else
+                  <img src="{{ asset('images/default/instructor.png') }}"
+                    alt="{{ $instructor->fname }} {{ $instructor->lname }}">
+                @endif
+              </div>
+              <span class="name fw-bold">
+                <a href="{{ route('instructor.profile', ['id' => $instructor->id, 'name' => $fullname]) }}"
+                  title="{{ $instructor->fname }} {{ $instructor->lname }}">
+                  {{ $instructor->fname }} {{ $instructor->lname }}
+                </a>
+              </span>
+              <div class="title text-accent fw-medium">
+                @if ($instructor->detail != null)
+                  {!! $instructor->detail !!}
+                @else
+                  {{ __('frontstaticword.Instructor') }}
+                @endif
+              </div>
+            </section>
+          @endforeach
+        </section>
+      </div>
+    </section>
   @endif
   {{-- /InstructorsSections --}}
 
@@ -441,7 +442,7 @@
 
 
   {{-- LearningPath --}}
-  <section class="block-sec">
+  <section class="block-sec pt-0">
     <div class="container">
       <div class="boxpath__bg px-5 rounded-50" style="background-image: url('front/img/slidersection.png');">
         <p class="sec-title mb-0 block-sec pb-5">

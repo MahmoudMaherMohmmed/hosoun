@@ -1,3 +1,15 @@
+// Fixed navbar
+$(window).on("scroll", function () {
+    const nav = $(".navbar");
+    let windscroll = $(window).scrollTop();
+    if (windscroll >= nav.height()) {
+        nav.addClass("fixed-top bg-white shadow-sm");
+    } else {
+        nav.removeClass("fixed-top bg-white shadow-sm");
+    }
+});
+
+
 // nested dropdown
 document.addEventListener("DOMContentLoaded", function () {
     // make it as accordion for smaller screens

@@ -15,28 +15,30 @@
         <div class="col-12 text-center">
           <h2 class="title-25 mb-5 pb-5">{{ __('frontstaticword.KeepinTouch') }}</h2>
         </div>
-        <div class="col-md-6 mb-5 mb-md-0">
-          @if($gsetting->map_enable == 'map')
-              {{-- GoogleMapsLocation --}}
-              <div id="location" class="w-100 h-100 bg-light main-block" style="min-height: 50rem">
-                {{-- Google Maps API key is required to render map --}}
-              </div>
-              {{-- GoogleMapsLocation --}}
-          @elseif($gsetting->map_enable == 'image')
-              <img src="{{ asset('images/contact/'.$gsetting->contact_image) }}" class="img-fluid">
-          @endif
+        <div class="col-lg-6 mb-5 mb-lg-0 px-5 align-self-center text-center">
+          <img src="{{ asset('/front/img/logo.svg') }}" class="img-fluid px-5 mb-5">
+          {{-- @if ($gsetting->map_enable == 'map') --}}
+          {{-- GoogleMapsLocation --}}
+          {{-- <div id="location" class="w-100 h-100 bg-light main-block" style="min-height: 50rem"> --}}
+          {{-- Google Maps API key is required to render map --}}
+          {{-- </div> --}}
+          {{-- GoogleMapsLocation --}}
+          {{-- @elseif($gsetting->map_enable == 'image') --}}
+          {{-- <img src="{{ asset('images/contact/'.$gsetting->contact_image) }}" class="img-fluid"> --}}
+          {{-- @endif --}}
         </div>
-        <div class="col-md-6 ps-md-5">
+        <div class="col-lg-6 ps-lg-5">
           @include('admin.message')
-          <form method="post" action="{{ route('contact.user') }}" class="ms-md-3">
+          <form method="post" action="{{ route('contact.user') }}" class="ms-lg-3">
             @csrf
-            @if(Auth::check())
-            <input type="hidden" name="user_id"  value="{{Auth::User()->id}}" />
+            @if (Auth::check())
+              <input type="hidden" name="user_id" value="{{ Auth::User()->id }}" />
             @endif
             <div class="form-group">
               <label for="fname" class="form-label">{{ __('frontstaticword.Name') }}</label>
               <div class="form-group-icon">
-                <input type="text" name="fname" id="fname" class="form-control" placeholder="{{ __('frontstaticword.Name') }}">
+                <input type="text" name="fname" id="fname" class="form-control"
+                  placeholder="{{ __('frontstaticword.Name') }}">
                 <svg class="svg-default form-control-icon">
                   <use xlink:href="{{ asset('/front/svg/sprite.svg#profile') }}" />
                 </svg>
@@ -45,7 +47,8 @@
             <div class="form-group">
               <label for="email" class="form-label">{{ __('frontstaticword.Email') }}</label>
               <div class="form-group-icon">
-                <input type="email" name="email" id="email" class="form-control" placeholder="{{ __('frontstaticword.Email') }}">
+                <input type="email" name="email" id="email" class="form-control"
+                  placeholder="{{ __('frontstaticword.Email') }}">
                 <svg class="svg-default form-control-icon">
                   <use xlink:href="{{ asset('/front/svg/sprite.svg#sms') }}" />
                 </svg>
@@ -54,7 +57,8 @@
             <div class="form-group">
               <label for="mobile" class="form-label">{{ __('frontstaticword.Mobile') }}</label>
               <div class="form-group-icon">
-                <input type="text" name="mobile" id="mobile" class="form-control" placeholder="{{ __('frontstaticword.Mobile') }}">
+                <input type="text" name="mobile" id="mobile" class="form-control"
+                  placeholder="{{ __('frontstaticword.Mobile') }}">
                 <svg class="svg-default form-control-icon">
                   <use xlink:href="{{ asset('/front/svg/sprite.svg#mobile') }}" />
                 </svg>
@@ -62,18 +66,19 @@
             </div>
             <div class="form-group">
               <label for="message" class="form-label">{{ __('frontstaticword.YourMessage') }}</label>
-              <textarea name="message" id="message" class="form-control" style="padding-inline-start: 2rem" placeholder="{{ __('frontstaticword.YourMessage') }}"></textarea>
+              <textarea name="message" id="message" class="form-control" style="padding-inline-start: 2rem"
+                placeholder="{{ __('frontstaticword.YourMessage') }}"></textarea>
             </div>
-            @if($gsetting->captcha_enable == 1)
-                <div class="{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
-                    {!! app('captcha')->display() !!}
-                    @if ($errors->has('g-recaptcha-response'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
-                        </span>
-                    @endif
-                </div>
-                <br>
+            @if ($gsetting->captcha_enable == 1)
+              <div class="{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
+                {!! app('captcha')->display() !!}
+                @if ($errors->has('g-recaptcha-response'))
+                  <span class="help-block">
+                    <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                  </span>
+                @endif
+              </div>
+              <br>
             @endif
             <button type="submit" class="btn btn-accent w-100 mt-5">{{ __('frontstaticword.Message') }}</button>
           </form>
@@ -117,31 +122,111 @@
 @endsection
 
 @section('custom-script')
-<script>
-  jQuery(function($) {
-    var script = document.createElement('script');
-    script.src = "https://maps.googleapis.com/maps/api/js?key={{ $gsetting['map_api'] }}&libraries=places&callback=initialize";
-    
-    document.body.appendChild(script);
-  });
-  function initialize(){
-    var myLatLng = {lat: {{ $gsetting['map_lat'] }}, lng: {{ $gsetting['map_long'] }}}; // Insert Your Latitude and Longitude For Footer Wiget Map
-    var mapOptions = {
-      center: myLatLng, 
-      zoom: 15,
-      disableDefaultUI: true,
-      scrollwheel: false,
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
-      styles: [{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}]     
+  <script>
+    jQuery(function($) {
+      var script = document.createElement('script');
+      script.src =
+        "https://maps.googleapis.com/maps/api/js?key={{ $gsetting['map_api'] }}&libraries=places&callback=initialize";
+
+      document.body.appendChild(script);
+    });
+
+    function initialize() {
+      var myLatLng = {
+        lat: {{ $gsetting['map_lat'] }},
+        lng: {{ $gsetting['map_long'] }}
+      }; // Insert Your Latitude and Longitude For Footer Wiget Map
+      var mapOptions = {
+        center: myLatLng,
+        zoom: 15,
+        disableDefaultUI: true,
+        scrollwheel: false,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        styles: [{
+          "featureType": "landscape",
+          "stylers": [{
+            "saturation": -100
+          }, {
+            "lightness": 65
+          }, {
+            "visibility": "on"
+          }]
+        }, {
+          "featureType": "poi",
+          "stylers": [{
+            "saturation": -100
+          }, {
+            "lightness": 51
+          }, {
+            "visibility": "simplified"
+          }]
+        }, {
+          "featureType": "road.highway",
+          "stylers": [{
+            "saturation": -100
+          }, {
+            "visibility": "simplified"
+          }]
+        }, {
+          "featureType": "road.arterial",
+          "stylers": [{
+            "saturation": -100
+          }, {
+            "lightness": 30
+          }, {
+            "visibility": "on"
+          }]
+        }, {
+          "featureType": "road.local",
+          "stylers": [{
+            "saturation": -100
+          }, {
+            "lightness": 40
+          }, {
+            "visibility": "on"
+          }]
+        }, {
+          "featureType": "transit",
+          "stylers": [{
+            "saturation": -100
+          }, {
+            "visibility": "simplified"
+          }]
+        }, {
+          "featureType": "administrative.province",
+          "stylers": [{
+            "visibility": "off"
+          }]
+        }, {
+          "featureType": "water",
+          "elementType": "labels",
+          "stylers": [{
+            "visibility": "on"
+          }, {
+            "lightness": -25
+          }, {
+            "saturation": -100
+          }]
+        }, {
+          "featureType": "water",
+          "elementType": "geometry",
+          "stylers": [{
+            "hue": "#ffff00"
+          }, {
+            "lightness": -25
+          }, {
+            "saturation": -97
+          }]
+        }]
+      }
+      // For Footer Widget Map
+      var map = new google.maps.Map(document.getElementById("location"), mapOptions);
+      var image = 'images/icons/map.png';
+      var beachMarker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        icon: image
+      });
     }
-    // For Footer Widget Map
-    var map = new google.maps.Map(document.getElementById("location"), mapOptions);
-    var image = 'images/icons/map.png';
-    var beachMarker = new google.maps.Marker({
-      position: myLatLng, 
-      map: map,   
-      icon: image
-    });    
-  }
-</script>
+  </script>
 @endsection

@@ -78,7 +78,7 @@
     <div class="container">
       <div class="row align-items-end justify-content-between mb-4">
         <div class="col-12 col-lg-auto bg-dark-accent rounded-4">
-          <div class="d-lg-flex align-items-center p-5 p-lg-0">
+          <div class="d-lg-flex align-items-center p-4 p-lg-0">
             @php
               $social_links = App\SocialLink::where('status', 1)
                   ->latest()
@@ -99,7 +99,7 @@
             @endif
           </div>
         </div>
-        <div class="col-12 col-lg-auto p-5 p-lg-0 pb-lg-3 bg-accent rounded-4 mt-3 mt-lg-0">
+        <div class="col-12 col-lg-auto p-4 p-lg-0 pb-lg-3 bg-accent rounded-4 mt-4 mt-lg-0">
           <div class="border-bottom pb-4 mb-4">
             <div class="d-flex align-items-center justify-content-between">
               <p class="mb-0 line-13 text-white">
