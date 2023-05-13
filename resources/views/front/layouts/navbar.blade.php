@@ -31,7 +31,7 @@
 
       @auth
         @include('front.layouts.navbar.user')
-        <a href="{{ route('wishlist.show') }}" class="btn btn-accent2 nav-btn ms-3">
+        <a href="{{ route('wishlist.show') }}" class="btn btn-accent2 nav-btn ms-3" title="Go to wishlist page">
           <svg class="svg-resize-24 svg-fill-white">
             <use xlink:href="{{ asset('/front/svg/sprite.svg#heart-fill') }}" />
           </svg>

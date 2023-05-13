@@ -77,7 +77,7 @@
             <div
               class="position-absolute top-50 translate-middle-y d-flex align-items-center justify-content-center px-4 border-end">
               <button class="bg-transparent border-0 px-2" type="submit">
-                <svg class="svg-resize-24 svg-fill-accent flex-shrink-0">
+                <svg class="svg-resize-24 svg-fill-accent flex-shrink-0" title="search">
                   <use xlink:href="{{ asset('/front/svg/sprite.svg#search-bold') }}" />
                 </svg>
               </button>
@@ -123,10 +123,12 @@
           </section>
           {{-- Next/Prev --}}
           <section class="carousel-controls mt-5 mt-lg-auto">
-            <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev"
+              title="Previous slide">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next"
+              title="Next slide">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
             </button>
           </section>
@@ -146,12 +148,13 @@
     <div class="container">
       <section class="bg-accent-gradient p-5 rounded-50 overflow-hidden position-relative z-0">
         {{-- animated svg --}}
-        <img src="{{ asset('front/svg/diamond-big.svg') }}" class="diamond-img big position-absolute z-n1">
+        <img src="{{ asset('front/svg/diamond-big.svg') }}" class="diamond-img big position-absolute z-n1"
+          alt="big-animated-svg">
         <div class="row position-relative z-0 p-4">
           <div class="col-12 position-relative z-0 text-center mb-3 mb-lg-5 pb-3">
             {{-- animated svg --}}
             <img src="{{ asset('front/svg/diamond-small.svg') }}"
-              class="diamond-img position-absolute z-n1 top-0 start-0 ms-4 d-none d-lg-inline-block">
+              class="diamond-img position-absolute z-n1 top-0 start-0 ms-4 d-none d-lg-inline-block" alt="animated-svg">
             {{-- Section title --}}
             <h3 class="sec-title text-white">لماذا تختار حصون؟</h3>
             <p class="text-white-70">
@@ -214,7 +217,7 @@
 
         <div class="row mt-5 pt-3">
           <div class="col-10 col-lg-4 mx-auto">
-            <a href="" class="btn btn-dark-outline w-100">
+            <a href="{{ url('') }}" class="btn btn-dark-outline w-100">
               <svg class="svg-resize-20 flex-shrink-0">
                 <use xlink:href="{{ asset('/front/svg/sprite.svg#arrow-circle') }}" />
               </svg>
@@ -233,14 +236,14 @@
     <div class="bg-accent-2-light rounded-50 position-relative z-0">
       <div class="iconshapes2">
         <img class="iconshapes__1 position-absolute z-n1 d-none d-md-inline-block"
-          src="{{ asset('front/img/iconshape-4.png') }}" alt="">
+          src="{{ asset('front/img/iconshape-4.png') }}" alt="bg-img">
         <img class="iconshapes__2 position-absolute z-n1" src="{{ asset('front/img/iconshape-3.png') }}"
-          alt="">
+          alt="bg-img">
       </div>
       <div class="row align-items-center justify-content-center">
         <div class="col-lg-6 align-self-end mb-4 mb-lg-0">
           <img class="img-fluid d-block mx-auto" src="{{ asset('front/img/img-2.svg') }}"
-            style="transform:translateY(-3rem); margin-bottom: -3rem">
+            style="transform:translateY(-3rem); margin-bottom: -3rem" alt="banner-img">
         </div>
         <div class="col-lg-6 block-sec py-5">
           <div class="p-5 text-center text-lg-start">
@@ -393,7 +396,7 @@
 
       <div class="row mt-5 pt-3">
         <div class="col-10 col-lg-4 mx-auto">
-          <a href="" class="btn btn-white-outline w-100">
+          <a href="{{ url('') }}" class="btn btn-white-outline w-100">
             <svg class="svg-resize-20 flex-shrink-0">
               <use xlink:href="{{ asset('/front/svg/sprite.svg#arrow-circle') }}" />
             </svg>
@@ -403,8 +406,8 @@
       </div>
 
       {{-- animations --}}
-      <img src="{{ asset('front/svg/lines.svg') }}" class="lines d-none d-sm-inline-block">
-      <img src="{{ asset('front/svg/lines.svg') }}" class="lines d-none d-sm-inline-block">
+      <img src="{{ asset('front/svg/lines.svg') }}" class="lines d-none d-sm-inline-block" alt="bg-img">
+      <img src="{{ asset('front/svg/lines.svg') }}" class="lines d-none d-sm-inline-block" alt="bg-img">
     </div>
   </section>
   {{-- /BooksSections --}}

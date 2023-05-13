@@ -54,7 +54,7 @@ $(document).ready(function () {
     });
 
     $('input[type="tel"]').intlTelInput({
-        initialCountry: 'sa',
+        initialCountry: 'eg',
         separateDialCode: true
     });
 
@@ -71,6 +71,8 @@ $(document).ready(function () {
         initialRating: 3,
         useFullStars: true
     });
+
+    $("[type='datetime-local']").flatpickr();
 });
 
 function previewFile(el) {

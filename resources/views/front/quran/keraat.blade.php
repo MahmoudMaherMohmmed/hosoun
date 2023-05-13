@@ -2,12 +2,12 @@
 @section('css')
 @endsection
 @section('title')
-  {{ __('hosoun.registerToMemorizePath') }}
+  {{ __('hosoun.registerToKeraatPath') }}
 @endsection
 
 @section('content')
   @include('front.layouts.page_header', [
-      'title' => __('hosoun.registerToMemorizePath'),
+      'title' => __('hosoun.registerToKeraatPath'),
   ])
   <section class="block-sec">
     <div class="container">
@@ -34,10 +34,8 @@
                   <input type="datetime-local" name="birthdate" id="birthdate" class="form-control"
                     placeholder="{{ __('frontstaticword.DateofBirth') }}" value="" required>
                   <i class="isax isax-calendar-2"></i>
-
                 </div>
               </div>
-
 
               <div class="form-group">
                 <label for="country" class="form-label">
@@ -52,7 +50,6 @@
                     <option value="2">option3</option>
                   </select>
                   <i class="isax isax-location"></i>
-
                 </div>
               </div>
 
@@ -83,7 +80,7 @@
 
               <section class="form-group d-flex flex-column gap-4">
                 <div class="fs-14 fw-bold">
-                  {{ __('hosoun.instructorGender') }}
+                  {{ __('hosoun.readBy') }}
                 </div>
                 <div class="d-flex align-items-center gap-5">
                   <div class="form-check">
@@ -104,12 +101,24 @@
               </section>
 
               <div class="form-group">
-                <label for="oldMemorized" class="form-label">
-                  {{ __('hosoun.oldMemorized') }}
+                <label for="requiredQeraa" class="form-label">
+                  {{ __('hosoun.requiredQeraa') }}
                 </label>
                 <div class="form-group-icon">
-                  <input type="text" name="oldMemorized" id="oldMemorized" class="form-control"
-                    placeholder="{{ __('hosoun.oldMemorized') }}" value="" required>
+                  <select name="requiredQeraa" id="requiredQeraa" class="select2-search-enable"
+                    data-placeholder="{{ __('hosoun.requiredQeraa') }}">
+                    <option></option>
+                    <option value="1">عاصم الكوفي</option>
+                    <option value="2">نافع المدني</option>
+                    <option value="3">أبو عمرو البصري</option>
+                    <option value="4">ابن عامر الشامي</option>
+                    <option value="5">ابن كثير المكي</option>
+                    <option value="6">حمزة الكوفي</option>
+                    <option value="7">الكسائي الكوفي</option>
+                    <option value="8">ابو جعفر المدني</option>
+                    <option value="9">يعقوب الحضرمي</option>
+                    <option value="10">خلف العاشر</option>
+                  </select>
                   <i class="isax isax-book"></i>
                 </div>
               </div>

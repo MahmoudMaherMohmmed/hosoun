@@ -2,12 +2,12 @@
 @section('css')
 @endsection
 @section('title')
-  {{ __('hosoun.registerToMemorizePath') }}
+  {{ __('hosoun.registerToEjazatPath') }}
 @endsection
 
 @section('content')
   @include('front.layouts.page_header', [
-      'title' => __('hosoun.registerToMemorizePath'),
+      'title' => __('hosoun.registerToEjazatPath'),
   ])
   <section class="block-sec">
     <div class="container">
@@ -34,10 +34,8 @@
                   <input type="datetime-local" name="birthdate" id="birthdate" class="form-control"
                     placeholder="{{ __('frontstaticword.DateofBirth') }}" value="" required>
                   <i class="isax isax-calendar-2"></i>
-
                 </div>
               </div>
-
 
               <div class="form-group">
                 <label for="country" class="form-label">
@@ -52,7 +50,6 @@
                     <option value="2">option3</option>
                   </select>
                   <i class="isax isax-location"></i>
-
                 </div>
               </div>
 
@@ -83,7 +80,7 @@
 
               <section class="form-group d-flex flex-column gap-4">
                 <div class="fs-14 fw-bold">
-                  {{ __('hosoun.instructorGender') }}
+                  {{ __('hosoun.ejazaFrom') }}
                 </div>
                 <div class="d-flex align-items-center gap-5">
                   <div class="form-check">
@@ -103,14 +100,52 @@
                 </div>
               </section>
 
-              <div class="form-group">
-                <label for="oldMemorized" class="form-label">
-                  {{ __('hosoun.oldMemorized') }}
+              {{-- <div class="form-group">
+                <label for="oldEjazat" class="form-label">
+                  {{ __('hosoun.oldEjazat') }}
                 </label>
                 <div class="form-group-icon">
-                  <input type="text" name="oldMemorized" id="oldMemorized" class="form-control"
-                    placeholder="{{ __('hosoun.oldMemorized') }}" value="" required>
+                  <input type="text" name="oldEjazat" id="oldEjazat" class="form-control"
+                    placeholder="{{ __('hosoun.oldEjazat') }}" value="" required>
                   <i class="isax isax-book"></i>
+                </div>
+              </div> --}}
+
+              <div class="form-group">
+                <label for="oldEjazat" class="form-label">
+                  {{ __('hosoun.oldEjazat') }}
+                </label>
+                <div class="form-group-icon">
+                  <select name="oldEjazat" id="oldEjazat" class="select2-search-enable"
+                    data-placeholder="{{ __('hosoun.oldEjazat') }}">
+                    <option></option>
+                    <option value="1">في القرآن الكريم</option>
+                    <option value="2">في التجويد</option>
+                    <option value="3">في القراءات</option>
+                    <option value="4">في اللغة العربية</option>
+                    <option value="5">في العقيدة</option>
+                    <option value="6">في الحديث</option>
+                  </select>
+                  <i class="isax isax-book"></i>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="required" class="form-label">
+                  {{ __('hosoun.requiredEjazat') }}
+                </label>
+                <div class="form-group-icon">
+                  <select name="required" id="required" class="select2-search-enable"
+                    data-placeholder="{{ __('hosoun.requiredEjazat') }}">
+                    <option></option>
+                    <option value="1">في القرآن الكريم</option>
+                    <option value="2">في التجويد</option>
+                    <option value="3">في القراءات</option>
+                    <option value="4">في اللغة العربية</option>
+                    <option value="5">في العقيدة</option>
+                    <option value="6">في الحديث</option>
+                  </select>
+                  <i class="isax isax-note-1"></i>
                 </div>
               </div>
 

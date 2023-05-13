@@ -207,7 +207,7 @@
               <input type="hidden" name="user_id" value="{{ Auth::User()->id }}" />
               <input type="hidden" name="course_id" value="{{ $course->id }}" />
 
-              <button class="btn rounded-circle flex-shrink-0">
+              <button class="btn rounded-circle flex-shrink-0" type="button" title="Add to whishlist">
                 <svg class="svg-resize-24 svg-stroke-accent">
                   <use xlink:href="{{ asset('/front/svg/sprite.svg#heart') }}" />
                 </svg>
@@ -227,7 +227,8 @@
             </form>
           @endif
         @else
-          <a href="{{ route('login') }}" class="btn rounded-circle flex-shrink-0">
+          <a href="{{ route('login') }}" class="btn rounded-circle flex-shrink-0" type="button"
+            title="Add to whishlist">
             <svg class="svg-resize-24 svg-stroke-accent">
               <use xlink:href="{{ asset('/front/svg/sprite.svg#heart') }}" />
             </svg>

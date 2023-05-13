@@ -2,12 +2,12 @@
 @section('css')
 @endsection
 @section('title')
-  {{ __('hosoun.registerToMemorizePath') }}
+  {{ __('hosoun.registerToTelawaPath') }}
 @endsection
 
 @section('content')
   @include('front.layouts.page_header', [
-      'title' => __('hosoun.registerToMemorizePath'),
+      'title' => __('hosoun.registerToTelawaPath'),
   ])
   <section class="block-sec">
     <div class="container">
@@ -83,7 +83,7 @@
 
               <section class="form-group d-flex flex-column gap-4">
                 <div class="fs-14 fw-bold">
-                  {{ __('hosoun.instructorGender') }}
+                  {{ __('hosoun.telawaInstrctrGender') }}
                 </div>
                 <div class="d-flex align-items-center gap-5">
                   <div class="form-check">
@@ -104,12 +104,12 @@
               </section>
 
               <div class="form-group">
-                <label for="oldMemorized" class="form-label">
-                  {{ __('hosoun.oldMemorized') }}
+                <label for="telawaAmount" class="form-label">
+                  {{ __('hosoun.telawaAmount') }}
                 </label>
                 <div class="form-group-icon">
-                  <input type="text" name="oldMemorized" id="oldMemorized" class="form-control"
-                    placeholder="{{ __('hosoun.oldMemorized') }}" value="" required>
+                  <input type="text" name="telawaAmount" id="telawaAmount" class="form-control"
+                    placeholder="{{ __('hosoun.telawaAmount') }}" value="" required>
                   <i class="isax isax-book"></i>
                 </div>
               </div>

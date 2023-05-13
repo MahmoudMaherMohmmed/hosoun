@@ -2,12 +2,12 @@
 @section('css')
 @endsection
 @section('title')
-  {{ __('hosoun.registerToMemorizePath') }}
+  {{ __('hosoun.registerToTajwedPath') }}
 @endsection
 
 @section('content')
   @include('front.layouts.page_header', [
-      'title' => __('hosoun.registerToMemorizePath'),
+      'title' => __('hosoun.registerToTajwedPath'),
   ])
   <section class="block-sec">
     <div class="container">
@@ -83,7 +83,7 @@
 
               <section class="form-group d-flex flex-column gap-4">
                 <div class="fs-14 fw-bold">
-                  {{ __('hosoun.instructorGender') }}
+                  {{ __('hosoun.tajwedBy') }}
                 </div>
                 <div class="d-flex align-items-center gap-5">
                   <div class="form-check">
@@ -102,17 +102,6 @@
                   </div>
                 </div>
               </section>
-
-              <div class="form-group">
-                <label for="oldMemorized" class="form-label">
-                  {{ __('hosoun.oldMemorized') }}
-                </label>
-                <div class="form-group-icon">
-                  <input type="text" name="oldMemorized" id="oldMemorized" class="form-control"
-                    placeholder="{{ __('hosoun.oldMemorized') }}" value="" required>
-                  <i class="isax isax-book"></i>
-                </div>
-              </div>
 
               <div class="form-group">
                 <label for="whenToStart" class="form-label">
