@@ -483,6 +483,9 @@ svg {
   color: var(--clr-white);
   background-color: var(--clr-dark);
 }
+.btn.btn-dark-outline .isax {
+  color: var(--clr-dark);
+}
 .btn.btn-white-outline {
   color: var(--clr-white);
   border: 2px solid var(--clr-white);

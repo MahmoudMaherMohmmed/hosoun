@@ -8,13 +8,8 @@ $(document).ready(function () {
         autoplay: true,
         nav: true,
         navText: [
-            `<svg xmlns="http://www.w3.org/2000/svg" width="6" height="12" viewBox="0 0 6 12">
-                <path id="start" d="M16,12l-6,6V6Z" transform="translate(-10 -6)" fill="#E49A00" />
-            </svg>`
-            ,
-            `<svg xmlns="http://www.w3.org/2000/svg" width="6" height="12" viewBox="0 0 6 12">
-                <path id="end" d="M10,12l6,6V6Z" transform="translate(-10 -6)" fill="#E49A00" />
-            </svg>`
+            `<i class="isax isax-arrow-right-25" style="color: #E49A00"></i>`,
+            `<i class="isax isax-arrow-left-35" style="color: #E49A00"></i>`
         ],
         dots: false,
         responsive: {
@@ -38,13 +33,8 @@ $(document).ready(function () {
         nav: true,
         dots: false,
         navText: [
-            `<svg xmlns="http://www.w3.org/2000/svg" width="6" height="12" viewBox="0 0 6 12">
-                <path id="start" d="M16,12l-6,6V6Z" transform="translate(-10 -6)" fill="#0e3c54" />
-            </svg>`
-            ,
-            `<svg xmlns="http://www.w3.org/2000/svg" width="6" height="12" viewBox="0 0 6 12">
-                <path id="end" d="M10,12l6,6V6Z" transform="translate(-10 -6)" fill="#0e3c54" />
-            </svg>`
+            `<i class="isax isax-arrow-right-25" style="color: #0E3C54"></i>`,
+            `<i class="isax isax-arrow-left-35" style="color: #0E3C54"></i>`
         ],
         responsive: {
             0: {
@@ -67,13 +57,8 @@ $(document).ready(function () {
         autoplay: true,
         nav: true,
         navText: [
-            `<svg xmlns="http://www.w3.org/2000/svg" width="6" height="12" viewBox="0 0 6 12">
-                <path id="start" d="M16,12l-6,6V6Z" transform="translate(-10 -6)" fill="#fff" />
-            </svg>`
-            ,
-            `<svg xmlns="http://www.w3.org/2000/svg" width="6" height="12" viewBox="0 0 6 12">
-                <path id="end" d="M10,12l6,6V6Z" transform="translate(-10 -6)" fill="#fff" />
-            </svg>`
+            `<i class="isax isax-arrow-right-25" style="color: #FFFFFF"></i>`,
+            `<i class="isax isax-arrow-left-35" style="color: #FFFFFF"></i>`
         ],
         dots: false,
         responsive: {
@@ -100,13 +85,8 @@ $(document).ready(function () {
         autoplay: true,
         nav: true,
         navText: [
-            `<svg xmlns="http://www.w3.org/2000/svg" width="6" height="12" viewBox="0 0 6 12">
-                <path id="start" d="M16,12l-6,6V6Z" transform="translate(-10 -6)" fill="#E49A00" />
-            </svg>`
-            ,
-            `<svg xmlns="http://www.w3.org/2000/svg" width="6" height="12" viewBox="0 0 6 12">
-                <path id="end" d="M10,12l6,6V6Z" transform="translate(-10 -6)" fill="#E49A00" />
-            </svg>`
+            `<i class="isax isax-arrow-right-25" style="color: #E49A00"></i>`,
+            `<i class="isax isax-arrow-left-35" style="color: #E49A00"></i>`
         ],
         dots: false,
         responsive: {

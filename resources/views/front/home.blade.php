@@ -77,9 +77,7 @@
             <div
               class="position-absolute top-50 translate-middle-y d-flex align-items-center justify-content-center px-4 border-end">
               <button class="bg-transparent border-0 px-2" type="submit">
-                <svg class="svg-resize-24 svg-fill-accent flex-shrink-0" title="search">
-                  <use xlink:href="{{ asset('/front/svg/sprite.svg#search-bold') }}" />
-                </svg>
+                <i class="isax isax-search-normal-15"></i>
               </button>
             </div>
             <input type="search" class="form-control rounded-pill"
@@ -109,9 +107,7 @@
                       @endif
                       @if ($slider->button_text != null && $slider->button_url != null)
                         <a href="{{ url($slider->button_url) }}" class="btn btn-accent">
-                          <svg class="svg-resize-20 svg-fill-white flex-shrink-0">
-                            <use xlink:href="{{ asset('/front/svg/sprite.svg#arrow-circle') }}" />
-                          </svg>
+                          <i class="isax isax-arrow-left-25 text-white"></i>
                           {{ $slider->button_text }}
                         </a>
                       @endif
@@ -125,11 +121,11 @@
           <section class="carousel-controls mt-5 mt-lg-auto">
             <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev"
               title="Previous slide">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <i class="isax isax-arrow-right-25" style="color: #0E3C54"></i>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next"
               title="Next slide">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <i class="isax isax-arrow-left-35" style="color: #0E3C54"></i>
             </button>
           </section>
         </div>
@@ -218,9 +214,7 @@
         <div class="row mt-5 pt-3">
           <div class="col-10 col-lg-4 mx-auto">
             <a href="{{ url('') }}" class="btn btn-dark-outline w-100">
-              <svg class="svg-resize-20 flex-shrink-0">
-                <use xlink:href="{{ asset('/front/svg/sprite.svg#arrow-circle') }}" />
-              </svg>
+              <i class="isax isax-arrow-left-25"></i>
               {{ __('frontstaticword.SeeAllCourses') }}
             </a>
           </div>
@@ -254,15 +248,11 @@
             </p>
             <div class="d-flex gap-3 align-items-center justify-content-center justify-content-lg-start flex-wrap">
               <a class="btn btn-accent2 px-4 flex-grow-1 flex-sm-grow-0" href="#">
-                <svg class="svg-resize-20 svg-fill-white flex-shrink-0">
-                  <use xlink:href="{{ asset('/front/svg/sprite.svg#arrow-circle') }}" />
-                </svg>
+                <i class="isax isax-arrow-left-25 text-white"></i>
                 سجل الآن
               </a>
               <a class="btn btn-dark px-4 flex-grow-1 flex-sm-grow-0" href="#">
-                <svg class="svg-resize-24 svg-fill-white flex-shrink-0">
-                  <use xlink:href="{{ asset('/front/svg/sprite.svg#play-circle') }}" />
-                </svg>
+                <i class="isax isax-play-circle5 text-white"></i>
                 شاهد قصتنا
               </a>
             </div>
@@ -397,9 +387,7 @@
       <div class="row mt-5 pt-3">
         <div class="col-10 col-lg-4 mx-auto">
           <a href="{{ url('') }}" class="btn btn-white-outline w-100">
-            <svg class="svg-resize-20 flex-shrink-0">
-              <use xlink:href="{{ asset('/front/svg/sprite.svg#arrow-circle') }}" />
-            </svg>
+            <i class="isax isax-arrow-left-25 text-white"></i>
             {{ __('frontstaticword.SeeAllBooksCat') }}
           </a>
         </div>
@@ -431,9 +419,7 @@
         <div class="row mt-5 pt-3">
           <div class="col-10 col-lg-4 mx-auto">
             <a href="{{ route('blog.all') }}" class="btn btn-dark-outline w-100">
-              <svg class="svg-resize-20 flex-shrink-0">
-                <use xlink:href="{{ asset('/front/svg/sprite.svg#arrow-circle') }}" />
-              </svg>
+              <i class="isax isax-arrow-left-25"></i>
               {{ __('frontstaticword.SeeAllArticles') }}
             </a>
           </div>
