@@ -39,9 +39,7 @@
               <div class="form-group-icon">
                 <input type="text" name="fname" id="fname" class="form-control"
                   placeholder="{{ __('frontstaticword.Name') }}">
-                <svg class="svg-default form-control-icon">
-                  <use xlink:href="{{ asset('/front/svg/sprite.svg#profile') }}" />
-                </svg>
+                <i class="isax isax-user"></i>
               </div>
             </div>
             <div class="form-group">
@@ -49,9 +47,7 @@
               <div class="form-group-icon">
                 <input type="email" name="email" id="email" class="form-control"
                   placeholder="{{ __('frontstaticword.Email') }}">
-                <svg class="svg-default form-control-icon">
-                  <use xlink:href="{{ asset('/front/svg/sprite.svg#sms') }}" />
-                </svg>
+                <i class="isax isax-sms"></i>
               </div>
             </div>
             <div class="form-group">
@@ -59,9 +55,7 @@
               <div class="form-group-icon">
                 <input type="text" name="mobile" id="mobile" class="form-control"
                   placeholder="{{ __('frontstaticword.Mobile') }}">
-                <svg class="svg-default form-control-icon">
-                  <use xlink:href="{{ asset('/front/svg/sprite.svg#mobile') }}" />
-                </svg>
+                <i class="isax isax-mobile"></i>
               </div>
             </div>
             <div class="form-group">
