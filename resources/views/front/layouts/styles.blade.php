@@ -2,9 +2,11 @@
 <link href="{{ asset('front/css/owl.theme.default.min.css') }}" rel="stylesheet">
 <link href="{{ asset('admin/bower_components/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
 <link href="{{ asset('front/css/fontawesome.all.min.css') }}" rel="stylesheet">
+<link href="{{ asset('front/css/iconsax.css') }}" rel="stylesheet">
 <link href="{{ asset('front/css/intlTelInput.min.css') }}" rel="stylesheet">
 <link href="{{ asset('front/css/select2.min.css') }}" rel="stylesheet" />
 <link href="{{ asset('front/css/star-rating-svg.css') }}" rel="stylesheet">
+<link href="{{ asset('front/css/flatpickr.min.css') }}" rel="stylesheet" />
 
 {{-- bootstrap --}}
 @if (in_array(Session::get('changed_language'), ['ar', 'he', 'ur', 'arc', 'az', 'dv', 'ku', 'fa']))

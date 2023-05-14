@@ -1,3 +1,15 @@
+// Fixed navbar
+$(window).on("scroll", function () {
+    const nav = $(".navbar");
+    let windscroll = $(window).scrollTop();
+    if (windscroll >= nav.height()) {
+        nav.addClass("fixed-top bg-white shadow-sm");
+    } else {
+        nav.removeClass("fixed-top bg-white shadow-sm");
+    }
+});
+
+
 // nested dropdown
 document.addEventListener("DOMContentLoaded", function () {
     // make it as accordion for smaller screens
@@ -42,7 +54,7 @@ $(document).ready(function () {
     });
 
     $('input[type="tel"]').intlTelInput({
-        initialCountry: 'sa',
+        initialCountry: 'eg',
         separateDialCode: true
     });
 
@@ -59,6 +71,8 @@ $(document).ready(function () {
         initialRating: 3,
         useFullStars: true
     });
+
+    $("[type='datetime-local']").flatpickr();
 });
 
 function previewFile(el) {

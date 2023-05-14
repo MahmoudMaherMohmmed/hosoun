@@ -774,3 +774,23 @@ Route::delete('delete-meeting/{id}', 'JitsiController@deletemeeting')->name('del
 Route::get('jitsi/detail/{id}', 'JitsiController@jitsidetailpage')->name('jitsipage.detail');
 // ====== jisti meeting end =============
 
+
+
+
+
+// Learning path forms
+Route::get('/memorize', function () {
+    return view('front.quran.memorize');
+});
+Route::get('/telawa', function () {
+    return view('front.quran.telawa');
+});
+Route::get('/ejazat', function () {
+    return view('front.quran.ejazat');
+});
+Route::get('/keraat', function () {
+    return view('front.quran.keraat');
+});
+Route::get('/tajwed', function () {
+    return view('front.quran.tajwed');
+});

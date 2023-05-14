@@ -77,9 +77,7 @@
             <div
               class="position-absolute top-50 translate-middle-y d-flex align-items-center justify-content-center px-4 border-end">
               <button class="bg-transparent border-0 px-2" type="submit">
-                <svg class="svg-resize-24 svg-fill-accent flex-shrink-0">
-                  <use xlink:href="{{ asset('/front/svg/sprite.svg#search-bold') }}" />
-                </svg>
+                <i class="isax isax-search-normal-15"></i>
               </button>
             </div>
             <input type="search" class="form-control rounded-pill"
@@ -92,51 +90,49 @@
 
   {{-- Home Carousel --}}
   @if ($sliders->isNotEmpty())
-    <section id="homeCarousel" class="carousel slide carousel-fade mt-5 pt-3" data-bs-ride="carousel">
-      <div class="container">
-        <section class="carousel-inner">
-          <div class="d-flex mt-md-5 pt-md-5 ">
-            @foreach ($sliders as $slider)
-              <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="carousel-caption text-black">
-                      <div class="content">
-                        @if ($slider->heading != null)
-                          <h5 class="caption-title">{{ $slider->heading }}</h5>
-                        @endif
-                        @if ($slider->detail != null)
-                          <p class="caption-text">{{ $slider->detail }}</p>
-                        @endif
-                        @if ($slider->button_text != null && $slider->button_url != null)
-                          <a href="{{ url($slider->button_url) }}" class="btn btn-accent">
-                            <svg class="svg-resize-20 svg-fill-white flex-shrink-0">
-                              <use xlink:href="{{ asset('/front/svg/sprite.svg#arrow-circle') }}" />
-                            </svg>
-                            {{ $slider->button_text }}
-                          </a>
-                        @endif
-                      </div>
+    <section class="container mt-5 pt-3">
+      <div class="row mt-lg-5 pt-lg-5">
+        <div class="col-lg-6 d-flex flex-column">
+          <section id="homeCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <section class="carousel-inner">
+              @foreach ($sliders as $slider)
+                <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                  <div class="carousel-caption text-black">
+                    <div class="content">
+                      @if ($slider->heading != null)
+                        <h5 class="caption-title">{{ $slider->heading }}</h5>
+                      @endif
+                      @if ($slider->detail != null)
+                        <p class="caption-text">{{ $slider->detail }}</p>
+                      @endif
+                      @if ($slider->button_text != null && $slider->button_url != null)
+                        <a href="{{ url($slider->button_url) }}" class="btn btn-accent">
+                          <i class="isax isax-arrow-left-25 text-white"></i>
+                          {{ $slider->button_text }}
+                        </a>
+                      @endif
                     </div>
                   </div>
-                  <div class="col-md-6 mt-5 mt-md-0 text-end">
-                    <img src="{{ asset('images/slider/' . $slider['image']) }}" class="img-fluid"
-                      alt="{{ $slider->heading }}">
-                  </div>
                 </div>
-              </div>
-            @endforeach
-          </div>
+              @endforeach
+            </section>
+          </section>
           {{-- Next/Prev --}}
-          <section class="carousel-controls mt-5 mt-lg-0">
-            <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <section class="carousel-controls mt-5 mt-lg-auto">
+            <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev"
+              title="Previous slide">
+              <i class="isax isax-arrow-right-25" style="color: #0E3C54"></i>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next"
+              title="Next slide">
+              <i class="isax isax-arrow-left-35" style="color: #0E3C54"></i>
             </button>
           </section>
-        </section>
+        </div>
+        {{-- Home Carousel image --}}
+        <div class="col-lg-6 mt-5 mt-lg-0 text-end">
+          <img src="{{ asset('front/img/home-slider-img.svg') }}" class="img-fluid" alt="{{ $slider->heading }}">
+        </div>
       </div>
     </section>
   @endif
@@ -144,16 +140,17 @@
 
 
   {{-- Why Hosoun --}}
-  <section class="block-sec">
+  <section class="block-sec pb-0">
     <div class="container">
-      <section class="bg-accent-gradient px-5 block-sec rounded-50 overflow-hidden position-relative z-0">
+      <section class="bg-accent-gradient p-5 rounded-50 overflow-hidden position-relative z-0">
         {{-- animated svg --}}
-        <img src="{{ asset('front/svg/diamond-big.svg') }}" class="diamond-img big position-absolute z-n1">
-        <div class="row position-relative z-0">
+        <img src="{{ asset('front/svg/diamond-big.svg') }}" class="diamond-img big position-absolute z-n1"
+          alt="big-animated-svg">
+        <div class="row position-relative z-0 p-4">
           <div class="col-12 position-relative z-0 text-center mb-3 mb-lg-5 pb-3">
             {{-- animated svg --}}
             <img src="{{ asset('front/svg/diamond-small.svg') }}"
-              class="diamond-img position-absolute z-n1 top-0 start-0 ms-4 d-none d-lg-inline-block">
+              class="diamond-img position-absolute z-n1 top-0 start-0 ms-4 d-none d-lg-inline-block" alt="animated-svg">
             {{-- Section title --}}
             <h3 class="sec-title text-white">لماذا تختار حصون؟</h3>
             <p class="text-white-70">
@@ -216,10 +213,8 @@
 
         <div class="row mt-5 pt-3">
           <div class="col-10 col-lg-4 mx-auto">
-            <a href="" class="btn btn-dark-outline w-100">
-              <svg class="svg-resize-20 flex-shrink-0">
-                <use xlink:href="{{ asset('/front/svg/sprite.svg#arrow-circle') }}" />
-              </svg>
+            <a href="{{ url('') }}" class="btn btn-dark-outline w-100">
+              <i class="isax isax-arrow-left-25"></i>
               {{ __('frontstaticword.SeeAllCourses') }}
             </a>
           </div>
@@ -235,14 +230,14 @@
     <div class="bg-accent-2-light rounded-50 position-relative z-0">
       <div class="iconshapes2">
         <img class="iconshapes__1 position-absolute z-n1 d-none d-md-inline-block"
-          src="{{ asset('front/img/iconshape-4.png') }}" alt="">
+          src="{{ asset('front/img/iconshape-4.png') }}" alt="bg-img">
         <img class="iconshapes__2 position-absolute z-n1" src="{{ asset('front/img/iconshape-3.png') }}"
-          alt="">
+          alt="bg-img">
       </div>
       <div class="row align-items-center justify-content-center">
         <div class="col-lg-6 align-self-end mb-4 mb-lg-0">
           <img class="img-fluid d-block mx-auto" src="{{ asset('front/img/img-2.svg') }}"
-            style="transform:translateY(-3rem); margin-bottom: -3rem">
+            style="transform:translateY(-3rem); margin-bottom: -3rem" alt="banner-img">
         </div>
         <div class="col-lg-6 block-sec py-5">
           <div class="p-5 text-center text-lg-start">
@@ -253,15 +248,11 @@
             </p>
             <div class="d-flex gap-3 align-items-center justify-content-center justify-content-lg-start flex-wrap">
               <a class="btn btn-accent2 px-4 flex-grow-1 flex-sm-grow-0" href="#">
-                <svg class="svg-resize-20 svg-fill-white flex-shrink-0">
-                  <use xlink:href="{{ asset('/front/svg/sprite.svg#arrow-circle') }}" />
-                </svg>
+                <i class="isax isax-arrow-left-25 text-white"></i>
                 سجل الآن
               </a>
               <a class="btn btn-dark px-4 flex-grow-1 flex-sm-grow-0" href="#">
-                <svg class="svg-resize-24 svg-fill-white flex-shrink-0">
-                  <use xlink:href="{{ asset('/front/svg/sprite.svg#play-circle') }}" />
-                </svg>
+                <i class="isax isax-play-circle5 text-white"></i>
                 شاهد قصتنا
               </a>
             </div>
@@ -275,49 +266,52 @@
 
   {{-- InstructorsSections --}}
   @if ($instructors->isNotEmpty())
-  <section class="block-sec">
-    <div class="container">
-      <section class="titling">
-        <h3 class="sec-title">
-          {{ __('frontstaticword.Instructors') }}
-        </h3>
-        <p class="text-dim">
-          {{ __('frontstaticword.InstructorsSubtitle') }}
-        </p>
-      </section>
+    <section class="block-sec">
+      <div class="container">
+        <section class="titling">
+          <h3 class="sec-title">
+            {{ __('frontstaticword.Instructors') }}
+          </h3>
+          <p class="text-dim">
+            {{ __('frontstaticword.InstructorsSubtitle') }}
+          </p>
+        </section>
 
-      <section class="instructors-carousel owl-carousel owl-theme">
-        @foreach ($instructors as $instructor)
-          @php
-            $fullname = isset($instructor->fname) . ' ' . isset($instructor->lname);
-            $fullname = preg_replace('/\s+/', '', $fullname);
-          @endphp
-          <section
-            class="instructor-item gap-4 gap-lg-5 text-center d-flex flex-column align-items-center justify-content-start">
-            <div class="teachers__bg position-relative">
-              @if ($instructor->user_img != null || $instructor->user_img != '')
-                <img src="{{ asset('images/user_img/' . $instructor->user_img) }}" alt="{{ $instructor->fname }} {{ $instructor->lname }}">
-              @else
-                <img src="{{ asset('images/default/instructor.png') }}" alt="{{ $instructor->fname }} {{ $instructor->lname }}">
-              @endif
-            </div>
-            <span class="name fw-bold">
-              <a href="{{ route('instructor.profile', ['id' => $instructor->id, 'name' => $fullname]) }}" title="{{ $instructor->fname }} {{ $instructor->lname }}">
-                {{ $instructor->fname }} {{ $instructor->lname }}
-              </a>
-            </span>
-            <div class="title text-accent fw-medium">
-              @if ($instructor->detail != null)
-                {!! $instructor->detail !!}
-              @else
-                {{ __('frontstaticword.Instructor') }}
-              @endif
-            </div>
-          </section>
-        @endforeach
-      </section>
-    </div>
-  </section>
+        <section class="instructors-carousel owl-carousel owl-theme">
+          @foreach ($instructors as $instructor)
+            @php
+              $fullname = isset($instructor->fname) . ' ' . isset($instructor->lname);
+              $fullname = preg_replace('/\s+/', '', $fullname);
+            @endphp
+            <section
+              class="instructor-item gap-4 gap-lg-5 text-center d-flex flex-column align-items-center justify-content-start">
+              <div class="teachers__bg position-relative">
+                @if ($instructor->user_img != null || $instructor->user_img != '')
+                  <img src="{{ asset('images/user_img/' . $instructor->user_img) }}"
+                    alt="{{ $instructor->fname }} {{ $instructor->lname }}">
+                @else
+                  <img src="{{ asset('images/default/instructor.png') }}"
+                    alt="{{ $instructor->fname }} {{ $instructor->lname }}">
+                @endif
+              </div>
+              <span class="name fw-bold">
+                <a href="{{ route('instructor.profile', ['id' => $instructor->id, 'name' => $fullname]) }}"
+                  title="{{ $instructor->fname }} {{ $instructor->lname }}">
+                  {{ $instructor->fname }} {{ $instructor->lname }}
+                </a>
+              </span>
+              <div class="title text-accent fw-medium">
+                @if ($instructor->detail != null)
+                  {!! $instructor->detail !!}
+                @else
+                  {{ __('frontstaticword.Instructor') }}
+                @endif
+              </div>
+            </section>
+          @endforeach
+        </section>
+      </div>
+    </section>
   @endif
   {{-- /InstructorsSections --}}
 
@@ -392,18 +386,16 @@
 
       <div class="row mt-5 pt-3">
         <div class="col-10 col-lg-4 mx-auto">
-          <a href="" class="btn btn-white-outline w-100">
-            <svg class="svg-resize-20 flex-shrink-0">
-              <use xlink:href="{{ asset('/front/svg/sprite.svg#arrow-circle') }}" />
-            </svg>
+          <a href="{{ url('') }}" class="btn btn-white-outline w-100">
+            <i class="isax isax-arrow-left-25 text-white"></i>
             {{ __('frontstaticword.SeeAllBooksCat') }}
           </a>
         </div>
       </div>
 
       {{-- animations --}}
-      <img src="{{ asset('front/svg/lines.svg') }}" class="lines d-none d-sm-inline-block">
-      <img src="{{ asset('front/svg/lines.svg') }}" class="lines d-none d-sm-inline-block">
+      <img src="{{ asset('front/svg/lines.svg') }}" class="lines d-none d-sm-inline-block" alt="bg-img">
+      <img src="{{ asset('front/svg/lines.svg') }}" class="lines d-none d-sm-inline-block" alt="bg-img">
     </div>
   </section>
   {{-- /BooksSections --}}
@@ -427,9 +419,7 @@
         <div class="row mt-5 pt-3">
           <div class="col-10 col-lg-4 mx-auto">
             <a href="{{ route('blog.all') }}" class="btn btn-dark-outline w-100">
-              <svg class="svg-resize-20 flex-shrink-0">
-                <use xlink:href="{{ asset('/front/svg/sprite.svg#arrow-circle') }}" />
-              </svg>
+              <i class="isax isax-arrow-left-25"></i>
               {{ __('frontstaticword.SeeAllArticles') }}
             </a>
           </div>
@@ -441,27 +431,54 @@
 
 
   {{-- LearningPath --}}
-  <section class="block-sec">
+  <section class="block-sec pt-0">
     <div class="container">
       <div class="boxpath__bg px-5 rounded-50" style="background-image: url('front/img/slidersection.png');">
         <p class="sec-title mb-0 block-sec pb-5">
-          <span class="text-accent-2">مسار</span>
-          حفظ القرآن الكريم
+          <span class="text-accent-2">{{ __('hosoun.path') }}</span>
+          {{ __('hosoun.memorizeQuran') }}
         </p>
       </div>
       <section class="px-5">
         <div class="row boxpath__items position-relative justify-content-center">
           @php
-            $items = ['حفظ', 'تصحيح تلاوة', 'إجازات', 'قراءات', 'تجويد'];
+            $items = [
+                [
+                    'name' => __('hosoun.memorize'),
+                    'url' => '/memorize',
+                    'title' => __('hosoun.registerToMemorizePath'),
+                ],
+                [
+                    'name' => __('hosoun.telawa'),
+                    'url' => '/telawa',
+                    'title' => __('hosoun.registerToTelawaPath'),
+                ],
+                [
+                    'name' => __('hosoun.ejazat'),
+                    'url' => '/ejazat',
+                    'title' => __('hosoun.registerToEjazatPath'),
+                ],
+                [
+                    'name' => __('hosoun.keraat'),
+                    'url' => '/keraat',
+                    'title' => __('hosoun.registerToKeraatPath'),
+                ],
+                [
+                    'name' => __('hosoun.tajwed'),
+                    'url' => '/tajwed',
+                    'title' => __('hosoun.registerToTajwedPath'),
+                ],
+            ];
           @endphp
           @foreach ($items as $item)
             <div class="col-4 col-lg p-2 p-sm-3">
-              <div class="boxpath h-100 bg-white text-center">
+              <a href="{{ url($item['url']) }}" class="boxpath d-block h-100 bg-white text-center"
+                title="{{ $item['title'] }}">
                 <div class="boxpath__number mb-4"></div>
                 <p class="title">
-                  {{ $item }}
+                  {{ $item['name'] }}
                 </p>
-              </div>
+              </a>
             </div>
           @endforeach
         </div>

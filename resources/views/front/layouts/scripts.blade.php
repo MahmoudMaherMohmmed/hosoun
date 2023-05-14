@@ -8,6 +8,7 @@
 <script src="{{ asset('front/js/intlTelInput-jquery.min.js') }}"></script>
 <script src="{{ asset('front/js/select2.full.min.js') }}"></script>
 <script src="{{ asset('front/js/jquery.star-rating-svg.min.js') }}"></script>
+<script src="{{ asset('front/js/flatpickr.js') }}"></script>
 
 @if (in_array(Session::get('changed_language'), ['ar', 'he', 'ur', 'arc', 'az', 'dv', 'ku', 'fa']))
   <script src="{{ asset('front/js/sliders.rtl.js') }}"></script>

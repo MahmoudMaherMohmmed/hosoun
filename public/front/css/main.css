@@ -483,6 +483,9 @@ svg {
   color: var(--clr-white);
   background-color: var(--clr-dark);
 }
+.btn.btn-dark-outline .isax {
+  color: var(--clr-dark);
+}
 .btn.btn-white-outline {
   color: var(--clr-white);
   border: 2px solid var(--clr-white);
@@ -505,8 +508,15 @@ svg {
 
 .logo {
   display: inline-block;
-  width: 15rem;
-  height: 8rem;
+  width: 12rem;
+  height: 6rem;
+}
+
+@media only screen and (min-width: 576px) {
+  .logo {
+    width: 14rem;
+    height: 7.5rem;
+  }
 }
 
 .logo img {
@@ -581,6 +591,16 @@ svg {
   max-height: 35rem;
 }
 
+.select2-container--open .select2-dropdown--below {
+  overflow: hidden;
+}
+
+.select2-container--default .select2-results > .select2-results__options,
+.select2-container--open .select2-dropdown--below {
+  border-bottom-left-radius: 2.5rem;
+  border-bottom-right-radius: 2.5rem;
+}
+
 .select2 .select2-selection .select2-selection__rendered {
   line-height: 5rem;
 }
@@ -592,7 +612,7 @@ svg {
 .select2-container--default
   .select2-selection--single
   .select2-selection__arrow {
-  left: 2rem;
+  left: 2rem !important;
 }
 
 .select2-search--dropdown {
@@ -691,9 +711,10 @@ textarea.form-control {
   z-index: 0;
 }
 
+.form-group-icon .isax,
 .form-group-icon .form-control-icon {
   position: absolute;
-  z-index: 1;
+  z-index: 100000;
   top: 1.25rem;
   right: 2rem;
 }
@@ -795,10 +816,12 @@ input {
 
 .iti__country {
   display: flex;
+  align-items: center;
 }
 
 .iti__dial-code {
   direction: ltr;
+  margin-inline-end: auto;
 }
 
 .iti--allow-dropdown .iti__flag-container,
@@ -832,7 +855,12 @@ input {
   direction: ltr;
   font-weight: 700;
   font-size: 1.4rem;
-  margin: 0.5rem 0.6rem 0;
+  margin: 0 0.6rem 0;
+}
+
+.isax {
+  font-size: 2.4rem;
+  color: var(--clr-accent);
 }
 
 /* /Form */
@@ -859,16 +887,12 @@ input {
 }
 
 .dropdown-toggle::after {
-  border-style: solid;
-  border-width: 0.2rem 0.2rem 0 0;
-  border-color: var(--clr-accent-2);
-  width: 0.7rem;
-  height: 0.5em;
-  transform: rotate(135deg);
-  vertical-align: top;
-  margin-top: 0.5rem;
-  margin-right: 0.7rem;
-  border-radius: 0.15rem;
+  vertical-align: middle;
+  width: 0;
+  height: 0;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-top: 0.5rem solid var(--clr-accent-2);
 }
 
 @media all and (min-width: 992px) {
@@ -947,6 +971,19 @@ input {
 /* /dropdown */
 
 /* Navbar */
+.navbar {
+  transition: all 0.2s linear;
+}
+
+.navbar.fixed-top {
+  padding: 0.5rem 0 !important;
+}
+
+.navbar.fixed-top .logo {
+  width: 12rem;
+  height: 5rem;
+}
+
 #search {
   max-width: 44.4rem;
   width: 100%;
@@ -1012,6 +1049,10 @@ input {
   }
 }
 
+.offcanvas {
+  max-width: 65%;
+}
+
 .notifications.dropdown-menu {
   width: 40rem;
 }
@@ -1050,16 +1091,17 @@ input {
 }
 
 .navbar-nav {
-  grid-gap: 3rem;
+  grid-gap: 2.4rem;
 }
 
-.navbar-nav .nav-item.dropdown .dropdown-toggle::after {
+/* .navbar-nav .nav-item.dropdown .dropdown-toggle::after {
   content: none;
-}
+} */
 
 .navbar-nav .nav-link {
   font-size: 1.6rem;
   font-weight: 500;
+  color: var(--clr-black);
   /* margin: 0 1.5rem; */
 }
 
@@ -1216,9 +1258,6 @@ input {
 
 @media only screen and (min-width: 992px) {
   .carousel-controls {
-    position: absolute;
-    bottom: 0;
-    right: 0;
     justify-content: flex-start;
   }
 }
@@ -1267,18 +1306,25 @@ input {
 }
 
 .carousel-caption .content {
-  max-width: 46rem;
   width: 100%;
   text-align: start;
 }
+
 .carousel-caption .content .caption-title {
   font-size: 4.5rem;
   font-weight: 700;
 }
+
 .carousel-caption .content .caption-text {
   font-size: 1.6rem;
   margin: 3.5rem 0;
   line-height: 3rem;
+}
+
+@media only screen and (min-width: 992px) {
+  .carousel-caption .content {
+    max-width: 46rem;
+  }
 }
 /* /Home Carousel */
 
@@ -1758,6 +1804,7 @@ input {
 
 .btn-redirect {
   min-width: 16rem;
+  padding: 0.5rem 1.5rem;
 }
 
 .btn-redirect svg {
@@ -2120,7 +2167,7 @@ input {
   font-size: 1.6rem;
 }
 .course-content-block .block-title {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   margin-bottom: 3rem;
 }
 
@@ -2155,8 +2202,8 @@ input {
 
 .course-content-block .instructor .img,
 .course-content-block .instructor img {
-  width: 20rem;
-  height: 20rem;
+  width: 15rem;
+  height: 15rem;
   display: inline-block;
   border-radius: 100%;
   object-fit: cover;

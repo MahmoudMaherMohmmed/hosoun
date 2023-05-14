@@ -17,7 +17,7 @@
     <h3 class="block-title">{{ __('frontstaticword.CourseIncludes') }}</h3>
     <div class="block-box">
       <ul class="info-list">
-        @foreach($course->include as $in)
+        @foreach ($course->include as $in)
           <li>{!! str_limit(strip_tags($in->detail), $limit = 50, $end = '...') !!}</li>
         @endforeach
       </ul>

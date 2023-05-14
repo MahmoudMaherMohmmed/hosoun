@@ -1,38 +1,24 @@
 $(document).ready(function () {
     // owl Carousels
-    $('.featured-carousel').owlCarousel({
-        loop: true,
-        margin: 16,
-        responsiveClass: true,
-        nav: true,
-        responsive: {
-            0: {
-                items: 1,
-            },
-            500: {
-                items: 2,
-            },
-            768: {
-                items: 3,
-            },
-            992: {
-                items: 4,
-            }
-        }
-    });
     $('.course-carousel').owlCarousel({
         loop: true,
         margin: 16,
         responsiveClass: true,
+        autoplay: true,
         nav: true,
+        navText: [
+            `<i class="isax isax-arrow-right-25" style="color: #E49A00"></i>`,
+            `<i class="isax isax-arrow-left-35" style="color: #E49A00"></i>`
+        ],
+        dots: false,
         responsive: {
             0: {
                 items: 1,
             },
-            768: {
+            578: {
                 items: 2,
             },
-            1200: {
+            992: {
                 items: 3,
             }
         }
@@ -41,8 +27,13 @@ $(document).ready(function () {
         loop: true,
         margin: 16,
         responsiveClass: true,
+        autoplay: true,
         nav: true,
         dots: false,
+        navText: [
+            `<i class="isax isax-arrow-right-25" style="color: #0E3C54"></i>`,
+            `<i class="isax isax-arrow-left-35" style="color: #0E3C54"></i>`
+        ],
         responsive: {
             0: {
                 items: 1,
@@ -50,51 +41,64 @@ $(document).ready(function () {
             576: {
                 items: 2,
             },
-            768: {
+            1200: {
                 items: 3,
             }
         }
     })
-    $('.testimonials-carousel').owlCarousel({
+    $('.books-carousel').owlCarousel({
         loop: true,
-        margin: 16,
+        autoplay: true,
+        margin: 18,
         responsiveClass: true,
+        autoplay: true,
         nav: true,
+        navText: [
+            `<i class="isax isax-arrow-right-25" style="color: #FFFFFF"></i>`,
+            `<i class="isax isax-arrow-left-35" style="color: #FFFFFF"></i>`
+        ],
+        dots: false,
         responsive: {
             0: {
                 items: 1,
             },
-            768: {
+            370: {
                 items: 2,
             },
-            1200: {
+            992: {
                 items: 3,
+            },
+            1200: {
+                items: 4,
             }
         }
     })
-    $('.trusted-carousel').owlCarousel({
+    $('.instructors-carousel').owlCarousel({
         loop: true,
         autoplay: true,
+        margin: 18,
         responsiveClass: true,
+        autoplay: true,
         nav: true,
+        navText: [
+            `<i class="isax isax-arrow-right-25" style="color: #E49A00"></i>`,
+            `<i class="isax isax-arrow-left-35" style="color: #E49A00"></i>`
+        ],
         dots: false,
         responsive: {
             0: {
-                margin: 50,
+                items: 1,
+            },
+            370: {
                 items: 2,
             },
-            500: {
-                margin: 70,
+            768: {
                 items: 3,
             },
-            992: {
-                margin: 100,
-                items: 4,
-            },
             1200: {
-                margin: 100,
-                items: 5,
+                items: 4,
             }
         }
     })
+
 });

@@ -7,7 +7,7 @@
   <section class="page_header course-header text-white">
     <div class="container">
       <div class="row">
-        <div class="col-lg-8">    
+        <div class="col-lg-8">
           <h1 class="title">{{ $course->title }}</h1>
           <div class="d-flex align-items-center mt-5">
             <span class="rating-readonly"></span>
@@ -57,6 +57,7 @@
                   </button>
                 </form>
               @endif
+              <hr class="vertical-divider" />
             @else
               <a href="{{ route('login') }}" class="btn h-auto">
                 <svg class="svg-resize-20 svg-stroke-white">
