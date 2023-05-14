@@ -64,7 +64,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-xs-12 col-md-4">
+                            {{--<div class="col-xs-12 col-md-4">
                                 <div class="form-group">
                                     <label for="image"> {{ __('adminstaticword.Image') }}</label>
                                     <div>
@@ -79,7 +79,7 @@
                                     <small class="text-muted"><i class="fa fa-question-circle"></i>
                                         {{ __('adminstaticword.Recommendedsize') }} (1375 x 409px)</small>
                                 </div>
-                            </div>
+                            </div>--}}
 
 
                             <div class="col-xs-12 col-md-4">

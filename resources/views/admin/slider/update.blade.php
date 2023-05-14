@@ -62,7 +62,7 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-xs-12 col-md-4">
+                                {{--<div class="col-xs-12 col-md-4">
                                     <div class="form-group">
                                         <label for="image">{{ __('adminstaticword.Image') }}:</label>
                                         <div>
@@ -81,7 +81,7 @@
                                             <img src="{{ url('/images/slider/'.$cate->image) }}" />
                                         </div>
                                     </div>
-                                </div>
+                                </div>--}}
                                 <div class="col-xs-12 col-md-4">
                                     <div class="form-group">
                                         <label>{{ __('adminstaticword.Status') }}:</label>

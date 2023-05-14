@@ -29,7 +29,7 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>{{ __('adminstaticword.Image') }}</th>
+                                    {{--<th>{{ __('adminstaticword.Image') }}</th>--}}
                                     <th>{{ __('adminstaticword.Heading') }}</th>
                                     <th>{{ __('adminstaticword.Status') }}</th>
                                     <th>{{ __('adminstaticword.TextPosition') }}</th>
@@ -43,9 +43,9 @@
                                 <?php $i++;?>
                                 <tr class="sortable" id="id-{{ $cat->id }}">
                                     <td><?php echo $i;?></td>
-                                    <td>
+                                    {{--<td>
                                         <img src="{{ asset('images/slider/'.$cat->image) }}" class="img-responsive">
-                                    </td>
+                                    </td>--}}
                                     <td>{{$cat->heading}}</td>
                                     <td>
                                         <form action="{{ route('slider.quick',$cat->id) }}" method="POST">

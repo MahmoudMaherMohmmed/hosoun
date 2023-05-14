@@ -26,6 +26,7 @@ class SliderController extends Controller
     public function index()
     {
         $sliders = Slider::orderBy('position','ASC')->get();
+
         return view("admin.slider.index",compact("sliders"));
     }
 
@@ -36,7 +37,6 @@ class SliderController extends Controller
      */
     public function create()
     {
-
         return view('admin.slider.insert');
     }
 
@@ -48,19 +48,16 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
-        
         $data = $this->validate($request,[
             'heading' => 'required',
             'search_text' => 'required',
             'detail' => 'required',
-            'image' => 'required',
+            'image' => 'nullable',
             'button_text' => 'sometimes',
             'button_url' => 'sometimes',
         ]);
 
-
         $input = $request->all();
-
         if($file = $request->file('image')) 
         {        
           $optimizeImage = Image::make($file);
@@ -71,19 +68,10 @@ class SliderController extends Controller
           $input['image'] = $image;
           
         }
-
-
         $input['position'] = (Slider::count()+1);
-
         $input['status'] = isset($request->status)  ? 1 : 0;
         $input['left'] = isset($request->left)  ? 1 : 0;
-       
-
-        $data = Slider::create($input);
-
-
-        
-        $data->save();
+        Slider::create($input);
 
         Session::flash('success',trans('flash.AddedSuccessfully'));
         return redirect('slider');
@@ -98,8 +86,8 @@ class SliderController extends Controller
     public function show($id)
     {
         $cate = Slider::find($id);
+
         return view('admin.slider.update',compact('cate'));
-   
     }
 
     /**
@@ -123,11 +111,8 @@ class SliderController extends Controller
 
     public function update(Request $request,$id)
     {
-
         $slider = Slider::findorfail($id);
-
         $input = $request->all();
-
         if($file = $request->file('image'))
         {
             if($slider->image != null) {
@@ -144,17 +129,12 @@ class SliderController extends Controller
 
             $input['image'] = $image;
         }
-
         $input['status'] = isset($request->status)  ? 1 : 0;
         $input['left'] = isset($request->left)  ? 1 : 0;
-
-       
-
         $slider->update($input);
 
         Session::flash('success',trans('flash.UpdatedSuccessfully'));
         return redirect('slider'); 
-     
     }
 
     /**
@@ -170,7 +150,6 @@ class SliderController extends Controller
 
         if ($cate->image != null)
         {
-                
             $image_file = @file_get_contents(public_path().'/images/slider/'.$cate->image);
 
             if($image_file)
@@ -191,7 +170,6 @@ class SliderController extends Controller
 
     public function reposition(Request $request)
     {
-
         $data= $request->all();
         
         $posts = Slider::all();
@@ -205,7 +183,5 @@ class SliderController extends Controller
         }
 
         return response()->json(['msg'=>'Updated Successfully', 'success'=>true]);
-
-
     }
 }
