@@ -93,7 +93,7 @@
     <section class="container mt-5 pt-3">
       <div class="row mt-lg-5 pt-lg-5">
         <div class="col-lg-6 d-flex flex-column">
-          <section id="homeCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+          <section id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
             <section class="carousel-inner">
               @foreach ($sliders as $slider)
                 <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
@@ -283,7 +283,8 @@
               $fullname = isset($instructor->fname) . ' ' . isset($instructor->lname);
               $fullname = preg_replace('/\s+/', '', $fullname);
             @endphp
-            <section
+            <a href="{{ route('instructor.profile', ['id' => $instructor->id, 'name' => $fullname]) }}"
+              title="{{ $instructor->fname }} {{ $instructor->lname }}"
               class="instructor-item gap-4 gap-lg-5 text-center d-flex flex-column align-items-center justify-content-start">
               <div class="teachers__bg position-relative">
                 @if ($instructor->user_img != null || $instructor->user_img != '')
@@ -295,10 +296,7 @@
                 @endif
               </div>
               <span class="name fw-bold">
-                <a href="{{ route('instructor.profile', ['id' => $instructor->id, 'name' => $fullname]) }}"
-                  title="{{ $instructor->fname }} {{ $instructor->lname }}">
-                  {{ $instructor->fname }} {{ $instructor->lname }}
-                </a>
+                {{ $instructor->fname }} {{ $instructor->lname }}
               </span>
               <div class="title text-accent fw-medium">
                 @if ($instructor->detail != null)
@@ -307,7 +305,7 @@
                   {{ __('frontstaticword.Instructor') }}
                 @endif
               </div>
-            </section>
+            </a>
           @endforeach
         </section>
       </div>
@@ -435,8 +433,9 @@
     <div class="container">
       <div class="boxpath__bg px-5 rounded-50" style="background-image: url('front/img/slidersection.png');">
         <p class="sec-title mb-0 block-sec pb-5">
-          <span class="text-accent-2">{{ __('hosoun.path') }}</span>
-          {{ __('hosoun.memorizeQuran') }}
+          {{ __('hosoun.learningPaths') }}
+          {{-- <span class="text-accent-2">{{ __('hosoun.path') }}</span>
+          {{ __('hosoun.memorizeQuran') }} --}}
         </p>
       </div>
       <section class="px-5">
@@ -444,34 +443,29 @@
           @php
             $items = [
                 [
-                    'name' => __('hosoun.memorize'),
-                    'url' => '/memorize',
-                    'title' => __('hosoun.registerToMemorizePath'),
+                    'name' => __('hosoun.quran'),
+                    'url' => '/quran',
+                    'title' => __('hosoun.registerToQuranPath'),
                 ],
                 [
-                    'name' => __('hosoun.telawa'),
-                    'url' => '/telawa',
-                    'title' => __('hosoun.registerToTelawaPath'),
+                    'name' => __('hosoun.arabicLang'),
+                    'url' => '/arabic',
+                    'title' => __('hosoun.arabicLangPath'),
                 ],
                 [
-                    'name' => __('hosoun.ejazat'),
-                    'url' => '/ejazat',
-                    'title' => __('hosoun.registerToEjazatPath'),
+                    'name' => __('hosoun.religiousSubjs'),
+                    'url' => '/religious',
+                    'title' => __('hosoun.religiousSubjsPath'),
                 ],
                 [
-                    'name' => __('hosoun.keraat'),
-                    'url' => '/keraat',
-                    'title' => __('hosoun.registerToKeraatPath'),
-                ],
-                [
-                    'name' => __('hosoun.tajwed'),
-                    'url' => '/tajwed',
-                    'title' => __('hosoun.registerToTajwedPath'),
+                    'name' => __('hosoun.otherSubjs'),
+                    'url' => '/subjects',
+                    'title' => __('hosoun.otherSubjsPath'),
                 ],
             ];
           @endphp
           @foreach ($items as $item)
-            <div class="col-4 col-lg p-2 p-sm-3">
+            <div class="col-6 col-lg p-2 p-sm-3">
               <a href="{{ url($item['url']) }}" class="boxpath d-block h-100 bg-white text-center"
                 title="{{ $item['title'] }}">
                 <div class="boxpath__number mb-4"></div>

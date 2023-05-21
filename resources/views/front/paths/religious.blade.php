@@ -1,20 +1,18 @@
 @extends('front.layouts.master')
-@section('css')
-@endsection
 @section('title')
-  {{ __('hosoun.registerToMemorizePath') }}
+  {{ __('hosoun.religiousSubjsPath') }}
 @endsection
 
 @section('content')
   @include('front.layouts.page_header', [
-      'title' => __('hosoun.registerToMemorizePath'),
+      'title' => __('hosoun.religiousSubjsPath'),
   ])
   <section class="block-sec">
     <div class="container">
       <div class="row">
         <div class="col-sm-10 col-lg-8 col-xl-6 mx-auto">
           <section class="main-block">
-            <form method="post" action="" class="p-sm-4" enctype="multipart/form-data">
+            <form method="post" action="" enctype="multipart/form-data">
               <div class="form-group">
                 <label for="name" class="form-label">
                   {{ __('frontstaticword.Name') }}
@@ -34,10 +32,8 @@
                   <input type="datetime-local" name="birthdate" id="birthdate" class="form-control"
                     placeholder="{{ __('frontstaticword.DateofBirth') }}" value="" required>
                   <i class="isax isax-calendar-2"></i>
-
                 </div>
               </div>
-
 
               <div class="form-group">
                 <label for="country" class="form-label">
@@ -52,7 +48,6 @@
                     <option value="2">option3</option>
                   </select>
                   <i class="isax isax-location"></i>
-
                 </div>
               </div>
 
@@ -83,7 +78,7 @@
 
               <section class="form-group d-flex flex-column gap-4">
                 <div class="fs-14 fw-bold">
-                  {{ __('hosoun.instructorGender') }}
+                  {{ __('hosoun.pathInstrctrGender') }}
                 </div>
                 <div class="d-flex align-items-center gap-5">
                   <div class="form-check">
@@ -103,13 +98,71 @@
                 </div>
               </section>
 
+              <section class="form-group d-flex flex-column gap-4">
+                <div class="fs-14 fw-bold">
+                  {{ __('hosoun.chooseSubj') }}
+                </div>
+                <div class="d-flex align-items-center gap-5 flex-wrap">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="subj" value="" id="aqeda">
+                    <label class="form-check-label fs-14" for="aqeda">
+                      {{ __('hosoun.aqeda') }}
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="subj" value="" id="fekh">
+                    <label class="form-check-label fs-14" for="fekh">
+                      {{ __('hosoun.fekh') }}
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="subj" value="" id="tafsir">
+                    <label class="form-check-label fs-14" for="tafsir">
+                      {{ __('hosoun.tafsir') }}
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="subj" value="" id="seerah">
+                    <label class="form-check-label fs-14" for="seerah">
+                      {{ __('hosoun.seerah') }}
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="subj" value="" id="hadeeth">
+                    <label class="form-check-label fs-14" for="hadeeth">
+                      {{ __('hosoun.hadeeth') }}
+                    </label>
+                  </div>
+                </div>
+              </section>
+
+              <section class="form-group d-flex flex-column gap-4">
+                <div class="fs-14 fw-bold">
+                  {{ __('hosoun.choosePreferred') }}
+                </div>
+                <div class="d-flex align-items-center gap-5">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="preferred" value="" id="preferredyes">
+                    <label class="form-check-label fs-14" for="preferredyes">
+                      {{ __('frontstaticword.Yes') }}
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="preferred" value="" id="preferredno">
+                    <label class="form-check-label fs-14" for="preferredno">
+                      {{ __('frontstaticword.No') }}
+                    </label>
+                  </div>
+                </div>
+              </section>
+
               <div class="form-group">
-                <label for="oldMemorized" class="form-label">
-                  {{ __('hosoun.oldMemorized') }}
+                <label for="preferredBook" class="form-label">
+                  {{ __('hosoun.preferredBook') }}
                 </label>
                 <div class="form-group-icon">
-                  <input type="text" name="oldMemorized" id="oldMemorized" class="form-control"
-                    placeholder="{{ __('hosoun.oldMemorized') }}" value="" required>
+                  <input type="text" name="preferredBook" id="preferredBook" class="form-control"
+                    placeholder="{{ __('hosoun.preferredBook') }}" value="" required>
                   <i class="isax isax-book"></i>
                 </div>
               </div>
