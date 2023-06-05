@@ -1,20 +1,18 @@
 @extends('front.layouts.master')
-@section('css')
-@endsection
 @section('title')
-  {{ __('hosoun.registerToTajwedPath') }}
+  {{ __('hosoun.otherSubjsPath') }}
 @endsection
 
 @section('content')
   @include('front.layouts.page_header', [
-      'title' => __('hosoun.registerToTajwedPath'),
+      'title' => __('hosoun.otherSubjsPath'),
   ])
   <section class="block-sec">
     <div class="container">
       <div class="row">
         <div class="col-sm-10 col-lg-8 col-xl-6 mx-auto">
           <section class="main-block">
-            <form method="post" action="" class="p-sm-4" enctype="multipart/form-data">
+            <form method="post" action="" enctype="multipart/form-data">
               <div class="form-group">
                 <label for="name" class="form-label">
                   {{ __('frontstaticword.Name') }}
@@ -83,7 +81,7 @@
 
               <section class="form-group d-flex flex-column gap-4">
                 <div class="fs-14 fw-bold">
-                  {{ __('hosoun.tajwedBy') }}
+                  {{ __('hosoun.pathInstrctrGender') }}
                 </div>
                 <div class="d-flex align-items-center gap-5">
                   <div class="form-check">
@@ -102,6 +100,61 @@
                   </div>
                 </div>
               </section>
+
+              <div class="form-group">
+                <label for="class" class="form-label">
+                  {{ __('hosoun.class') }}
+                </label>
+                <div class="form-group-icon">
+                  <select name="class" id="class" class="select2-search-enable"
+                    data-placeholder="{{ __('hosoun.class') }}">
+                    <option></option>
+                    <option value="1">Kg1</option>
+                    <option value="2">Kg2</option>
+                    <option value="3">أول ابتدائي</option>
+                    <option value="4">ثاني ابتدائي</option>
+                    <option value="5">ثالث ابتدائي</option>
+                    <option value="6">رابع ابتدائي</option>
+                    <option value="7">خامس ابتدائي</option>
+                    <option value="8">سادس ابتدائي</option>
+                    <option value="9">أول متوسط</option>
+                    <option value="10">ثاني متوسط</option>
+                    <option value="11">ثالث متوسط</option>
+                    <option value="12">أول ثانوي</option>
+                    <option value="13">ثاني ثانوي</option>
+                    <option value="14">ثالث ثانوي</option>
+                    <option value="14">جامعة</option>
+                  </select>
+                  <i class="isax isax-book"></i>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="chooseSubj" class="form-label">
+                  {{ __('hosoun.chooseSubj') }}
+                </label>
+                <div class="form-group-icon">
+                  <select name="chooseSubj" id="chooseSubj" class="select2-search-enable"
+                    data-placeholder="{{ __('hosoun.chooseSubj') }}">
+                    <option></option>
+                    <option value="1">تأسيس</option>
+                    <option value="2">لغة عربية</option>
+                    <option value="3">دراسات إسلامية</option>
+                    <option value="4">إنجليزي</option>
+                    <option value="5">رياضيات</option>
+                    <option value="6">علوم</option>
+                    <option value="7">فيزياء</option>
+                    <option value="8">أحياء</option>
+                    <option value="9">كمياء</option>
+                    <option value="10">ساينس</option>
+                    <option value="11">ماث</option>
+                    <option value="12">فرنساوي</option>
+                    <option value="13">قدرات وتحصيلي</option>
+                    <option value="14">مراجعات عامة</option>
+                  </select>
+                  <i class="isax isax-book"></i>
+                </div>
+              </div>
 
               <div class="form-group">
                 <label for="whenToStart" class="form-label">

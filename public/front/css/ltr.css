@@ -191,8 +191,8 @@ h6 {
 .page_header {
   background-image: linear-gradient(
     to right,
-    var(--clr-accent),
-    var(--clr-accent-2)
+    var(--clr-dark),
+    var(--clr-accent)
   );
 }
 

@@ -82,7 +82,7 @@ body {
   font-weight: 400;
   color: var(--text-black-color);
   font-size: 1.6rem;
-  text-align: right;
+  text-align: start;
 }
 
 body::after {
@@ -716,7 +716,7 @@ textarea.form-control {
   position: absolute;
   z-index: 100000;
   top: 1.25rem;
-  right: 2rem;
+  inset-inline-start: 2rem;
 }
 
 input {

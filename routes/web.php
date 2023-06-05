@@ -780,18 +780,15 @@ Route::get('jitsi/detail/{id}', 'JitsiController@jitsidetailpage')->name('jitsip
 
 
 // Learning path forms
-Route::get('/memorize', function () {
-    return view('front.quran.memorize');
+Route::get('/quran', function () {
+    return view('front.paths.quran');
 });
-Route::get('/telawa', function () {
-    return view('front.quran.telawa');
+Route::get('/arabic', function () {
+    return view('front.paths.arabic');
 });
-Route::get('/ejazat', function () {
-    return view('front.quran.ejazat');
+Route::get('/religious', function () {
+    return view('front.paths.religious');
 });
-Route::get('/keraat', function () {
-    return view('front.quran.keraat');
-});
-Route::get('/tajwed', function () {
-    return view('front.quran.tajwed');
+Route::get('/subjects', function () {
+    return view('front.paths.subjects');
 });
