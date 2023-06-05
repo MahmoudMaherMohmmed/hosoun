@@ -61,7 +61,7 @@
   </a>
 </li>
 <li class="nav-item">
-  <a class="nav-link p-0" href="">
+  <a class="nav-link p-0" href="{{route('instructors.all')}}">
     {{ __('frontstaticword.Instructors') }}
   </a>
 </li>

@@ -136,6 +136,7 @@ return [
     'Aboutthiscourse' => 'About this course',
     'Instructor' => 'Instructor',
     'Instructors' => 'Instructors',
+    'NoInstructors' => 'There are no instructors active recently.',
     'InstructorsSubtitle' => 'Best instructors on Hosoum Academy',
     'Section' => 'Section',
     'Students' => 'Students',

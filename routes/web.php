@@ -493,6 +493,7 @@ Route::middleware(['web'])->group(function () {
 
             Route::resource('requestinstructor', 'InstructorRequestController');
             Route::get('instructor/{id}/{name}', 'InstructorSettingController@instructorprofile')->name('instructor.profile');
+            Route::get('instructors/all', 'InstructorSettingController@instructorsAll')->name('instructors.all');
 
             Route::post('rating/show/{id}', 'ReviewratingController@rating')->name('course.rating');
             Route::post('reports/insert/{id}', 'ReportReviewController@store')->name('report.review');

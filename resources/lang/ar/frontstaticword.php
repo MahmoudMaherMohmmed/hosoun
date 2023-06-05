@@ -142,6 +142,7 @@ return array(
   'Aboutthiscourse' => 'معلومات عن هذه الدورة',
   'Instructor' => 'معلم',
   'Instructors' => 'المعلمين',
+  'NoInstructors' => 'لايوجد معلمين نشطين حاليا.',
   'InstructorsSubtitle' => 'أفضل الكوادر العلمية من كل المدربين المميزين على منصة حصون التعليمية',
   'Section' => 'الجزء',
   'Students' => 'المتدربين',

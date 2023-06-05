@@ -84,6 +84,7 @@ class InstructorRequestController extends Controller
     public function allinstructor()
     {
         $items = Instructor::all();
+        
         return view('admin.instructor.all_instructor.index',compact('items'));
     }
 
