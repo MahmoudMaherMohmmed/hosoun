@@ -24,7 +24,7 @@
   <section class="boxcourse__content position-relative">
     <div class="d-flex flex-column pt-5">
       <span class="rating-readonly"></span>
-      <a href="{{ route('course.content', ['id' => $course->id, 'slug' => $course->slug]) }}"
+      <a href="{{ route('user.course.show', ['id' => $course->id, 'slug' => $course->slug]) }}"
         class="fs-20 fw-bold mt-4">
         {{ $course->title }} </a>
       <div class="d-flex align-items-center mt-4 mb-5">
