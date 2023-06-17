@@ -792,3 +792,9 @@ Route::get('/religious', function () {
 Route::get('/subjects', function () {
     return view('front.paths.subjects');
 });
+Route::get('/books-category', function () {
+    return view('front.books.category');
+});
+Route::get('/books', function () {
+    return view('front.books.books');
+});

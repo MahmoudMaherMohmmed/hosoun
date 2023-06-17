@@ -1,7 +1,7 @@
 .headersearch__dropdown .dropdown-toggle::after {
   content: none;
 }
-.headersearch__dropdown .dropdown-menu {
+.headersearch__dropdown > .dropdown-menu {
   min-width: 24rem;
   height: 25rem;
   transform: translate(-3rem, 4.1rem) !important;
@@ -13,6 +13,14 @@
 }
 .headersearch__dropdown .dropdown-menu .dropdown-item:hover {
   background-color: #4a9994;
+}
+
+.headersearch__dropdown .submenu {
+  position: relative;
+  border-radius: 0;
+  background-color: rgba(var(--clr-white-rgb), 0.1);
+  padding: 0;
+  box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.1);
 }
 
 .headersearch__form input {
