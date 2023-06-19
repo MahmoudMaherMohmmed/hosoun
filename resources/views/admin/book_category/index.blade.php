@@ -22,7 +22,7 @@
                                 <tr>
                                     <th>#</th>
                                     <th>{{ __('adminstaticword.Image') }}</th>
-                                    <th>{{ __('adminstaticword.Category') }}</th>
+                                    <th>{{ __('adminstaticword.Name') }}</th>
                                     <th>{{ __('adminstaticword.Status') }}</th>
                                     <th>{{ __('adminstaticword.Edit') }}</th>
                                     <th>{{ __('adminstaticword.Delete') }}</th>

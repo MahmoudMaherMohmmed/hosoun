@@ -31,7 +31,7 @@ class BookSubCategoryController extends Controller
      */
     public function create()
     {
-        $bookCategories = BookCategory::latest()->get();
+        $bookCategories = BookCategory::active()->latest()->get();
 
         return view('admin.book_sub_category.add', compact('bookCategories'));
     }
@@ -88,7 +88,7 @@ class BookSubCategoryController extends Controller
      */
     public function edit(BookSubCategory $bookSubCategory)
     {
-        $bookCategories = BookCategory::latest()->get();
+        $bookCategories = BookCategory::active()->latest()->get();
 
         return view('admin.book_sub_category.edit', compact('bookSubCategory', 'bookCategories'));
     }

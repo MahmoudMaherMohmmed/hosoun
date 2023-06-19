@@ -32,7 +32,7 @@
                         <div class="row">
                             <div class="col-xs-12 col-md-6">
                                 <div class="form-group">
-                                    <label for="title">{{ __('adminstaticword.Category') }}:<sup class="redstar">*</sup></label>
+                                    <label for="title">{{ __('adminstaticword.Name') }}:<sup class="redstar">*</sup></label>
                                     <input type="text" class="form-control" name="title" id="title"  value="{{old('title')}}">
                                 </div>
                             </div>

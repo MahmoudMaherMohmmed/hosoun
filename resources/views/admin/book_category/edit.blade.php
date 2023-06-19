@@ -18,7 +18,7 @@
             <div class="box box-primary">
                 <div class="box-header with-border">
                     <h3 class="box-title">{{ __('adminstaticword.EditCategory') }}</h3>
-                    <a href="{{url('category')}}" class="btn btn-success pull-right owtbtn">
+                    <a href="{{url('book-categories')}}" class="btn btn-success pull-right owtbtn">
                         {{ __('adminstaticword.Back') }}
                     </a>
                 </div>
@@ -33,7 +33,7 @@
                         <div class="row">
                             <div class="col-xs-12 col-md-6">
                                 <div class="form-group">
-                                    <label for="title">{{ __('adminstaticword.Category') }}:<sup class="redstar">*</sup></label>
+                                    <label for="title">{{ __('adminstaticword.Name') }}:<sup class="redstar">*</sup></label>
                                     <input type="text" class="form-control" name="title" id="title"  value="{{$bookCategory->title}}">
                                 </div>
                             </div>
