@@ -1,6 +1,6 @@
 @extends('admin/layouts.master')
 
-@section('title', __('adminstaticword.BookCategories'))
+@section('title', __('adminstaticword.BookSubCategories'))
 
 @section('body')
 <section class="content">
@@ -9,9 +9,9 @@
         <div class="col-xs-12">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">{{ __('adminstaticword.BookCategories') }}</h3>
-                    <a type="button" class="btn btn-info btn-sm" href="{{ route('book-categories.create') }}">
-                        + {{ __('adminstaticword.AddBookCategory') }}
+                    <h3 class="box-title">{{ __('adminstaticword.BookSubCategories') }}</h3>
+                    <a type="button" class="btn btn-info btn-sm" href="{{ route('book-sub-categories.create') }}">
+                        + {{ __('adminstaticword.AddBookSubCategory') }}
                     </a>
                 </div>
 
@@ -21,7 +21,7 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>{{ __('adminstaticword.Image') }}</th>
+                                    <th>{{ __('adminstaticword.Name') }}</th>
                                     <th>{{ __('adminstaticword.Category') }}</th>
                                     <th>{{ __('adminstaticword.Status') }}</th>
                                     <th>{{ __('adminstaticword.Edit') }}</th>
@@ -29,26 +29,20 @@
                                 </tr>
                             </thead>
                             <tbody id="sortable">
-                                @foreach($bookCategories as $key=>$category)
-                                <tr class="sortable" id="id-{{ $category->id }}">
+                                @foreach($bookSubCategories as $key=>$sub_category)
+                                <tr class="sortable" id="id-{{ $sub_category->id }}">
                                     <td>{{ $key+1 }}</td>
 
-                                    <td>
-                                        @if($category->image !== NULL && $category->image !== '')
-                                            <img src="{{ url('images/book_categories', $category->image)}}" class="img-responsive">
-                                        @else
-                                            <img src="{{ Avatar::create($category->title)->toBase64() }}" class="img-responsive">
-                                        @endif
-                                    </td>
+                                    <td>{{$sub_category->title}}</td>
 
-                                    <td>{{$category->title}}</td>
+                                    <td>{{$sub_category->category->title}}</td>
 
                                     <td>
-                                        <form action="{{ route('book-categories.quick',$category->id) }}" method="POST">
+                                        <form action="{{ route('book-sub-categories.quick',$sub_category->id) }}" method="POST">
                                             {{ csrf_field() }}
                                             <button type="Submit"
-                                                class="btn btn-xs table-status {{ $category->status ==1 ? 'btn-success' : 'btn-danger' }}">
-                                                @if($category->status ==1)
+                                                class="btn btn-xs table-status {{ $sub_category->status ==1 ? 'btn-success' : 'btn-danger' }}">
+                                                @if($sub_category->status ==1)
                                                 {{ __('adminstaticword.Active') }}
                                                 @else
                                                 {{ __('adminstaticword.Deactive') }}
@@ -58,11 +52,11 @@
                                     </td>
 
                                     <td>
-                                        <a class="table-edit" href="{{url('book-categories/'.$category->id).'/edit'}}"><i class='bx bx-edit' ></i></a>
+                                        <a class="table-edit" href="{{url('book-sub-categories/'.$sub_category->id).'/edit'}}"><i class='bx bx-edit' ></i></a>
                                     </td>
 
                                     <td>
-                                        <form method="post" action="{{url('book-categories/'.$category->id)}}" data-parsley-validate
+                                        <form method="post" action="{{url('book-sub-categories/'.$sub_category->id)}}" data-parsley-validate
                                             class="form-horizontal form-label-left">
                                             {{ csrf_field() }}
                                             {{ method_field('DELETE') }}

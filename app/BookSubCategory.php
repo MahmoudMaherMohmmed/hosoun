@@ -7,13 +7,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Translatable\HasTranslations;
 
-class BookCategory extends Model
+class BookSubCategory extends Model
 {
     use HasFactory;
     use HasTranslations;
     use SoftDeletes;
 
     protected $fillable = [
+        'book_category_id',
         'slug',
         'title',
         'description',
@@ -23,8 +24,8 @@ class BookCategory extends Model
 
     public $translatable = ['title', 'description'];
 
-    public function subcategories()
+    public function category()
     {
-        return $this->hasMany(BookSubCategory::class, 'book_category_id', 'id');
+        return $this->belongsTo(BookCategory::class, 'book_category_id', 'id');
     }
 }

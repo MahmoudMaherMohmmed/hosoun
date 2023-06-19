@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\BookCategory;
-use App\Http\Requests\StoreBookCategoryRequest;
-use App\Http\Requests\UpdateBookCategoryRequest;
+use App\BookSubCategory;
+use App\Http\Requests\StoreBookSubCategoryRequest;
+use App\Http\Requests\UpdateBookSubCategoryRequest;
 use File;
 use Image;
 use Session;
 
-class BookCategoryController extends Controller
+class BookSubCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,9 +19,9 @@ class BookCategoryController extends Controller
      */
     public function index()
     {
-        $bookCategories = BookCategory::latest()->get();
+        $bookSubCategories = BookSubCategory::latest()->get();
 
-        return view('admin.book_category.index', compact('bookCategories'));
+        return view('admin.book_sub_category.index', compact('bookSubCategories'));
     }
 
     /**
@@ -30,23 +31,25 @@ class BookCategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.book_category.add');
+        $bookCategories = BookCategory::latest()->get();
+
+        return view('admin.book_sub_category.add', compact('bookCategories'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreBookCategoryRequest  $request
+     * @param  \App\Http\Requests\StoreBookSubCategoryRequest  $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(StoreBookCategoryRequest $request)
+    public function store(StoreBookSubCategoryRequest $request)
     {
         $input = $request->all();
 
         $input['slug'] = str_slug($input['title'], '-');
 
         if ($file = $request->file('image')) {
-            $path = '/images/book_categories/';
+            $path = '/images/book_sub_categories/';
             if (!file_exists(public_path() . '/' . $path)) {
                 File::makeDirectory(public_path() . '/' . $path, 0777, true);
             }
@@ -59,20 +62,20 @@ class BookCategoryController extends Controller
 
         $input['status'] = isset($request->status) ? 1 : 0;
 
-        BookCategory::create($input);
+        BookSubCategory::create($input);
 
         Session::flash('success', trans('flash.AddedSuccessfully'));
 
-        return redirect('book-categories');
+        return redirect('book-sub-categories');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\BookCategory  $bookCategory
-     * @return \Illuminate\View\View
+     * @param  \App\BookSubCategory  $bookSubCategory
+     * @return \Illuminate\Http\Response
      */
-    public function show(BookCategory $bookCategory)
+    public function show(BookSubCategory $bookSubCategory)
     {
         //
     }
@@ -80,38 +83,40 @@ class BookCategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\BookCategory  $bookCategory
+     * @param  \App\BookSubCategory  $bookSubCategory
      * @return \Illuminate\View\View
      */
-    public function edit(BookCategory $bookCategory)
+    public function edit(BookSubCategory $bookSubCategory)
     {
-        return view('admin.book_category.edit', compact('bookCategory'));
+        $bookCategories = BookCategory::latest()->get();
+
+        return view('admin.book_sub_category.edit', compact('bookSubCategory', 'bookCategories'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateBookCategoryRequest  $request
-     * @param  \App\BookCategory  $bookCategory
+     * @param  \App\Http\Requests\UpdateBookSubCategoryRequest  $request
+     * @param  \App\BookSubCategory  $bookSubCategory
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(UpdateBookCategoryRequest $request, BookCategory $bookCategory)
+    public function update(UpdateBookSubCategoryRequest $request, BookSubCategory $bookSubCategory)
     {
         $input = $request->all();
 
         $input['slug'] = str_slug($input['title'], '-');
 
         if ($file = $request->file('image')) {
-            $path = '/images/book_categories/';
+            $path = '/images/book_sub_categories/';
 
             if (!file_exists(public_path() . '/' . $path)) {
                 File::makeDirectory(public_path() . '/' . $path, 0777, true);
             }
 
-            if ($bookCategory->cat_image != null) {
-                $content = @file_get_contents(public_path() . $path . $bookCategory->cat_image);
+            if ($bookSubCategory->cat_image != null) {
+                $content = @file_get_contents(public_path() . $path . $bookSubCategory->cat_image);
                 if ($content) {
-                    unlink(public_path() . $path . $bookCategory->cat_image);
+                    unlink(public_path() . $path . $bookSubCategory->cat_image);
                 }
             }
 
@@ -124,22 +129,22 @@ class BookCategoryController extends Controller
 
         $input['status'] = isset($request->status) ? 1 : 0;
 
-        $bookCategory->update($input);
+        $bookSubCategory->update($input);
 
         Session::flash('success', trans('flash.UpdatedSuccessfully'));
 
-        return redirect('book-categories');
+        return redirect('book-sub-categories');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\BookCategory  $bookCategory
+     * @param  \App\BookSubCategory  $bookSubCategory
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(BookCategory $bookCategory)
+    public function destroy(BookSubCategory $bookSubCategory)
     {
-        $bookCategory->delete();
+        $bookSubCategory->delete();
 
         return back()->with('delete', trans('flash.DeletedSuccessfully'));
     }

@@ -741,5 +741,6 @@ return [
 
     'BookCategories' => 'فئات الكتب',
     'AddBookCategory' => 'أضافة فئة كتاب جديدة',
-  
+    'BookSubCategories' => 'فئات الكتب الفرعية',
+    'AddBookSubCategory' => 'أضافة فئة كتب فرعية جديدة',
   ];
