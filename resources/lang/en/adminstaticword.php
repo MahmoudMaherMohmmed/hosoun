@@ -772,4 +772,7 @@ return [
     'ImageTen' => 'Image Ten',
     'ImageOneText' => 'Image One Text',
     'ImageTwoText' => 'Image Two Text',
+
+    'BookCategories' => 'Book Categories',
+    'AddBookCategory' => 'Add Book Categories',
 ];

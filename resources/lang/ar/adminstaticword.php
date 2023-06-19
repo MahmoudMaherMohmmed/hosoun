@@ -738,5 +738,8 @@ return [
     'ImageTen' => 'الصورة العاشرة',
     'ImageOneText' => 'نص الصورة الأولى',
     'ImageTwoText' => 'نص الصورة الثانية',
+
+    'BookCategories' => 'فئات الكتب',
+    'AddBookCategory' => 'أضافة فئة كتاب جديدة',
   
   ];

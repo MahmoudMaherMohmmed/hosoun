@@ -412,6 +412,8 @@ Route::middleware(['web'])->group(function () {
                     Route::put('/edit/{id}', 'UserController@update')->name('user.update');
                 });
 
+                Route::resource('book-categories', 'BookCategoryController');
+
                 Route::resource('category', 'CategoriesController');
                 Route::get('/category/{slug}', 'CategoriesController@show')->name('category.show');
                 Route::resource('subcategory', 'SubcategoryController');
@@ -748,6 +750,7 @@ Route::middleware(['web'])->group(function () {
             Route::post('/quickupdate/related/{id}', 'QuickUpdateController@relatedQuick')->name('related.quick');
             Route::post('/quickupdate/ansr/{id}', 'QuickUpdateController@ansrQuick')->name('ansr.quick');
             Route::post('/quickupdate/answer/{id}', 'QuickUpdateController@answerQuick')->name('answer.quick');
+            Route::post('/quickupdate/book-categories/{id}', 'QuickUpdateController@bookCategoriesQuick')->name('book-categories.quick');
         });
     });
 });
