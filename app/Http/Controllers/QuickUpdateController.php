@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Book;
 use App\BookCategory;
 use App\BookSubCategory;
 use Illuminate\Http\Request;
@@ -149,6 +150,21 @@ class QuickUpdateController extends Controller
             return back()->with('success', 'Status changed to active !');
         } else {
             $bookSubCategory->update(['status' => "0"]);
+
+            return back()->with('delete', 'Status changed to deactive !');
+        }
+    }
+
+    public function bookQuick($id)
+    {
+        $book = Book::findorfail($id);
+
+        if ($book->status == 0) {
+            $book->update(['status' => "1"]);
+
+            return back()->with('success', 'Status changed to active !');
+        } else {
+            $book->update(['status' => "0"]);
 
             return back()->with('delete', 'Status changed to deactive !');
         }

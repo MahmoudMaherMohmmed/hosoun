@@ -7,31 +7,27 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Translatable\HasTranslations;
 
-class BookSubCategory extends Model
+class Book extends Model
 {
     use HasFactory;
     use HasTranslations;
     use SoftDeletes;
 
     protected $fillable = [
-        'book_category_id',
+        'book_sub_category_id',
         'slug',
         'title',
         'description',
         'image',
+        'file',
         'status',
     ];
 
     public $translatable = ['title', 'description'];
 
-    public function category()
+    public function sub_category()
     {
-        return $this->belongsTo(BookCategory::class, 'book_category_id', 'id')->withTrashed();
-    }
-
-    public function books()
-    {
-        return $this->hasMany(Book::class, 'book_sub_category_id', 'id')->withTrashed();
+        return $this->belongsTo(BookSubCategory::class, 'book_sub_category_id', 'id')->withTrashed();
     }
 
     public function scopeActive($query)

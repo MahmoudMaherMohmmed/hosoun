@@ -777,4 +777,7 @@ return [
     'AddBookCategory' => 'Add Book Categories',
     'BookSubCategories' => 'Book Sub Categories',
     'AddBookSubCategory' => 'Add Book Sub Categories',
+    'Books' => 'Books',
+    'AddBook' => 'Add Book',
+    'EditBook' => 'Edit Book',
 ];

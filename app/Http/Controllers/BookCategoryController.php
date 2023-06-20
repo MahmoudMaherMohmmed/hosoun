@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\BookCategory;
+use App\BookSubCategory;
 use App\Http\Requests\StoreBookCategoryRequest;
 use App\Http\Requests\UpdateBookCategoryRequest;
 use File;
+use Illuminate\Http\Request;
 use Image;
 use Session;
 
@@ -108,10 +110,10 @@ class BookCategoryController extends Controller
                 File::makeDirectory(public_path() . '/' . $path, 0777, true);
             }
 
-            if ($bookCategory->cat_image != null) {
-                $content = @file_get_contents(public_path() . $path . $bookCategory->cat_image);
+            if ($bookCategory->image != null) {
+                $content = @file_get_contents(public_path() . $path . $bookCategory->image);
                 if ($content) {
-                    unlink(public_path() . $path . $bookCategory->cat_image);
+                    unlink(public_path() . $path . $bookCategory->image);
                 }
             }
 
@@ -142,5 +144,12 @@ class BookCategoryController extends Controller
         $bookCategory->delete();
 
         return back()->with('delete', trans('flash.DeletedSuccessfully'));
+    }
+
+    public function subCategories(Request $request)
+    {
+        $book_sub_categories = BookSubCategory::where('book_category_id', $request->book_category_id)->pluck('title', 'id')->all();
+
+        return response()->json($book_sub_categories);
     }
 }

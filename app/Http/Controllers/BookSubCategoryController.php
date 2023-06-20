@@ -113,10 +113,10 @@ class BookSubCategoryController extends Controller
                 File::makeDirectory(public_path() . '/' . $path, 0777, true);
             }
 
-            if ($bookSubCategory->cat_image != null) {
-                $content = @file_get_contents(public_path() . $path . $bookSubCategory->cat_image);
+            if ($bookSubCategory->image != null) {
+                $content = @file_get_contents(public_path() . $path . $bookSubCategory->image);
                 if ($content) {
-                    unlink(public_path() . $path . $bookSubCategory->cat_image);
+                    unlink(public_path() . $path . $bookSubCategory->image);
                 }
             }
 
