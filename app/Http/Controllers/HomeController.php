@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\BookCategory;
 use App\Currency;
 use App\Categories;
 use App\Slider;
@@ -41,6 +42,7 @@ class HomeController extends Controller
         $trusted = Trusted::where('status', 1)->orderBy('created_at', 'DESC')->get();
         $currency = Currency::first();
         $instructors = User::where('role', 'instructor')->where('status', 1)->get();
+        $book_categories = BookCategory::active()->latest()->get();
 
         /*
         $category = Categories::orderBy('position', 'ASC')->get();
@@ -104,7 +106,7 @@ class HomeController extends Controller
         $total_count=$counter;
         */
 
-        return view('front.home', compact('sliders', 'featured_categories', 'featured_courses', 'facts', 'recent_courses', 'blogs', 'testi', 'trusted', 'currency', 'instructors'));
+        return view('front.home', compact('sliders', 'featured_categories', 'featured_courses', 'facts', 'recent_courses', 'blogs', 'testi', 'trusted', 'currency', 'instructors', 'book_categories'));
     }
 
     public function beInstructor()
@@ -115,5 +117,25 @@ class HomeController extends Controller
     public function onlineStore()
     {
         return view('front.online_store');
+    }
+
+    public function booksCategories()
+    {
+        $book_categories = BookCategory::active()->latest()->get();
+
+        return view('front.books.categories', compact('book_categories'));
+    }
+
+    public function bookscategorySubCategories($id)
+    {
+        $book_category = BookCategory::where('id', $id)->active()->latest()->first();
+
+        if ($book_category != null) {
+            $book_sub_categories = $book_category->sub_categories;
+
+            return view('front.books.sub_categories', compact('book_category', 'book_sub_categories'));
+        }
+
+        abort(404);
     }
 }

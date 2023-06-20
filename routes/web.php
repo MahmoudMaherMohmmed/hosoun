@@ -414,6 +414,7 @@ Route::middleware(['web'])->group(function () {
 
                 Route::resource('book-categories', 'BookCategoryController')->except('show');
                 Route::resource('book-sub-categories', 'BookSubCategoryController')->except('show');
+                Route::resource('book-child-categories', 'BookChildCategoryController')->except('show');
                 Route::get('admin/book_category/sub_categories', "BookCategoryController@subCategories");
                 Route::resource('books', 'BookController')->except('show');
 
@@ -499,6 +500,9 @@ Route::middleware(['web'])->group(function () {
             Route::resource('requestinstructor', 'InstructorRequestController');
             Route::get('instructor/{id}/{name}', 'InstructorSettingController@instructorprofile')->name('instructor.profile');
             Route::get('instructors/all', 'InstructorSettingController@instructorsAll')->name('instructors.all');
+
+            Route::get('/browse/books-categories', 'HomeController@booksCategories')->name('browse.book.categories');
+            Route::get('/browse/books-category/{id}/subcategories', 'HomeController@bookscategorySubCategories')->name('browse.book.category.subcategories');
 
             Route::post('rating/show/{id}', 'ReviewratingController@rating')->name('course.rating');
             Route::post('reports/insert/{id}', 'ReportReviewController@store')->name('report.review');
@@ -755,6 +759,7 @@ Route::middleware(['web'])->group(function () {
             Route::post('/quickupdate/answer/{id}', 'QuickUpdateController@answerQuick')->name('answer.quick');
             Route::post('/quickupdate/book-categories/{id}', 'QuickUpdateController@bookCategoriesQuick')->name('book-categories.quick');
             Route::post('/quickupdate/book-sub-categories/{id}', 'QuickUpdateController@bookSubCategoriesQuick')->name('book-sub-categories.quick');
+            Route::post('/quickupdate/book-child-categories/{id}', 'QuickUpdateController@bookChildCategoriesQuick')->name('book-child-categories.quick');
             Route::post('/quickupdate/books/{id}', 'QuickUpdateController@bookQuick')->name('books.quick');
         });
     });
@@ -800,9 +805,4 @@ Route::get('/religious', function () {
 Route::get('/subjects', function () {
     return view('front.paths.subjects');
 });
-Route::get('/books-category', function () {
-    return view('front.books.category');
-});
-Route::get('/site/books', function () {
-    return view('front.books.books');
-});
+

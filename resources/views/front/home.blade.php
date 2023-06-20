@@ -315,6 +315,7 @@
 
 
   {{-- BooksSections --}}
+  @if ($book_categories->isNotEmpty())
   <section class="block-sec bg-dark-accent">
     <div class="container position-relative" style="z-index: 0">
       <section class="titling">
@@ -327,64 +328,20 @@
       </section>
 
       <section class="books-carousel owl-carousel owl-theme">
-        @php
-          $items = [
-              [
-                  'img' => 'books.png',
-                  'title' => 'عربي',
-                  'desc' => 'كتب اللغة العربية المختلفة وتصنيفات العربي',
-              ],
-              [
-                  'img' => 'quran.png',
-                  'title' => 'مواد شرعية',
-                  'desc' => 'كتب المواد الشرعية مثل الفقه والحديث والسيرة وغيرها',
-              ],
-              [
-                  'img' => 'quran2.png',
-                  'title' => 'قران كريم',
-                  'desc' => 'علوم القران الكريم من الحفظ والتجويد والقراءات وغيرها',
-              ],
-              [
-                  'img' => 'openbook.png',
-                  'title' => 'علوم أخرى',
-                  'desc' => 'مواد أخرى مثل الإنجليزية والعلوم وغيرها من المواد',
-              ],
-              [
-                  'img' => 'books.png',
-                  'title' => 'عربي',
-                  'desc' => 'كتب اللغة العربية المختلفة وتصنيفات العربي',
-              ],
-              [
-                  'img' => 'quran.png',
-                  'title' => 'مواد شرعية',
-                  'desc' => 'كتب المواد الشرعية مثل الفقه والحديث والسيرة وغيرها',
-              ],
-              [
-                  'img' => 'quran2.png',
-                  'title' => 'قران كريم',
-                  'desc' => 'علوم القران الكريم من الحفظ والتجويد والقراءات وغيرها',
-              ],
-              [
-                  'img' => 'openbook.png',
-                  'title' => 'علوم أخرى',
-                  'desc' => 'مواد أخرى مثل الإنجليزية والعلوم وغيرها من المواد',
-              ],
-          ];
-        @endphp
-        @foreach ($items as $item)
-          <section class="books-item text-center d-flex flex-column align-items-center justify-content-start">
-            <img src="{{ url('front/img/books', $item['img']) }}" class="books-thumbnail" alt="">
-            <span class="fs-1 fw-bold text-white">{{ $item['title'] }}</span>
-            <span class="text-white-70">
-              {{ $item['desc'] }}
-            </span>
+        @foreach ($book_categories as $book_category)
+          <section class="books-item text-center d-flex flex-column align-items-center justify-content-start">    
+            <a href="{{ route('browse.book.category.subcategories', $book_category->id) }}">
+              <img src="{{ url('/images/book_categories/', $book_category->image) }}" class="books-thumbnail" alt="{{ $book_category->title }}">
+            </a>
+            <span class="fs-1 fw-bold text-white">{{ $book_category->title }}</span>
+            <span class="text-white-70"> {{ $book_category->description }} </span>
           </section>
         @endforeach
       </section>
 
       <div class="row mt-5 pt-3">
         <div class="col-10 col-lg-4 mx-auto">
-          <a href="{{ url('') }}" class="btn btn-white-outline w-100">
+          <a href="{{ route('browse.book.categories') }}" class="btn btn-white-outline w-100">
             <i class="isax isax-arrow-left-25 text-white"></i>
             {{ __('frontstaticword.SeeAllBooksCat') }}
           </a>
@@ -396,6 +353,7 @@
       <img src="{{ asset('front/svg/lines.svg') }}" class="lines d-none d-sm-inline-block" alt="bg-img">
     </div>
   </section>
+  @endif
   {{-- /BooksSections --}}
 
 

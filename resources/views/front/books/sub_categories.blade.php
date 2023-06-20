@@ -1,15 +1,11 @@
 @extends('front.layouts.master')
-@section('title')
-  قسم اللغة العربية
-@endsection
 
-@section('custom-css')
-@endsection
+@section('title') {{$book_category->title}} @endsection
+
+@section('custom-css') @endsection
 
 @section('content')
-  @include('front.layouts.page_header', [
-      'title' => 'قسم اللغة العربية',
-  ])
+  @include('front.layouts.page_header', ['title' => $book_category->title])
 
   <section class="block-sec">
     <div class="container">

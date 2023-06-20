@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBooksTable extends Migration
+class CreateBookChildCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,18 @@ class CreateBooksTable extends Migration
      */
     public function up()
     {
-        Schema::create('books', function (Blueprint $table) {
+        Schema::create('book_child_categories', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('book_child_category_id')->index();
+            $table->unsignedBigInteger('book_sub_category_id')->index();
             $table->string('slug')->nullable();
             $table->string('title')->nullable();
             $table->text('description')->nullable();
             $table->string('image')->nullable();
-            $table->string('file')->nullable();
             $table->enum('status', ['1', '0']);
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('book_child_category_id')->references('id')->on('book_child_categories')->onUpdate('cascade');
+            $table->foreign('book_sub_category_id')->references('id')->on('book_sub_categories')->onUpdate('cascade');
         });
     }
 
@@ -36,6 +35,6 @@ class CreateBooksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('books');
+        Schema::dropIfExists('book_child_categories');
     }
 }

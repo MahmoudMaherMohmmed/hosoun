@@ -29,9 +29,9 @@ class BookSubCategory extends Model
         return $this->belongsTo(BookCategory::class, 'book_category_id', 'id')->withTrashed();
     }
 
-    public function books()
+    public function child_categories()
     {
-        return $this->hasMany(Book::class, 'book_sub_category_id', 'id')->withTrashed();
+        return $this->hasMany(BookChildCategory::class, 'book_child_category_id', 'id')->withTrashed();
     }
 
     public function scopeActive($query)
