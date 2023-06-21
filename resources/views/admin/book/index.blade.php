@@ -24,6 +24,7 @@
                                     <th>{{ __('adminstaticword.Name') }}</th>
                                     <th>{{ __('adminstaticword.Category') }}</th>
                                     <th>{{ __('adminstaticword.SubCategory') }}</th>
+                                    <th>{{ __('adminstaticword.ChildCategory') }}</th>
                                     <th>{{ __('adminstaticword.Status') }}</th>
                                     <th>{{ __('adminstaticword.Edit') }}</th>
                                     <th>{{ __('adminstaticword.Delete') }}</th>
@@ -36,9 +37,11 @@
 
                                     <td>{{$book->title}}</td>
 
-                                    <td>{{$book->sub_category->category->title}}</td>
+                                    <td>{{$book->child_category->sub_category->category->title}}</td>
 
-                                    <td>{{$book->sub_category->title}}</td>
+                                    <td>{{$book->child_category->sub_category->title}}</td>
+
+                                    <td>{{$book->child_category->title}}</td>
 
                                     <td>
                                         <form action="{{ route('books.quick',$book->id) }}" method="POST">

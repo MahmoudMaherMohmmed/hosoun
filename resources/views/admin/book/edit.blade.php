@@ -32,12 +32,25 @@
                         {{ method_field('PUT') }}
 
                         <div class="row">
-                            <div class="col-xs-12 col-md-6">
+                            <div class="col-xs-12 col-md-12">
                                 <div class="form-group">
                                     <label for="book_category_id">{{ __('adminstaticword.Category') }}</label>
                                     <select name="book_category_id" id="book_category_id"  class="form-control js-example-basic-single" data-placeholder="{{ __('frontstaticword.SelectanOption') }}">
                                         @foreach($bookCategories as $bookCategory)
-                                            <option value="{{$bookCategory->id}}" {{ $book->sub_category->category->id == $bookCategory->id ? 'selected' : '' }}>{{$bookCategory->title}}</option>
+                                            <option value="{{$bookCategory->id}}" {{ $book->child_category->sub_category->category->id == $bookCategory->id ? 'selected' : '' }}>{{$bookCategory->title}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6">
+                                <div class="form-group">
+                                    <label for="book_sub_category_id">{{ __('adminstaticword.SubCategory') }}</label>
+                                    <select name="book_sub_category_id" id="book_sub_category_id"  class="form-control js-example-basic-single" data-placeholder="{{ __('frontstaticword.SelectanOption') }}">
+                                        @foreach($bookSubCategories as $bookSubCategory)
+                                            <option value="{{$bookSubCategory->id}}" {{ $book->child_category->book_sub_category_id == $bookSubCategory->id ? 'selected' : '' }}>{{$bookSubCategory->title}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -45,10 +58,10 @@
 
                             <div class="col-xs-12 col-md-6">
                                 <div class="form-group">
-                                    <label for="book_sub_category_id">{{ __('adminstaticword.SubCategory') }}</label>
-                                    <select name="book_sub_category_id" id="book_sub_category_id"  class="form-control js-example-basic-single" data-placeholder="{{ __('frontstaticword.SelectanOption') }}">
-                                        @foreach($bookSubCategories as $bookSubCategory)
-                                            <option value="{{$bookSubCategory->id}}" {{ $book->book_sub_category_id == $bookSubCategory->id ? 'selected' : '' }}>{{$bookSubCategory->title}}</option>
+                                    <label for="book_child_category_id">{{ __('adminstaticword.ChildCategory') }}</label>
+                                    <select name="book_child_category_id" id="book_child_category_id"  class="form-control js-example-basic-single" data-placeholder="{{ __('frontstaticword.SelectanOption') }}">
+                                        @foreach($bookChildCategories as $bookChildCategory)
+                                            <option value="{{$bookChildCategory->id}}" {{ $book->book_child_category_id == $bookChildCategory->id ? 'selected' : '' }}>{{$bookChildCategory->title}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -153,6 +166,34 @@
                         success: function (data) {
                             $.each(data, function (id, title) {
                                 up.append($('<option>', {
+                                    value: id,
+                                    text: title
+                                }));
+                            });
+                        },
+                        error: function (XMLHttpRequest, textStatus, errorThrown) {
+                            console.log(XMLHttpRequest);
+                        }
+                    });
+                }
+            });
+
+            $('#book_sub_category_id').change(function () {
+                var book_child_category = $('#book_child_category_id').empty();
+                var book_sub_category_id = $(this).val();
+                if (book_sub_category_id) {
+                    $.ajax({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        type: "GET",
+                        url: "{{ url('admin/book_sub_category/child_categories') }}",
+                        data: {
+                            book_sub_category_id: book_sub_category_id
+                        },
+                        success: function (data) {
+                            $.each(data, function (id, title) {
+                                book_child_category.append($('<option>', {
                                     value: id,
                                     text: title
                                 }));

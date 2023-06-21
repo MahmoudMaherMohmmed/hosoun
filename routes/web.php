@@ -416,6 +416,7 @@ Route::middleware(['web'])->group(function () {
                 Route::resource('book-sub-categories', 'BookSubCategoryController')->except('show');
                 Route::resource('book-child-categories', 'BookChildCategoryController')->except('show');
                 Route::get('admin/book_category/sub_categories', "BookCategoryController@subCategories");
+                Route::get('admin/book_sub_category/child_categories', "BookSubCategoryController@childCategories");
                 Route::resource('books', 'BookController')->except('show');
 
                 Route::resource('category', 'CategoriesController');

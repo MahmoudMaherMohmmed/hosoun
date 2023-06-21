@@ -195,6 +195,7 @@
                     <span>{{ __('adminstaticword.Currency') }}</span>
                 </a>
             </li>
+
             <li class="{{ Nav::isResource('category') }} {{ Nav::isResource('subcategory') }} {{ Nav::isResource('childcategory') }} {{ Nav::hasSegment('course') }} {{ Nav::isResource('bundle') }} {{ Nav::isResource('courselang') }} {{ Nav::isResource('coursereview') }} {{ Nav::isRoute('assignment.view') }} {{ Nav::isResource('refundpolicy') }} {{ Nav::isResource('batch') }} {{ Nav::isRoute('quiz.review') }} {{ Nav::isRoute('list.assignment') }} {{ Nav::hasSegment('courseinclude') }} {{ Nav::hasSegment('whatlearns') }} {{ Nav::hasSegment('coursechapter') }} {{ Nav::hasSegment('courseclass') }} {{ Nav::hasSegment('relatedcourse') }} {{ Nav::hasSegment('questionanswer') }} {{ Nav::hasSegment('announsment') }} {{ Nav::isRoute('show.quizreport') }} treeview">
                 <a href="#" class="flex-between">
                     <div class="item-flex">
@@ -235,76 +236,124 @@
                             </li>
                         </ul>
 
-                    <li class="{{ Nav::hasSegment('course') }} {{ Nav::hasSegment('courseinclude') }} {{ Nav::hasSegment('whatlearns') }} {{ Nav::hasSegment('coursechapter') }} {{ Nav::hasSegment('courseclass') }} {{ Nav::hasSegment('relatedcourse') }} {{ Nav::hasSegment('questionanswer') }} {{ Nav::hasSegment('announsment') }}  {{ Nav::isRoute('show.quizreport') }}">
-                        <a href="{{url('course')}}" class="item-flex">
-                            <i class='bx bx-chevron-left' ></i>
-                            <span>{{ __('adminstaticword.Courses') }}</span>
-                        </a>
+                        <li class="{{ Nav::hasSegment('course') }} {{ Nav::hasSegment('courseinclude') }} {{ Nav::hasSegment('whatlearns') }} {{ Nav::hasSegment('coursechapter') }} {{ Nav::hasSegment('courseclass') }} {{ Nav::hasSegment('relatedcourse') }} {{ Nav::hasSegment('questionanswer') }} {{ Nav::hasSegment('announsment') }}  {{ Nav::isRoute('show.quizreport') }}">
+                            <a href="{{url('course')}}" class="item-flex">
+                                <i class='bx bx-chevron-left' ></i>
+                                <span>{{ __('adminstaticword.Courses') }}</span>
+                            </a>
+                        </li>
+                        
+                        <li class="{{ Nav::isResource('bundle') }}">
+                            <a href="{{url('bundle')}}" class="item-flex">
+                                <i class='bx bx-chevron-left' ></i>
+                                <span>{{ __('adminstaticword.BundleCourse') }}</span>
+                            </a>
+                        </li>
+                        
+                        <li class="{{ Nav::isResource('courselang') }}">
+                            <a href="{{url('courselang')}}" class="item-flex">
+                                <i class='bx bx-chevron-left' ></i>
+                                <span>{{ __('adminstaticword.CourseLanguage') }}</span>
+                            </a>
+                        </li>
+                        
+                        <li class="{{ Nav::isResource('coursereview') }}">
+                            <a href="{{url('coursereview')}}" class="item-flex">
+                                <i class='bx bx-chevron-left' ></i>
+                                <span>{{ __('adminstaticword.CourseReview') }}</span>
+                            </a>
+                        </li>
+                        
+                        @if($gsetting->assignment_enable == 1)
+                        <li class="{{ Nav::isRoute('assignment.view') }} {{ Nav::isRoute('list.assignment') }}">
+                            <a href="{{route('assignment.view')}}" class="item-flex">
+                                <i class='bx bx-chevron-left' ></i>
+                                <span>{{ __('adminstaticword.Assignment') }}</span>
+                            </a>
+                        </li>
+                        @endif
+                        
+                        <li class="{{ Nav::isResource('refundpolicy') }}">
+                            <a href="{{url('refundpolicy')}}" class="item-flex">
+                                <i class='bx bx-chevron-left' ></i>
+                                <span>{{ __('adminstaticword.RefundPolicy') }}</span>
+                            </a>
+                        </li>
+                        
+                        <li class="{{ Nav::isResource('batch') }}">
+                            <a href="{{url('batch')}}" class="item-flex">
+                                <i class='bx bx-chevron-left' ></i>
+                                <span>{{ __('adminstaticword.Batch') }}</span>
+                            </a>
+                        </li>
+                        
+                        <li class="{{ Nav::isRoute('quiz.review') }}">
+                            <a href="{{route('quiz.review')}}" class="item-flex">
+                                <i class='bx bx-chevron-left' ></i>
+                                <span>{{ __('adminstaticword.QuizReview') }}</span>
+                            </a>
+                        </li>
                     </li>
-                    
-                    <li class="{{ Nav::isResource('bundle') }}">
-                        <a href="{{url('bundle')}}" class="item-flex">
-                            <i class='bx bx-chevron-left' ></i>
-                            <span>{{ __('adminstaticword.BundleCourse') }}</span>
+                </ul>
+            <li>
+
+            <li class="{{ Nav::isResource('book-categories') }} {{ Nav::isResource('book-sub-categories') }} {{ Nav::isResource('book-child-categories') }} {{ Nav::isResource('books') }} treeview">
+                <a href="#" class="flex-between">
+                    <div class="item-flex">
+                        <i class='bx bx-book' ></i>
+                        <span>{{ __('adminstaticword.Books') }}</span>
+                    </div>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                
+                <ul class="treeview-menu">
+                    <li class="{{ Nav::isResource('book-categories') }} {{ Nav::isResource('book-sub-categories') }} {{ Nav::isResource('book-child-categories') }} treeview">
+                        <a href="#" class="flex-between">
+                            <div class="item-flex">
+                                <i class='bx bx-chevron-left' ></i>
+                                <span>{{ __('adminstaticword.BookCategories') }}</span>
+                            </div>
+                            <i class="fa fa-angle-left pull-right"></i>
                         </a>
+                        
+                        <ul class="treeview-menu">
+                            <li class="{{ Nav::isResource('book-categories') }}">
+                                <a href="{{url('book-categories')}}" class="item-flex">
+                                    <i class='bx bx-chevron-left' ></i>
+                                    <span>{{ __('adminstaticword.BookCategories') }}</span>
+                                </a>
+                            </li>
+                            <li class="{{ Nav::isResource('book-sub-categories') }}">
+                                <a href="{{url('book-sub-categories')}}" class="item-flex">
+                                    <i class='bx bx-chevron-left' ></i>
+                                    <span>{{ __('adminstaticword.BookSubCategories') }}</span>
+                                </a>
+                            </li>
+                            <li class="{{ Nav::isResource('book-child-categories') }}">
+                                <a href="{{url('book-child-categories')}}" class="item-flex">
+                                    <i class='bx bx-chevron-left' ></i>
+                                    <span>{{ __('adminstaticword.BookChildCategories') }}</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <li class="{{ Nav::isResource('books') }}">
+                            <a href="{{url('books')}}" class="item-flex">
+                                <i class='bx bx-chevron-left' ></i>
+                                <span>{{ __('adminstaticword.Books') }}</span>
+                            </a>
+                        </li>
                     </li>
-                    
-                    <li class="{{ Nav::isResource('courselang') }}">
-                        <a href="{{url('courselang')}}" class="item-flex">
-                            <i class='bx bx-chevron-left' ></i>
-                            <span>{{ __('adminstaticword.CourseLanguage') }}</span>
-                        </a>
-                    </li>
-                    
-                    <li class="{{ Nav::isResource('coursereview') }}">
-                        <a href="{{url('coursereview')}}" class="item-flex">
-                            <i class='bx bx-chevron-left' ></i>
-                            <span>{{ __('adminstaticword.CourseReview') }}</span>
-                        </a>
-                    </li>
-                    
-                    @if($gsetting->assignment_enable == 1)
-                    <li class="{{ Nav::isRoute('assignment.view') }} {{ Nav::isRoute('list.assignment') }}">
-                        <a href="{{route('assignment.view')}}" class="item-flex">
-                            <i class='bx bx-chevron-left' ></i>
-                            <span>{{ __('adminstaticword.Assignment') }}</span>
-                        </a>
-                    </li>
-                    @endif
-                    
-                    <li class="{{ Nav::isResource('refundpolicy') }}">
-                        <a href="{{url('refundpolicy')}}" class="item-flex">
-                            <i class='bx bx-chevron-left' ></i>
-                            <span>{{ __('adminstaticword.RefundPolicy') }}</span>
-                        </a>
-                    </li>
-                    
-                    <li class="{{ Nav::isResource('batch') }}">
-                        <a href="{{url('batch')}}" class="item-flex">
-                            <i class='bx bx-chevron-left' ></i>
-                            <span>{{ __('adminstaticword.Batch') }}</span>
-                        </a>
-                    </li>
-                    
-                    <li class="{{ Nav::isRoute('quiz.review') }}">
-                        <a href="{{route('quiz.review')}}" class="item-flex">
-                            <i class='bx bx-chevron-left' ></i>
-                            <span>{{ __('adminstaticword.QuizReview') }}</span>
-                        </a>
-                    </li>
+                </ul>
             </li>
-        </ul>
-        {{-- </li> --}}
         
             @if(isset($gsetting) && $gsetting->attandance_enable == 1)
-
             <li class="{{ Nav::isResource('attandance') }} {{ Nav::isRoute('enrolled.users') }}">
                 <a href="{{url('attandance')}}" class="item-flex">
                     <i class='bx bx-user-check' ></i>
                     <span>{{ __('adminstaticword.Attandance') }}</span>
                 </a>
             </li>
-
             @endif
 
             <li class="{{ Nav::isRoute('onesignal.settings') }}">

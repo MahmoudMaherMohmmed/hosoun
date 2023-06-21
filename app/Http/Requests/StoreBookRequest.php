@@ -24,7 +24,7 @@ class StoreBookRequest extends FormRequest
     public function rules()
     {
         return [
-            'book_sub_category_id' => 'required|exists:book_sub_categories,id',
+            'book_child_category_id' => 'required|exists:book_child_categories,id',
             'title' => 'required|unique:book_categories,title',
             'description' => 'required',
             'image' => 'required|mimes:jpeg,png,jpg,svg',

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Book;
 use App\BookCategory;
+use App\BookChildCategory;
 use App\BookSubCategory;
 use App\Http\Requests\StoreBookRequest;
 use App\Http\Requests\UpdateBookRequest;
@@ -101,8 +102,9 @@ class BookController extends Controller
     {
         $bookCategories = BookCategory::active()->latest()->get();
         $bookSubCategories = BookSubCategory::active()->latest()->get();
+        $bookChildCategories = BookChildCategory::active()->latest()->get();
 
-        return view('admin.book.edit', compact('book', 'bookCategories', 'bookSubCategories'));
+        return view('admin.book.edit', compact('book', 'bookCategories', 'bookSubCategories', 'bookChildCategories'));
     }
 
     /**

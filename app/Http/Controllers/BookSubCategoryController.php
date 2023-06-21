@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\BookCategory;
+use App\BookChildCategory;
 use App\BookSubCategory;
 use App\Http\Requests\StoreBookSubCategoryRequest;
 use App\Http\Requests\UpdateBookSubCategoryRequest;
 use File;
+use Illuminate\Http\Request;
 use Image;
 use Session;
 
@@ -147,5 +149,12 @@ class BookSubCategoryController extends Controller
         $bookSubCategory->delete();
 
         return back()->with('delete', trans('flash.DeletedSuccessfully'));
+    }
+
+    public function childCategories(Request $request)
+    {
+        $book_child_categories = BookChildCategory::where('book_sub_category_id', $request->book_sub_category_id)->pluck('title', 'id')->all();
+
+        return response()->json($book_child_categories);
     }
 }
