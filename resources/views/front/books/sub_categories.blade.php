@@ -14,7 +14,7 @@
         <div class="col-md-6 p-3">
           <section class="books-collapse">
             <button class="books-head" type="button" data-bs-toggle="collapse" data-bs-target="#grade1" aria-expanded="false"
-              aria-controls="grade1">
+              aria-controls="grade-{{$book_sub_category->id}}">
               <div class="d-flex flex-column align-items-start text-start gap-2">
                 {{$book_sub_category->title}}
                 @php
@@ -24,7 +24,7 @@
               </div>
               <i class="isax isax-arrow-left-25 text-accent"></i>
             </button>
-            <div class="collapse " id="grade1">
+            <div class="collapse " id="grade-{{$book_sub_category->id}}">
               <div class="books-table border-top mx-5 py-5">
                 <div class="table-responsive">
                   <table class="table">
