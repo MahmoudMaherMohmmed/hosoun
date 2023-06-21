@@ -64,9 +64,9 @@ class BookController extends Controller
             $input['image'] = $image;
         }
 
-        if ($file = $request->file('file')) {
-            $filename = time() . $file->getClientOriginalName();
-            $file->move($path, $filename);
+        if ($request->file('file')) {
+            $filename = time() . $request->file->getClientOriginalName();
+            $request->file->move($path, $filename);
 
             $input['file'] = $filename;
         }
@@ -125,7 +125,7 @@ class BookController extends Controller
         if (!file_exists(public_path() . '/' . $path)) {
             File::makeDirectory(public_path() . '/' . $path, 0777, true);
         }
-        if ($file = $request->file('image')) {
+        if ($image = $request->file('image')) {
             if ($book->image != null) {
                 $image = @file_get_contents(public_path() . $path . $book->image);
                 if ($image) {
@@ -133,14 +133,14 @@ class BookController extends Controller
                 }
             }
 
-            $optimizeImage = Image::make($file);
-            $image = time() . $file->getClientOriginalName();
+            $optimizeImage = Image::make($image);
+            $image = time() . $image->getClientOriginalName();
             $optimizeImage->save(public_path() . $path . $image, 72);
 
             $input['image'] = $image;
         }
 
-        if ($file = $request->file('file')) {
+        if ($request->file('file')) {
             if ($book->file != null) {
                 $file = @file_get_contents(public_path() . $path . $book->file);
                 if ($file) {
@@ -148,8 +148,8 @@ class BookController extends Controller
                 }
             }
 
-            $filename = time() . $file->getClientOriginalName();
-            $file->move($path, $filename);
+            $filename = $request->file->getClientOriginalName();
+            $request->file->move('images/books/', $filename);
 
             $input['file'] = $filename;
         }

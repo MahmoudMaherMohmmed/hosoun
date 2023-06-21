@@ -505,6 +505,7 @@ Route::middleware(['web'])->group(function () {
             Route::get('/browse/books-categories', 'HomeController@booksCategories')->name('browse.book.categories');
             Route::get('/browse/books-category/{id}/subcategories', 'HomeController@bookscategorySubCategories')->name('browse.book.category.subcategories');
             Route::get('/browse/books-child-category/{id}/books', 'HomeController@childCategoryBooks')->name('browse.child.category.books');
+            Route::get('/browse/book/{id}/pdf', 'HomeController@bookPDF')->name('book.pdf');
 
             Route::post('rating/show/{id}', 'ReviewratingController@rating')->name('course.rating');
             Route::post('reports/insert/{id}', 'ReportReviewController@store')->name('report.review');

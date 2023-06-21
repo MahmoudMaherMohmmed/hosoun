@@ -153,4 +153,15 @@ class HomeController extends Controller
 
         abort(404);
     }
+
+    public function bookPDF($id)
+    {
+        $book = Book::where('id', $id)->active()->latest()->first();
+
+        if ($book != null) {
+            return view('front.books.pdf', compact('book'));
+        }
+
+        abort(404);
+    }
 }

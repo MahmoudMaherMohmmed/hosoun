@@ -22,8 +22,7 @@
                   <span class="text-dim fs-14">{{$book->description}}</span>
                 </section>
                 <section class="d-flex align-items-center gap-3">
-                  <a href="" download class="btn btn-accent-light w-100">{{__('frontstaticword.Download')}}</a>
-                  <a href="" class="btn btn-accent-light w-100">{{__('frontstaticword.View')}}</a>
+                  <a href="{{route('book.pdf', $book->id)}}" class="btn btn-accent-light w-100" target="_blank">{{__('frontstaticword.View')}}</a>
                 </section>
               </section>
             </section>

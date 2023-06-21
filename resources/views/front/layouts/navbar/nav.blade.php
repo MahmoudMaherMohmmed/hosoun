@@ -66,7 +66,7 @@
   </a>
 </li>
 <li class="nav-item">
-  <a class="nav-link p-0" href="">
+  <a class="nav-link p-0" href="{{ route('browse.book.categories') }}">
     {{ __('frontstaticword.Books') }}
   </a>
 </li>
