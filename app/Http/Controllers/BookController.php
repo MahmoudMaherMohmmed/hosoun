@@ -66,7 +66,7 @@ class BookController extends Controller
 
         if ($request->file('file')) {
             $filename = time() . $request->file->getClientOriginalName();
-            $request->file->move($path, $filename);
+            $request->file->move('images/books/', $filename);
 
             $input['file'] = $filename;
         }
