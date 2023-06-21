@@ -97,8 +97,7 @@
                                         required>{{$book->description}}</textarea>
                                 </div>
                             </div>
-                        </div>
-                        
+                        </div>  
 
                         <div class="row">
                             <div class="col-xs-12 col-md-6">
@@ -164,6 +163,7 @@
                             book_category_id: book_category_id
                         },
                         success: function (data) {
+                            up.append('<option></option>');
                             $.each(data, function (id, title) {
                                 up.append($('<option>', {
                                     value: id,
@@ -192,6 +192,7 @@
                             book_sub_category_id: book_sub_category_id
                         },
                         success: function (data) {
+                            book_child_category.append('<option></option>');
                             $.each(data, function (id, title) {
                                 book_child_category.append($('<option>', {
                                     value: id,

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Book;
 use App\BookCategory;
+use App\BookChildCategory;
 use App\Currency;
 use App\Categories;
 use App\Slider;
@@ -130,10 +132,23 @@ class HomeController extends Controller
     {
         $book_category = BookCategory::where('id', $id)->active()->latest()->first();
 
-        if ($book_category != null) {
+        if ($book_category != null && $book_category->sub_categories != null) {
             $book_sub_categories = $book_category->sub_categories;
 
             return view('front.books.sub_categories', compact('book_category', 'book_sub_categories'));
+        }
+
+        abort(404);
+    }
+
+    public function childCategoryBooks($id)
+    {
+        $book_child_category = BookChildCategory::where('id', $id)->active()->latest()->first();
+
+        if ($book_child_category != null && $book_child_category->books != null) {
+            $books = $book_child_category->books;
+
+            return view('front.books.books', compact('book_child_category', 'books'));
         }
 
         abort(404);

@@ -1,38 +1,34 @@
 @extends('front.layouts.master')
-@section('title')
-  الصف الاول الإبتدائي
-@endsection
+
+@section('title') {{$book_child_category->title}} @endsection
 
 @section('custom-css')
 @endsection
 
 @section('content')
-  @include('front.layouts.page_header', [
-      'title' => 'الصف الاول الإبتدائي',
-  ])
+  @include('front.layouts.page_header', ['title' => $book_child_category->title])
 
   <section class="block-sec">
     <div class="container">
       <section class="row">
-        @for ($i = 0; $i < 8; $i++)
+        @foreach ($books as $book)
           <div class="col-sm-6 col-lg-4 col-xl-3 p-4">
             <section class="book-card">
-              <img src="{{ asset('/front/img/img-4.jpg') }}" alt="book-cover"
+              <img src="{{ url('/images/books/', $book->image) }}" alt="book-cover"
                 class="rounded-40 w-100 img-fluid object-fit-cover">
               <section class="">
                 <section class="d-flex flex-column gap-2 text-center py-5 px-4">
-                  <span class="fw-bold">اسم الكتاب</span>
-                  <span class="text-dim fs-14">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi,
-                    voluptatem?</span>
+                  <span class="fw-bold">{{$book->title}}</span>
+                  <span class="text-dim fs-14">{{$book->description}}</span>
                 </section>
                 <section class="d-flex align-items-center gap-3">
-                  <a href="" download class="btn btn-accent-light w-100">تحميل</a>
-                  <a href="" class="btn btn-accent-light w-100">تصفح</a>
+                  <a href="" download class="btn btn-accent-light w-100">{{__('frontstaticword.Download')}}</a>
+                  <a href="" class="btn btn-accent-light w-100">{{__('frontstaticword.View')}}</a>
                 </section>
               </section>
             </section>
           </div>
-        @endfor
+        @endforeach
       </section>
     </div>
   </section>

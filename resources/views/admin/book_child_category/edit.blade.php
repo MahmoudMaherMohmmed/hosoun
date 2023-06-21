@@ -141,6 +141,7 @@
                             book_category_id: book_category_id
                         },
                         success: function (data) {
+                            up.append('<option></option>');
                             $.each(data, function (id, title) {
                                 up.append($('<option>', {
                                     value: id,

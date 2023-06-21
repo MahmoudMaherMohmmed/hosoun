@@ -460,5 +460,6 @@ return [
     'BooksCategories' => 'Books Categories',
     'BooksSubtitle' => 'Best books categories for students',
     'SeeAllBooksCat' => 'See All Books Categories',
+    'View' => 'View',
 
 ];

@@ -23,7 +23,7 @@ class BookCategory extends Model
 
     public $translatable = ['title', 'description'];
 
-    public function subcategories()
+    public function sub_categories()
     {
         return $this->hasMany(BookSubCategory::class, 'book_category_id', 'id')->withTrashed();
     }

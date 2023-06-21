@@ -440,4 +440,5 @@ return array(
   'SeeAllBooksCat' => 'شاهد كل أقسام الكتب',
 
   'WhenSubscribe' => 'عندما تقوم بالاشتراك ، ستظهر الدورات هنا.',
+  'View' => 'تصفح',
 );
