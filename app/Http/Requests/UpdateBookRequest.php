@@ -28,7 +28,7 @@ class UpdateBookRequest extends FormRequest
             'title' => 'required|unique:book_categories,title',
             'description' => 'required',
             'image' => 'nullable|mimes:jpeg,png,jpg,svg',
-            'file' => 'nullable|mimes:pdf|max:10000',
+            'file' => 'nullable|mimes:pdf|max:50000',
         ];
     }
 }
