@@ -251,9 +251,9 @@
                 <i class="isax isax-arrow-left-25 text-white"></i>
                 سجل الآن
               </a>
-              <a class="btn btn-dark px-4 flex-grow-1 flex-sm-grow-0" href="#">
-                <i class="isax isax-play-circle5 text-white"></i>
-                شاهد قصتنا
+              <a href="{{ route('about.show') }}" class="btn btn-dark px-4 flex-grow-1 flex-sm-grow-0" href="#">
+                <i class="isax isax-arrow-left-25 text-white"></i>
+                عن حصون
               </a>
             </div>
           </div>
@@ -316,43 +316,44 @@
 
   {{-- BooksSections --}}
   @if ($book_categories->isNotEmpty())
-  <section class="block-sec bg-dark-accent">
-    <div class="container position-relative" style="z-index: 0">
-      <section class="titling">
-        <h3 class="sec-title text-white">
-          {{ __('frontstaticword.BooksCategories') }}
-        </h3>
-        <p class="text-white-70">
-          {{ __('frontstaticword.BooksSubtitle') }}
-        </p>
-      </section>
+    <section class="block-sec bg-dark-accent">
+      <div class="container position-relative" style="z-index: 0">
+        <section class="titling">
+          <h3 class="sec-title text-white">
+            {{ __('frontstaticword.BooksCategories') }}
+          </h3>
+          <p class="text-white-70">
+            {{ __('frontstaticword.BooksSubtitle') }}
+          </p>
+        </section>
 
-      <section class="books-carousel owl-carousel owl-theme">
-        @foreach ($book_categories as $book_category)
-          <section class="books-item text-center d-flex flex-column align-items-center justify-content-start">    
-            <a href="{{ route('browse.book.category.subcategories', $book_category->id) }}">
-              <img src="{{ url('/images/book_categories/', $book_category->image) }}" class="books-thumbnail" alt="{{ $book_category->title }}">
+        <section class="books-carousel owl-carousel owl-theme">
+          @foreach ($book_categories as $book_category)
+            <section class="books-item text-center d-flex flex-column align-items-center justify-content-start">
+              <a href="{{ route('browse.book.category.subcategories', $book_category->id) }}">
+                <img src="{{ url('/images/book_categories/', $book_category->image) }}" class="books-thumbnail"
+                  alt="{{ $book_category->title }}">
+              </a>
+              <span class="fs-1 fw-bold text-white">{{ $book_category->title }}</span>
+              <span class="text-white-70"> {{ $book_category->description }} </span>
+            </section>
+          @endforeach
+        </section>
+
+        <div class="row mt-5 pt-3">
+          <div class="col-10 col-lg-4 mx-auto">
+            <a href="{{ route('browse.book.categories') }}" class="btn btn-white-outline w-100">
+              <i class="isax isax-arrow-left-25 text-white"></i>
+              {{ __('frontstaticword.SeeAllBooksCat') }}
             </a>
-            <span class="fs-1 fw-bold text-white">{{ $book_category->title }}</span>
-            <span class="text-white-70"> {{ $book_category->description }} </span>
-          </section>
-        @endforeach
-      </section>
-
-      <div class="row mt-5 pt-3">
-        <div class="col-10 col-lg-4 mx-auto">
-          <a href="{{ route('browse.book.categories') }}" class="btn btn-white-outline w-100">
-            <i class="isax isax-arrow-left-25 text-white"></i>
-            {{ __('frontstaticword.SeeAllBooksCat') }}
-          </a>
+          </div>
         </div>
-      </div>
 
-      {{-- animations --}}
-      <img src="{{ asset('front/svg/lines.svg') }}" class="lines d-none d-sm-inline-block" alt="bg-img">
-      <img src="{{ asset('front/svg/lines.svg') }}" class="lines d-none d-sm-inline-block" alt="bg-img">
-    </div>
-  </section>
+        {{-- animations --}}
+        <img src="{{ asset('front/svg/lines.svg') }}" class="lines d-none d-sm-inline-block" alt="bg-img">
+        <img src="{{ asset('front/svg/lines.svg') }}" class="lines d-none d-sm-inline-block" alt="bg-img">
+      </div>
+    </section>
   @endif
   {{-- /BooksSections --}}
 

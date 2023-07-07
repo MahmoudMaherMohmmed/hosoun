@@ -17,12 +17,13 @@
         @if (Auth::User()['user_img'] != null &&
                 Auth::User()['user_img'] != '' &&
                 @file_get_contents('images/user_img/' . Auth::user()['user_img']))
-          <img src="{{ url('/images/user_img/' . Auth::User()->user_img) }}"
+          <img class="flex-shrink-0" src="{{ url('/images/user_img/' . Auth::User()->user_img) }}"
             alt="{{ Auth::User()->fname . ' ' . Auth::User()->lname }}">
         @else
-          <img src="{{ asset('images/default/user.jpg') }}" alt="{{ Auth::User()->fname . ' ' . Auth::User()->lname }}">
+          <img class="flex-shrink-0" src="{{ asset('images/default/user.jpg') }}"
+            alt="{{ Auth::User()->fname . ' ' . Auth::User()->lname }}">
         @endif
-        <div class="d-flex flex-column ms-3">
+        <div class="d-flex flex-column ms-3 w-75">
           <h5 class="fw-semibold text">
             {{ Auth::User()->fname . ' ' . Auth::User()->lname }}
           </h5>

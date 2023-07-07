@@ -1,11 +1,13 @@
 <section class="boxcourse position-relative overflow-hidden">
   @if ($course->preview_image != null && $course->preview_image !== '')
-    <div class="boxcourse__thu position-absolute"
+    <a href="{{ route('user.course.show', ['id' => $course->id, 'slug' => $course->slug]) }}"
+      class="boxcourse__thu position-absolute d-block"
       style="background: no-repeat center/cover url('{{ asset('images/course/' . $course->preview_image) }}') var(--clr-light)">
-    </div>
+    </a>
   @else
-    <div class="boxcourse__thu position-absolute"
-      style="background-image: {{ Avatar::create($course->title)->toBase64() }}"></div>
+    <a href="{{ route('user.course.show', ['id' => $course->id, 'slug' => $course->slug]) }}"
+      class="boxcourse__thu position-absolute d-block"
+      style="background-image: {{ Avatar::create($course->title)->toBase64() }}"></a>
   @endif
 
   @if ($course['level_tags'] == !null)
