@@ -24,7 +24,7 @@
           <div class="col-12">
             <div class="main-block text-center d-flex flex-column align-items-center justify-content-center">
               <svg class="svg-resize-32 svg-stroke-accent mb-4">
-                <use xlink:href="{{ asset('/front/svg/sprite.svg#heart') }}" />
+                <use xlink:href="{{ asset('/front/svg/sprite.svg#search') }}" />
               </svg>
               {{ __('frontstaticword.Nosearch') }} "{{$searchTerm}}"
             </div>
