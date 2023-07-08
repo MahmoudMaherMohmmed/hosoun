@@ -585,7 +585,7 @@ svg {
 /* Form */
 .select2-container {
   width: 100% !important;
-  z-index: 10000;
+  z-index: 1000;
 }
 .select2-container--default .select2-results > .select2-results__options {
   max-height: 35rem;
@@ -717,6 +717,15 @@ textarea.form-control {
   z-index: 100000;
   top: 1.25rem;
   inset-inline-start: 2rem;
+}
+
+button.form-control-icon {
+  display: grid;
+  place-items: center;
+  fill: var(--clr-accent);
+  stroke: none;
+  inset-inline-end: 2rem;
+  inset-inline-start: unset !important;
 }
 
 input {
@@ -871,6 +880,7 @@ input {
 
 /* dropdown */
 .dropdown-menu {
+  --bs-dropdown-zindex: 1050;
   font-size: 1.2rem;
   border-radius: 2rem;
   border: none;
@@ -1195,6 +1205,10 @@ input {
 .auth-user .dropdown-menu .text,
 .auth-user .dropdown-menu .dropdown-item {
   font-size: 1.2rem !important;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .auth-user .dropdown-menu .content {
@@ -1890,18 +1904,20 @@ input {
 .filters {
   padding: 4rem;
   overflow-y: scroll;
+  max-width: 100%;
 }
 
 @media only screen and (min-width: 992px) {
   .filters.offcanvas {
-    padding: 0;
-    padding-inline-end: 4rem;
+    padding: 4rem;
+    margin-inline-end: 2rem;
     position: relative;
     visibility: visible;
     overflow: auto;
     height: 100%;
     border: none;
     transform: none;
+    border-radius: 4rem;
   }
 }
 
@@ -2988,16 +3004,17 @@ img.lines:last-of-type {
 
 .blog-content img {
   width: 100%;
-  height: 25rem;
+  height: auto;
+  /* height: 25rem; */
   object-fit: cover;
   border-radius: 3rem;
 }
 
-@media only screen and (min-width: 576px) {
+/* @media only screen and (min-width: 576px) {
   .blog-content img {
     height: 55rem;
   }
-}
+} */
 
 .blog-content .blog-title {
   font-size: 3.5rem;
@@ -3150,6 +3167,19 @@ footer::after {
   height: 2.8rem;
   width: auto;
   object-fit: contain;
+}
+
+#whatsapp-btn {
+  z-index: 10;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 100%;
+  color: var(--clr-white);
+  background-color: #25d366;
+  inset-block-end: 3rem;
+  inset-inline-start: 3rem;
+  font-size: 3rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 /* /Footer */

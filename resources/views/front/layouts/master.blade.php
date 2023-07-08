@@ -20,6 +20,13 @@
   </main>
   <!-- main-content closed -->
   @include('front.layouts.footer')
+  {{-- Fixed Whatsapp button --}}
+  <section id="whatsapp-btn" class="position-fixed">
+    <a href="https://wa.me/" target="_blank"
+      class="d-flex flex-column align-items-center justify-content-center w-100 h-100">
+      <i class="fab fa-whatsapp text-white"></i>
+    </a>
+  </section>
   @include('front.layouts.scripts')
 
   @yield('custom-js')

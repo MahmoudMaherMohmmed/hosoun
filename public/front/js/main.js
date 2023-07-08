@@ -96,3 +96,9 @@ function previewPic(el) {
         $(el).siblings('img').attr('src', URL.createObjectURL(file))
     }
 }
+
+
+function showPassword(el) {
+    const inpt = $(el).parents('.form-group').find('input')
+    inpt.attr('type') === 'password' ? inpt.attr('type', 'text') : inpt.attr('type', 'password')
+}

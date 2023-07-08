@@ -15,12 +15,16 @@
     <path d="M0,0H24V24H0Z" fill="none"/>
     <path d="M12,16,6,10H18Z" fill=""/>
   </symbol>
-
+  <symbol id="eye"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M19.25,5.72C16.94,2.09,13.56,0,10,0A9.682,9.682,0,0,0,4.91,1.49,13.354,13.354,0,0,0,.75,5.72a5.771,5.771,0,0,0,0,5.69c2.31,3.64,5.69,5.72,9.25,5.72a9.682,9.682,0,0,0,5.09-1.49,13.354,13.354,0,0,0,4.16-4.23A5.771,5.771,0,0,0,19.25,5.72ZM10,12.61a4.04,4.04,0,1,1,4.04-4.04A4.035,4.035,0,0,1,10,12.61Z" transform="translate(2 3.43)" fill="" opacity="0.4"/>
+    <path d="M2.85,0A2.855,2.855,0,1,0,5.71,2.86,2.857,2.857,0,0,0,2.85,0Z" transform="translate(9.15 9.14)" fill=""/>
+    <path d="M0,0H24V24H0Z" fill="none" opacity="0"/>
+  </symbol>
   <symbol id="grid" viewBox="0 0 24 24">
     <path d="M0,0H24V24H0Z" fill="none"/>
     <path d="M3,3h8v8H3ZM3,13h8v8H3ZM13,3h8v8H13Zm0,10h8v8H13Z" fill=""/>
   </symbol>
-
   <symbol id="search-bold" viewBox="0 0 24 24">
     <path d="M0,0H24V24H0Z" fill="none"/>
     <path d="M18.031,16.617,22.314,20.9,20.9,22.314l-4.282-4.283a9,9,0,1,1,1.414-1.414Z" fill=""/>

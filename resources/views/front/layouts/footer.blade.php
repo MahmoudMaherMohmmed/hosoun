@@ -93,7 +93,7 @@
               <nav
                 class="sharesocial d-flex flex-wrap align-itemse-center justify-content-center ml-lg-4 justify-content-center">
                 @foreach ($social_links as $social_link)
-                  <a href="{{ $social_link->link }}" class="social-link" title="Follow us">
+                  <a href="{{ $social_link->link }}" target="_blank" class="social-link" title="Follow us">
                     <i class="fab {{ $social_link->icon }}"></i>
                   </a>
                 @endforeach

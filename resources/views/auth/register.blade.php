@@ -140,6 +140,11 @@
                     <strong>{{ $errors->first('password') }}</strong>
                   </span>
                 @endif
+                <button type="button" class="form-control-icon bg-transparent border-0" onclick="showPassword(this)">
+                  <svg class="svg-default ">
+                    <use xlink:href="{{ asset('/front/svg/sprite.svg#eye') }}" />
+                  </svg>
+                </button>
               </div>
             </div>
             <div class="form-group">
@@ -150,6 +155,11 @@
                 <svg class="svg-default form-control-icon">
                   <use xlink:href="{{ asset('/front/svg/sprite.svg#lock') }}" />
                 </svg>
+                <button type="button" class="form-control-icon bg-transparent border-0" onclick="showPassword(this)">
+                  <svg class="svg-default ">
+                    <use xlink:href="{{ asset('/front/svg/sprite.svg#eye') }}" />
+                  </svg>
+                </button>
               </div>
             </div>
             <div class="form-check form-group">
