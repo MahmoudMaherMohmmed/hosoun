@@ -73,14 +73,14 @@
           </div>
         </div>
         <div class="col px-0">
-          <form action="" class="headersearch__form position-relative">
+          <form method="GET" id="searchform" action="{{ route('search') }}" class="headersearch__form position-relative">
             <div
               class="position-absolute top-50 translate-middle-y d-flex align-items-center justify-content-center px-4 border-end">
               <button class="bg-transparent border-0 px-2" type="submit">
                 <i class="isax isax-search-normal-15"></i>
               </button>
             </div>
-            <input type="search" class="form-control rounded-pill"
+            <input type="search" class="form-control rounded-pill" name="searchTerm"
               placeholder="{{ __('frontstaticword.Searchforcourses') }}">
           </form>
         </div>
