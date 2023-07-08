@@ -74,6 +74,7 @@
     </div>
   </section>
 @endsection
+
 @section('custom-js')
   <script src="{{ asset('front/js/form_step.js') }}"></script>
 @endsection

@@ -112,7 +112,7 @@
 <br/>
 @endsection
 
-@section('custom-script')
+@section('custom-js')
 <script>
     function printDiv(divName) {
      var printContents = document.getElementById(divName).innerHTML;
