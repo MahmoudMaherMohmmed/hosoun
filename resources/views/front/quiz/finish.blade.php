@@ -1,8 +1,10 @@
 @extends('front.layouts.master')
 
-@section('title',"Show Report")
+@section('title', __('frontstaticword.answerreoprt'))
 
 @section('content')
+  @include('front.layouts.page_header', ['title' => __('frontstaticword.answerreoprt')])
+
  <section class="main-wrapper finish-main-block">
    <div class="container">
     <br/>
@@ -34,8 +36,6 @@
                       <td>{{ $a->quiz->question }}</td>
                        <td>{{ $a->user_answer }}</td>
                       <td>{{ $a->answer }}</td>
-                     
-                    
                     </tr>
                     @php                
                       $y++;
@@ -43,19 +43,13 @@
                         break;
                       }
                     @endphp
-                 
                 @endforeach              
-               
               </tbody>
             </table>
-            
           </div>
-
           @endif
 
-
           <div id="printableArea">
-
            <h3 class="text-center main-block-heading">{{ __('frontstaticword.scorecard') }} </h3>
             <br/>
 
