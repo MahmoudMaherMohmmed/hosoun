@@ -28,6 +28,11 @@
               </a>
             </li>
             <li>
+              <a href="{{ url('/careers') }}" class="footer-link fw-medium mb-3">
+                {{ __('frontstaticword.Careers') }}
+              </a>
+            </li>
+            <li>
               <a href="{{ route('help.show') }}" class="footer-link fw-medium mb-3">
                 {{ __('frontstaticword.Help&Support') }}
               </a>

@@ -3147,7 +3147,7 @@ footer::after {
 
   .sharesocial {
     position: relative;
-    padding: 0 7rem;
+    padding: 0 3rem;
     margin: 0 -0.45rem;
   }
 
@@ -3155,7 +3155,7 @@ footer::after {
   .sharesocial::after {
     position: absolute;
     content: "";
-    width: 5rem;
+    width: 2rem;
     height: 1px;
     top: 50%;
     transform: translateY(-50%);
@@ -3168,6 +3168,18 @@ footer::after {
 
   .sharesocial::after {
     left: 0;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .sharesocial {
+    padding: 0 7rem;
+    margin: 0 -0.45rem;
+  }
+
+  .sharesocial::before,
+  .sharesocial::after {
+    width: 5rem;
   }
 }
 
