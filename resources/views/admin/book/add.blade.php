@@ -95,8 +95,7 @@
 
                         <div class="row">
                             <div class="col-xs-12 col-md-6">
-                                <label for="image">{{ __('adminstaticword.PreviewImage') }}:</label> - <p class="inline info">size:
-                                    250x150</p>
+                                <label for="image">{{ __('adminstaticword.PreviewImage') }}:</label>
                                 <div>
                                     <input type="file" name="image" id="image" class="inputfile inputfile-1" />
                                     <label for="image"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17"
