@@ -393,7 +393,7 @@ return array(
   'Featured' => 'المميز',
   'LowToHigh' => 'السعر من الأقل الى الاعلى',
   'HighToLow' => 'السعر من الأعلى الى الأقل',
-
+  'Search' => 'بحث',
   'SearchResults' => 'نتائج البحث',
 
   'CourseType' => 'نوع الدورة',
@@ -441,4 +441,9 @@ return array(
 
   'WhenSubscribe' => 'عندما تقوم بالاشتراك ، ستظهر الدورات هنا.',
   'View' => 'تصفح',
+  'NoBooksCategories' => 'لا يوجد تصنيفات للكتب',
+  "SearchBook" => 'هل تبحث عن كتاب محدد؟',
+  'SearchCareer' => 'بحث الوظائف',
+  'Careers' => 'الوظائف'
+
 );

@@ -809,3 +809,10 @@ Route::get('/subjects', function () {
     return view('front.paths.subjects');
 });
 
+
+Route::get('/careers', function () {
+    return view('front.careers.all');
+});
+Route::get('/single-job', function () {
+    return view('front.careers.single');
+});

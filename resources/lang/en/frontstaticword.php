@@ -438,7 +438,7 @@ return [
     'Featured' => 'Featured',
     'LowToHigh' => 'Low to High',
     'HighToLow' => 'High to Low',
-
+    'Search' => 'Search',
     'SearchResults' => 'Search Results',
 
     'CourseType' => 'Course Type',
@@ -461,5 +461,10 @@ return [
     'BooksSubtitle' => 'Best books categories for students',
     'SeeAllBooksCat' => 'See All Books Categories',
     'View' => 'View',
+    'NoBooksCategories' => 'No books categories',
+    "SearchBook" => 'Looking for a specific book?',
+    'SearchCareer' => 'Search jobs',
+    'Careers' => 'Careers'
+
 
 ];
