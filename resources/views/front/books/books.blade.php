@@ -1,22 +1,22 @@
 @extends('front.layouts.master')
 
 @section('title')
-  {{ $book_child_category->title }}
+  {{ isset($book_child_category) && $book_child_category!=null ? $book_child_category->title : __('frontstaticword.SearchBook') }}
 @endsection
 
 @section('custom-css')
 @endsection
 
 @section('content')
-  @include('front.layouts.page_header', ['title' => $book_child_category->title])
+  @include('front.layouts.page_header', ['title' => isset($book_child_category) && $book_child_category!=null ? $book_child_category->title : __('frontstaticword.SearchBook')])
   <section class="block-sec">
     <div class="container">
       <section class="row">
         <div class="col-12 mb-5">
-          <form action="">
+          <form method="GET" action="{{ route('book.search') }}">
             <div class="form-group">
-              <div class="form-group-icon">
-                <input type="search" name="searchBook" id="searchBook" value="" class="form-control"
+              <div class="form-group-icon"> 
+                <input type="search" name="searchTerm" class="form-control"
                   placeholder="{{ __('frontstaticword.SearchBook') }}" required autofocus>
                 <svg class="svg-default form-control-icon">
                   <use xlink:href="{{ asset('/front/svg/sprite.svg#search') }}" />

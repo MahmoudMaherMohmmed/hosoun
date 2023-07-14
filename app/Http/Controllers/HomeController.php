@@ -14,6 +14,7 @@ use App\Testimonial;
 use App\Trusted;
 use App\Blog;
 use App\User;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -163,5 +164,18 @@ class HomeController extends Controller
         }
 
         abort(404);
+    }
+
+    public function searchBook(Request $request)
+    {
+        $searchTerm = $request->input('searchTerm');
+
+        if (isset($searchTerm)) {
+            $books = Book::where('title->ar', 'LIKE', "%$searchTerm%")->active()->latest()->get();
+
+            return view('front.books.books', compact('books'));
+        } else {
+            return back()->with('delete', trans('flash.NoSearch'));
+        }
     }
 }
