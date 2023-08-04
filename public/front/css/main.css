@@ -880,7 +880,7 @@ input {
 
 /* dropdown */
 .dropdown-menu {
-  --bs-dropdown-zindex: 1050;
+  --bs-dropdown-zindex: 1020;
   font-size: 1.2rem;
   border-radius: 2rem;
   border: none;
@@ -1901,6 +1901,10 @@ input {
   border-bottom: none;
 }
 
+.sortby-dropdown.select2-dropdown .select2-results ul {
+  border-radius: 0 !important;
+}
+
 .filters {
   padding: 4rem;
   overflow-y: scroll;
@@ -2915,6 +2919,7 @@ input {
   }
 }
 
+.books-item .books-thumbnail,
 .books-carousel .books-thumbnail {
   height: 8rem;
   width: auto;

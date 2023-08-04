@@ -46,7 +46,7 @@
                         @foreach ($sub_categories as $sub_category)
                           @php $child_categories= $sub_category->childcategory->where('status', 1) @endphp
                           <li>
-                            <a class="dropdown-item p-3 text-white {{ $child_categories != null && count($child_categories) > 0 ? 'toggle' : '' }}"
+                            <a class="dropdown-item py-3 px-5 text-white {{ $child_categories != null && count($child_categories) > 0 ? 'toggle' : '' }}"
                               href="{{ route('subcategory.page', ['id' => $sub_category->id, 'category' => $sub_category->title]) }}">
                               {{ str_limit($sub_category->title, $limit = 25, $end = '..') }}
                             </a>
@@ -73,7 +73,8 @@
           </div>
         </div>
         <div class="col px-0">
-          <form method="GET" id="searchform" action="{{ route('search') }}" class="headersearch__form position-relative">
+          <form method="GET" id="searchform" action="{{ route('search') }}"
+            class="headersearch__form position-relative">
             <div
               class="position-absolute top-50 translate-middle-y d-flex align-items-center justify-content-center px-4 border-end">
               <button class="bg-transparent border-0 px-2" type="submit">

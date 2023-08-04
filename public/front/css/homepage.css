@@ -10,6 +10,7 @@
 }
 .headersearch__dropdown .dropdown-menu .dropdown-item {
   font-size: 1.6rem;
+  padding: 0 2rem;
 }
 .headersearch__dropdown .dropdown-menu .dropdown-item:hover {
   background-color: #4a9994;
@@ -134,6 +135,8 @@
 .teachers__bg {
   width: 100%;
   z-index: 0;
+  overflow: hidden;
+  border-radius: 2rem;
 }
 .teachers__bg::before {
   content: "";
@@ -155,8 +158,9 @@
 .teachers__bg img {
   height: 22rem;
   margin: 0 auto;
-  width: auto !important;
+  width: 16rem !important;
   object-fit: contain;
+  object-position: bottom;
 }
 
 .instructor-item .name {
@@ -172,8 +176,12 @@
 }
 
 @media only screen and (min-width: 992px) {
+  .teachers__bg {
+    border-radius: 4rem;
+  }
   .teachers__bg img {
     height: 30rem;
+    width: auto !important;
   }
   .teachers__bg::before {
     height: 25rem;
