@@ -36,6 +36,13 @@
                 </div>
               </div>
 
+              <div class="form-group">
+                <label for="mobile" class="form-label">
+                  {{ __('frontstaticword.Mobile') }}
+                </label>
+                <input type="tel" name="mobile" id="mobile" class="form-control"
+                  placeholder="{{ __('frontstaticword.Mobile') }}">
+              </div>
 
               <div class="form-group">
                 <label for="country" class="form-label">
@@ -45,38 +52,14 @@
                   <select name="country" id="country" class="select2-search-enable"
                     data-placeholder="{{ __('frontstaticword.country_id') }}">
                     <option></option>
-                    <option value="0">option1</option>
-                    <option value="1">option2</option>
-                    <option value="2">option3</option>
+                    @foreach(App\Country::all() as $country)
+                    <option value="{{ $country->country_id }}">
+                        {{ $country->nicename }}
+                    </option>
+                    @endforeach
                   </select>
                   <i class="isax isax-location"></i>
-
                 </div>
-              </div>
-
-              <div class="form-group">
-                <label for="nationality" class="form-label">{{ __('frontstaticword.Nationality') }}</label>
-                <div class="form-group-icon">
-                  <select name="nationality" id="nationality" class="select2-search-enable"
-                    data-placeholder="{{ __('frontstaticword.Nationality') }}">
-                    <option></option>
-                    <option value="0"> {{ __('frontstaticword.SaudiArabia') }} </option>
-                    <option value="1"> {{ __('frontstaticword.GulfCountries') }} </option>
-                    <option value="2"> {{ __('frontstaticword.ArabCountries') }} </option>
-                    <option value="3"> {{ __('frontstaticword.ForeignerWithASaudiPassport') }} </option>
-                    <option value="4"> {{ __('frontstaticword.DisplacedTribesmen') }} </option>
-                    <option value="5"> {{ __('frontstaticword.OtherNationality') }} </option>
-                  </select>
-                  <i class="isax isax-card"></i>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="mobile" class="form-label">
-                  {{ __('frontstaticword.Mobile') }}
-                </label>
-                <input type="tel" name="mobile" id="mobile" class="form-control"
-                  placeholder="{{ __('frontstaticword.Mobile') }}">
               </div>
 
               <section class="form-group d-flex flex-column gap-4">
