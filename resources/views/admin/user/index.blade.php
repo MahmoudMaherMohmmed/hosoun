@@ -28,11 +28,10 @@
               <table id="example1" class="table table-bordered table-striped display nowrap">
                 <thead>
                   <th>#</th>
-                  <th>{{ __('adminstaticword.Image') }}</th>
                   <th>{{ __('adminstaticword.Name') }}</th>
-                  <th>{{ __('adminstaticword.identification') }}</th>
-                  <th>{{ __('adminstaticword.Email') }}</th>
                   <th>{{ __('adminstaticword.Mobile') }}</th>
+                  <th>{{ __('adminstaticword.Email') }}</th>
+                  <th>{{ __('adminstaticword.Country') }}</th>
                   <th>{{ __('adminstaticword.Role') }}</th>
                   <th>{{ __('adminstaticword.Status') }}</th>
                   <th>{{ __('adminstaticword.Edit') }}</th>
@@ -48,17 +47,10 @@
 
                       <tr>
                         <td><?php echo $i;?></td>
-                        <td>
-                          @if($user->user_img != null || $user->user_img !='')
-                            <img src="{{ url('/images/user_img/'.$user->user_img) }}" class="img-responsive">
-                          @else
-                            <img src="{{ asset('images/default/user.jpg')}}" class="img-responsive" alt="User Image">
-                          @endif
-                        </td>
                         <td>{{ $user['fname'] }} {{ $user['lname'] }}</td>
-                        <td>{{ $user['national_id'] }}</td>
-                        <td>{{ $user['email'] }}</td>
                         <td>{{ isset($user->mobile) ? $user->mobile : '' }}</td>
+                        <td>{{ $user['email'] }}</td>
+                        <td>{{ $user->country!=null ? $user->country->nicename : '---' }}</td>
                         <td>{{ $user['role'] }}</td>
                         <td>
                           <form action="{{ route('user.quick',$user->id) }}" method="POST">

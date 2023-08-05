@@ -76,25 +76,24 @@
               </div>
             @endif
             <div class="form-group">
-              <label for="nationality" class="form-label">{{ __('frontstaticword.Nationality') }}</label>
+              <label for="country_id" class="form-label">{{ __('frontstaticword.Country') }}</label>
               <div class="form-group-icon">
-                <select name="nationality" id="nationality"
-                  class="select2-search-enable {{ $errors->has('nationality') ? ' is-invalid' : '' }}"
-                  data-placeholder="{{ __('frontstaticword.Nationality') }}">
+                <select name="country_id" id="country_id"
+                  class="select2-search-enable {{ $errors->has('country_id') ? ' is-invalid' : '' }}"
+                  data-placeholder="{{ __('frontstaticword.Country') }}">
                   <option></option>
-                  <option value="0"> {{ __('frontstaticword.SaudiArabia') }} </option>
-                  <option value="1"> {{ __('frontstaticword.GulfCountries') }} </option>
-                  <option value="2"> {{ __('frontstaticword.ArabCountries') }} </option>
-                  <option value="3"> {{ __('frontstaticword.ForeignerWithASaudiPassport') }} </option>
-                  <option value="4"> {{ __('frontstaticword.DisplacedTribesmen') }} </option>
-                  <option value="5"> {{ __('frontstaticword.OtherNationality') }} </option>
+                  @foreach(App\Country::all() as $country)
+                  <option value="{{ $country->country_id }}">
+                      {{ $country->nicename }}
+                  </option>
+                  @endforeach
                 </select>
                 <svg class="svg-default form-control-icon">
                   <use xlink:href="{{ asset('/front/svg/sprite.svg#location') }}" />
                 </svg>
-                @if ($errors->has('nationality'))
+                @if ($errors->has('country_id'))
                   <span class="invalid-feedback" role="alert">
-                    <strong>{{ $errors->first('nationality') }}</strong>
+                    <strong>{{ $errors->first('country_id') }}</strong>
                   </span>
                 @endif
               </div>
