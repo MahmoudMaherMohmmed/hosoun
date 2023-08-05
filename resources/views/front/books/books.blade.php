@@ -42,6 +42,13 @@
                     </svg>
                     {{ __('frontstaticword.View') }}
                   </a>
+
+                  <a href="{{ route('book.download', $book->id) }}" class="btn btn-accent-light w-100" target="_blank">
+                    <svg class="svg-default form-control-icon">
+                      <use xlink:href="{{ asset('/front/svg/sprite.svg#document-upload') }}" />
+                    </svg>
+                    {{__('frontstaticword.Download')}}
+                  </a>
                 </section>
               </section>
             </section>

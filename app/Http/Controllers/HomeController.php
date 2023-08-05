@@ -166,6 +166,17 @@ class HomeController extends Controller
         abort(404);
     }
 
+    public function bookDownload($id)
+    {
+        $book = Book::where('id', $id)->active()->latest()->first();
+
+        if ($book != null) {
+            return view('front.books.download', compact('book'));
+        }
+
+        abort(404);
+    }
+
     public function searchBook(Request $request)
     {
         $searchTerm = $request->input('searchTerm');
