@@ -63,6 +63,7 @@
           </a>
         </li>
         <li>
+        @if (Auth::User()->role != 'user')
         <li>
           <a class="dropdown-item fw-semibold" href="{{ url('bankdetail') }}">
             <svg class="svg-default">
@@ -71,6 +72,7 @@
             <span> {{ __('frontstaticword.MyBankDetails') }} </span>
           </a>
         </li>
+        @endif
         <li>
           <a class="dropdown-item fw-semibold" href="{{ route('mycourse.show') }}">
             <svg class="svg-default">
@@ -87,6 +89,7 @@
             <span> {{ __('frontstaticword.MyWishlist') }} </span>
           </a>
         </li>
+        @if (Auth::User()->role != 'admin')
         <li>
           <a class="dropdown-item fw-semibold" href="{{ route('purchase.show') }}">
             <svg class="svg-default">
@@ -95,6 +98,7 @@
             <span> {{ __('frontstaticword.PurchaseHistory') }} </span>
           </a>
         </li>
+        @endif
         @if (Auth::User()->role == 'user')
           @if ($gsetting->instructor_enable == 1)
             <li>
