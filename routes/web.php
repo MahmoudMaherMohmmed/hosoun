@@ -178,6 +178,8 @@ Route::middleware(['web'])->group(function () {
                 Route::resource('trusted', 'TrustedController');
                 Route::resource('social_link', 'SocialLinkController');
 
+                Route::get('admin/paths/subjects', 'PathsController@subjects')->name('paths.subjects');
+
 
                 Route::post('mailsetting/update', 'SettingController@updateMailSetting')->name('update.mail.set');
                 Route::get('settings', 'SettingController@genreal')->name('gen.set');
@@ -801,15 +803,17 @@ Route::get('jitsi/detail/{id}', 'JitsiController@jitsidetailpage')->name('jitsip
 Route::get('/quran', function () {
     return view('front.paths.quran');
 });
+
 Route::get('/arabic', function () {
     return view('front.paths.arabic');
 });
+
 Route::get('/religious', function () {
     return view('front.paths.religious');
 });
-Route::get('/subjects', function () {
-    return view('front.paths.subjects');
-});
+
+Route::get('subjects', 'HomeController@subjects');
+Route::post('subjects/save', 'HomeController@saveSubjects');
 
 
 Route::get('/careers', function () {

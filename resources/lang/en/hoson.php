@@ -89,6 +89,6 @@ return [
         'french' => 'فرنساوي',
         'abilitiesAndAchievement' => 'قدرات وتحصيلي',
         'generalReviews' => 'مراجعات عامة',
-    ]
+    ],
 
 ];

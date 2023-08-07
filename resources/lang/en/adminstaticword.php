@@ -783,4 +783,11 @@ return [
     'Books' => 'Books',
     'AddBook' => 'Add Book',
     'EditBook' => 'Edit Book',
+
+    'Paths' => 'Education paths',
+    'Subjects' => 'Course of study subjects',
+    'BirthDate' => 'Birth Date',
+    'InstructorGender' => 'Instructor Gender',
+    'Class' => 'Class',
+    'StartDate' => 'Start Date',
 ];

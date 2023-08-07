@@ -10,11 +10,13 @@ use App\Categories;
 use App\Slider;
 use App\SliderFacts;
 use App\Course;
+use App\SubjectPath;
 use App\Testimonial;
 use App\Trusted;
 use App\Blog;
 use App\User;
 use Illuminate\Http\Request;
+use Session;
 
 class HomeController extends Controller
 {
@@ -188,5 +190,30 @@ class HomeController extends Controller
         } else {
             return back()->with('delete', trans('flash.NoSearch'));
         }
+    }
+
+    public function subjects()
+    {
+        return view('front.paths.subjects');
+    }
+
+    public function saveSubjects(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required|string|max:255',
+            'birth_date' => 'required|date',
+            'mobile' => 'required|numeric',
+            'country_id' => 'required|exists:countries,id',
+            'instructor_gender' => 'required|numeric',
+            'class_id' => 'required|numeric',
+            'subject_id' => 'required|numeric',
+            'start_date' => 'required|date|after:today',
+        ]);
+
+        SubjectPath::create($request->all());
+
+        Session::flash('success', trans('flash.AddedSuccessfully'));
+
+        return back();
     }
 }

@@ -346,6 +346,24 @@
                     </li>
                 </ul>
             </li>
+
+            <li class="{{ Nav::isRoute('paths.subjects') }} treeview">
+                <a href="#" class="flex-between">
+                    <div class="item-flex">
+                        <i class='bx bx-chalkboard' ></i>
+                        <span>{{ __('adminstaticword.Paths') }}</span>
+                    </div>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{ Nav::isRoute('paths.subjects') }}">
+                        <a href="{{route('paths.subjects')}}" class="item-flex">
+                            <i class='bx bx-chevron-left' ></i>
+                            <span>{{ __('adminstaticword.Subjects') }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
         
             @if(isset($gsetting) && $gsetting->attandance_enable == 1)
             <li class="{{ Nav::isResource('attandance') }} {{ Nav::isRoute('enrolled.users') }}">
