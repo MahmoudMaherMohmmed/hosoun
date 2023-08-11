@@ -14,7 +14,7 @@
           <div class="headersearch__dropdown dropdown">
             <button
               class="border-0 bg-transparent dropdown-toggle d-flex align-items-center justify-content-center text-white fw-bold pe-0 ps-4 mx-auto"
-              type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
               <svg class="svg-resize-24 svg-fill-white me-sm-3">
                 <use xlink:href="{{ asset('/front/svg/sprite.svg#grid') }}" />
               </svg>
@@ -37,24 +37,38 @@
                 @foreach ($categories as $category)
                   @php $sub_categories= $category->subcategory->where('status', 1) @endphp
                   <li>
-                    <a class="dropdown-item p-3 text-white {{ $sub_categories != null && count($sub_categories) > 0 ? 'toggle' : '' }}"
-                      href="{{ route('category.page', ['id' => $category->id, 'category' => $category->title]) }}">
-                      {{ str_limit($category->title, $limit = 25, $end = '..') }}
-                    </a>
+                    <div class="dropdown-item p-3 d-flex align-items-center justify-content-between gap-2">
+                      <a class="text-white flex-grow-1 {{ $sub_categories != null && count($sub_categories) > 0 ? 'toggle' : '' }}"
+                        href="{{ route('category.page', ['id' => $category->id, 'category' => $category->title]) }}">
+                        {{ str_limit($category->title, $limit = 25, $end = '..') }}
+                      </a>
+                      @if ($sub_categories != null && count($sub_categories) > 0)
+                        <svg class="svg-resize-24 svg-fill-white flex-shrink-0">
+                          <use xlink:href="{{ asset('/front/svg/sprite.svg#arrow-solid') }}" />
+                        </svg>
+                      @endif
+                    </div>
                     @if ($sub_categories != null && count($sub_categories) > 0)
-                      <ul class="submenu dropdown-menu">
+                      <ul class="submenu dropdown-menu m-0">
                         @foreach ($sub_categories as $sub_category)
                           @php $child_categories= $sub_category->childcategory->where('status', 1) @endphp
                           <li>
-                            <a class="dropdown-item py-3 px-5 text-white {{ $child_categories != null && count($child_categories) > 0 ? 'toggle' : '' }}"
-                              href="{{ route('subcategory.page', ['id' => $sub_category->id, 'category' => $sub_category->title]) }}">
-                              {{ str_limit($sub_category->title, $limit = 25, $end = '..') }}
-                            </a>
+                            <div class="dropdown-item py-3 px-5 d-flex align-items-center justify-content-between gap-2">
+                              <a class=" text-white flex-grow-1 {{ $child_categories != null && count($child_categories) > 0 ? 'toggle' : '' }}"
+                                href="{{ route('subcategory.page', ['id' => $sub_category->id, 'category' => $sub_category->title]) }}">
+                                {{ str_limit($sub_category->title, $limit = 25, $end = '..') }}
+                              </a>
+                              @if ($child_categories != null && count($child_categories) > 0)
+                                <svg class="svg-resize-24 svg-fill-white flex-shrink-0">
+                                  <use xlink:href="{{ asset('/front/svg/sprite.svg#arrow-solid') }}" />
+                              @endif
+                              </svg>
+                            </div>
                             @if ($child_categories != null && count($child_categories) > 0)
-                              <ul class="submenu dropdown-menu">
+                              <ul class="submenu dropdown-menu m-0">
                                 @foreach ($child_categories as $child_category)
-                                  <li>
-                                    <a class="dropdown-item p-3 text-white"
+                                  <li class="dropdown-item p-3">
+                                    <a class="text-white"
                                       href="{{ route('childcategory.page', ['id' => $child_category->id, 'category' => $child_category->title]) }}">
                                       {{ str_limit($child_category->title, $limit = 25, $end = '..') }}
                                     </a>
