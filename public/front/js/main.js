@@ -76,7 +76,7 @@ $(document).ready(function () {
 
     $('.dropdown-item').on('click', function () {
         console.log($(this))
-        $(this).siblings('.submenu').toggleClass('d-flex').toggleClass('d-none')
+        $(this).siblings('.submenu').toggleClass('d-flex')
     })
 });
 

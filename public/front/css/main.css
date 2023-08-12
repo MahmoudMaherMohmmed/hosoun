@@ -970,7 +970,7 @@ input {
   border-width: 0.2rem 0.2rem 0 0;
   border-color: var(--clr-black);
   width: 0.8rem;
-  height: 0.7em;
+  height: 0.8rem;
   transform: rotate(-135deg);
   vertical-align: top;
   margin-top: 0.5rem;
@@ -1135,6 +1135,7 @@ input {
   position: relative !important;
   border-radius: 0;
   padding-top: 0;
+  right: unset;
   padding-bottom: 1rem;
   background-color: transparent;
   border-bottom: 1px solid var(--clr-light);
