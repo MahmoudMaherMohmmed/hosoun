@@ -486,6 +486,9 @@ svg {
 .btn.btn-dark-outline .isax {
   color: var(--clr-dark);
 }
+.btn.btn.btn-dark-outline:hover .isax {
+  color: var(--clr-white);
+}
 .btn.btn-white-outline {
   color: var(--clr-white);
   border: 2px solid var(--clr-white);
@@ -2486,7 +2489,7 @@ input {
 .exam .form-check-input:checked[type="radio"]::after {
   content: "";
   display: inline-block;
-  transform: translate(-0.2rem, -0.3rem);
+  transform: translate(-0.2rem, -0.4rem);
   width: 75%;
   height: 75%;
   border-radius: 100%;
@@ -2496,7 +2499,7 @@ input {
 
 @media only screen and (min-width: 768px) {
   .exam .form-check-input:checked[type="radio"]::after {
-    transform: translate(-0.2rem, -0.2rem);
+    transform: translate(-0.2rem, -0.4rem);
   }
 }
 /* /Exam page */
