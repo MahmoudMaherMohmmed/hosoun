@@ -356,6 +356,8 @@ return array(
   'Complete' => 'اكتمال',
   'share' => 'مشاركة',
   'CopyText' => 'نسخ النص',
+  'CertificateRecipient' => 'مستقبل الشهادة',
+  'AbouttheCourse' => 'عن الدورة',
   'CourseIncludes' => 'تشمل الدورة',
   'read_lesson' => 'قراءة الدرس',
   'RecentNews' => 'آخر الأخبار',

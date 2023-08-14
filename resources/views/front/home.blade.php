@@ -1,5 +1,5 @@
 @extends('front.layouts.master')
-@section('css')
+@section('custom-css')
 @endsection
 @section('title')
   {{ __('frontstaticword.Home') }}
