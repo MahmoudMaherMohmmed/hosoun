@@ -17,7 +17,7 @@
                 class="books-item text-center d-flex flex-column align-items-center justify-content-start">
                 <img src="{{ url('/images/book_categories/', $book_category->image) }}" class="books-thumbnail"
                   alt="{{ $book_category->title }}">
-                <span class="fs-1 fw-bold">{{ $book_category->title }}</span>
+                <span class="fs-20 fw-bold">{{ $book_category->title }}</span>
                 <span class=""> {{ $book_category->description }} </span>
               </a>
             </div>

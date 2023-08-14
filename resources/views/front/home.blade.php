@@ -198,7 +198,7 @@
                   <img src="{{ url('front/svg', $item['image']) }}"
                     class="features-img flex-shrink-0 mx-auto me-sm-5 ms-sm-0 mb-4" alt="feature-image">
                   <div class="d-flex flex-column align-items-center align-items-sm-start">
-                    <span class="fs-1 fw-black mb-3">{{ $item['title'] }}</span>
+                    <span class="fs-20 fw-black mb-3">{{ $item['title'] }}</span>
                     <span class="text-dim pt-3 text-center text-sm-start">{{ $item['desc'] }}</span>
                   </div>
                 </div>
@@ -349,7 +349,7 @@
                 <img src="{{ url('/images/book_categories/', $book_category->image) }}" class="books-thumbnail"
                   alt="{{ $book_category->title }}">
               </a>
-              <span class="fs-1 fw-bold text-white">{{ $book_category->title }}</span>
+              <span class="fs-20 fw-bold text-white">{{ $book_category->title }}</span>
               <span class="text-white-70"> {{ $book_category->description }} </span>
             </section>
           @endforeach

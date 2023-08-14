@@ -1,21 +1,27 @@
 @extends('front.layouts.master')
 
 @section('title')
-  {{ isset($book_child_category) && $book_child_category!=null ? $book_child_category->title : __('frontstaticword.SearchBook') }}
+  {{ isset($book_child_category) && $book_child_category != null ? $book_child_category->title : __('frontstaticword.SearchBook') }}
 @endsection
 
 @section('custom-css')
 @endsection
 
 @section('content')
-  @include('front.layouts.page_header', ['title' => isset($book_child_category) && $book_child_category!=null ? $book_child_category->title : __('frontstaticword.SearchBook')])
+  @include('front.layouts.page_header', [
+      'title' =>
+          isset($book_child_category) && $book_child_category != null
+              ? $book_child_category->title
+              : __('frontstaticword.SearchBook'),
+  ])
+
   <section class="block-sec">
     <div class="container">
       <section class="row">
         <div class="col-12 mb-5">
           <form method="GET" action="{{ route('book.search') }}">
             <div class="form-group">
-              <div class="form-group-icon"> 
+              <div class="form-group-icon">
                 <input type="search" name="searchTerm" class="form-control"
                   placeholder="{{ __('frontstaticword.SearchBook') }}" required autofocus>
                 <svg class="svg-default form-control-icon">
@@ -33,7 +39,7 @@
               <section class="">
                 <section class="d-flex flex-column gap-2 text-center py-5 px-4">
                   <span class="fw-bold">{{ $book->title }}</span>
-                  <span class="text-dim fs-14">{{ $book->description }}</span>
+                  <span class="text-dim fs-14 line-clamp-5">{{ $book->description }}</span>
                 </section>
                 <section class="d-flex align-items-center gap-3">
                   <a href="{{ route('book.pdf', $book->id) }}" class="btn btn-accent-light w-100" target="_blank">
@@ -47,7 +53,7 @@
                     <svg class="svg-default form-control-icon">
                       <use xlink:href="{{ asset('/front/svg/sprite.svg#document-upload') }}" />
                     </svg>
-                    {{__('frontstaticword.Download')}}
+                    {{ __('frontstaticword.Download') }}
                   </a>
                 </section>
               </section>
