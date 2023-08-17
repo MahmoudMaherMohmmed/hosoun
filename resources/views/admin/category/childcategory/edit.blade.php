@@ -111,8 +111,7 @@
         "use strict";
 
         $(function () {
-            var urlLike = '{{ url('
-            admin / dropdown ') }}';
+            var urlLike = '{{ url("admin/dropdown") }}';
             $('#category_id').change(function () {
                 var up = $('#upload_id').empty();
                 var cat_id = $(this).val();
