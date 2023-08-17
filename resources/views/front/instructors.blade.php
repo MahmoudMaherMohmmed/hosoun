@@ -20,15 +20,13 @@
               <section
                 class="instructor-item gap-4 gap-lg-5 text-center d-flex flex-column align-items-center justify-content-start">
                 <div class="teachers__bg position-relative">
-                  {{-- @if ($instructor->user_img != null || $instructor->user_img != '')
+                  @if ($instructor->user_img != null || $instructor->user_img != '')
                     <img src="{{ asset('images/user_img/' . $instructor->user_img) }}"
                       alt="{{ $instructor->fname }} {{ $instructor->lname }}">
                   @else
                     <img src="{{ asset('images/default/instructor.png') }}"
                       alt="{{ $instructor->fname }} {{ $instructor->lname }}">
-                      @endif --}}
-                  <img src="{{ asset('front/img/persons/person-3.png') }}"
-                    alt="{{ $instructor->fname }} {{ $instructor->lname }}">
+                  @endif
                 </div>
                 <span class="name fw-bold">
                   <a href="{{ route('instructor.profile', ['id' => $instructor->id, 'name' => $fullname]) }}"

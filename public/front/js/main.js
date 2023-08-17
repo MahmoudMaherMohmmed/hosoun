@@ -73,6 +73,11 @@ $(document).ready(function () {
     });
 
     $("[type='datetime-local']").flatpickr();
+
+    $('.dropdown-item').on('click', function () {
+        console.log($(this))
+        $(this).siblings('.submenu').toggleClass('d-flex')
+    })
 });
 
 function previewFile(el) {

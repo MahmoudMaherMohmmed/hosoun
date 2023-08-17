@@ -486,6 +486,9 @@ svg {
 .btn.btn-dark-outline .isax {
   color: var(--clr-dark);
 }
+.btn.btn.btn-dark-outline:hover .isax {
+  color: var(--clr-white);
+}
 .btn.btn-white-outline {
   color: var(--clr-white);
   border: 2px solid var(--clr-white);
@@ -970,7 +973,7 @@ input {
   border-width: 0.2rem 0.2rem 0 0;
   border-color: var(--clr-black);
   width: 0.8rem;
-  height: 0.7em;
+  height: 0.8rem;
   transform: rotate(-135deg);
   vertical-align: top;
   margin-top: 0.5rem;
@@ -1135,9 +1138,11 @@ input {
   position: relative !important;
   border-radius: 0;
   padding-top: 0;
+  right: unset;
+  left: unset;
   padding-bottom: 1rem;
   background-color: transparent;
-  border-bottom: 1px solid var(--clr-light);
+  border: 0;
   margin-bottom: 1rem !important;
 }
 
@@ -1436,7 +1441,7 @@ input {
 .diamond-img.big {
   width: 45rem;
   height: 50rem;
-  left: -5rem;
+  inset-inline-end: -5rem;
   top: -3px;
 }
 
@@ -2485,7 +2490,7 @@ input {
 .exam .form-check-input:checked[type="radio"]::after {
   content: "";
   display: inline-block;
-  transform: translate(-0.2rem, -0.3rem);
+  transform: translate(-0.2rem, -0.4rem);
   width: 75%;
   height: 75%;
   border-radius: 100%;
@@ -2495,7 +2500,7 @@ input {
 
 @media only screen and (min-width: 768px) {
   .exam .form-check-input:checked[type="radio"]::after {
-    transform: translate(-0.2rem, -0.2rem);
+    transform: translate(-0.2rem, -0.4rem);
   }
 }
 /* /Exam page */
@@ -3138,15 +3143,18 @@ footer::after {
   .footerbottom::before {
     width: 50%;
     height: 14rem;
-    border-radius: 0 7rem 0 0;
-    left: 0;
+    /* border-radius: 0 7rem 0 0; */
+    border-start-start-radius: 7rem;
+    inset-inline-end: 0;
     background-color: var(--clr-accent);
   }
   .footerbottom::after {
     width: 60%;
     height: 7rem;
-    border-radius: 3.5rem 0 0 3.5rem;
-    right: 0;
+    /* border-radius: 3.5rem 0 0 3.5rem; */
+    border-start-end-radius: 3.5rem;
+    border-end-end-radius: 3.5rem;
+    inset-inline-start: 0;
     background-color: var(--clr-dark);
   }
 
@@ -3201,7 +3209,7 @@ footer::after {
   border-radius: 100%;
   color: var(--clr-white);
   background-color: #25d366;
-  inset-block-end: 3rem;
+  inset-block-end: 5.5rem;
   inset-inline-start: 3rem;
   font-size: 3rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -3240,4 +3248,11 @@ footer::after {
   height: 1rem;
   border-radius: 100%;
   background-color: var(--clr-accent);
+}
+
+.line-clamp-5 {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

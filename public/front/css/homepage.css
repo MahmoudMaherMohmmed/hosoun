@@ -201,12 +201,12 @@
   top: 6rem;
 }
 .iconshapes2 .iconshapes__1 {
-  left: 0;
+  inset-inline-end: 0;
   bottom: 0;
   border-radius: 0 0 0 5rem;
 }
 .iconshapes2 .iconshapes__2 {
-  right: 0;
+  inset-inline-start: 0;
   top: 0;
   border-radius: 0 5rem 0 0;
 }

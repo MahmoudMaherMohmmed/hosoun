@@ -117,8 +117,6 @@ h6 {
 }
 
 .dropdown-toggle::after {
-  border-width: 0.2rem 0 0 0.2rem;
-  transform: rotate(-135deg);
   margin-right: 0;
   margin-left: 0.7rem;
 }
@@ -302,4 +300,29 @@ footer::after {
 
 .jq-star {
   transform: scaleX(1);
+}
+
+.headersearch__dropdown > .dropdown-menu {
+  transform: translate(4rem, 4.1rem) !important;
+}
+
+.diamond-img,
+.diamond-img.big,
+.iconshapes2 .iconshapes__2,
+.iconshapes2 .iconshapes__1,
+.btn svg,
+.isax {
+  transform: scaleX(-1);
+}
+
+.form-group-icon button.form-control-icon {
+  left: unset;
+  right: 2rem;
+}
+
+@media only screen and (min-width: 1200px) {
+  .auth-user .btn {
+    gap: 0.5rem;
+    min-width: 16rem;
+  }
 }
