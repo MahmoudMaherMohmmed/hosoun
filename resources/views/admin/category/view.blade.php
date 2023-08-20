@@ -36,7 +36,9 @@
                                     <th>{{ __('adminstaticword.Featured') }}</th>
                                     <th>{{ __('adminstaticword.Status') }}</th>
                                     <th>{{ __('adminstaticword.Edit') }}</th>
+                                    @if(Auth::User()->role == "admin")
                                     <th>{{ __('adminstaticword.Delete') }}</th>
+                                    @endif
                                 </tr>
                             </thead>
                             <tbody id="sortable">
@@ -84,7 +86,9 @@
                                     </td>
 
                                     <td>
-                                        <a class="table-edit" href="{{url('category/'.$cat->id)}}"><i class='bx bx-edit' ></i></a></td>
+                                        <a class="table-edit" href="{{url('category/'.$cat->id)}}"><i class='bx bx-edit' ></i></a>
+                                    </td>
+                                    @if(Auth::User()->role == "admin")
                                     <td>
                                         <form method="post" action="{{url('category/'.$cat->id)}}" data-parsley-validate
                                             class="form-horizontal form-label-left">
@@ -93,6 +97,7 @@
                                             <button type="submit" class="btn-null table-delete"><i class='bx bx-trash' ></i></button>
                                         </form>
                                     </td>
+                                    @endif
                                 </tr>
                                 @endforeach
                             </tbody>

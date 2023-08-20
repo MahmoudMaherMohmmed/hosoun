@@ -27,7 +27,9 @@
                   <th>{{ __('adminstaticword.Icon') }}</th>
                   <th>{{ __('adminstaticword.Status') }}</th>
                   <th>{{ __('adminstaticword.Edit') }}</th>
+                  @if(Auth::User()->role == "admin")
                   <th>{{ __('adminstaticword.Delete') }}</th>
+                  @endif
                 </tr>
               </thead>
               <tbody>
@@ -54,6 +56,7 @@
                   <td>
                     <a class="table-edit" href="{{url('childcategory/'.$cat->id)}}"><i class='bx bx-edit' ></i></a>
                   </td>
+                  @if(Auth::User()->role == "admin")
                   <td>
                     <form  method="post" action="{{url('childcategory/'.$cat->id)}}"data-parsley-validate class="form-horizontal form-label-left">
                       {{ csrf_field() }}
@@ -63,6 +66,7 @@
                       </button>
                     </form>
                   </td>
+                  @endif
                 </tr>
                 @endforeach
               </tbody>
