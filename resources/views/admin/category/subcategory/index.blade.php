@@ -25,9 +25,9 @@
                   <th>{{ __('adminstaticword.SubCategory') }}</th>
                   <th>{{ __('adminstaticword.Icon') }}</th>
                   <th>{{ __('adminstaticword.Slug') }}</th>
+                  @if(Auth::User()->role == "admin")
                   <th>{{ __('adminstaticword.Status') }}</th>
                   <th>{{ __('adminstaticword.Edit') }}</th>
-                  @if(Auth::User()->role == "admin")
                   <th>{{ __('adminstaticword.Delete') }}</th>
                   @endif
                 </tr>
@@ -44,6 +44,7 @@
                   <td>{{$cat->title}}</td>
                   <td><i class="fa {{$cat->icon}}"></i></td>
                   <td>{{$cat->slug}}</td>
+                  @if(Auth::User()->role == "admin")
                   <td>
                       <form action="{{ route('subcategory.quick',$cat->id) }}" method="POST">
                         {{ csrf_field() }}
@@ -60,7 +61,6 @@
                     <a class="table-edit" href="{{url('subcategory/'.$cat->id)}}">
                     <i class='bx bx-edit'></i></a>
                   </td>
-                  @if(Auth::User()->role == "admin")
                   <td>
                     <form  method="post" action="{{url('subcategory/'.$cat->id)}}
                       "data-parsley-validate class="form-horizontal form-label-left">
