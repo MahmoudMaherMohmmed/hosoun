@@ -103,7 +103,8 @@
             "app/Helpers/SeoHelper.php",
             "app/Helpers/Tracker.php",
             "app/Helpers/TwilioMsg.php",
-            "app/Helpers/CourseRateHelper.php"
+            "app/Helpers/CourseRateHelper.php",
+            "app/Helpers/ZoomHelper.php"
         ],
         "psr-4": {
             "App\\": "app/",

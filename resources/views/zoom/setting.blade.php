@@ -28,7 +28,7 @@
 
             <div class="form-group">
               <label for="jwt_token">{{ __('adminstaticword.ZoomJWTToken') }}:</label>
-              <textarea id="jwt_token" name="jwt_token" class="form-control" rows="5" cols="30" placeholder="Enter your JWT Token here">{{ Auth::user()->jwt_token }}</textarea>
+              <textarea id="jwt_token" name="jwt_token" class="form-control" rows="5" cols="30" placeholder="Enter your JWT Token here">{{ ZoomHelper::getToken() }}</textarea>
             </div>
 
             <div class="form-group">

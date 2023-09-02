@@ -55,6 +55,7 @@ class CreateUsersTable extends Migration {
 				$table->timestamps();
 				$table->string('zoom_email', 200)->nullable();
 				$table->text('jwt_token')->nullable();
+				$table->timestamp('jwt_token_expires_in')->nullable();
 				$table->string('gitlab_id')->nullable();
 				$table->string('linkedin_id')->nullable();
 				$table->string('twitter_id')->nullable();

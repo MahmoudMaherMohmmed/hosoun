@@ -52,6 +52,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'linkedin_id',
         'twitter_id',
         'jwt_token',
+        'jwt_token_expires_in',
         'zoom_email',
         'nationality',
         'national_id',

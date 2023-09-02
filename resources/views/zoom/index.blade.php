@@ -102,7 +102,7 @@
     
                                 @php
                                 $curl = curl_init();
-                                $token = Auth::user()->jwt_token;
+                                $token = ZoomHelper::getToken();
                                 $meetingID = $meeting['id'];
                                 curl_setopt_array($curl, array(
                                 CURLOPT_URL => "https://api.zoom.us/v2/meetings/$meetingID",

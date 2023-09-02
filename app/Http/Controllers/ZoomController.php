@@ -9,7 +9,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
 use App\Meeting;
 use DateTime;
 use DateTimeZone;
-use App\Categories;
+use App\Helpers\ZoomHelper;
 use App\Course;
 use Illuminate\Support\Facades\Log;
 use File;
@@ -19,8 +19,8 @@ class ZoomController extends Controller
 {
     public function dashboard(Request $request){
       if(Auth::user()->role == 'admin' || Auth::user()->role == 'instructor'){
-        if(Auth::user()->jwt_token != '' && Auth::user()->zoom_email != ''){
-          $token = Auth::user()->jwt_token;
+        if(ZoomHelper::getToken() != '' && Auth::user()->zoom_email != ''){
+          $token = ZoomHelper::getToken();
           $email = Auth::user()->zoom_email;
           $curl = curl_init();
 
@@ -141,7 +141,7 @@ class ZoomController extends Controller
 
     public function delete($id){
       $curl = curl_init();
-      $token = Auth::user()->jwt_token;
+      $token = ZoomHelper::getToken();
       curl_setopt_array($curl, array(
       CURLOPT_URL => "https://api.zoom.us/v2/meetings/$id",
       CURLOPT_RETURNTRANSFER => true,
@@ -209,7 +209,7 @@ class ZoomController extends Controller
 
 
         $email = Auth::user()->zoom_email;
-        $token = Auth::user()->jwt_token;
+        $token = AZoomHelper::getToken();
          // $start_time = date('Y-m-d\TH:i:s', strtotime($request->start_time));
 
          if($request->timezone == 'None'){
@@ -355,7 +355,7 @@ class ZoomController extends Controller
     public function edit($mettingid){
 
         $curl = curl_init();
-        $token = Auth::user()->jwt_token;
+        $token = ZoomHelper::getToken();
         curl_setopt_array($curl, array(
           CURLOPT_URL => "https://api.zoom.us/v2/meetings/$mettingid",
           CURLOPT_RETURNTRANSFER => true,
@@ -484,7 +484,7 @@ class ZoomController extends Controller
           $type  = "2";
          }
          
-         $token = Auth::user()->jwt_token;
+         $token = ZoomHelper::getToken();
          $curl = curl_init();
 
           curl_setopt_array($curl, array(
@@ -555,7 +555,7 @@ class ZoomController extends Controller
     }
 
     public function show($meetingid){
-       $token = Auth::user()->jwt_token;
+       $token = ZoomHelper::getToken();
        $curl = curl_init();
 
         curl_setopt_array($curl, array(
