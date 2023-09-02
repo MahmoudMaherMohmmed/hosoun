@@ -1,6 +1,5 @@
 <?php
 
-use Auth;
 use Carbon\Carbon;
 
 class ZoomHelper
