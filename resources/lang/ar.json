@@ -5,5 +5,11 @@
     "You are receiving this email because we received a password reset request for your account.": "أنت تتلقى هذا البريد الإلكتروني لأننا تلقينا طلب إعادة تعيين كلمة المرور لحسابك.",
     "This password reset link will expire in :count minutes.": "ستنتهي صلاحية رابط إعادة تعيين كلمة المرور خلال :count دقيقة",
     "If you did not request a password reset, no further action is required.": "إذا لم تطلب إعادة تعيين كلمة المرور ، فلا داعي لاتخاذ أي إجراء آخر.",
-    "Regards": "مع تحيات"
+    "Regards": "مع تحيات",
+    "The subject field is required when arabic native is yes.":"يجب اختيار المادة التي تريد دراستها ",
+    "The preferred field is required when arabic native is yes.":" يجب اختيار الكتاب الذي تريد دراسته",
+    "The preferred book field is required when preferred is yes.":"يجب اختيار الكتاب الذي تريد دراسته",
+    "The speak arabic field is required when arabic native is no.":"هذا الحقل مطلوب عندما يكون العربية ليست لغتك الأم",
+    "The spoken lang field is required when arabic native is no.":"يجب ادخال اللغة التي تتحدثها"
+
 }

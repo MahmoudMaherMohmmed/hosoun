@@ -790,4 +790,9 @@ return [
     'InstructorGender' => 'Instructor Gender',
     'Class' => 'Class',
     'StartDate' => 'Start Date',
+    'old_memorized' => 'Old Memorized',
+    'telawa_amount' => 'Telawa Amount',
+    'old_ejazat' => 'Old Ejazat',
+    'required_ejazat' => 'Required Ejazat',
+    'required_qeraa' => 'Required Qeraa',
 ];

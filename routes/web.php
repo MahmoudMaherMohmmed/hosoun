@@ -179,6 +179,9 @@ Route::middleware(['web'])->group(function () {
                 Route::resource('social_link', 'SocialLinkController');
 
                 Route::get('admin/paths/subjects', 'PathsController@subjects')->name('paths.subjects');
+                Route::get('admin/paths/religious', 'PathsController@religious')->name('paths.religious');
+                Route::get('admin/paths/quran', 'PathsController@quran')->name('paths.quran');
+                Route::get('admin/paths/arabic', 'PathsController@arabic')->name('paths.arabic');
 
 
                 Route::post('mailsetting/update', 'SettingController@updateMailSetting')->name('update.mail.set');
@@ -800,17 +803,26 @@ Route::get('jitsi/detail/{id}', 'JitsiController@jitsidetailpage')->name('jitsip
 
 
 // Learning path forms
-Route::get('/quran', function () {
-    return view('front.paths.quran');
-});
+// Route::get('/quran', function () {
+//     return view('front.paths.quran');
+// });
 
-Route::get('/arabic', function () {
-    return view('front.paths.arabic');
-});
+// Route::get('/arabic', function () {
+//     return view('front.paths.arabic');
+// });
 
-Route::get('/religious', function () {
-    return view('front.paths.religious');
-});
+// Route::get('/religious', function () {
+//     return view('front.paths.religious');
+// });
+
+Route::get('quran', 'HomeController@quran');
+Route::post('quran/save', 'HomeController@saveQuranPath')->name('quran.save');
+
+Route::get('arabic', 'HomeController@arabic');
+Route::post('arabic/save', 'HomeController@saveArabicPath')->name('arabic.save');
+
+Route::get('religious', 'HomeController@religious');
+Route::post('religious/save', 'HomeController@saveReligious')->name('religious.save');
 
 Route::get('subjects', 'HomeController@subjects');
 Route::post('subjects/save', 'HomeController@saveSubjects');

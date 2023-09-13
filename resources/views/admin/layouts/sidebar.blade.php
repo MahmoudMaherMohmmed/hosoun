@@ -347,7 +347,7 @@
                 </ul>
             </li>
 
-            <li class="{{ Nav::isRoute('paths.subjects') }} treeview">
+            <li class="{{ Nav::isRoute('paths.subjects') }} {{ Nav::isRoute('paths.religious') }} {{ Nav::isRoute('paths.arabic') }} {{ Nav::isRoute('paths.quran') }} treeview">
                 <a href="#" class="flex-between">
                     <div class="item-flex">
                         <i class='bx bx-chalkboard' ></i>
@@ -360,6 +360,24 @@
                         <a href="{{route('paths.subjects')}}" class="item-flex">
                             <i class='bx bx-chevron-left' ></i>
                             <span>{{ __('adminstaticword.Subjects') }}</span>
+                        </a>
+                    </li>
+                    <li class="{{ Nav::isRoute('paths.religious') }}">
+                        <a href="{{route('paths.religious')}}" class="item-flex">
+                            <i class='bx bx-chevron-left' ></i>
+                            <span>{{ __('adminstaticword.Religious') }}</span>
+                        </a>
+                    </li>
+                    <li class="{{ Nav::isRoute('paths.quran') }}">
+                        <a href="{{route('paths.quran')}}" class="item-flex">
+                            <i class='bx bx-chevron-left' ></i>
+                            <span>{{ __('adminstaticword.QuranPath') }}</span>
+                        </a>
+                    </li>
+                    <li class="{{ Nav::isRoute('paths.arabic') }}">
+                        <a href="{{route('paths.arabic')}}" class="item-flex">
+                            <i class='bx bx-chevron-left' ></i>
+                            <span>{{ __('adminstaticword.ArabicPath') }}</span>
                         </a>
                     </li>
                 </ul>

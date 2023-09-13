@@ -30,6 +30,7 @@
   @include('front.layouts.scripts')
 
   @yield('custom-js')
+  @stack('js')
 </body>
 
 </html>
