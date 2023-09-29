@@ -15,6 +15,7 @@ use App\SubjectPath;
 use App\Testimonial;
 use App\Trusted;
 use App\Blog;
+use App\CareerJob;
 use App\QuranPath;
 use App\ReligiousPath;
 use App\User;
@@ -220,8 +221,6 @@ class HomeController extends Controller
         return back();
     }
 
-
-    
     public function religious()
     {
         return view('front.paths.religious');
@@ -241,7 +240,6 @@ class HomeController extends Controller
         ]);
 
         ReligiousPath::create($request->all());
-
         Session::flash('success', trans('flash.AddedSuccessfully'));
 
         return back();
@@ -267,7 +265,7 @@ class HomeController extends Controller
             'required_ejazat' => 'requiredif:sub_path,==,3',
             'required_qeraa' => 'requiredif:sub_path,==,4',
             'start_date' => 'required|date|after:today',
-        ],[
+        ], [
             'old_memorized.requiredif' => 'The old memorized field is required when sub path is memorization.',
             'telawa_amount.requiredif' => 'The telawa amount field is required when sub path is telawa.',
             'required_ejazat.requiredif' => 'The required ejazat field is required when sub path is ejazat.',
@@ -275,11 +273,9 @@ class HomeController extends Controller
         ]);
 
         $requestArray = $request->all();
-        $requestArray['old_ejazat'] = $request->has('old_ejazat') ? implode(',',$requestArray['old_ejazat']) : 0;
-        // dd($requestArray);
+        $requestArray['old_ejazat'] = $request->has('old_ejazat') ? implode(',', $requestArray['old_ejazat']) : 0;
 
         QuranPath::create($requestArray);
-
         Session::flash('success', trans('flash.AddedSuccessfully'));
 
         return back();
@@ -305,7 +301,7 @@ class HomeController extends Controller
             'speak_arabic' => 'requiredif:arabic_native,==,0',
             'spoken_lang' => 'requiredif:arabic_native,==,0',
             'start_date' => 'required|date|after:today',
-        ],[
+        ], [
             'subject_id.requiredif' => __('The subject field is required when arabic native is yes.'),
             'preferred.requiredif' => __('The preferred field is required when arabic native is yes.'),
             'preferred_book.requiredif' => __('The preferred book field is required when preferred is yes.'),
@@ -314,13 +310,11 @@ class HomeController extends Controller
         ]);
 
         $requestArray = $request->all();
-        
+
         $requestArray['spoken_lang'] = $request->arabic_native == 1 ? null : $requestArray['spoken_lang'];
         $requestArray['speak_arabic'] = $request->arabic_native == 1 ? null : $requestArray['speak_arabic'];
-        $requestArray['subject_id'] = $request->arabic_native == 0 ? null :$requestArray['subject_id'] ;
+        $requestArray['subject_id'] = $request->arabic_native == 0 ? null : $requestArray['subject_id'];
         $requestArray['preferred_book'] = $request->arabic_native == 0 ? null : $requestArray['preferred_book'];
-
-        // dd($requestArray);
 
         ArabicPath::create($requestArray);
 
@@ -329,4 +323,22 @@ class HomeController extends Controller
         return back();
     }
 
+    public function careers(Request $request)
+    {
+        dump($request->SearchCareer);
+        $careerJobs = CareerJob::query()
+        ->where('status', 1)
+        ->when($request->SearchCareer, function ($query) use ($request) {
+            $query->where('title->ar', 'LIKE', "%$request->SearchCareer%")
+            ->orWhere('title->en', 'LIKE', "%$request->SearchCareer%");
+        })->get()
+        ;
+        return view('front.careers.all', compact('careerJobs'));
+    }
+
+    public function careerJob($id)
+    {
+        $careerJob = careerJob::findOrFail($id);
+        return view('front.careers.single', compact('careerJob'));
+    }
 }

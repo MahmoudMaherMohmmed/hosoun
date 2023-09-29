@@ -795,4 +795,17 @@ return [
     'old_ejazat' => 'Old Ejazat',
     'required_ejazat' => 'Required Ejazat',
     'required_qeraa' => 'Required Qeraa',
+
+    'CareerJobs' => 'Jobs',
+    'AddCareerJob' => 'Add New Job',
+    'EditCareerJob' => 'Edit Job Data',
+    'Responsibilities'=>'Responsibilities',
+    'Qualifications'=>'Qualifications',
+    'Requirements'=>'Requirements',
+    'ApplyMethod'=>'Apply Method',
+    'Full-Time'=>'Full-Time',
+    'Part-Time'=>'Part-Time',
+    'JobTitle'=>'Job Title',
+    'JobType'=>'Job Type',
+    
 ];

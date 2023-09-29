@@ -423,6 +423,7 @@ Route::middleware(['web'])->group(function () {
                 Route::get('admin/book_category/sub_categories', "BookCategoryController@subCategories");
                 Route::get('admin/book_sub_category/child_categories', "BookSubCategoryController@childCategories");
                 Route::resource('books', 'BookController')->except('show');
+                Route::resource('career-jobs', 'CareerJobController')->except('show');
 
                 Route::resource('category', 'CategoriesController');
                 Route::get('/category/{slug}', 'CategoriesController@show')->name('category.show');
@@ -771,6 +772,7 @@ Route::middleware(['web'])->group(function () {
             Route::post('/quickupdate/book-sub-categories/{id}', 'QuickUpdateController@bookSubCategoriesQuick')->name('book-sub-categories.quick');
             Route::post('/quickupdate/book-child-categories/{id}', 'QuickUpdateController@bookChildCategoriesQuick')->name('book-child-categories.quick');
             Route::post('/quickupdate/books/{id}', 'QuickUpdateController@bookQuick')->name('books.quick');
+            Route::post('/quickupdate/career-jobs/{id}', 'QuickUpdateController@careerJobQuick')->name('career-jobs.quick');
         });
     });
 });
@@ -828,9 +830,11 @@ Route::get('subjects', 'HomeController@subjects');
 Route::post('subjects/save', 'HomeController@saveSubjects');
 
 
-Route::get('/careers', function () {
-    return view('front.careers.all');
-});
-Route::get('/single-job', function () {
-    return view('front.careers.single');
-});
+Route::get('careers', 'HomeController@careers')->name('careersList');
+Route::get('careers/{id}', 'HomeController@careerJob')->name('career.job.show');
+// Route::get('/careers', function () {
+//     return view('front.careers.all');
+// });
+// Route::get('/single-job', function () {
+//     return view('front.careers.single');
+// });

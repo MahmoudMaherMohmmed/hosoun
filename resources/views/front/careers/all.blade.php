@@ -26,22 +26,21 @@
           </form>
         </div>
         <div class="col-12">
-          @for ($i = 0; $i < 5; $i++)
+          @foreach ($careerJobs as $careerJob)
             <section class="job-card mb-4">
-              <h3 class="fs-20">عنوان الوظيفة المطلوب فيها التقديم</h3>
+              <h3 class="fs-20">{{$careerJob->title}}</h3>
               <p class="mt-4">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam, ex obcaecati et quisquam
-                quasi esse quae
-                non fugit ipsam quod asperiores consectetur quis dolorum provident veniam maxime? Itaque sit velit soluta
-                ipsam voluptate! Optio aliquam voluptatum impedit ipsa expedita quasi unde suscipit mollitia veritatis
-                doloremque officia, perspiciatis atque perferendis consequuntur.....
+                {!! $careerJob->description !!}
               </p>
               <div class="d-flex align-items-center gap-3 mt-4">
                 <div class="d-flex align-items-center gap-2">
-                  <span class="tag tag-accent-light">full-time</span>
-                  <span class="tag tag-accent-light">part-time</span>
+                  @foreach(explode(',',$careerJob->tags) as $tag)
+                    <span class="tag tag-accent-light">{{$tag}}</span>
+                    @endforeach
+                  {{-- <span class="tag tag-accent-light">full-time</span>
+                  <span class="tag tag-accent-light">part-time</span> --}}
                 </div>
-                <a href="{{ url('/single-job') }}" class="d-flex align-items-center gap-2 text-accent fw-bold ms-auto">
+                <a href="{{ route('career.job.show',$careerJob->id) }}" class="d-flex align-items-center gap-2 text-accent fw-bold ms-auto">
                   {{ __('frontstaticword.Detail') }}
                   <svg class="svg-resize-24 svg-stroke-accent">
                     <use xlink:href="{{ asset('/front/svg/sprite.svg#arrow-left') }}" />
@@ -49,7 +48,7 @@
                 </a>
               </div>
             </section>
-          @endfor
+          @endforeach
         </div>
       </section>
     </div>

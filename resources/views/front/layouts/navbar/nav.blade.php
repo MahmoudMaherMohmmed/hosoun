@@ -61,11 +61,11 @@
 </li>
 
 
-<li class="nav-item">
+{{-- <li class="nav-item">
   <a class="nav-link p-0" href="">
     {{ __('frontstaticword.Quizzes') }}
   </a>
-</li>
+</li> --}}
 <li class="nav-item">
   <a class="nav-link p-0" href="{{ route('instructors.all') }}">
     {{ __('frontstaticword.Instructors') }}

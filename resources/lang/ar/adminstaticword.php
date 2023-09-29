@@ -770,4 +770,14 @@ return [
     'preferredBook'=> 'الكتاب المفضل',
     'speakArabic' => 'يتحدث العربية',
     'spoken_lang'   => 'اللغة المتحدث بها',
+
+    'CareerJobs' => 'الوظائف',
+    'AddCareerJob' => 'أضافة وظيفة جديدة',
+    'EditCareerJob' => 'تعديل بيانات الوظيفة',
+    'Responsibilities'=>'المسؤوليات',
+    'Qualifications'=>'المؤهلات',
+    'Requirements'=>'المتطلبات',
+    'ApplyMethod'=>'طريقة التقديم',
+    'Full-Time'=>'دوام كامل',
+    'Part-Time'=>'دوام جزئي',
 ];

@@ -499,6 +499,12 @@
                 </a>
             </li>
 
+            <li class="{{ Nav::isResource('career-jobs') }}">
+                <a href="{{url('career-jobs')}}" class="item-flex">
+                    <i class='bx bx-file' ></i>
+                    <span>{{ __('adminstaticword.CareerJobs') }}</span>
+                </a>
+            </li>
             <li class="{{ Nav::isResource('faq') }} {{ Nav::isResource('faqinstructor') }}  treeview">
                 <a href="#" class="flex-between">
                     <div class="item-flex">
@@ -577,6 +583,8 @@
                 </ul>
             </li>
 
+
+            
             <li class="{{ Nav::isResource('slider') }} {{ Nav::isResource('facts') }} {{ Nav::isRoute('category.slider') }} {{ Nav::isResource('getstarted') }} {{ Nav::isResource('trusted') }} {{ Nav::isRoute('widget.setting') }} {{ Nav::isRoute('terms') }} {{ Nav::isResource('testimonial') }} {{ Nav::isResource('social_link') }} {{ Nav::isResource('advertisement') }} treeview">
                 <a href="#" class="flex-between">
                     <div class="item-flex">

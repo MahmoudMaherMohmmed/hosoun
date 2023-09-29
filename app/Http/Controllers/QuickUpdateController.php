@@ -27,6 +27,7 @@ use App\Order;
 use DB;
 use App\CourseClass;
 use App\Answer;
+use App\CareerJob;
 use App\CourseInclude;
 use App\RelatedCourse;
 
@@ -181,6 +182,20 @@ class QuickUpdateController extends Controller
             return back()->with('success', 'Status changed to active !');
         } else {
             $book->update(['status' => "0"]);
+
+            return back()->with('delete', 'Status changed to deactive !');
+        }
+    }
+    public function careerJobQuick ($id)
+    {
+        $careerJob = CareerJob::findorfail($id);
+
+        if ($careerJob->status == 0) {
+            $careerJob->update(['status' => "1"]);
+
+            return back()->with('success', 'Status changed to active !');
+        } else {
+            $careerJob->update(['status' => "0"]);
 
             return back()->with('delete', 'Status changed to deactive !');
         }
