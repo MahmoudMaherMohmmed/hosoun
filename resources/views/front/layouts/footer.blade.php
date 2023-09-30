@@ -69,12 +69,12 @@
         <p class="fw-medium mb-3">
           البريد الإلكتروني
         </p>
-        <a class="d-inline-block text-accent-2 fs-2 fw-bold mb-3" href="mailto:info@huson.com">info@huson.com</a>
+        <a class="d-inline-block text-accent-2 fs-2 fw-bold mb-3" href="mailto:info@huson.com">info@hosoun.com</a>
         <p class="fw-medium mb-3">
           العنوان
         </p>
         <p class="text-accent-2 fs-2 fw-bold mb-3">
-          القاهرة - المعادي
+          المنصورة - مصر
         </p>
       </div>
     </div>

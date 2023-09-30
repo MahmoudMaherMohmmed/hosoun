@@ -85,9 +85,9 @@
                             
                             <div class="col-xs-12 col-md-6">
                                 <div class="form-group">
-                                    <label for="requirements">{{ __('adminstaticword.Requirements') }}: <sup class="redstar">*</sup></label>
+                                    <label for="requirements">{{ __('adminstaticword.JobRequirements') }}: <sup class="redstar">*</sup></label>
                                     <textarea id="requirements" name="requirements" rows="3" class="form-control"
-                                        placeholder="{{ __('adminstaticword.Enter') }} {{ __('adminstaticword.Requirements') }}"
+                                        placeholder="{{ __('adminstaticword.Enter') }} {{ __('adminstaticword.JobRequirements') }}"
                                         required>{{ (old('requirements',$careerJob->requirements)) }}</textarea>
                                 </div>
                             </div>

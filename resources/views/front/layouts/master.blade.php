@@ -22,7 +22,7 @@
   @include('front.layouts.footer')
   {{-- Fixed Whatsapp button --}}
   <section id="whatsapp-btn" class="position-fixed">
-    <a href="https://wa.me/{{$gsetting->default_phone}}" target="_blank"
+    <a href="https://wa.me/{{$gsetting->wapp_phone}}" target="_blank"
       class="d-flex flex-column align-items-center justify-content-center w-100 h-100">
       <i class="fab fa-whatsapp text-white"></i>
     </a>

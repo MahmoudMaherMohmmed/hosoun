@@ -200,7 +200,8 @@
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label for="detail">{{ __('adminstaticword.Detail') }}:
-                                        <sup class="redstar">*</sup></label>
+                                        {{-- <sup class="redstar">*</sup> --}}
+                                    </label>
                                     <textarea id="detail" name="detail" rows="3"
                                         class="form-control">{{ (old('detail')) }}</textarea>
                                 </div>

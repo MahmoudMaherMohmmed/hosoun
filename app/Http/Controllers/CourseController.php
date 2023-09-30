@@ -96,7 +96,7 @@ class CourseController extends Controller
             'subcategory_id' => 'required',
             'title' => 'required',
             'short_detail' => 'required',
-            'detail' => 'required',
+            // 'detail' => 'required',
             'video' => 'mimes:mp4,avi,wmv',
             'slug' => 'required|unique:courses,slug',
         ]);

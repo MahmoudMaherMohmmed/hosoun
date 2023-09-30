@@ -801,7 +801,7 @@ return [
     'EditCareerJob' => 'Edit Job Data',
     'Responsibilities'=>'Responsibilities',
     'Qualifications'=>'Qualifications',
-    'Requirements'=>'Requirements',
+    'JobRequirements'=>'Requirements',
     'ApplyMethod'=>'Apply Method',
     'Full-Time'=>'Full-Time',
     'Part-Time'=>'Part-Time',

@@ -776,7 +776,7 @@ return [
     'EditCareerJob' => 'تعديل بيانات الوظيفة',
     'Responsibilities'=>'المسؤوليات',
     'Qualifications'=>'المؤهلات',
-    'Requirements'=>'المتطلبات',
+    'JobRequirements'=>'المتطلبات',
     'ApplyMethod'=>'طريقة التقديم',
     'Full-Time'=>'دوام كامل',
     'Part-Time'=>'دوام جزئي',
