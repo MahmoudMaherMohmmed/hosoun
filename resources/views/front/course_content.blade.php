@@ -88,11 +88,11 @@
         <div class="col-12">
           <ul class="nav nav-pills justify-content-center nav-tabs border-bottom-0" id="courseTabs" role="tablist">
             <li class="nav-item" role="presentation">
-              <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info" type="button"
+              <button class="nav-link" id="info-tab" data-bs-toggle="tab" data-bs-target="#info" type="button"
                 role="tab" aria-controls="info" aria-selected="true">{{ __('frontstaticword.Overview') }}</button>
             </li>
             <li class="nav-item" role="presentation">
-              <button class="nav-link" id="download-tab" data-bs-toggle="tab" data-bs-target="#download" type="button"
+              <button class="nav-link active" id="download-tab" data-bs-toggle="tab" data-bs-target="#download" type="button"
                 role="tab" aria-controls="download"
                 aria-selected="false">{{ __('frontstaticword.CourseContent') }}</button>
             </li>
@@ -114,12 +114,12 @@
           <!-- Tab panes -->
           <div class="tab-content">
             {{-- Info Tab --}}
-            <div class="tab-pane fade show active" id="info" role="tabpanel" aria-labelledby="info-tab"
+            <div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="info-tab"
               tabindex="0">
               @include('front.course.tabs.info')
             </div>
             {{-- Download Tab --}}
-            <div class="tab-pane fade" id="download" role="tabpanel" aria-labelledby="download-tab" tabindex="0">
+            <div class="tab-pane fade show active" id="download" role="tabpanel" aria-labelledby="download-tab" tabindex="0">
               @include('front.course.tabs.download')
             </div>
             {{-- Questions and Answers Tab --}}

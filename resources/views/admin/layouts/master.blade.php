@@ -203,7 +203,7 @@ $rtl = array('ar','he','ur', 'arc', 'az', 'dv', 'ku', 'fa'); //make a list of rt
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 @if(Auth::User()['user_img'] != null && Auth::User()['user_img'] !='' &&
                                 @file_get_contents('images/user_img/'.Auth::user()['user_img']))
-                                <img src="{{ asset('images/user_img/'.Auth::User()['user_img'])}}" class="user-image"
+                                <img src="{{ asset('images/user_img/'.Auth::User()['user_img']??'')}}" class="user-image"
                                     alt="">
                                 @else
                                 <img src="{{ asset('images/default/user.jpg')}}" class="user-image" alt="">

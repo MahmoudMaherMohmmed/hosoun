@@ -325,7 +325,7 @@ class HomeController extends Controller
 
     public function careers(Request $request)
     {
-        dump($request->SearchCareer);
+        // dump($request->SearchCareer);
         $careerJobs = CareerJob::query()
         ->where('status', 1)
         ->when($request->SearchCareer, function ($query) use ($request) {

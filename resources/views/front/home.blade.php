@@ -262,10 +262,12 @@
               اللحظة
             </p>
             <div class="d-flex gap-3 align-items-center justify-content-center justify-content-lg-start flex-wrap">
-              <a class="btn btn-accent2 px-4 flex-grow-1 flex-sm-grow-0" href="#">
+              @guest
+              <a class="btn btn-accent2 px-4 flex-grow-1 flex-sm-grow-0" href="{{ route('register') }}">
                 <i class="isax isax-arrow-left-25 text-white"></i>
                 سجل الآن
               </a>
+              @endguest
               <a href="{{ route('about.show') }}" class="btn btn-dark px-4 flex-grow-1 flex-sm-grow-0" href="#">
                 <i class="isax isax-arrow-left-25 text-white"></i>
                 عن حصون
