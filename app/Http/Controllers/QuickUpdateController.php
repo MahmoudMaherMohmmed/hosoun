@@ -29,6 +29,7 @@ use App\CourseClass;
 use App\Answer;
 use App\CareerJob;
 use App\CourseInclude;
+use App\QuranPath;
 use App\RelatedCourse;
 
 class QuickUpdateController extends Controller
@@ -448,5 +449,29 @@ class QuickUpdateController extends Controller
             DB::table('orders')->where('id', '=', $id)->update(['status' => "0"]);
             return back()->with('delete', 'Status changed to Deactive !');
         }
+    }
+
+    public function quranPathsQuick($id)
+    {
+            DB::table('quran_paths')->where('id', '=', $id)->update(['done_flag' => "1"]);
+            return back()->with('success', 'Status changed to Active !');
+    }
+
+    public function subjectPathsQuick($id)
+    {
+            DB::table('subject_paths')->where('id', '=', $id)->update(['done_flag' => "1"]);
+            return back()->with('success', 'Status changed to Active !');
+    }
+
+    public function arabicPathsQuick($id)
+    {
+            DB::table('arabic_paths')->where('id', '=', $id)->update(['done_flag' => "1"]);
+            return back()->with('success', 'Status changed to Active !');
+    }
+
+    public function religiousPathsQuick($id)
+    {
+            DB::table('religious_paths')->where('id', '=', $id)->update(['done_flag' => "1"]);
+            return back()->with('success', 'Status changed to Active !');
     }
 }

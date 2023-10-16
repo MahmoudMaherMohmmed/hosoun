@@ -12,7 +12,7 @@
 
                 <div class="box-body">
                     <div class="table-responsive">
-                        <table id="example1" class="table table-bordered table-striped">
+                        <table id="example1" class="table table-bordered">
                             <thead>
                                 <tr>
                                     <th>#</th>
@@ -24,12 +24,14 @@
                                     <th>{{ __('adminstaticword.preferredBook') }}</th>
                                     <th>{{ __('adminstaticword.Subject') }}</th>
                                     <th>{{ __('adminstaticword.StartDate') }}</th>
+                                    <th>{{ __('adminstaticword.Action') }}</th>
+
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($religious as $key=>$item)
-                                <tr>
-                                    <td>{{ $key+1 }}</td>
+                                <tr class="{{$item->done_flag ==1 ? 'bg-success':''}}">
+                                    <td class="{{$item->done_flag ==1 ? 'bg-success':''}}">{{ $key+1 }}</td>
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->birth_date }}</td>
                                     <td>{{ $item->mobile }}</td>
@@ -52,6 +54,22 @@
                                         @endif
                                     </td>
                                     <td>{{ $item->start_date }}</td>
+                                    <td>
+                                        @if($item->done_flag ==1)
+                                        <span class="label label-success">{{ __('Done') }}</span>
+
+                                        @else
+                                        <form action="{{ route('religious-paths.quick',$item->id) }}" method="POST">
+                                            {{ csrf_field() }}
+                                            <button type="Submit"
+                                                class="btn btn-xs table-status btn-warning text-black }}">
+
+                                                {{ __('Mark Done') }}
+
+                                            </button>
+                                        </form>
+                                        @endif
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>

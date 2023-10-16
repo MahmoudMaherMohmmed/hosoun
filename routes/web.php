@@ -773,6 +773,10 @@ Route::middleware(['web'])->group(function () {
             Route::post('/quickupdate/book-child-categories/{id}', 'QuickUpdateController@bookChildCategoriesQuick')->name('book-child-categories.quick');
             Route::post('/quickupdate/books/{id}', 'QuickUpdateController@bookQuick')->name('books.quick');
             Route::post('/quickupdate/career-jobs/{id}', 'QuickUpdateController@careerJobQuick')->name('career-jobs.quick');
+            Route::post('/quickupdate/paths/quran/{id}', 'QuickUpdateController@quranPathsQuick')->name('quran-paths.quick');
+            Route::post('/quickupdate/paths/subject/{id}', 'QuickUpdateController@subjectPathsQuick')->name('subject-paths.quick');
+            Route::post('/quickupdate/paths/religious/{id}', 'QuickUpdateController@religiousPathsQuick')->name('religious-paths.quick');
+            Route::post('/quickupdate/paths/arabic/{id}', 'QuickUpdateController@arabicPathsQuick')->name('arabic-paths.quick');
         });
     });
 });

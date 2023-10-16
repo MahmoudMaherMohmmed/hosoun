@@ -10,6 +10,8 @@
     "The preferred field is required when arabic native is yes.":" يجب اختيار الكتاب الذي تريد دراسته",
     "The preferred book field is required when preferred is yes.":"يجب اختيار الكتاب الذي تريد دراسته",
     "The speak arabic field is required when arabic native is no.":"هذا الحقل مطلوب عندما يكون العربية ليست لغتك الأم",
-    "The spoken lang field is required when arabic native is no.":"يجب ادخال اللغة التي تتحدثها"
+    "The spoken lang field is required when arabic native is no.":"يجب ادخال اللغة التي تتحدثها",
+    "Done": "تم الانتهاء",
+    "Mark Done" : "تعليم كمنتهي"
 
 }
