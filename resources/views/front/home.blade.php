@@ -407,11 +407,10 @@
   {{-- LearningPath --}}
   <section class="block-sec pt-0">
     <div class="container">
-      <div class="boxpath__bg px-5 rounded-50" style="background-image: url('front/img/slidersection.png');">
-        <p class="sec-title mb-0 block-sec pb-5">
+      <div class="boxpath__bg px-5 rounded-50 position-relative">
+        <img src="{{asset('front/img/learning/cover.jpg')}}" alt="learning-paths-cover" class="w-100 h-auto rounded-50 position-absolute top-0 start-0 end-0">
+        <p class="sec-title mb-0">
           {{ __('hosoun.learningPaths') }}
-          {{-- <span class="text-accent-2">{{ __('hosoun.path') }}</span>
-          {{ __('hosoun.memorizeQuran') }} --}}
         </p>
       </div>
       <section class="px-5">
@@ -422,32 +421,39 @@
                     'name' => __('hosoun.quran'),
                     'url' => '/quran',
                     'title' => __('hosoun.registerToQuranPath'),
+                    'img'=> '1.jpg'
                 ],
                 [
                     'name' => __('hosoun.arabicLang'),
                     'url' => '/arabic',
                     'title' => __('hosoun.arabicLangPath'),
+                    'img'=> '2.jpg'
                 ],
                 [
                     'name' => __('hosoun.religiousSubjs'),
                     'url' => '/religious',
                     'title' => __('hosoun.religiousSubjsPath'),
+                    'img'=> '3.jpg'
                 ],
                 [
                     'name' => __('hosoun.otherSubjs'),
                     'url' => '/subjects',
                     'title' => __('hosoun.otherSubjsPath'),
+                    'img'=> '4.jpg'
                 ],
             ];
           @endphp
           @foreach ($items as $item)
             <div class="col-6 col-lg p-2 p-sm-3">
-              <a href="{{ url($item['url']) }}" class="boxpath d-block h-100 bg-white text-center"
+              {{-- <a href="{{ url($item['url']) }}" class="boxpath d-block h-100 bg-white text-center"
                 title="{{ $item['title'] }}">
                 <div class="boxpath__number mb-4"></div>
                 <p class="title">
                   {{ $item['name'] }}
                 </p>
+              </a> --}}
+              <a href="{{ url($item['url']) }}" class="boxpath d-block h-100 w-100" title="{{ $item['title'] }}">
+                <img src="{{ asset('front/img/learning/'.$item['img']) }}" alt="{{$item['title']}}" class="w-100 h-100">
               </a>
             </div>
           @endforeach
