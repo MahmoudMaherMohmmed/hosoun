@@ -65,11 +65,11 @@
         <p class="fw-medium mb-3">
           تواصل هاتفيا
         </p>
-        {{-- <a class="d-inline-block text-accent-2 fs-2 fw-bold mb-3" href="tel:{{ $gsetting->default_phone }}">{{ $gsetting->default_phone }}</a> --}}
+        <a class="d-inline-block text-accent-2 fs-2 fw-bold mb-3" href="tel:{{ $gsetting->default_phone }}">{{ $gsetting->default_phone }}</a>
         <p class="fw-medium mb-3">
           البريد الإلكتروني
         </p>
-        <a class="d-inline-block text-accent-2 fs-2 fw-bold mb-3" href="mailto:info@huson.com">info@hosoun.com</a>
+        <a class="d-inline-block text-accent-2 fs-2 fw-bold mb-3" href="mailto:{{ $gsetting->default_phwel_emailone }}">{{ $gsetting->wel_email }}</a>
         <p class="fw-medium mb-3">
           العنوان
         </p>
