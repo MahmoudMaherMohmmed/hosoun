@@ -75,7 +75,7 @@ class ZoomController extends Controller
         $response = curl_exec($curl);
         $err = curl_error($curl);
         $response = json_decode($response, true);
-
+        \Log::info($response);
         if (isset($response['code']) && $response['code'] != 200) {
           return $response['message'];
         }
