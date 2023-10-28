@@ -22,17 +22,21 @@ class ZoomHelper
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'POST',
-                CURLOPT_HTTPHEADER => ["Authorization: Basic " . base64_encode("RaHl80AFSqW9S8jkWYiXw:hh6gMHu1o6rQGX9OOjqVuEOH4ur1mIeS")],
+                CURLOPT_HTTPHEADER => array("Authorization: Basic " . base64_encode("b35Gx7GCTxphqLO2Zy6TA:2f5F0tUH4UbwJa63WexDbHbhd0KW6CFf")),
             ]);
+            curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
             $response = curl_exec($curl);
             curl_close($curl);
-
+            // dump('test');
+            // dd($response);
             $zoom_auth = json_decode($response, true);
             if (isset($zoom_auth['token_type']) && $zoom_auth['token_type'] == 'bearer' && isset($zoom_auth['access_token']) && isset($zoom_auth['expires_in'])) {
                 Auth::user()->update(['zoom_email' => 'husunacademy@gmail.com', 'jwt_token' => $zoom_auth['access_token'], 'jwt_token_expires_in' => Carbon::now()->addSeconds($zoom_auth['expires_in'])]);
 
                 $access_token = $zoom_auth['access_token'];
+                // dd($zoom_auth);
+
             }
         }
 

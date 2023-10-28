@@ -20,11 +20,16 @@ class ZoomController extends Controller
   public function dashboard(Request $request)
   {
     if (Auth::user()->role == 'admin' || Auth::user()->role == 'instructor') {
+      // dd(ZoomHelper::getToken());
       if (ZoomHelper::getToken() != '' && Auth::user()->zoom_email != '') {
         $token = ZoomHelper::getToken();
         $email = Auth::user()->zoom_email;
 
         $curl = curl_init();
+
+        if ($curl === false) {
+          throw new Exception('failed to initialize');
+        }
         curl_setopt_array($curl, [
           CURLOPT_URL => "https://api.zoom.us/v2/users/$email",
           CURLOPT_RETURNTRANSFER => true,
@@ -38,8 +43,10 @@ class ZoomController extends Controller
             "Authorization: Bearer $token"
           ),
         ]);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
         $profile = curl_exec($curl);
+
         $profile = json_decode($profile, true);
         $err = curl_error($curl);
         curl_close($curl);
@@ -47,6 +54,7 @@ class ZoomController extends Controller
         if (isset($profile['code']) && $profile['code'] != 200) {
           return $profile['message'];
         }
+
 
 
         $curl = curl_init();
@@ -62,6 +70,7 @@ class ZoomController extends Controller
             "authorization: Bearer $token"
           ),
         ]);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
         $response = curl_exec($curl);
         $err = curl_error($curl);
@@ -72,7 +81,6 @@ class ZoomController extends Controller
         }
 
         curl_close($curl);
-
         $currentPage = LengthAwarePaginator::resolveCurrentPage();
 
         $itemCollection = collect($response['meetings']);
@@ -261,6 +269,8 @@ class ZoomController extends Controller
         "accept: application/json"
       ],
     ]);
+    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
     $response = curl_exec($curl);
     $err = curl_error($curl);
     $response = json_decode($response, true);
@@ -338,6 +348,7 @@ class ZoomController extends Controller
         "authorization: Bearer $token"
       ),
     ]);
+    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
     $response = curl_exec($curl);
     $err = curl_error($curl);
@@ -450,6 +461,7 @@ class ZoomController extends Controller
         "content-type: application/json"
       ),
     ]);
+    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
     $response = curl_exec($curl);
     $err = curl_error($curl);
@@ -505,6 +517,8 @@ class ZoomController extends Controller
         "authorization: Bearer $token"
       ),
     ]);
+    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
     $response = curl_exec($curl);
     $err = curl_error($curl);
     curl_close($curl);
