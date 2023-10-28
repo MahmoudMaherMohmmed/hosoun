@@ -82,10 +82,10 @@
                   class="select2-search-enable {{ $errors->has('country_id') ? ' is-invalid' : '' }}"
                   data-placeholder="{{ __('frontstaticword.Country') }}">
                   <option></option>
-                  @foreach(App\Country::all() as $country)
-                  <option value="{{ $country->country_id }}">
+                  @foreach (App\Country::all() as $country)
+                    <option value="{{ $country->country_id }}">
                       {{ $country->nicename }}
-                  </option>
+                    </option>
                   @endforeach
                 </select>
                 <svg class="svg-default form-control-icon">
@@ -171,13 +171,13 @@
                   class="text-accent fw-light">{{ __('frontstaticword.PrivacyPolicy') }}</a>
               </label>
             </div>
-            <button type="submit" class="btn btn-accent w-100 mt-5">{{ __('frontstaticword.Signup') }}</button>
+            <button type="submit" class="btn btn-accent w-100 mt-5">{{ __('frontstaticword.NewAccount') }}</button>
 
-            <div class="mt-5 text-center">
-              <div class="fw-bold">
-                {{ __('frontstaticword.Alreadyhaveanaccount') }}?
-                <a href="{{ route('login') }}" class="text-accent">{{ __('frontstaticword.Login') }}</a>
-              </div>
+            <div class="mt-4 text-center">
+              {{-- <div class="fw-bold"> --}}
+              {{-- {{ __('frontstaticword.Alreadyhaveanaccount') }}? --}}
+              <a href="{{ route('login') }}" class="btn btn-accent2 w-100">{{ __('frontstaticword.Login') }}</a>
+              {{-- </div> --}}
             </div>
           </form>
         </div>

@@ -263,10 +263,10 @@
             </p>
             <div class="d-flex gap-3 align-items-center justify-content-center justify-content-lg-start flex-wrap">
               @guest
-              <a class="btn btn-accent2 px-4 flex-grow-1 flex-sm-grow-0" href="{{ route('register') }}">
-                <i class="isax isax-arrow-left-25 text-white"></i>
-                سجل الآن
-              </a>
+                <a class="btn btn-accent2 px-4 flex-grow-1 flex-sm-grow-0" href="{{ route('register') }}">
+                  <i class="isax isax-arrow-left-25 text-white"></i>
+                  سجل الآن
+                </a>
               @endguest
               <a href="{{ route('about.show') }}" class="btn btn-dark px-4 flex-grow-1 flex-sm-grow-0" href="#">
                 <i class="isax isax-arrow-left-25 text-white"></i>
@@ -407,9 +407,10 @@
   {{-- LearningPath --}}
   <section class="block-sec pt-0">
     <div class="container">
-      <div class="boxpath__bg px-5 rounded-50 position-relative">
-        <img src="{{asset('front/img/learning/cover.jpg')}}" alt="learning-paths-cover" class="w-100 h-auto rounded-50 position-absolute top-0 start-0 end-0">
-        <p class="sec-title mb-0">
+      <div class="boxpath__bg rounded-50 position-relative">
+        <img src="{{ asset('front/img/learning/cover.jpg') }}" alt="learning-paths-cover"
+          class="w-100 h-auto rounded-50 ">
+        <p class="sec-title mb-0 position-absolute top-50 translate-middle-y start-0 px-5">
           {{ __('hosoun.learningPaths') }}
         </p>
       </div>
@@ -421,25 +422,25 @@
                     'name' => __('hosoun.quran'),
                     'url' => '/quran',
                     'title' => __('hosoun.registerToQuranPath'),
-                    'img'=> '1.jpg'
+                    'img' => '1.jpg',
                 ],
                 [
                     'name' => __('hosoun.arabicLang'),
                     'url' => '/arabic',
                     'title' => __('hosoun.arabicLangPath'),
-                    'img'=> '2.jpg'
+                    'img' => '2.jpg',
                 ],
                 [
                     'name' => __('hosoun.religiousSubjs'),
                     'url' => '/religious',
                     'title' => __('hosoun.religiousSubjsPath'),
-                    'img'=> '3.jpg'
+                    'img' => '3.jpg',
                 ],
                 [
                     'name' => __('hosoun.otherSubjs'),
                     'url' => '/subjects',
                     'title' => __('hosoun.otherSubjsPath'),
-                    'img'=> '4.jpg'
+                    'img' => '4.jpg',
                 ],
             ];
           @endphp
@@ -453,7 +454,8 @@
                 </p>
               </a> --}}
               <a href="{{ url($item['url']) }}" class="boxpath d-block h-100 w-100" title="{{ $item['title'] }}">
-                <img src="{{ asset('front/img/learning/'.$item['img']) }}" alt="{{$item['title']}}" class="w-100 h-100">
+                <img src="{{ asset('front/img/learning/' . $item['img']) }}" alt="{{ $item['title'] }}"
+                  class="w-100 h-100">
               </a>
             </div>
           @endforeach

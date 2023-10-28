@@ -11,6 +11,7 @@ return [
     'Signup' => 'Signup',
     'SignupFree' => 'Signup Free',
     'Login' => 'Login',
+    'NewAccount'=>'Register New Account',
     'Logout' => 'Logout',
     'MyCourses' => 'My Courses',
     'ClearAll' => 'Clear All',

@@ -2,7 +2,7 @@
 
 return [
     'path' => 'مسار',
-    'learningPaths' => 'سجل الآن في مسارات التعلم عن بعد',
+    'learningPaths' => 'سجل الآن',
     'memorizeQuran' => 'حفظ القرآن الكريم',
     'quran' => 'القرآن الكريم',
     'registerTo' => 'التسجيل في',

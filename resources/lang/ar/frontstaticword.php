@@ -10,6 +10,7 @@ return array(
   'Signup' => 'سجل',
   'SignupFree' => 'سجل مجانا',
   'Login' => 'تسجيل الدخول',
+  'NewAccount'=>'سجل حساب جديد',
   'Logout' => 'تسجيل خروج',
   'MyCourses' => 'دوراتي',
   'ClearAll' => 'امسح الكل',

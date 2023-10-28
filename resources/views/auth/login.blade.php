@@ -63,11 +63,11 @@
             </div>
             <button type="submit" class="btn btn-accent w-100 mt-5">{{ __('frontstaticword.Login') }}</button>
 
-            <div class="mt-5 text-center">
-              <div class="fw-bold">
-                {{ __('frontstaticword.Donothaveanaccount') }}?
-                <a href="{{ route('register') }}" class="text-accent">{{ __('frontstaticword.Signup') }}</a>
-              </div>
+            <div class="mt-4 text-center">
+              {{-- <div class="fw-bold"> --}}
+              {{-- {{ __('frontstaticword.Donothaveanaccount') }}? --}}
+              <a href="{{ route('register') }}" class="btn btn-accent2 w-100">{{ __('frontstaticword.NewAccount') }}</a>
+              {{-- </div> --}}
               <div class="mt-4 pt-3">
                 {{ __('frontstaticword.Bysigningup') }}
                 <a href="{{ url('terms_condition') }}"
