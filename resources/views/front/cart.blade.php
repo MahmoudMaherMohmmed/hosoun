@@ -105,8 +105,8 @@
                   </div>
                 @endif
 
-{{--                <a href="#" onclick="event.preventDefault(); document.getElementById('cart-form').submit();"--}}
-{{--                  class="btn btn-accent w-100">{{ __('frontstaticword.Checkout') }}</a>--}}
+                <a href="#" onclick="event.preventDefault(); document.getElementById('cart-form').submit();"
+                  class="btn btn-accent w-100">{{ __('frontstaticword.Checkout') }}</a>
 
                 <form id="cart-form" method="post" action="{{ url('gotocheckout') }}" style="display: none;">
                   {{ csrf_field() }}
