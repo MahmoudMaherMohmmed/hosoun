@@ -61,43 +61,51 @@
           <h2 class="fs-2">اختر طريقة الدفع المناسبة لك</h2>
           <div class="payment accordion" id="accordion_payment">
             {{-- CreditCard --}}
-            <div class="payment-item border-bottom">
-              <div class="form-check w-100" data-bs-toggle="collapse" type="button" aria-expanded="false"
-                data-bs-target="#creditCard" aria-controls="creditCard">
-                <input class="form-check-input mb-2" type="radio" name="payment" id="credit-check">
-                <label class="form-check-label w-100 d-flex align-items-center fw-bold fs-3" for="credit-check">
-                  بطاقة ائتمان
-                  <div class="d-flex align-items-center ms-auto">
-                    <img src="{{ asset('front/img/payment/mada.png') }}" alt="mada">
-                    <img src="{{ asset('front/img/payment/visa.png') }}" alt="visa" class="mx-4">
-                    <img src="{{ asset('front/img/payment/mastercard.png') }}" alt="mastercard">
-                  </div>
-                </label>
-              </div>
-              <div class="collapse  border-top mt-5" id="creditCard" data-bs-parent="#accordion_payment">
-                <div class="mysr-form"></div>
-                <!-- <form action="" class="row pt-5 my-3">
-                  <div class="col-12">
-                    <input type="text" class="form-control px-5 mb-4" id="account_number" name="account_number"
-                      placeholder="رقم البطاقة">
-                  </div>
-                  <div class="col-12">
-                    <input type="text" class="form-control px-5 mb-4" id="owner" name="owner"
-                      placeholder="اسم صاحب البطاقة">
-                  </div>
-                  <div class="col-6">
-                    <input type="text" class="form-control px-5 mb-4" id="expire" name="expire"
-                      placeholder="تاريخ الانتهاء">
-                  </div>
-                  <div class="col-6">
-                    <input type="text" class="form-control px-5 mb-4" id="cvv" name="cvv" placeholder="CCV">
-                  </div>
-                  <div class="col-12">
-                    <button type="submit" class="btn btn-accent w-100 mt-5">تأكيد دفع الطلب</button>
-                  </div>
-                </form> -->
-              </div>
-            </div>
+{{--            <div class="payment-item border-bottom">--}}
+{{--              <div class="form-check w-100" data-bs-toggle="collapse" type="button" aria-expanded="false"--}}
+{{--                data-bs-target="#creditCard" aria-controls="creditCard">--}}
+{{--                <input class="form-check-input mb-2" type="radio" name="payment" id="credit-check">--}}
+{{--                <label class="form-check-label w-100 d-flex align-items-center fw-bold fs-3" for="credit-check">--}}
+{{--                بايبال--}}
+{{--                  <div class="d-flex align-items-center ms-auto">--}}
+{{--                    <img src="{{ asset('front/img/payment/mada.png') }}" alt="mada">--}}
+{{--                    <img src="{{ asset('front/img/payment/visa.png') }}" alt="visa" class="mx-4">--}}
+{{--                    <img src="{{ asset('front/img/payment/mastercard.png') }}" alt="mastercard">--}}
+{{--                  </div>--}}
+{{--                </label>--}}
+{{--              </div>--}}
+{{--              <div class="collapse  border-top mt-5" id="creditCard" data-bs-parent="#accordion_payment">--}}
+{{--                  <div class="payment-proceed-btn">--}}
+{{--                      <form action="{{ route('payWithpaypal') }}" method="POST" autocomplete="off">--}}
+{{--                          @csrf--}}
+
+{{--                          <input type="hidden" name="amount" value="{{ $cart_total  }}"/>--}}
+{{--                          <button class="btn btn-primary" title="checkout" type="submit">{{ __('frontstaticword.Proceed') }}</button>--}}
+{{--                      </form>--}}
+
+{{--                  </div>--}}
+{{--                <!-- <form action="" class="row pt-5 my-3">--}}
+{{--                  <div class="col-12">--}}
+{{--                    <input type="text" class="form-control px-5 mb-4" id="account_number" name="account_number"--}}
+{{--                      placeholder="رقم البطاقة">--}}
+{{--                  </div>--}}
+{{--                  <div class="col-12">--}}
+{{--                    <input type="text" class="form-control px-5 mb-4" id="owner" name="owner"--}}
+{{--                      placeholder="اسم صاحب البطاقة">--}}
+{{--                  </div>--}}
+{{--                  <div class="col-6">--}}
+{{--                    <input type="text" class="form-control px-5 mb-4" id="expire" name="expire"--}}
+{{--                      placeholder="تاريخ الانتهاء">--}}
+{{--                  </div>--}}
+{{--                  <div class="col-6">--}}
+{{--                    <input type="text" class="form-control px-5 mb-4" id="cvv" name="cvv" placeholder="CCV">--}}
+{{--                  </div>--}}
+{{--                  <div class="col-12">--}}
+{{--                    <button type="submit" class="btn btn-accent w-100 mt-5">تأكيد دفع الطلب</button>--}}
+{{--                  </div>--}}
+{{--                </form> -->--}}
+{{--              </div>--}}
+{{--            </div>--}}
             {{-- Transfer --}}
             @php $banktransfer = App\BankTransfer::first(); @endphp
             @if(isset($banktransfer))
