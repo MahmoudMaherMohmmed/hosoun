@@ -21,8 +21,8 @@ class CreateCertificatesTable extends Migration
             $table ->string('image')->nullable();
             $table ->string('file')->nullable();
             $table->enum('status', ['1', '0'])->default('1');
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('course_id');
+            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('course_id');
             $table->foreign('course_id')->references('id')->on('courses')->onUpdate('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade');
             $table->softDeletes();
