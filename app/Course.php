@@ -158,4 +158,8 @@ class Course extends Model
         return json_encode($value, JSON_UNESCAPED_UNICODE);
     }
 
+    public function certificates()
+    {
+        return $this->hasMany('App\Certificate','course_id');
+    }
 }

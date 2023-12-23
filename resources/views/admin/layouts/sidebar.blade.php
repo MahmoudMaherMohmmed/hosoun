@@ -485,6 +485,13 @@
                 </a>
             </li>
 
+            <li class="{{ Nav::hasSegment('certificates') }}">
+                <a href="{{url('certificates')}}" class="item-flex">
+                    <i class='bx bx-cart' ></i>
+                    <span>{{ __('adminstaticword.Certificates') }}</span>
+                </a>
+            </li>
+
             <li class="{{ Nav::hasSegment('refundorder') }}">
                 <a href="{{url('refundorder')}}" class="item-flex">
                     <i class='bx bx-money' ></i>

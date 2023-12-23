@@ -82,6 +82,14 @@
           </a>
         </li>
         <li>
+          <a class="dropdown-item fw-semibold" href="{{ route('mycertificates.index') }}">
+            <svg class="svg-default">
+              <use xlink:href="{{ asset('/front/svg/sprite.svg#note') }}" />
+            </svg>
+            <span> {{ __('frontstaticword.MyCertificates') }} </span>
+          </a>
+        </li>
+        <li>
           <a class="dropdown-item fw-semibold" href="{{ route('wishlist.show') }}">
             <svg class="svg-default">
               <use xlink:href="{{ asset('/front/svg/sprite.svg#heart') }}" />

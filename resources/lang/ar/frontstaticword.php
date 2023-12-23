@@ -13,6 +13,7 @@ return array(
   'NewAccount'=>'سجل حساب جديد',
   'Logout' => 'تسجيل خروج',
   'MyCourses' => 'دوراتي',
+  'MyCertificates' => 'شهاداتي',
   'ClearAll' => 'امسح الكل',
   'AdminDashboard' => 'لوحة تحكم المسؤول',
   'MyWishlist' => 'قائمة الرغبات',
@@ -447,6 +448,7 @@ return array(
   'NoBooksCategories' => 'لا يوجد تصنيفات للكتب',
   "SearchBook" => 'هل تبحث عن كتاب محدد؟',
   'SearchCareer' => 'بحث الوظائف',
-  'Careers' => 'الوظائف'
+  'Careers' => 'الوظائف',
 
+    'WhenCertificates' => 'عندما تحصل على شهادة ، ستظهر هنا.'
 );

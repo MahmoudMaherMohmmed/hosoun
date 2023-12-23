@@ -309,6 +309,7 @@ Route::middleware(['web'])->group(function () {
                 Route::resource('manualpayment', 'ManualPaymentController');
 
                 Route::get('order/enroll/{user_id}', 'OrderController@enrollUser')->name('order.enrolluserview');
+                Route::get('certificates/make/{user_id}', 'CertificateController@makeUser')->name('certificates.makecertificate');
 
 
                 Route::resource('attandance', 'AttandanceController');
@@ -470,6 +471,7 @@ Route::middleware(['web'])->group(function () {
                 Route::resource('/admin/questions', 'QuizController');
                 Route::resource('blog', 'BlogController');
                 Route::resource('order', 'OrderController');
+                Route::resource('certificates', 'CertificateController');
                 Route::resource('featurecourse', 'FeatureCourseController');
 
                 Route::post('/paywithpaytm', 'FeatureCourseController@order')->name('paywithpaytm');
@@ -524,6 +526,7 @@ Route::middleware(['web'])->group(function () {
             Route::get('show/careers', 'CareersController@careerpage')->name('careers.show');
             Route::get('detail/blog/{id}', 'BlogController@blogdetailpage')->name('blog.detail');
             Route::get('gotomycourse', 'CourseController@mycoursepage')->name('mycourse.show');
+            Route::get('my-certificates', 'CertificateController@myCertificates')->name('mycertificates.index');
 
             Route::get('pages/{slug}', 'PageController@showpage')->name('page.show');
             Route::get('beinstructor', 'HomeController@beInstructor')->name('beinstructor.show');
@@ -631,7 +634,7 @@ Route::middleware(['web'])->group(function () {
 
             Route::post('question/reports/{id}', 'QuestionReportController@store')->name('question.report');
 
-            Route::get('cirtificate/{id}', 'CertificateController@show')->name('cirtificate.show');
+            Route::get('cirtificate/{id}', 'CertificateController@showOldCert')->name('cirtificate.show');
 
             Route::get('cirtificate/download/{course}', 'CertificateController@pdfdownload')->name('cirtificate.download');
 

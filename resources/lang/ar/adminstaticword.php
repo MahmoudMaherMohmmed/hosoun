@@ -488,6 +488,7 @@ return [
     'AWSFileName' => 'اسم ملف AWS',
     'AWSSettings' => 'إعدادات AWS',
     'CertificateEnable' => 'تمكين الشهادة',
+    'Certificates' => 'الشهادات',
     'DeviceControl' => 'جهاز التحكم',
     'IPBlockSettings' => 'إعدادات كتلة IP',
     'IPBlock' => 'كتلة IP',
@@ -780,4 +781,15 @@ return [
     'ApplyMethod'=>'طريقة التقديم',
     'Full-Time'=>'دوام كامل',
     'Part-Time'=>'دوام جزئي',
+
+    'MakeCertificate' => 'إنشاء شهادة',
+    'EditCertificate' => 'تعديل شهادة',
+    'SaveCertificate' => 'حفظ شهادة',
+    'Certificate' => 'شهادة',
+    'CertificateTitle' => 'عنوان الشهادة',
+    'CertificateImage' => 'صورة الشهادة',
+    'CertificateDescription' => 'وصف الشهادة',
+    'CertificatePDF' => 'ملف الشهادة',
+
+
 ];

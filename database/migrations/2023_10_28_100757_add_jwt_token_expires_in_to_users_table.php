@@ -14,7 +14,9 @@ class AddJwtTokenExpiresInToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
+            if(!Schema::hasColumn('users', 'jwt_token_expires_in')){
             $table->string('jwt_token_expires_in')->nullable()->after('jwt_token');
+            }
         });
     }
 

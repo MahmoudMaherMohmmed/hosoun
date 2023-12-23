@@ -172,4 +172,9 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(MyFatoorah::class, 'user_id');
     }
+
+    public function certificates()
+    {
+        return $this->hasMany(Certificate::class, 'user_id');
+    }
 }

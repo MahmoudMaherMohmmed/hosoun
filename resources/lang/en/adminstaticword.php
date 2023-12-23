@@ -505,6 +505,7 @@ return [
     'AWSFileName' => 'AWS File Name',
     'AWSSettings' => 'AWS Settings',
     'CertificateEnable' => 'Certificate Enable',
+    'Certificates' => 'Certificates',
     'DeviceControl' => 'Device Control',
     'IPBlockSettings' => 'IP Block Settings',
     'IPBlock' => 'IP Block',
@@ -807,5 +808,16 @@ return [
     'Part-Time'=>'Part-Time',
     'JobTitle'=>'Job Title',
     'JobType'=>'Job Type',
-    
+
+    'MakeCertificate' => 'Make Certificate',
+    'EditCertificate' => 'Edit Certificate',
+    'SaveCertificate' => 'Save Certificate',
+    'Certificate' => 'Certificate',
+    'CertificateTitle' => 'Certificate Title',
+    'CertificateDescription' => 'Certificate Description',
+    'CertificateImage' => 'Certificate Image',
+    'CertificateImageNote' => 'Recommended size 800x600',
+    'CertificateTemplate' => 'Certificate Template',
+    'CertificateTemplateNote' => 'Recommended size 800x600',
+    'CertificatePDF' => 'Certificate PDF',
 ];
