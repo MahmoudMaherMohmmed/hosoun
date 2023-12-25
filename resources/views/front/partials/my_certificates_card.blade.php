@@ -8,15 +8,20 @@
       <img src="{{ Avatar::create($certificate->title)->toBase64() }}" alt="{{ $certificate->title }}">
     </a>
   @endif
+      @if ($certificate->course != null && $certificate->course !== '')
 
-
+      <div class="text-center">
+          <a href="{{ route('course.content', ['id' => $certificate->course->id, 'slug' => $certificate->course->slug]) }}"
+             class="mt-1 mb-1 d-block">{{ $certificate->course->title }}</a>
+      </div>
+      @endif
 
   <div class="border-top card-footer">
 
       <div class="text-center">
 
         <a href="{{ url('/images/certificates/'.$certificate->file) }}"
-          class="mt-4 d-block">
+          class="mt-1 d-block">
 {{--            {{ __('frontstaticword.preview') }}--}}
       {{ $certificate->title }}
         </a>

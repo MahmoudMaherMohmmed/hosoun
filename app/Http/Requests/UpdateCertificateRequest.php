@@ -27,8 +27,8 @@ class UpdateCertificateRequest extends FormRequest
 
             'title' => 'required',
             'description' => 'nullable',
-            'image' => 'mimes:jpeg,png,jpg,svg',
-            'file' => 'mimes:pdf|max:50000',
+            'image' => 'nullable|mimes:jpeg,png,jpg,svg',
+            'file' => 'nullable|mimes:pdf|max:50000',
         ];
     }
 }

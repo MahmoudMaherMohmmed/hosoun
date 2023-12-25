@@ -56,7 +56,7 @@
                                                 @if ($certificate->course_id != null)
                                                     {{ $certificate->course['title'] }}
                                                 @else
-                                                    {{ $certificate->bundle['title'] }}
+                                                    -
                                                 @endif
                                             </td>
 

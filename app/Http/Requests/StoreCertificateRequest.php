@@ -24,7 +24,7 @@ class StoreCertificateRequest extends FormRequest
     public function rules()
     {
         return [
-            'course_id' => 'required|exists:courses,id',
+            'course_id' => 'nullable|exists:courses,id',
             'title' => 'required',
             'description' => 'nullable',
             'image' => 'required|mimes:jpeg,png,jpg,svg',

@@ -25,14 +25,15 @@ class QuizStartController extends Controller
 
     public function store(Request $request, $id)
     {
-
+//        dd($request->All());
     	$topics=QuizTopic::where('id',$id)->first();
 
         $unique_question = array_unique($request->question_id);
-      
+        $answers = [];
         for ($i = 1; $i <= count($request->answer); $i++) {
-    
-                
+            if($request->answer[$i] == 0) {
+                continue;
+            }
             $answers[] = [
                 'user_id' => Auth::user()->id,
                 'user_answer' => $request->answer[$i],

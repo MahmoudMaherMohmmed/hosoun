@@ -38,7 +38,7 @@
                                 <div class="col-xs-12 col-md-6">
                                     <div class="form-group">
                                         <label for="course_id">{{ __('adminstaticword.course') }} </label>
-                                        <input type="text" class="form-control" id="course_id"  value="{{$certificate->course->title}}" disabled>
+                                        <input type="text" class="form-control" id="course_id"  value="{{$certificate->course? $certificate->course->title :''}}" disabled>
 
                                     </div>
                                 </div>
