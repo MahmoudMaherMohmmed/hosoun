@@ -29,9 +29,10 @@ class QuizStartController extends Controller
     	$topics=QuizTopic::where('id',$id)->first();
 
         $unique_question = array_unique($request->question_id);
+
         $answers = [];
         for ($i = 1; $i <= count($request->answer); $i++) {
-            if($request->answer[$i] == 0) {
+            if(($request->answer[$i]) === 0||($request->answer[$i]) == null) {
                 continue;
             }
             $answers[] = [
@@ -45,7 +46,6 @@ class QuizStartController extends Controller
             ];
          
         }
-        
         QuizAnswer::insert($answers);
         
         
