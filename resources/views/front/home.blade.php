@@ -265,12 +265,12 @@
               @guest
                 <a class="btn btn-accent2 px-4 flex-grow-1 flex-sm-grow-0" href="{{ route('register') }}">
                   <i class="isax isax-arrow-left-25 text-white"></i>
-                  سجل الآن
+                  {{ __('frontstaticword.RegisterNow') }}
                 </a>
               @endguest
               <a href="{{ route('about.show') }}" class="btn btn-dark px-4 flex-grow-1 flex-sm-grow-0" href="#">
                 <i class="isax isax-arrow-left-25 text-white"></i>
-                عن حصون
+                {{ __('frontstaticword.AboutHosoun') }}
               </a>
             </div>
           </div>

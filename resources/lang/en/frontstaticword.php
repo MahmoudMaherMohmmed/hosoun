@@ -37,6 +37,8 @@ return [
     'Welcome' => 'Welcome',
     'LogIn' => 'Log in to your account',
     'LogIntoYour' => 'Log In to Your',
+    'ContactUs' => 'Contact us',
+    'ContactWithPhone' => 'Contact with phone',
     'ContinuewithFacebook' => 'Continue with Facebook',
     'ContinuewithGoogle' => 'Continue with Google',
     'ContinuewithGitLab' => 'Continue with Git Lab',
@@ -465,7 +467,9 @@ return [
     'NoBooksCategories' => 'No books categories',
     "SearchBook" => 'Looking for a specific book?',
     'SearchCareer' => 'Search jobs',
-    'Careers' => 'Careers'
+    'Careers' => 'Careers',
+    'RegisterNow' => 'Register now',
+    'AboutHosoun' => 'About Hosoun',
 
 
 ];

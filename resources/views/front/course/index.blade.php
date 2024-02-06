@@ -14,7 +14,7 @@
             <span class="fw-bold ms-3 pt-2">(4.5)</span>
             <span class="fs-14 ms-5 mt-1">
               <span class="fw-bold">12</span>
-              مستخدم مسجل
+              {{ __('frontstaticword.studentsenrolled') }}
             </span>
           </div>
           <div class="d-lg-none enroll-header mt-5">
@@ -26,19 +26,19 @@
               <svg class="svg-resize-20 svg-fill-white">
                 <use xlink:href="{{ asset('/front/svg/sprite.svg#share') }}" />
               </svg>
-              مشاركة
+              {{ __('frontstaticword.share') }}
             </button>
             <button class="btn h-auto">
               <svg class="svg-resize-20 svg-stroke-white">
                 <use xlink:href="{{ asset('/front/svg/sprite.svg#heart') }}" />
               </svg>
-              أضف الى المفضلة
+              {{ __('frontstaticword.AddtoWishlist') }}
             </button>
             <button class="btn h-auto" type="button" data-bs-toggle="modal" data-bs-target="#reportModal">
               <svg class="svg-resize-20 svg-stroke-white">
                 <use xlink:href="{{ asset('/front/svg/sprite.svg#flag') }}" />
               </svg>
-              تقرير
+              {{ __('frontstaticword.Report') }}
             </button>
           </div>
         </div>
@@ -64,7 +64,7 @@
         {{-- NewCoursesSlider --}}
         <div class="col-12">
           <div class="course-content-block">
-            <h3 class="block-title">الدورات الجديدة</h3>
+            <h3 class="block-title">{{ __('frontstaticword.RecentCourses') }}</h3>
             <section class="course-carousel owl-carousel owl-theme">
               @for ($i = 0; $i < 6; $i++)
                 <section class="course-card">
@@ -74,7 +74,7 @@
                       تطوير سياسات وإجراءات العمل - إعداد وصياغة الأدلة
                     </h4>
                     <div class="text-dim">
-                      آخر تحديث:
+                      {{ __('frontstaticword.LastUpdated') }}:
                       <span class="text-black">25th September 2022</span>
                     </div>
                     <div class="d-flex align-items-center mt-4 pt-3">
@@ -82,7 +82,7 @@
                         <use xlink:href="{{ asset('/front/svg/sprite.svg#profile-circle') }}" />
                       </svg>
                       <span class="fw-bold mx-2">12</span>
-                      مستخدم مسجل
+                      {{ __('frontstaticword.studentsenrolled') }}
                     </div>
                   </div>
                   <div class="d-flex align-items-center justify-content-between card-footer">

@@ -37,6 +37,8 @@ return array(
   'Welcome' => 'مرحبا بك',
   'LogIn' => 'سجل دخولك الى حسابك',
   'LogIntoYour' => 'تسجيل الدخول إلى ملف',
+  'ContactUs' => 'تواصل معنا',
+  'ContactWithPhone' => 'تواصل هاتفيا',
   'ContinuewithFacebook' => 'تواصل مع الفيسبوك',
   'ContinuewithGoogle' => 'تواصل مع جوجل',
   'ContinuewithGitLab' => 'تواصل مع Git Lab',
@@ -449,6 +451,7 @@ return array(
   "SearchBook" => 'هل تبحث عن كتاب محدد؟',
   'SearchCareer' => 'بحث الوظائف',
   'Careers' => 'الوظائف',
-
-    'WhenCertificates' => 'عندما تحصل على شهادة ، ستظهر هنا.'
+  'RegisterNow' => 'سجل الآن',
+  'AboutHosoun' => 'عن حصون',
+  'WhenCertificates' => 'عندما تحصل على شهادة ، ستظهر هنا.'
 );

@@ -60,18 +60,20 @@
       @endif
       <div class="col-6 col-lg-3 my-5 mb-lg-0">
         <h2 class="fs-1 text-dark-accent mb-5 pb-2">
-          تواصل معنا
+          {{ __('frontstaticword.ContactUs') }}
         </h2>
         <p class="fw-medium mb-3">
-          تواصل هاتفيا
+          {{ __('frontstaticword.ContactWithPhone') }}
         </p>
-        <a class="d-inline-block text-accent-2 fs-2 fw-bold mb-3" href="tel:{{ $gsetting->default_phone }}">{{ $gsetting->default_phone }}</a>
+        <a class="d-inline-block text-accent-2 fs-2 fw-bold mb-3"
+          href="tel:{{ $gsetting->default_phone }}">{{ $gsetting->default_phone }}</a>
         <p class="fw-medium mb-3">
-          البريد الإلكتروني
+          {{ __('frontstaticword.Email') }}
         </p>
-        <a class="d-inline-block text-accent-2 fs-2 fw-bold mb-3" href="mailto:{{ $gsetting->default_phwel_emailone }}">{{ $gsetting->wel_email }}</a>
+        <a class="d-inline-block text-accent-2 fs-2 fw-bold mb-3"
+          href="mailto:{{ $gsetting->default_phwel_emailone }}">{{ $gsetting->wel_email }}</a>
         <p class="fw-medium mb-3">
-          العنوان
+          {{ __('frontstaticword.address') }}
         </p>
         <p class="text-accent-2 fs-2 fw-bold mb-3">
           المنصورة - مصر
