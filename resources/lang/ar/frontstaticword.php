@@ -453,5 +453,6 @@ return array(
   'Careers' => 'الوظائف',
   'RegisterNow' => 'سجل الآن',
   'AboutHosoun' => 'عن حصون',
-  'WhenCertificates' => 'عندما تحصل على شهادة ، ستظهر هنا.'
+  'WhenCertificates' => 'عندما تحصل على شهادة ، ستظهر هنا.',
+  'StartYourJourneyNow' => 'ابدأ رحلتك الآن في حصون وتحدى قدراتك من اللحظة'
 );

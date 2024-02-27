@@ -11,7 +11,7 @@ return [
     'Signup' => 'Signup',
     'SignupFree' => 'Signup Free',
     'Login' => 'Login',
-    'NewAccount'=>'Register New Account',
+    'NewAccount' => 'Register New Account',
     'Logout' => 'Logout',
     'MyCourses' => 'My Courses',
     'ClearAll' => 'Clear All',
@@ -470,6 +470,7 @@ return [
     'Careers' => 'Careers',
     'RegisterNow' => 'Register now',
     'AboutHosoun' => 'About Hosoun',
-
+    'WhenCertificates' => 'When you receive a certificate, it will appear here',
+    'StartYourJourneyNow' => 'Start your journey now in Hosoun and challange your abilities from the moment'
 
 ];

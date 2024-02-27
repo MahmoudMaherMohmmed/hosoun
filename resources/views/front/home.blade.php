@@ -27,10 +27,7 @@
             </button>
 
             @php
-              $categories = App\Categories::with('subcategory')
-                  ->where('status', 1)
-                  ->orderBy('position', 'ASC')
-                  ->get();
+              $categories = App\Categories::with('subcategory')->where('status', 1)->orderBy('position', 'ASC')->get();
             @endphp
             @if (!$categories->isEmpty())
               <ul class="dropdown-menu rounded-top-0 rounded-bottom-5 bg-accent">
@@ -167,27 +164,27 @@
             <img src="{{ asset('front/svg/diamond-small.svg') }}"
               class="diamond-img position-absolute z-n1 top-0 start-0 ms-4 d-none d-lg-inline-block" alt="animated-svg">
             {{-- Section title --}}
-            <h3 class="sec-title text-white">لماذا تختار حصون؟</h3>
+            <h3 class="sec-title text-white">{{ __('hosoun.why.title') }}</h3>
             <p class="text-white-70">
-              حصون خيارك الأمثل لتجربة تعليمية مميزة
+              {{ __('hosoun.why.subtitle') }}
             </p>
           </div>
           @php
             $items = [
                 [
                     'image' => 'online-course.svg',
-                    'title' => 'دورات مميزة',
-                    'desc' => 'أفضل الدورات التي تقدم على منصة حصون على ايدي باقة من أبرز المدربين',
+                    'title' => __('hosoun.why.specialCourses'),
+                    'desc' => __('hosoun.why.specialCoursesDesc'),
                 ],
                 [
                     'image' => 'teacher.svg',
-                    'title' => 'كوادر علمية',
-                    'desc' => 'أفضل الكوادر العلمية من كل المدربين المميزين على منصة حصون التعليمية',
+                    'title' => __('hosoun.why.scientificStaff'),
+                    'desc' => __('hosoun.why.scientificStaffDesc'),
                 ],
                 [
                     'image' => 'question.svg',
-                    'title' => 'إختبارات مستمرة',
-                    'desc' => 'نقدم الإختبارات المستمرة على كل الدورات الموجودة لمتابعة مستوى الطلاب',
+                    'title' => __('hosoun.why.continusExams'),
+                    'desc' => __('hosoun.why.continusExamsDesc'),
                 ],
             ];
           @endphp
@@ -239,46 +236,69 @@
   @endif
   {{-- /Courses Carousel --}}
 
-
-  {{-- Banner --}}
-  <section class="container mt-5">
-    <div class="bg-accent-2-light rounded-50 position-relative z-0">
-      <div class="iconshapes2">
-        <img class="iconshapes__1 position-absolute z-n1 d-none d-md-inline-block"
-          src="{{ asset('front/img/iconshape-4.png') }}" alt="bg-img">
-        <img class="iconshapes__2 position-absolute z-n1" src="{{ asset('front/img/iconshape-3.png') }}"
-          alt="bg-img">
+  {{-- LearningPath --}}
+  <section class="block-sec pt-0">
+    <div class="container">
+      <div class="boxpath__bg rounded-50 position-relative">
+        <img src="{{ asset('front/img/learning/cover.jpg') }}" alt="learning-paths-cover"
+          class="w-100 h-auto rounded-50 ">
+        <p class="sec-title mb-0 position-absolute top-50 translate-middle-y start-0 px-5">
+          {{ __('hosoun.learningPaths') }}
+        </p>
       </div>
-      <div class="row align-items-center justify-content-center">
-        <div class="col-lg-6 align-self-end mb-4 mb-lg-0">
-          <img class="img-fluid d-block mx-auto" src="{{ asset('front/img/img-2.svg') }}"
-            style="transform:translateY(-3rem); margin-bottom: -3rem" alt="banner-img">
-        </div>
-        <div class="col-lg-6 block-sec py-5">
-          <div class="p-5 text-center text-lg-start">
-            <p class="sec-title mb-5 pb-3 pe-5 lh-sm">
-              ابدأ رحلتك الآن في حصون
-              وتحدى قدراتك من
-              اللحظة
-            </p>
-            <div class="d-flex gap-3 align-items-center justify-content-center justify-content-lg-start flex-wrap">
-              @guest
-                <a class="btn btn-accent2 px-4 flex-grow-1 flex-sm-grow-0" href="{{ route('register') }}">
-                  <i class="isax isax-arrow-left-25 text-white"></i>
-                  {{ __('frontstaticword.RegisterNow') }}
-                </a>
-              @endguest
-              <a href="{{ route('about.show') }}" class="btn btn-dark px-4 flex-grow-1 flex-sm-grow-0" href="#">
-                <i class="isax isax-arrow-left-25 text-white"></i>
-                {{ __('frontstaticword.AboutHosoun') }}
+      <section class="px-5">
+        <div class="row boxpath__items position-relative justify-content-center">
+          @php
+            $items = [
+                [
+                    'name' => __('hosoun.quran'),
+                    'url' => '/quran',
+                    'title' => __('hosoun.registerToQuranPath'),
+                    'img' => '1.jpg',
+                ],
+                [
+                    'name' => __('hosoun.arabicLang'),
+                    'url' => '/arabic',
+                    'title' => __('hosoun.arabicLangPath'),
+                    'img' => '2.jpg',
+                ],
+                [
+                    'name' => __('hosoun.religiousSubjs'),
+                    'url' => '/religious',
+                    'title' => __('hosoun.religiousSubjsPath'),
+                    'img' => '3.jpg',
+                ],
+                [
+                    'name' => __('hosoun.otherSubjs'),
+                    'url' => '/subjects',
+                    'title' => __('hosoun.otherSubjsPath'),
+                    'img' => '4.jpg',
+                ],
+            ];
+          @endphp
+          @foreach ($items as $item)
+            <div class="col-6 col-lg p-2 p-sm-3">
+              {{-- <a href="{{ url($item['url']) }}" class="boxpath d-block h-100 bg-white text-center"
+                title="{{ $item['title'] }}">
+                <div class="boxpath__number mb-4"></div>
+                <p class="title">
+                  {{ $item['name'] }}
+                </p>
+              </a> --}}
+              <a href="{{ url($item['url']) }}" class="boxpath d-block h-100 w-100" title="{{ $item['title'] }}">
+                <img src="{{ asset('front/img/learning/' . $item['img']) }}" alt="{{ $item['title'] }}"
+                  class="w-100 h-100">
               </a>
             </div>
-          </div>
+          @endforeach
         </div>
-      </div>
+      </section>
     </div>
   </section>
-  {{-- /Banner --}}
+  {{-- /LearningPath --}}
+
+
+
 
 
   {{-- InstructorsSections --}}
@@ -403,66 +423,43 @@
   @endif
   {{-- /Blog Carousel --}}
 
-
-  {{-- LearningPath --}}
-  <section class="block-sec pt-0">
-    <div class="container">
-      <div class="boxpath__bg rounded-50 position-relative">
-        <img src="{{ asset('front/img/learning/cover.jpg') }}" alt="learning-paths-cover"
-          class="w-100 h-auto rounded-50 ">
-        <p class="sec-title mb-0 position-absolute top-50 translate-middle-y start-0 px-5">
-          {{ __('hosoun.learningPaths') }}
-        </p>
+  {{-- Banner --}}
+  <section class="container mb-5 pb-5">
+    <div class="bg-accent-2-light rounded-50 position-relative z-0">
+      <div class="iconshapes2">
+        <img class="iconshapes__1 position-absolute z-n1 d-none d-md-inline-block"
+          src="{{ asset('front/img/iconshape-4.png') }}" alt="bg-img">
+        <img class="iconshapes__2 position-absolute z-n1" src="{{ asset('front/img/iconshape-3.png') }}"
+          alt="bg-img">
       </div>
-      <section class="px-5">
-        <div class="row boxpath__items position-relative justify-content-center">
-          @php
-            $items = [
-                [
-                    'name' => __('hosoun.quran'),
-                    'url' => '/quran',
-                    'title' => __('hosoun.registerToQuranPath'),
-                    'img' => '1.jpg',
-                ],
-                [
-                    'name' => __('hosoun.arabicLang'),
-                    'url' => '/arabic',
-                    'title' => __('hosoun.arabicLangPath'),
-                    'img' => '2.jpg',
-                ],
-                [
-                    'name' => __('hosoun.religiousSubjs'),
-                    'url' => '/religious',
-                    'title' => __('hosoun.religiousSubjsPath'),
-                    'img' => '3.jpg',
-                ],
-                [
-                    'name' => __('hosoun.otherSubjs'),
-                    'url' => '/subjects',
-                    'title' => __('hosoun.otherSubjsPath'),
-                    'img' => '4.jpg',
-                ],
-            ];
-          @endphp
-          @foreach ($items as $item)
-            <div class="col-6 col-lg p-2 p-sm-3">
-              {{-- <a href="{{ url($item['url']) }}" class="boxpath d-block h-100 bg-white text-center"
-                title="{{ $item['title'] }}">
-                <div class="boxpath__number mb-4"></div>
-                <p class="title">
-                  {{ $item['name'] }}
-                </p>
-              </a> --}}
-              <a href="{{ url($item['url']) }}" class="boxpath d-block h-100 w-100" title="{{ $item['title'] }}">
-                <img src="{{ asset('front/img/learning/' . $item['img']) }}" alt="{{ $item['title'] }}"
-                  class="w-100 h-100">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-lg-6 align-self-end mb-4 mb-lg-0">
+          <img class="img-fluid d-block mx-auto" src="{{ asset('front/img/img-2.svg') }}"
+            style="transform:translateY(-3rem); margin-bottom: -3rem" alt="banner-img">
+        </div>
+        <div class="col-lg-6 block-sec py-5">
+          <div class="p-5 text-center text-lg-start">
+            <p class="sec-title mb-5 pb-3 pe-5 lh-sm">
+              {{ __('frontstaticword.StartYourJourneyNow') }}
+            </p>
+            <div class="d-flex gap-3 align-items-center justify-content-center justify-content-lg-start flex-wrap">
+              @guest
+                <a class="btn btn-accent2 px-4 flex-grow-1 flex-sm-grow-0" href="{{ route('register') }}">
+                  <i class="isax isax-arrow-left-25 text-white"></i>
+                  {{ __('frontstaticword.RegisterNow') }}
+                </a>
+              @endguest
+              <a href="{{ route('about.show') }}" class="btn btn-dark px-4 flex-grow-1 flex-sm-grow-0" href="#">
+                <i class="isax isax-arrow-left-25 text-white"></i>
+                {{ __('frontstaticword.AboutHosoun') }}
               </a>
             </div>
-          @endforeach
+          </div>
         </div>
-      </section>
+      </div>
     </div>
   </section>
-  {{-- /LearningPath --}}
+  {{-- /Banner --}}
+
 
 @endsection

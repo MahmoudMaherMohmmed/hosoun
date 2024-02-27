@@ -72,7 +72,7 @@ return [
         'secondSecondary' => 'ثاني ثانوي',
         'thirdSecondary' => 'ثالث ثانوي',
         'university' => 'جامعة',
-    ], 
+    ],
 
     'subjects' => [
         'establishing' => 'تأسيس',
@@ -89,6 +89,17 @@ return [
         'french' => 'فرنساوي',
         'abilitiesAndAchievement' => 'قدرات وتحصيلي',
         'generalReviews' => 'مراجعات عامة',
+    ],
+
+    'why' => [
+        'title' => 'لماذا تختار حصون؟',
+        'subtitle' => 'حصون خيارك الأمثل لتجربة تعليمية مميزة',
+        'specialCourses' => 'دورات مميزة',
+        'specialCoursesDesc' => 'أفضل الدورات التي تقدم على منصة حصون على ايدي باقة من أبرز المدربين',
+        'scientificStaff' => 'كوادر علمية',
+        'scientificStaffDesc' => 'أفضل الكوادر العلمية من كل المدربين المميزين على منصة حصون التعليمية',
+        'continusExams' => 'إختبارات مستمرة',
+        'continusExamsDesc' => 'نقدم الإختبارات المستمرة على كل الدورات الموجودة لمتابعة مستوى الطلاب'
     ]
 
 ];

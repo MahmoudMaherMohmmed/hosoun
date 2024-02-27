@@ -3,7 +3,7 @@
 }
 .headersearch__dropdown > .dropdown-menu {
   min-width: 24rem;
-  height: 25rem;
+  min-height: 6rem;
   transform: translate(-3rem, 4.1rem) !important;
   overflow-x: hidden;
   overflow-y: auto;
