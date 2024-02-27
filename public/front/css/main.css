@@ -3098,6 +3098,11 @@ footer::after {
   background-image: linear-gradient(to top, var(--clr-aceent), transparent);
 }
 
+.company-logo {
+  width: 6rem;
+  height: auto;
+}
+
 .social-link {
   flex-shrink: 0;
   display: grid;
@@ -3128,7 +3133,7 @@ footer::after {
 
 @media only screen and (min-width: 992px) {
   .footerbottom {
-    height: 14rem;
+    height: 18rem;
   }
 
   .footerbottom::before,
@@ -3142,7 +3147,7 @@ footer::after {
 
   .footerbottom::before {
     width: 50%;
-    height: 14rem;
+    height: 17rem;
     /* border-radius: 0 7rem 0 0; */
     border-start-start-radius: 7rem;
     inset-inline-end: 0;

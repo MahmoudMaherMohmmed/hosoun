@@ -459,6 +459,7 @@ return [
     'FollowSocials' => 'Follow us on all platforms',
     'AcceptedPayment' => 'We accept the following paymetns',
     'Copyright' => 'All Copyrights goes to Hosoun Academy',
+    'MadeBy' => 'Made by',
     'SeeAllArticles' => 'See All Articles',
     'BooksCategories' => 'Books Categories',
     'BooksSubtitle' => 'Best books categories for students',

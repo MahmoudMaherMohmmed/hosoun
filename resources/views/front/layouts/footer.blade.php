@@ -89,9 +89,7 @@
         <div class="col-12 col-lg-auto bg-dark-accent rounded-4">
           <div class="d-lg-flex align-items-center p-4 p-lg-0">
             @php
-              $social_links = App\SocialLink::where('status', 1)
-                  ->latest()
-                  ->get();
+              $social_links = App\SocialLink::where('status', 1)->latest()->get();
             @endphp
             @if ($social_links->isNotEmpty())
               <h3 class="text-white text-center mb-4 mb-lg-0 me-lg-5">
@@ -122,10 +120,16 @@
               </div>
             </div>
           </div>
+
           <p class="text-end text-white-70 mt-2">
             {{ __('frontstaticword.Copyright') }} @
             <span id="current-year"></span>
           </p>
+          <div class="d-flex align-items-center gap-3 text-white mt-3">
+            {{ __('frontstaticword.MadeBy') }}
+            <img src="{{ asset('front/img/company.webp') }}" alt="company-logo"
+              class="company-logo object-fit-contain" />
+          </div>
         </div>
       </div>
     </div>
