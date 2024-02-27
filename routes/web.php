@@ -781,6 +781,25 @@ Route::middleware(['web'])->group(function () {
             Route::post('/quickupdate/paths/religious/{id}', 'QuickUpdateController@religiousPathsQuick')->name('religious-paths.quick');
             Route::post('/quickupdate/paths/arabic/{id}', 'QuickUpdateController@arabicPathsQuick')->name('arabic-paths.quick');
         });
+
+
+        Route::get('quran', 'HomeController@quran');
+        Route::post('quran/save', 'HomeController@saveQuranPath')->name('quran.save');
+
+        Route::get('arabic', 'HomeController@arabic');
+        Route::post('arabic/save', 'HomeController@saveArabicPath')->name('arabic.save');
+
+        Route::get('religious', 'HomeController@religious');
+        Route::post('religious/save', 'HomeController@saveReligious')->name('religious.save');
+
+        Route::get('subjects', 'HomeController@subjects');
+        Route::post('subjects/save', 'HomeController@saveSubjects');
+
+
+        Route::get('careers', 'HomeController@careers')->name('careersList');
+        Route::get('careers/{id}', 'HomeController@careerJob')->name('career.job.show');
+
+
     });
 });
 
@@ -824,21 +843,6 @@ Route::get('jitsi/detail/{id}', 'JitsiController@jitsidetailpage')->name('jitsip
 //     return view('front.paths.religious');
 // });
 
-Route::get('quran', 'HomeController@quran');
-Route::post('quran/save', 'HomeController@saveQuranPath')->name('quran.save');
-
-Route::get('arabic', 'HomeController@arabic');
-Route::post('arabic/save', 'HomeController@saveArabicPath')->name('arabic.save');
-
-Route::get('religious', 'HomeController@religious');
-Route::post('religious/save', 'HomeController@saveReligious')->name('religious.save');
-
-Route::get('subjects', 'HomeController@subjects');
-Route::post('subjects/save', 'HomeController@saveSubjects');
-
-
-Route::get('careers', 'HomeController@careers')->name('careersList');
-Route::get('careers/{id}', 'HomeController@careerJob')->name('career.job.show');
 // Route::get('/careers', function () {
 //     return view('front.careers.all');
 // });
