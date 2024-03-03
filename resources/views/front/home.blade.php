@@ -103,8 +103,9 @@
   {{-- Home Carousel --}}
   @if ($sliders->isNotEmpty())
     <section class="container mt-5 pt-3">
-      <div class="row mt-lg-5 pt-lg-5">
-        <div class="col-lg-6 d-flex flex-column">
+      {{-- <div class="row mt-lg-5 pt-lg-5"> --}}
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center">
           <section id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
             <section class="carousel-inner">
               @foreach ($sliders as $slider)
@@ -130,7 +131,8 @@
             </section>
           </section>
           {{-- Next/Prev --}}
-          <section class="carousel-controls mt-5 mt-lg-auto">
+          {{-- <section class="carousel-controls mt-5 mt-lg-auto"> --}}
+          <section class="carousel-controls mt-5">
             <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev"
               title="Previous slide">
               <i class="isax isax-arrow-right-25" style="color: #0E3C54"></i>
@@ -143,7 +145,7 @@
         </div>
         {{-- Home Carousel image --}}
         <div class="col-lg-6 mt-5 mt-lg-0 text-end">
-          <img src="{{ asset('front/img/home-slider-img.svg') }}" class="img-fluid" alt="{{ $slider->heading }}">
+          <img src="{{ asset('front/img/new-header.png') }}" class="img-fluid" alt="{{ $slider->heading }}">
         </div>
       </div>
     </section>

@@ -121,14 +121,19 @@
             </div>
           </div>
 
-          <p class="text-end text-white-70 mt-2">
-            {{ __('frontstaticword.Copyright') }} @
-            <span id="current-year"></span>
-          </p>
-          <div class="d-flex align-items-center gap-3 text-white mt-3">
-            {{ __('frontstaticword.MadeBy') }}
-            <img src="{{ asset('front/img/company.webp') }}" alt="company-logo"
-              class="company-logo object-fit-contain" />
+          <div
+            class="d-flex flex-column align-items-center align-items-lg-end justify-content-center justify-content-lg-start gap-3 text-white mt-3">
+            <p class="text-end text-white-70">
+              {{ __('frontstaticword.Copyright') }} @
+              <span id="current-year"></span>
+            </p>
+            <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-3 text-white">
+              {{ __('frontstaticword.MadeBy') }}
+              <a target="_blank" href="https://lawhatik.com/">
+                <img src="{{ asset('front/img/company.webp') }}" alt="company-logo"
+                  class="company-logo object-fit-contain" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
