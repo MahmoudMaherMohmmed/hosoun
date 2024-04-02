@@ -162,7 +162,7 @@
               </div>
             </div>
             <div class="form-check form-group">
-              <input type="checkbox" name="term" id="term" class="form-check-input">
+              <input type="checkbox" name="term" id="term" class="form-check-input" checked>
               <label for="term" class="form-check-label">
                 {{ __('frontstaticword.IAgreeTo') }}
                 <a href="{{ url('terms_condition') }}"
